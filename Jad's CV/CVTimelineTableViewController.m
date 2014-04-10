@@ -8,6 +8,11 @@
 
 #import "CVTimelineTableViewController.h"
 
+#import "CVTimelineEventTableViewCell.h"
+
+static NSString *CVMajorEventTableCellIdentifier = @"Major Event Cell";
+static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
+
 @interface CVTimelineTableViewController ()
 
 @end
@@ -16,89 +21,50 @@
 
 @synthesize pageIndex = _pageIndex;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.title = @"Experience";
-    self.view.backgroundColor = [UIColor greenColor];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSString *eventsFilePath = [[NSBundle mainBundle] pathForResource:@"Experience" ofType:@"plist"];
+    NSArray *events = [CVTimelineEvent timelineEventsFromFileContents:eventsFilePath];
+    [self setData:events containsSections:NO];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Table View
 
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
-    // Return the number of rows in the section.
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    CVTimelineEvent *event = [self objectAtIndexPath:indexPath];
     
-    // Configure the cell...
+    NSString *CellIdentifier = [super cellIdentifierForIndexPath:indexPath];
+    if (event.importance == CVTimelineEventImportanceMajor)
+    {
+        CellIdentifier = CVMajorEventTableCellIdentifier;
+    }
+    else if (event.importance == CVTimelineEventImportanceMinor)
+    {
+        CellIdentifier = CVMinorEventTableCellIdentifier;
+    }
     
-    return cell;
+    return CellIdentifier;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView
+    configureCell:(CVTimelineEventTableViewCell *)cell
+       withObject:(CVTimelineEvent *)event
+      atIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    cell.event = event;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView
+  didSelectObject:(CVTimelineEvent *)event
+      atIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

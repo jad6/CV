@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Jad Osseiran. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "JOTableViewController.h"
 
 #import "CVPageContentViewController.h"
 
-@interface CVExtraCurricularTableViewController : UITableViewController <CVPageContentViewController>
+@interface CVExtraCurricularTableViewController : JOTableViewController <CVPageContentViewController>
 
 @end

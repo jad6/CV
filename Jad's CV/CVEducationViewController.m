@@ -34,8 +34,6 @@
     [super viewDidLoad];
 
     self.title = @"Education";
-
-    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated

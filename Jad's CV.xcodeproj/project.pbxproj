@@ -35,6 +35,14 @@
 		0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */; };
 		0568735618F680C100132551 /* CVRefereeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */; };
 		05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ABB18F6904C0061C1BC /* UIView+Extension.m */; };
+		05F75AC018F69A9B0061C1BC /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75ABF18F69A9B0061C1BC /* Experience.plist */; };
+		05F75AC218F69AAF0061C1BC /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC118F69AAF0061C1BC /* Referees.plist */; };
+		05F75AC418F69ACD0061C1BC /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC318F69ACD0061C1BC /* Extra Curricular.plist */; };
+		05F75AC618F69AE40061C1BC /* Education.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC518F69AE40061C1BC /* Education.plist */; };
+		05F75AC918F69B120061C1BC /* CVTimelineEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75AC818F69B120061C1BC /* CVTimelineEvent.m */; };
+		05F75ACC18F69DF80061C1BC /* CVTimelineEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ACB18F69DF80061C1BC /* CVTimelineEventTableViewCell.m */; };
+		05F75AD018F69EF70061C1BC /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ACF18F69EF70061C1BC /* NSDate+Extension.m */; };
+		05F75AD318F6A2B50061C1BC /* JOTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75AD218F6A2B50061C1BC /* JOTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +100,18 @@
 		0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVRefereeCollectionViewCell.m; sourceTree = "<group>"; };
 		05F75ABA18F6904C0061C1BC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		05F75ABB18F6904C0061C1BC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		05F75ABF18F69A9B0061C1BC /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
+		05F75AC118F69AAF0061C1BC /* Referees.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Referees.plist; sourceTree = "<group>"; };
+		05F75AC318F69ACD0061C1BC /* Extra Curricular.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Extra Curricular.plist"; sourceTree = "<group>"; };
+		05F75AC518F69AE40061C1BC /* Education.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Education.plist; sourceTree = "<group>"; };
+		05F75AC718F69B120061C1BC /* CVTimelineEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineEvent.h; sourceTree = "<group>"; };
+		05F75AC818F69B120061C1BC /* CVTimelineEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTimelineEvent.m; sourceTree = "<group>"; };
+		05F75ACA18F69DF80061C1BC /* CVTimelineEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineEventTableViewCell.h; sourceTree = "<group>"; };
+		05F75ACB18F69DF80061C1BC /* CVTimelineEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTimelineEventTableViewCell.m; sourceTree = "<group>"; };
+		05F75ACE18F69EF70061C1BC /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		05F75ACF18F69EF70061C1BC /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		05F75AD118F6A2B50061C1BC /* JOTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOTableViewController.h; sourceTree = "<group>"; };
+		05F75AD218F6A2B50061C1BC /* JOTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +239,10 @@
 			children = (
 				0568732818F64EAB00132551 /* CVTimelineTableViewController.h */,
 				0568732918F64EAB00132551 /* CVTimelineTableViewController.m */,
+				05F75ACA18F69DF80061C1BC /* CVTimelineEventTableViewCell.h */,
+				05F75ACB18F69DF80061C1BC /* CVTimelineEventTableViewCell.m */,
+				05F75AC718F69B120061C1BC /* CVTimelineEvent.h */,
+				05F75AC818F69B120061C1BC /* CVTimelineEvent.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -258,6 +282,10 @@
 			isa = PBXGroup;
 			children = (
 				0568734618F662F800132551 /* Record.pdf */,
+				05F75ABF18F69A9B0061C1BC /* Experience.plist */,
+				05F75AC118F69AAF0061C1BC /* Referees.plist */,
+				05F75AC318F69ACD0061C1BC /* Extra Curricular.plist */,
+				05F75AC518F69AE40061C1BC /* Education.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -277,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				05F75ABE18F690820061C1BC /* Categories */,
+				05F75AD418F6A2B80061C1BC /* Subclasses */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -286,8 +315,19 @@
 			children = (
 				05F75ABA18F6904C0061C1BC /* UIView+Extension.h */,
 				05F75ABB18F6904C0061C1BC /* UIView+Extension.m */,
+				05F75ACE18F69EF70061C1BC /* NSDate+Extension.h */,
+				05F75ACF18F69EF70061C1BC /* NSDate+Extension.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		05F75AD418F6A2B80061C1BC /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				05F75AD118F6A2B50061C1BC /* JOTableViewController.h */,
+				05F75AD218F6A2B50061C1BC /* JOTableViewController.m */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,11 +407,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F75AC418F69ACD0061C1BC /* Extra Curricular.plist in Resources */,
 				0568734718F662F800132551 /* Record.pdf in Resources */,
 				0568730418F6361E00132551 /* Main_iPad.storyboard in Resources */,
 				0568730918F6361E00132551 /* Images.xcassets in Resources */,
 				0568730118F6361E00132551 /* Main_iPhone.storyboard in Resources */,
 				056872F818F6361E00132551 /* InfoPlist.strings in Resources */,
+				05F75AC018F69A9B0061C1BC /* Experience.plist in Resources */,
+				05F75AC218F69AAF0061C1BC /* Referees.plist in Resources */,
+				05F75AC618F69AE40061C1BC /* Education.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,14 +438,18 @@
 				0568734A18F664FE00132551 /* CVProfileView.m in Sources */,
 				05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */,
 				0568735618F680C100132551 /* CVRefereeCollectionViewCell.m in Sources */,
+				05F75AD018F69EF70061C1BC /* NSDate+Extension.m in Sources */,
 				0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */,
 				0568733E18F65B6B00132551 /* CVExtraCurricularTableViewController.m in Sources */,
 				0568732718F6399200132551 /* CVHomeViewController.m in Sources */,
 				0568733A18F65B4500132551 /* CVEducationViewController.m in Sources */,
 				0568732A18F64EAB00132551 /* CVTimelineTableViewController.m in Sources */,
+				05F75AD318F6A2B50061C1BC /* JOTableViewController.m in Sources */,
+				05F75ACC18F69DF80061C1BC /* CVTimelineEventTableViewCell.m in Sources */,
 				056872FA18F6361E00132551 /* main.m in Sources */,
 				056872FE18F6361E00132551 /* CVAppDelegate.m in Sources */,
 				0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */,
+				05F75AC918F69B120061C1BC /* CVTimelineEvent.m in Sources */,
 				0568734418F65DF700132551 /* CVPreviewItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
