@@ -15,13 +15,16 @@
 		056872FE18F6361E00132551 /* CVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 056872FD18F6361E00132551 /* CVAppDelegate.m */; };
 		0568730118F6361E00132551 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056872FF18F6361E00132551 /* Main_iPhone.storyboard */; };
 		0568730418F6361E00132551 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0568730218F6361E00132551 /* Main_iPad.storyboard */; };
-		0568730718F6361E00132551 /* CVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568730618F6361E00132551 /* CVViewController.m */; };
 		0568730918F6361E00132551 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0568730818F6361E00132551 /* Images.xcassets */; };
 		0568731018F6361E00132551 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568730F18F6361E00132551 /* XCTest.framework */; };
 		0568731118F6361E00132551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872ED18F6361E00132551 /* Foundation.framework */; };
 		0568731218F6361E00132551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872F118F6361E00132551 /* UIKit.framework */; };
 		0568731A18F6361E00132551 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0568731818F6361E00132551 /* InfoPlist.strings */; };
 		0568731C18F6361E00132551 /* Jad_s_CVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568731B18F6361E00132551 /* Jad_s_CVTests.m */; };
+		0568732718F6399200132551 /* CVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568732618F6399200132551 /* CVHomeViewController.m */; };
+		0568732A18F64EAB00132551 /* CVTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568732918F64EAB00132551 /* CVTimelineTableViewController.m */; };
+		0568732D18F64ECC00132551 /* CVReferencesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568732C18F64ECC00132551 /* CVReferencesTableViewController.m */; };
+		0568733318F64F8500132551 /* CVPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568733218F64F8500132551 /* CVPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +50,21 @@
 		056872FD18F6361E00132551 /* CVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVAppDelegate.m; sourceTree = "<group>"; };
 		0568730018F6361E00132551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0568730318F6361E00132551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		0568730518F6361E00132551 /* CVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVViewController.h; sourceTree = "<group>"; };
-		0568730618F6361E00132551 /* CVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVViewController.m; sourceTree = "<group>"; };
 		0568730818F6361E00132551 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0568730E18F6361E00132551 /* Jad's CVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jad's CVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0568730F18F6361E00132551 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0568731718F6361E00132551 /* Jad's CVTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jad's CVTests-Info.plist"; sourceTree = "<group>"; };
 		0568731918F6361E00132551 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0568731B18F6361E00132551 /* Jad_s_CVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Jad_s_CVTests.m; sourceTree = "<group>"; };
+		0568732518F6399200132551 /* CVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVHomeViewController.h; sourceTree = "<group>"; };
+		0568732618F6399200132551 /* CVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVHomeViewController.m; sourceTree = "<group>"; };
+		0568732818F64EAB00132551 /* CVTimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineTableViewController.h; sourceTree = "<group>"; };
+		0568732918F64EAB00132551 /* CVTimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTimelineTableViewController.m; sourceTree = "<group>"; };
+		0568732B18F64ECC00132551 /* CVReferencesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVReferencesTableViewController.h; sourceTree = "<group>"; };
+		0568732C18F64ECC00132551 /* CVReferencesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVReferencesTableViewController.m; sourceTree = "<group>"; };
+		0568733118F64F8500132551 /* CVPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPageViewController.h; sourceTree = "<group>"; };
+		0568733218F64F8500132551 /* CVPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPageViewController.m; sourceTree = "<group>"; };
+		0568733418F6509C00132551 /* CVPageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVPageContentViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +128,11 @@
 				056872FD18F6361E00132551 /* CVAppDelegate.m */,
 				056872FF18F6361E00132551 /* Main_iPhone.storyboard */,
 				0568730218F6361E00132551 /* Main_iPad.storyboard */,
-				0568730518F6361E00132551 /* CVViewController.h */,
-				0568730618F6361E00132551 /* CVViewController.m */,
+				0568732518F6399200132551 /* CVHomeViewController.h */,
+				0568732618F6399200132551 /* CVHomeViewController.m */,
+				0568733118F64F8500132551 /* CVPageViewController.h */,
+				0568733218F64F8500132551 /* CVPageViewController.m */,
+				0568733518F650A200132551 /* Pages */,
 				0568730818F6361E00132551 /* Images.xcassets */,
 				056872F418F6361E00132551 /* Supporting Files */,
 			);
@@ -153,6 +166,34 @@
 				0568731818F6361E00132551 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0568733518F650A200132551 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				0568733418F6509C00132551 /* CVPageContentViewController.h */,
+				0568733618F650B400132551 /* Timeline */,
+				0568733718F650BC00132551 /* References */,
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
+		0568733618F650B400132551 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				0568732818F64EAB00132551 /* CVTimelineTableViewController.h */,
+				0568732918F64EAB00132551 /* CVTimelineTableViewController.m */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		0568733718F650BC00132551 /* References */ = {
+			isa = PBXGroup;
+			children = (
+				0568732B18F64ECC00132551 /* CVReferencesTableViewController.h */,
+				0568732C18F64ECC00132551 /* CVReferencesTableViewController.m */,
+			);
+			name = References;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0568733318F64F8500132551 /* CVPageViewController.m in Sources */,
+				0568732718F6399200132551 /* CVHomeViewController.m in Sources */,
+				0568732D18F64ECC00132551 /* CVReferencesTableViewController.m in Sources */,
+				0568732A18F64EAB00132551 /* CVTimelineTableViewController.m in Sources */,
 				056872FA18F6361E00132551 /* main.m in Sources */,
 				056872FE18F6361E00132551 /* CVAppDelegate.m in Sources */,
-				0568730718F6361E00132551 /* CVViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

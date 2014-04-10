@@ -1,5 +1,5 @@
 //
-//  CVViewController.h
+//  CVHomeViewController.h
 //  Jad's CV
 //
 //  Created by Jad Osseiran on 10/04/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CVViewController : UIViewController
+@interface CVHomeViewController : UIViewController
 
 @end
