@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
     
+    self.title = @"Experience";
     self.view.backgroundColor = [UIColor greenColor];
 
     // Uncomment the following line to preserve selection between presentations.

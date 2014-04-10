@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
     
+    self.title = @"Extra Curricular";
     self.view.backgroundColor = [UIColor blueColor];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -43,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table View
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

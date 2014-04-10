@@ -96,14 +96,4 @@
     return [self viewControllerAtIndex:index];
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [self.viewControllerIdentifiers count];
-}
-
-//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-//{
-//    return pageViewController;
-//}
-
 @end

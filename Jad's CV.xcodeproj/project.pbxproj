@@ -23,13 +23,18 @@
 		0568731C18F6361E00132551 /* Jad_s_CVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568731B18F6361E00132551 /* Jad_s_CVTests.m */; };
 		0568732718F6399200132551 /* CVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568732618F6399200132551 /* CVHomeViewController.m */; };
 		0568732A18F64EAB00132551 /* CVTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568732918F64EAB00132551 /* CVTimelineTableViewController.m */; };
-		0568732D18F64ECC00132551 /* CVReferencesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568732C18F64ECC00132551 /* CVReferencesTableViewController.m */; };
 		0568733318F64F8500132551 /* CVPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568733218F64F8500132551 /* CVPageViewController.m */; };
 		0568733A18F65B4500132551 /* CVEducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568733918F65B4500132551 /* CVEducationViewController.m */; };
 		0568733E18F65B6B00132551 /* CVExtraCurricularTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568733D18F65B6B00132551 /* CVExtraCurricularTableViewController.m */; };
 		0568734118F65DB300132551 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568734018F65DB300132551 /* QuickLook.framework */; };
 		0568734418F65DF700132551 /* CVPreviewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568734318F65DF700132551 /* CVPreviewItem.m */; };
 		0568734718F662F800132551 /* Record.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0568734618F662F800132551 /* Record.pdf */; };
+		0568734A18F664FE00132551 /* CVProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568734918F664FE00132551 /* CVProfileView.m */; };
+		0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568734D18F6788E00132551 /* JOCircleImageView.m */; };
+		0568735018F678BD00132551 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568734F18F678BD00132551 /* QuartzCore.framework */; };
+		0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */; };
+		0568735618F680C100132551 /* CVRefereeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */; };
+		05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ABB18F6904C0061C1BC /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +70,6 @@
 		0568732618F6399200132551 /* CVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVHomeViewController.m; sourceTree = "<group>"; };
 		0568732818F64EAB00132551 /* CVTimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineTableViewController.h; sourceTree = "<group>"; };
 		0568732918F64EAB00132551 /* CVTimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTimelineTableViewController.m; sourceTree = "<group>"; };
-		0568732B18F64ECC00132551 /* CVReferencesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVReferencesTableViewController.h; sourceTree = "<group>"; };
-		0568732C18F64ECC00132551 /* CVReferencesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVReferencesTableViewController.m; sourceTree = "<group>"; };
 		0568733118F64F8500132551 /* CVPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPageViewController.h; sourceTree = "<group>"; };
 		0568733218F64F8500132551 /* CVPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPageViewController.m; sourceTree = "<group>"; };
 		0568733418F6509C00132551 /* CVPageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVPageContentViewController.h; sourceTree = "<group>"; };
@@ -78,6 +81,17 @@
 		0568734218F65DF700132551 /* CVPreviewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPreviewItem.h; sourceTree = "<group>"; };
 		0568734318F65DF700132551 /* CVPreviewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPreviewItem.m; sourceTree = "<group>"; };
 		0568734618F662F800132551 /* Record.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Record.pdf; path = ../../../../../Documents/Record.pdf; sourceTree = "<group>"; };
+		0568734818F664FE00132551 /* CVProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVProfileView.h; sourceTree = "<group>"; };
+		0568734918F664FE00132551 /* CVProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVProfileView.m; sourceTree = "<group>"; };
+		0568734C18F6788E00132551 /* JOCircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOCircleImageView.h; sourceTree = "<group>"; };
+		0568734D18F6788E00132551 /* JOCircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOCircleImageView.m; sourceTree = "<group>"; };
+		0568734F18F678BD00132551 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0568735118F67ED700132551 /* CVReferencesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVReferencesCollectionViewController.h; sourceTree = "<group>"; };
+		0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVReferencesCollectionViewController.m; sourceTree = "<group>"; };
+		0568735418F680C100132551 /* CVRefereeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVRefereeCollectionViewCell.h; sourceTree = "<group>"; };
+		0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVRefereeCollectionViewCell.m; sourceTree = "<group>"; };
+		05F75ABA18F6904C0061C1BC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		05F75ABB18F6904C0061C1BC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0568735018F678BD00132551 /* QuartzCore.framework in Frameworks */,
 				0568734118F65DB300132551 /* QuickLook.framework in Frameworks */,
 				056872F018F6361E00132551 /* CoreGraphics.framework in Frameworks */,
 				056872F218F6361E00132551 /* UIKit.framework in Frameworks */,
@@ -127,6 +142,7 @@
 		056872EC18F6361E00132551 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0568734F18F678BD00132551 /* QuartzCore.framework */,
 				0568734018F65DB300132551 /* QuickLook.framework */,
 				056872ED18F6361E00132551 /* Foundation.framework */,
 				056872EF18F6361E00132551 /* CoreGraphics.framework */,
@@ -145,9 +161,9 @@
 				0568730218F6361E00132551 /* Main_iPad.storyboard */,
 				0568732518F6399200132551 /* CVHomeViewController.h */,
 				0568732618F6399200132551 /* CVHomeViewController.m */,
-				0568733118F64F8500132551 /* CVPageViewController.h */,
-				0568733218F64F8500132551 /* CVPageViewController.m */,
+				0568734B18F6650100132551 /* Profile */,
 				0568733518F650A200132551 /* Pages */,
+				05F75ABD18F690780061C1BC /* Helpers */,
 				0568734518F6618400132551 /* Resources */,
 				0568730818F6361E00132551 /* Images.xcassets */,
 				056872F418F6361E00132551 /* Supporting Files */,
@@ -188,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				0568733418F6509C00132551 /* CVPageContentViewController.h */,
+				0568733118F64F8500132551 /* CVPageViewController.h */,
+				0568733218F64F8500132551 /* CVPageViewController.m */,
 				0568733618F650B400132551 /* Timeline */,
 				0568733F18F65B7000132551 /* Extra Curricular */,
 				0568733B18F65B4800132551 /* Education */,
@@ -208,8 +226,10 @@
 		0568733718F650BC00132551 /* References */ = {
 			isa = PBXGroup;
 			children = (
-				0568732B18F64ECC00132551 /* CVReferencesTableViewController.h */,
-				0568732C18F64ECC00132551 /* CVReferencesTableViewController.m */,
+				0568735118F67ED700132551 /* CVReferencesCollectionViewController.h */,
+				0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */,
+				0568735418F680C100132551 /* CVRefereeCollectionViewCell.h */,
+				0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */,
 			);
 			name = References;
 			sourceTree = "<group>";
@@ -240,6 +260,34 @@
 				0568734618F662F800132551 /* Record.pdf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		0568734B18F6650100132551 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0568734818F664FE00132551 /* CVProfileView.h */,
+				0568734918F664FE00132551 /* CVProfileView.m */,
+				0568734C18F6788E00132551 /* JOCircleImageView.h */,
+				0568734D18F6788E00132551 /* JOCircleImageView.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		05F75ABD18F690780061C1BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				05F75ABE18F690820061C1BC /* Categories */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		05F75ABE18F690820061C1BC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				05F75ABA18F6904C0061C1BC /* UIView+Extension.h */,
+				05F75ABB18F6904C0061C1BC /* UIView+Extension.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,13 +391,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0568733318F64F8500132551 /* CVPageViewController.m in Sources */,
+				0568734A18F664FE00132551 /* CVProfileView.m in Sources */,
+				05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */,
+				0568735618F680C100132551 /* CVRefereeCollectionViewCell.m in Sources */,
+				0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */,
 				0568733E18F65B6B00132551 /* CVExtraCurricularTableViewController.m in Sources */,
 				0568732718F6399200132551 /* CVHomeViewController.m in Sources */,
-				0568732D18F64ECC00132551 /* CVReferencesTableViewController.m in Sources */,
 				0568733A18F65B4500132551 /* CVEducationViewController.m in Sources */,
 				0568732A18F64EAB00132551 /* CVTimelineTableViewController.m in Sources */,
 				056872FA18F6361E00132551 /* main.m in Sources */,
 				056872FE18F6361E00132551 /* CVAppDelegate.m in Sources */,
+				0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */,
 				0568734418F65DF700132551 /* CVPreviewItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +617,7 @@
 				0568732118F6361E00132551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0568732218F6361E00132551 /* Build configuration list for PBXNativeTarget "Jad's CVTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +626,7 @@
 				0568732418F6361E00132551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

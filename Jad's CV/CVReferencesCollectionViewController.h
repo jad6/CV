@@ -1,5 +1,5 @@
 //
-//  CVReferencesTableViewController.h
+//  CVReferencesCollectionViewController.h
 //  Jad's CV
 //
 //  Created by Jad Osseiran on 10/04/2014.
@@ -10,6 +10,6 @@
 
 #import "CVPageContentViewController.h"
 
-@interface CVReferencesTableViewController : UITableViewController <CVPageContentViewController>
+@interface CVReferencesCollectionViewController : UICollectionViewController <CVPageContentViewController>
 
 @end

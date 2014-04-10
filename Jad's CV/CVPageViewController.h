@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class CVPageViewController;
+
 @interface CVPageViewController : UIPageViewController
 
 @property (nonatomic, strong) NSArray *viewControllerIdentifiers;

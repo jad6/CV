@@ -32,7 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.title = @"Education";
+
     self.view.backgroundColor = [UIColor blackColor];
 }
 
@@ -73,7 +75,6 @@
         [self.navigationController pushViewController:previewController animated:YES];
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     }
-
 }
 
 #pragma mark - Quick Look
