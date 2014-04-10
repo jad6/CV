@@ -11,6 +11,8 @@
 #import "CVPageViewController.h"
 
 static NSString *CVTimelineViewControllerIdentifier = @"CVTimelineTableViewController";
+static NSString *CVExtraCurricularViewControllerIdentifier = @"CVExtraCurricularTableViewController";
+static NSString *CVEducationViewControllerIdentifier = @"CVEducationViewController";
 static NSString *CVReferencesViewControllerIdentifier = @"CVReferencesTableViewController";
 
 @interface CVHomeViewController ()
@@ -41,7 +43,10 @@ static NSString *CVReferencesViewControllerIdentifier = @"CVReferencesTableViewC
 
 - (NSArray *)pageContentViewControllerIdentifiers
 {
-    return @[CVTimelineViewControllerIdentifier, CVReferencesViewControllerIdentifier];
+    return @[CVTimelineViewControllerIdentifier,
+             CVExtraCurricularViewControllerIdentifier,
+             CVEducationViewControllerIdentifier,
+             CVReferencesViewControllerIdentifier];
 }
 
 #pragma mark - Segues

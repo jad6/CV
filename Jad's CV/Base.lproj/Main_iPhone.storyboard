@@ -74,7 +74,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="CVReferencesTableViewController" id="BBv-Ek-R3v" customClass="CVReferencesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ujo-zG-M6T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -92,17 +92,58 @@
                             <outlet property="delegate" destination="BBv-Ek-R3v" id="4pL-y4-oN0"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="460"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibg-31-MH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="268"/>
+            <point key="canvasLocation" x="1716" y="516"/>
+        </scene>
+        <!--Education View Controller-->
+        <scene sceneID="i2g-aN-hqP">
+            <objects>
+                <viewController storyboardIdentifier="CVEducationViewController" id="qhc-x8-AVD" customClass="CVEducationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zdP-Dd-B84"/>
+                        <viewControllerLayoutGuide type="bottom" id="BW3-5i-wjE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y8j-OU-Sms">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37C-eB-opc">
+                                <rect key="frame" x="99" y="381" width="122" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Academic Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="academicTranscriptAction:" destination="qhc-x8-AVD" eventType="touchUpInside" id="hrs-vj-S5r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="37C-eB-opc" secondAttribute="trailing" constant="99" id="Ih1-Rm-hrD"/>
+                            <constraint firstItem="BW3-5i-wjE" firstAttribute="top" secondItem="37C-eB-opc" secondAttribute="bottom" constant="49" id="Ssy-KH-z14"/>
+                            <constraint firstItem="37C-eB-opc" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="99" id="VdH-Cd-vXj"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="460"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81i-aD-4Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="516"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="7Fv-Nh-xgQ">
             <objects>
                 <tableViewController storyboardIdentifier="CVTimelineTableViewController" id="SNy-Ap-MKI" customClass="CVTimelineTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="s8H-YN-7Nr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -120,10 +161,44 @@
                             <outlet property="delegate" destination="SNy-Ap-MKI" id="FbX-Z6-F18"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="460"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E98-av-Pkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="-381"/>
+            <point key="canvasLocation" x="1324" y="-45"/>
+        </scene>
+        <!--Extra Curricular Table View Controller-->
+        <scene sceneID="KZM-V7-Sbt">
+            <objects>
+                <tableViewController storyboardIdentifier="CVExtraCurricularTableViewController" id="Oe8-13-B3a" customClass="CVExtraCurricularTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aad-Hk-LMr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="eP9-tB-G0V">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eP9-tB-G0V" id="3Bh-1u-C96">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Oe8-13-B3a" id="CuS-s2-ngC"/>
+                            <outlet property="delegate" destination="Oe8-13-B3a" id="wkv-23-l3E"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="460"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXm-cW-V5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716" y="-45"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
