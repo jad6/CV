@@ -1,1 +1,1 @@
-# Jad's CV
+# Jad's Curriculum Vitae iOS App
