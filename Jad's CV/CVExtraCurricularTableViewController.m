@@ -8,6 +8,10 @@
 
 #import "CVExtraCurricularTableViewController.h"
 
+#import "CVExtraCurricularTableViewCell.h"
+
+static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell";
+
 @interface CVExtraCurricularTableViewController ()
 
 @end
@@ -16,88 +20,38 @@
 
 @synthesize pageIndex = _pageIndex;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.title = @"Extra Curricular";
-    self.view.backgroundColor = [UIColor blueColor];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *activitiesFilePath = [[NSBundle mainBundle] pathForResource:@"Extra Curricular" ofType:@"plist"];
+    NSArray *activities = [CVExtraCurricularActivity extraCurricularActivitiesFromFileContents:activitiesFilePath];
+    [self setData:activities containsSections:YES];
 }
 
 #pragma mark - Table View
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
-    // Return the number of rows in the section.
-    return 1;
+    return CVExtraCurricularTableCellIdentifier;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView
+    configureCell:(CVExtraCurricularTableViewCell *)cell
+       withObject:(CVExtraCurricularActivity *)activity
+      atIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.activity = activity;
+}
+
+- (void)tableView:(UITableView *)tableView
+  didSelectObject:(CVExtraCurricularActivity *)activity
+      atIndexPath:(NSIndexPath *)indexPath
+{
     
-    // Configure the cell...
-    
-    return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

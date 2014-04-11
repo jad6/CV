@@ -28,7 +28,7 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     self.title = @"Experience";
     
     NSString *eventsFilePath = [[NSBundle mainBundle] pathForResource:@"Experience" ofType:@"plist"];
-    NSArray *events = [CVTimelineEvent timelineEventsFromFileContents:eventsFilePath];
+    NSArray *events = [CVTimelineEvent extraObjectsFromFilePath:eventsFilePath];
     [self setData:events containsSections:NO];
 }
 

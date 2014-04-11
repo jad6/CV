@@ -20,7 +20,8 @@
 
 - (void)setEvent:(CVTimelineEvent *)event
 {
-    if (self->_event != event) {
+    if (self->_event != event)
+    {
         self->_event = event;
         
         self.eventImageView.image = event.thumbnailImage;

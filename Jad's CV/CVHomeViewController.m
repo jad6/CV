@@ -18,6 +18,8 @@ static NSString *CVTimelineViewControllerIdentifier = @"CVTimelineTableViewContr
 static NSString *CVExtraCurricularViewControllerIdentifier = @"CVExtraCurricularTableViewController";
 static NSString *CVEducationViewControllerIdentifier = @"CVEducationViewController";
 static NSString *CVReferencesViewControllerIdentifier = @"CVReferencesCollectionViewController";
+static NSString *CVTimelineSplitViewControllerIdentifier = @"CVTimelineSplitViewController";
+static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurricularSplitViewController";
 
 @interface CVHomeViewController () <CVProfileViewDelegate, UIPageViewControllerDelegate>
 
@@ -60,10 +62,23 @@ static NSString *CVReferencesViewControllerIdentifier = @"CVReferencesCollection
 - (NSArray *)pageContentViewControllerIdentifiers
 {
     if (self->_pageContentViewControllerIdentifiers == nil) {
-        NSArray *identifiers = @[CVTimelineViewControllerIdentifier,
-                                 CVExtraCurricularViewControllerIdentifier,
-                                 CVEducationViewControllerIdentifier,
-                                 CVReferencesViewControllerIdentifier];
+        
+        NSArray *identifiers = nil;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            identifiers = @[CVTimelineSplitViewControllerIdentifier,
+                            CVExtraCurricularSplitViewControllerIdentifier,
+                            CVEducationViewControllerIdentifier,
+                            CVReferencesViewControllerIdentifier];
+        }
+        else
+        {
+            identifiers = @[CVTimelineViewControllerIdentifier,
+                            CVExtraCurricularViewControllerIdentifier,
+                            CVEducationViewControllerIdentifier,
+                            CVReferencesViewControllerIdentifier];
+        }
+
         self->_pageContentViewControllerIdentifiers = identifiers;
         
         self.pageControl.numberOfPages = [identifiers count];

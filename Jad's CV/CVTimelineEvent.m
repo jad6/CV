@@ -10,29 +10,22 @@
 
 @implementation CVTimelineEvent
 
-- (instancetype)initWithEventInfo:(NSDictionary *)eventInfo
+- (instancetype)initFromDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
     if (self)
     {
-        self.eventDescription = eventInfo[@"description"];
-        self.thumbnailImage = [UIImage imageNamed:eventInfo[@"imageName"]];
-        self.importance = [eventInfo[@"importance"] integerValue];
-        self.date = eventInfo[@"date"];
+        self.eventDescription = dictionary[@"description"];
+        self.thumbnailImage = [UIImage imageNamed:dictionary[@"imageName"]];
+        self.importance = [dictionary[@"importance"] integerValue];
+        self.date = dictionary[@"date"];
     }
     return self;
 }
 
-+ (NSArray *)timelineEventsFromFileContents:(NSString *)filePath
++ (NSArray *)extraObjectsFromFilePath:(NSString *)filePath
 {
-    NSArray *eventsInfo = [[NSArray alloc] initWithContentsOfFile:filePath];
-    NSMutableArray *events = [[NSMutableArray alloc] initWithCapacity:[eventsInfo count]];
-    
-    for (NSDictionary *eventInfo in eventsInfo)
-    {
-        CVTimelineEvent *event = [[CVTimelineEvent alloc] initWithEventInfo:eventInfo];
-        [events addObject:event];
-    }
+    NSArray *events = [super extraObjectsFromFilePath:filePath];
     
     NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     

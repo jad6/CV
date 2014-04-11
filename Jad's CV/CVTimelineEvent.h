@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Jad Osseiran. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "CVResourceExtractor.h"
 
 typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
     CVTimelineEventImportanceNone,
@@ -14,14 +14,12 @@ typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
     CVTimelineEventImportanceMinor
 };
 
-@interface CVTimelineEvent : NSObject
+@interface CVTimelineEvent : CVResourceExtractor
 
 @property (nonatomic, strong) UIImage *thumbnailImage;
 @property (nonatomic, strong) NSString *eventDescription;
 @property (nonatomic, strong) NSDate *date;
 
 @property (nonatomic) CVTimelineEventImportance importance;
-
-+ (NSArray *)timelineEventsFromFileContents:(NSString *)filePath;
 
 @end
