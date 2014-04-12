@@ -48,11 +48,18 @@
     return self;
 }
 
-+ (NSArray *)extraCurricularActivitiesFromFileContents:(NSString *)filePath
++ (NSArray *)extraCurricularActivitiesFromFileContents:(NSString *)filePath 
 {
     NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
     
-    NSArray *activities = [[super extraObjectsFromFilePath:filePath] sortedArrayUsingDescriptors:@[dateSortDescriptor]];
+    NSError *error = nil;
+    NSArray *activities = [[super extraObjectsFromPropertyListAtFilePath:filePath error:&error] sortedArrayUsingDescriptors:@[dateSortDescriptor]];
+    
+    if (error != nil)
+    {
+        [error handle];
+        return nil;
+    }
     
     NSMutableDictionary *sectionedActivities = [[NSMutableDictionary alloc] init];
     for (CVExtraCurricularActivity *activity in activities)

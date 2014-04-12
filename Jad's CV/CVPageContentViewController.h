@@ -30,8 +30,12 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Protocol for each page content controller to abide to.
+ */
 @protocol CVPageContentViewController <NSObject>
 
+/// The page number for the particular page controller.
 @property (nonatomic) NSInteger pageIndex;
 
 @end

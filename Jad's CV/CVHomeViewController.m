@@ -34,26 +34,40 @@
 
 #import "CVProfileView.h"
 
-/// Set the identifiers of the view controllers to the class name
-/// so that more stuff can be done with them.
+/// Storyboard identifier for CVTimelineTableViewController.
 static NSString *CVTimelineViewControllerIdentifier = @"CVTimelineTableViewController";
+/// Storyboard identifier for CVExtraCurricularTableViewController.
 static NSString *CVExtraCurricularViewControllerIdentifier = @"CVExtraCurricularTableViewController";
+/// Storyboard identifier for CVEducationViewController.
 static NSString *CVEducationViewControllerIdentifier = @"CVEducationViewController";
+/// Storyboard identifier for CVReferencesCollectionViewController.
 static NSString *CVReferencesViewControllerIdentifier = @"CVReferencesCollectionViewController";
+/// Storyboard identifier for CVTimelineSplitViewController.
 static NSString *CVTimelineSplitViewControllerIdentifier = @"CVTimelineSplitViewController";
+/// Storyboard identifier for CVExtraCurricularSplitViewController.
 static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurricularSplitViewController";
 
 @interface CVHomeViewController () <CVProfileViewDelegate, UIPageViewControllerDelegate>
 
+/// The profile view
 @property (nonatomic, weak) IBOutlet CVProfileView *profileView;
+/// Container view which handles displaying the views for each page.
 @property (nonatomic, weak) IBOutlet UIView *pagesView;
 
+/// A visual indicator to show what page is currently displayed.
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
 
+/// The constraint for the height of the profile view. Changing its constant
+/// value changes the height of the pagesView.
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *profileViewHeightLayoutConstraint;
 
+/// An array to store the storyboard identifiers for the view controllers
+/// to be paged.
+/// NOTE: they are different for iPad and iPhone.
 @property (nonatomic, strong) NSArray *pageContentViewControllerIdentifiers;
 
+/// Property to remember the last description text before the profile view
+/// is extended via the profileViewHeightLayoutConstraint.
 @property (nonatomic, strong) NSString *descriptionTextBeforeInfoTransition;
 
 @end
@@ -63,20 +77,9 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 - (void)loadView
 {
     [super loadView];
-    
+
     [self.navigationController setNavigationBarHidden:YES];
     self.profileView.delegate = self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Getters & Setters
@@ -84,7 +87,7 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 - (NSArray *)pageContentViewControllerIdentifiers
 {
     if (self->_pageContentViewControllerIdentifiers == nil) {
-        
+        // Set the identifiers for the decive.
         NSArray *identifiers = nil;
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         {
@@ -103,6 +106,7 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
         self->_pageContentViewControllerIdentifiers = identifiers;
         
+        // Indicate the number of pages to display in the page control.
         self.pageControl.numberOfPages = [identifiers count];
     }
     
@@ -111,17 +115,32 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 #pragma mark - Logic
 
+/**
+ *  Refreshes the description label in the profile view and the page
+ *  control indicator.
+ *
+ *  @param pageViewController The page view controller who's page has changed.
+ */
 - (void)refreshFromPageViewController:(UIPageViewController *)pageViewController
 {
-    // In our case we only ever load one.
+    // In our case we only ever load one page thus this array will only
+    // ever contain one element.
     UIViewController *currentController = [pageViewController.viewControllers lastObject];
     NSString *controllerIdentifier = NSStringFromClass([currentController class]);
     
     self.profileView.descriptionLabel.text = currentController.title;
     
+    // Because we store the storyboard identifiers as the class names
+    // we can extract the index from the identifiers array.
     self.pageControl.currentPage = [self.pageContentViewControllerIdentifiers indexOfObject:controllerIdentifier];
 }
 
+/**
+ *  Layout the profile's and pages view's subviews.
+ *
+ *  @param animated        Flag to set wether to animate the changes.
+ *  @param completionBlock Called when the layout has completed.
+ */
 - (void)layoutSubviews:(BOOL)animated
             completion:(void(^)(BOOL finished))completionBlock
 {
@@ -151,10 +170,11 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 {
     if ([segue.identifier isEqualToString:@"Page Segue"])
     {
+        // Set the page view controller's properties.
         CVPageViewController *pageViewController = [segue destinationViewController];
         pageViewController.delegate = self;
         pageViewController.viewControllerIdentifiers = self.pageContentViewControllerIdentifiers;
-        
+        // Refresh the UI.
         [self refreshFromPageViewController:pageViewController];
     }
 }
@@ -163,26 +183,32 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 - (void)profileViewDidSelectInfoButton:(CVProfileView *)profileView
 {
+    // Set the profile view height to the full height of the view.
     self.profileViewHeightLayoutConstraint.constant = self.view.frame.size.height;
     
-    [self.pageControl setHidden:YES animated:YES];
+    // Set the UI changes.
+    BOOL animated = YES;
+    [self.pageControl setHidden:YES animated:animated];
+    [self layoutSubviews:animated completion:nil];
     
-    [self layoutSubviews:YES completion:nil];
-    
+    // Save the current description label text.
     self.descriptionTextBeforeInfoTransition = self.profileView.descriptionLabel.text;
+    // Update the description label text.
     self.profileView.descriptionLabel.text = @"About Me";
 }
 
 - (void)profileViewDidSelectCloseButton:(CVProfileView *)profileView
 {
-    CGFloat profileViewHeight = self.profileView.length;
-    
-    self.profileViewHeightLayoutConstraint.constant = profileViewHeight;
+    // Set the profile view's height back to it layout length.
+    self.profileViewHeightLayoutConstraint.constant = self.profileView.length;
 
-    [self.pageControl setHidden:NO animated:YES];
-    
-    [self layoutSubviews:YES completion:^(BOOL finished) {
+    // Set the UI changes.
+    BOOL animated = YES;
+    [self.pageControl setHidden:NO animated:animated];
+    [self layoutSubviews:animated completion:^(BOOL finished) {
+        // Reset the description label text back to what it was.
         self.profileView.descriptionLabel.text = self.descriptionTextBeforeInfoTransition;
+        // Remove the stored text.
         self.descriptionTextBeforeInfoTransition = nil;
     }];
 }
@@ -194,6 +220,7 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
    previousViewControllers:(NSArray *)previousViewControllers
        transitionCompleted:(BOOL)completed
 {
+    // Only refresh the UI if the transition was completed.
     if (completed)
     {
         [self refreshFromPageViewController:pageViewController];

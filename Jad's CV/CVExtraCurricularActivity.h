@@ -28,9 +28,9 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import "CVResourceExtractor.h"
+#import "CVExtractedObject.h"
 
-@interface CVExtraCurricularActivity : CVResourceExtractor
+@interface CVExtraCurricularActivity : CVExtractedObject
 
 @property (nonatomic, strong) NSString *organisation, *position;
 @property (nonatomic, strong) NSString *activityDescription;

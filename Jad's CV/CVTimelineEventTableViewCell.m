@@ -32,8 +32,11 @@
 
 @interface CVTimelineEventTableViewCell ()
 
+/// The image view for the event (ususally the company logo).
 @property (nonatomic, weak) IBOutlet UIImageView *eventImageView;
+/// The description label for the event.
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+/// The date label for the event.
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 
 @end
@@ -46,6 +49,7 @@
     {
         self->_event = event;
         
+        // Set the UI elements from the event.
         self.eventImageView.image = event.thumbnailImage;
         self.descriptionLabel.text = event.eventDescription;
         self.dateLabel.text = [event.date stringFromFormatter:^(NSDateFormatter *formatter) {

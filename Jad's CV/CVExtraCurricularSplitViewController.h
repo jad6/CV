@@ -32,6 +32,11 @@
 
 #import "CVPageContentViewController.h"
 
+/**
+ *  A view controller that has two child view controllers.
+ *  In this case the left hand controller is CVExtraCurricularTableViewController.
+ *  The right hand one is its detail view controller.
+ */
 @interface CVExtraCurricularSplitViewController : UIViewController <CVPageContentViewController>
 
 @end

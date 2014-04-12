@@ -32,8 +32,13 @@
 
 @class CVPageViewController;
 
+/**
+ *  Subclass of UIPageViewController which handles the paging structure
+ *  and dataSource.
+ */
 @interface CVPageViewController : UIPageViewController
 
+/// The controller storyboard identifiers passed on for each page content controller.
 @property (nonatomic, strong) NSArray *viewControllerIdentifiers;
 
 @end

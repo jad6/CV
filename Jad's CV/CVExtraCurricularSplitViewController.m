@@ -32,10 +32,6 @@
 
 #import "CVExtraCurricularTableViewController.h"
 
-@interface CVExtraCurricularSplitViewController ()
-
-@end
-
 @implementation CVExtraCurricularSplitViewController
 
 @synthesize pageIndex = _pageIndex;

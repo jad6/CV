@@ -1,5 +1,5 @@
 //
-//  CVResourceExtractor.m
+//  CVExtractedObject.m
 //  Jad's CV
 //
 //  Created by Jad Osseiran on 10/04/2014.
@@ -28,9 +28,37 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import "CVResourceExtractor.h"
+#import "CVExtractedObject.h"
 
-@implementation CVResourceExtractor
+@implementation CVExtractedObject
+
++ (NSArray *)extraObjectsFromPropertyListAtFilePath:(NSString *)filePath error:(NSError *__autoreleasing *)error;
+{
+//    NSPropertyListSerialization *propertyListSer
+    
+    NSArray *allInfo = [[NSArray alloc] initWithContentsOfFile:filePath];
+    
+    if (allInfo == nil)
+    {
+        return nil;
+    }
+    
+    NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity:[allInfo count]];
+    
+    // For each of the resource create an new object.
+    for (id info in allInfo)
+    {
+        if (![info respondsToSelector:@selector(objectForKey:)])
+        {
+            return nil;
+        }
+        
+        CVExtractedObject *object = [[[self class] alloc] initFromDictionary:info];
+        [objects addObject:object];
+    }
+    
+    return objects;
+}
 
 - (instancetype)initFromDictionary:(NSDictionary *)dictionary
 {
@@ -40,20 +68,6 @@
         
     }
     return self;
-}
-
-+ (NSArray *)extraObjectsFromFilePath:(NSString *)filePath
-{
-    NSArray *allInfo = [[NSArray alloc] initWithContentsOfFile:filePath];
-    NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity:[allInfo count]];
-    
-    for (NSDictionary *info in allInfo)
-    {
-        id object = [[[self class] alloc] initFromDictionary:info];
-        [objects addObject:object];
-    }
-    
-    return objects;
 }
 
 @end

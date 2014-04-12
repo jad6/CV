@@ -32,10 +32,6 @@
 
 #import "CVTimelineTableViewController.h"
 
-@interface CVTimelineSplitViewController ()
-
-@end
-
 @implementation CVTimelineSplitViewController
 
 @synthesize pageIndex = _pageIndex;

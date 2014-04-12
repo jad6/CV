@@ -41,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.dataSource = self;
 }
 
@@ -51,30 +51,52 @@
     {
         self->_viewControllerIdentifiers = viewControllerIdentifiers;
         
-        UIViewController *startingViewController = [self viewControllerWithIdentifier:[self->_viewControllerIdentifiers firstObject]];
-        [self setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        if ([viewControllerIdentifiers count] > 0)
+        {
+            // Create the initial view contorller from the given controller identifiers.
+            UIViewController *startingViewController = [self viewControllerWithIdentifier:[self->_viewControllerIdentifiers firstObject]];
+            // Add it the the page controller.
+            [self setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        }
     }
 }
 
 #pragma mark - Logic
 
+/**
+ *  Helper method to instantiate a storyboard view controller from its identifier.
+ *
+ *  @param identifier The identifier of the view controller to instantiate.
+ *
+ *  @return The instantiated view controller.
+ */
 - (UIViewController *)viewControllerWithIdentifier:(NSString *)identifier
 {
     return [self.storyboard instantiateViewControllerWithIdentifier:identifier];
 }
 
+/**
+ *  Helper method to return the view controller for a given page controller 
+ *  index.
+ *
+ *  @param index The index of the view controller to return.
+ *
+ *  @return The view controller at the given index.
+ */
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     NSArray *viewControllerIdentifiers = self.viewControllerIdentifiers;
     
-    NSUInteger numControllers = [viewControllerIdentifiers count];
-    if ((numControllers == 0) || (index >= numControllers))
+    // If the number of identifiers is invalid return nil.
+    NSUInteger numIdentifiers = [viewControllerIdentifiers count];
+    if ((numIdentifiers == 0) || (index >= numIdentifiers))
     {
         return nil;
     }
     
     NSString *identifier = viewControllerIdentifiers[index];
     
+    // Instantiate the view controller and set its page index.
     UIViewController<CVPageContentViewController> *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     viewController.pageIndex = index;
     

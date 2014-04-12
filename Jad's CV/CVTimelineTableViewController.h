@@ -32,6 +32,10 @@
 
 #import "CVPageContentViewController.h"
 
+/**
+ *  The timeline table view controller displaus a graphical timeline for
+ *  my work experience.
+ */
 @interface CVTimelineTableViewController : JOTableViewController <CVPageContentViewController>
 
 @end

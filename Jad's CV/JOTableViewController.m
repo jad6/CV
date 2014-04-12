@@ -39,17 +39,14 @@ static NSString *CVTableDefaultCellIdentifier = @"Cell";
 
 @implementation JOTableViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 #pragma mark - Logic
 
 - (void)setData:(NSArray *)data containsSections:(BOOL)containsSections
 {
     if (self->_data != data)
     {
+        // If the data is not formatted for multiple sections then assume
+        // that is for a singular section and format it accordingly.
         self->_data = (containsSections) ? data : @[data];
     }
 }
@@ -88,10 +85,13 @@ static NSString *CVTableDefaultCellIdentifier = @"Cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Get identifers from overridable method.
     NSString *CellIdentifier = [self cellIdentifierForIndexPath:indexPath];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    // Get object from overridable method.
     id object = [self objectAtIndexPath:indexPath];
+    // Configure the cell from overridable method.
     [self tableView:tableView configureCell:cell withObject:object atIndexPath:indexPath];
     
     return cell;
@@ -99,7 +99,9 @@ static NSString *CVTableDefaultCellIdentifier = @"Cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Get object from overridable method.
     id object = [self objectAtIndexPath:indexPath];
+    // Call overridable method.
     [self tableView:tableView didSelectObject:object atIndexPath:indexPath];
 }
 

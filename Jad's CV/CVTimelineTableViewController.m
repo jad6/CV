@@ -32,12 +32,10 @@
 
 #import "CVTimelineEventTableViewCell.h"
 
+/// Cell identifier for major events.
 static NSString *CVMajorEventTableCellIdentifier = @"Major Event Cell";
+/// Cell identifier for minor events.
 static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
-
-@interface CVTimelineTableViewController ()
-
-@end
 
 @implementation CVTimelineTableViewController
 
@@ -49,8 +47,9 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     
     self.title = @"Experience";
     
+    // Set the table view data from "Experience.plist".
     NSString *eventsFilePath = [[NSBundle mainBundle] pathForResource:@"Experience" ofType:@"plist"];
-    NSArray *events = [CVTimelineEvent extraObjectsFromFilePath:eventsFilePath];
+    NSArray *events = [CVTimelineEvent timetableEventsFromFileContents:eventsFilePath];
     [self setData:events containsSections:NO];
 }
 
@@ -59,8 +58,9 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
 - (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
     CVTimelineEvent *event = [self objectAtIndexPath:indexPath];
-    
     NSString *CellIdentifier = [super cellIdentifierForIndexPath:indexPath];
+    
+    // Set the appropriate cell identifier base on importance of the event.
     if (event.importance == CVTimelineEventImportanceMajor)
     {
         CellIdentifier = CVMajorEventTableCellIdentifier;
@@ -80,23 +80,5 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
 {
     cell.event = event;
 }
-
-- (void)tableView:(UITableView *)tableView
-  didSelectObject:(CVTimelineEvent *)event
-      atIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

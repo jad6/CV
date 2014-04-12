@@ -1,5 +1,5 @@
 //
-//  CVTimelineEvent.m
+//  CVExtractedObject.h
 //  Jad's CV
 //
 //  Created by Jad Osseiran on 10/04/2014.
@@ -28,37 +28,34 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import "CVTimelineEvent.h"
+#import <Foundation/Foundation.h>
 
-@implementation CVTimelineEvent
+/**
+ *  Abstract object to help extract data from a resource and convert it 
+ *  to objects.
+ */
+@interface CVExtractedObject : NSObject
 
-- (instancetype)initFromDictionary:(NSDictionary *)dictionary
-{
-    self = [super init];
-    if (self)
-    {
-        self.eventDescription = dictionary[@"description"];
-        self.thumbnailImage = [UIImage imageNamed:dictionary[@"imageName"]];
-        self.importance = [dictionary[@"importance"] integerValue];
-        self.date = dictionary[@"date"];
-    }
-    return self;
-}
+/**
+ *  Extracts the data from a plist into an array of CVExtractedObjects.
+ *  The plist must be formatter with a root object as an Array and 
+ *  each element as a Dictionary for this method to be successful.
+ *  NOTE: If the method returns nil check the error parameter.
+ *
+ *  @param filePath The file path of the plist.
+ *  @param error    An error is allocated if something went wrong.
+ *
+ *  @return An array of CVExtractedObjects from the resource data.
+ */
++ (NSArray *)extraObjectsFromPropertyListAtFilePath:(NSString *)filePath error:(NSError *__autoreleasing *)error;
 
-+ (NSArray *)timetableEventsFromFileContents:(NSString *)filePath
-{
-    NSError *error = nil;
-    NSArray *events = [super extraObjectsFromPropertyListAtFilePath:filePath error:&error];
-    
-    if (error != nil)
-    {
-        [error handle];
-        return nil;
-    }
-    
-    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    
-    return [events sortedArrayUsingDescriptors:@[dateSortDescriptor]];
-}
+/**
+ *  Creates an instance from a dictionary.
+ *
+ *  @param dictionary The dictionary to populate the instance from.
+ *
+ *  @return A populated CVExtractedObject.
+ */
+- (instancetype)initFromDictionary:(NSDictionary *)dictionary;
 
 @end

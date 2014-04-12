@@ -28,20 +28,44 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import "CVResourceExtractor.h"
+#import "CVExtractedObject.h"
 
+/**
+ *  The level of importance of the event.
+ */
 typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
+    /// Importance not set.
     CVTimelineEventImportanceNone,
+    /// Big event, usually start of work somewhere.
     CVTimelineEventImportanceMajor,
+    /// Small event, usually end of work somewhere.
     CVTimelineEventImportanceMinor
 };
 
-@interface CVTimelineEvent : CVResourceExtractor
+/**
+ *  An object representing an event in my work experience.
+ */
+@interface CVTimelineEvent : CVExtractedObject
 
+/// The thumbnail image for the event.
 @property (nonatomic, strong) UIImage *thumbnailImage;
+/// The description of the event.
 @property (nonatomic, strong) NSString *eventDescription;
+/// The dtae of the event.
 @property (nonatomic, strong) NSDate *date;
 
+/// Importance of the event.
 @property (nonatomic) CVTimelineEventImportance importance;
+
+/**
+ *  Returns an array of CVTimelineEvent from the resource data at the 
+ *  given file path.
+ *
+ *  @param filePath The resource file path.
+ *
+ *  @return An array of CVTimelineEvent populated from the resource at the 
+ *          given file path.
+ */
++ (NSArray *)timetableEventsFromFileContents:(NSString *)filePath;
 
 @end

@@ -30,6 +30,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  The home view controller which handles the pages and the profile view.
+ */
 @interface CVHomeViewController : UIViewController
 
 @end

@@ -32,9 +32,8 @@
 
 @interface CVProfileView ()
 
-@property (nonatomic, weak) IBOutlet UIButton *infoButton;
-
-@property (nonatomic) BOOL fullScreen;
+/// Flag set whenever the view has been expanded.
+@property (nonatomic) BOOL expanded;
 
 @end
 
@@ -49,9 +48,15 @@
 
 #pragma mark - Actions
 
-- (IBAction)infoAction:(id)sender
+/**
+ *  Action triggered when the info button has been touched.
+ *
+ *  @param sender The info button.
+ */
+- (IBAction)infoAction:(UIButton *)infoButton
 {
-    if (self.fullScreen)
+    // Call the appropirate delegate method.
+    if (self.expanded)
     {
         if ([self.delegate respondsToSelector:@selector(profileViewDidSelectCloseButton:)])
         {
@@ -66,7 +71,8 @@
         }
     }
     
-    self.fullScreen = !self.fullScreen;
+    // Update the expand flag.
+    self.expanded = !self.expanded;
 }
 
 @end

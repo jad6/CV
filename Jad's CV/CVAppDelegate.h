@@ -32,6 +32,7 @@
 
 @interface CVAppDelegate : UIResponder <UIApplicationDelegate>
 
+/// The main window for the application.
 @property (strong, nonatomic) UIWindow *window;
 
 @end

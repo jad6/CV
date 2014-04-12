@@ -1,9 +1,8 @@
 //
-//  CVTimelineEvent.m
-//  Jad's CV
+//  NSError+Extension.m
 //
-//  Created by Jad Osseiran on 10/04/2014.
-//  Copyright (c) 2014 Jad Osseiran. All rights reserved.
+//  Created by Jad Osseiran on 13/01/2014.
+//  Copyright (c) 2014 Jad. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -28,37 +27,25 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import "CVTimelineEvent.h"
+#import "NSError+Extension.h"
 
-@implementation CVTimelineEvent
+@implementation NSError (Extension)
 
-- (instancetype)initFromDictionary:(NSDictionary *)dictionary
+- (void)handle
 {
-    self = [super init];
-    if (self)
-    {
-        self.eventDescription = dictionary[@"description"];
-        self.thumbnailImage = [UIImage imageNamed:dictionary[@"imageName"]];
-        self.importance = [dictionary[@"importance"] integerValue];
-        self.date = dictionary[@"date"];
-    }
-    return self;
-}
+#if DEBUG
+    NSString *title = [[NSString alloc] initWithFormat:@"Error %li", (long)[self code]];
+    NSString *message = [[NSString alloc] initWithFormat:@"%@ %@ %@", [self localizedDescription], [self localizedFailureReason], [self localizedRecoverySuggestion]];
 
-+ (NSArray *)timetableEventsFromFileContents:(NSString *)filePath
-{
-    NSError *error = nil;
-    NSArray *events = [super extraObjectsFromPropertyListAtFilePath:filePath error:&error];
-    
-    if (error != nil)
-    {
-        [error handle];
-        return nil;
-    }
-    
-    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    
-    return [events sortedArrayUsingDescriptors:@[dateSortDescriptor]];
+    UIAlertView *errorAV = [[UIAlertView alloc] initWithTitle:title
+                                                      message:message
+                                                     delegate:nil
+                                            cancelButtonTitle:@"Dismiss"
+                                            otherButtonTitles:nil];
+    [errorAV show];
+#else
+    NSLog(@"Error %li - %@ %@. %@", (long)[self code], [self localizedDescription], [self localizedFailureReason], [self localizedRecoverySuggestion]);
+#endif
 }
 
 @end

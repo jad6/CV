@@ -1,9 +1,8 @@
 //
-//  CVResourceExtractor.h
-//  Jad's CV
+//  NSError+Extension.h
 //
-//  Created by Jad Osseiran on 10/04/2014.
-//  Copyright (c) 2014 Jad Osseiran. All rights reserved.
+//  Created by Jad Osseiran on 13/01/2014.
+//  Copyright (c) 2014 Jad. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -30,10 +29,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CVResourceExtractor : NSObject
+@interface NSError (Extension)
 
-+ (NSArray *)extraObjectsFromFilePath:(NSString *)filePath;
-
-- (instancetype)initFromDictionary:(NSDictionary *)dictionary;
+- (void)handle;
 
 @end
