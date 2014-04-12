@@ -34,8 +34,6 @@
 
 @implementation CVTimelineSplitViewController
 
-@synthesize pageIndex = _pageIndex;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -26,8 +26,6 @@
 		0568733318F64F8500132551 /* CVPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568733218F64F8500132551 /* CVPageViewController.m */; };
 		0568733A18F65B4500132551 /* CVEducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568733918F65B4500132551 /* CVEducationViewController.m */; };
 		0568733E18F65B6B00132551 /* CVExtraCurricularTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568733D18F65B6B00132551 /* CVExtraCurricularTableViewController.m */; };
-		0568734118F65DB300132551 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568734018F65DB300132551 /* QuickLook.framework */; };
-		0568734418F65DF700132551 /* CVPreviewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568734318F65DF700132551 /* CVPreviewItem.m */; };
 		0568734A18F664FE00132551 /* CVProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568734918F664FE00132551 /* CVProfileView.m */; };
 		0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568734D18F6788E00132551 /* JOCircleImageView.m */; };
 		0568735018F678BD00132551 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568734F18F678BD00132551 /* QuartzCore.framework */; };
@@ -37,6 +35,13 @@
 		0594FFB018F7D73500422BA5 /* CVExtraCurricularSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0594FFAF18F7D73500422BA5 /* CVExtraCurricularSplitViewController.m */; };
 		05BE998A18F8FA320015D7D9 /* JOCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE998918F8FA320015D7D9 /* JOCircleView.m */; };
 		05BE998D18F908EE0015D7D9 /* NSError+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE998C18F908EE0015D7D9 /* NSError+Extension.m */; };
+		05BE999318F93A970015D7D9 /* CVPageContentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE999218F93A970015D7D9 /* CVPageContentNavigationController.m */; };
+		05BE999618F93AD80015D7D9 /* CVPageContentSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE999518F93AD80015D7D9 /* CVPageContentSplitViewController.m */; };
+		05BE999918F93B570015D7D9 /* CVTimelineNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE999818F93B570015D7D9 /* CVTimelineNavigationController.m */; };
+		05BE999D18F93B870015D7D9 /* CVExtraCurricularNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE999C18F93B870015D7D9 /* CVExtraCurricularNavigationController.m */; };
+		05BE99A118F93D630015D7D9 /* CVDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99A018F93D630015D7D9 /* CVDetailViewController.m */; };
+		05BE99A418F96E950015D7D9 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99A318F96E950015D7D9 /* UIViewController+Extension.m */; };
+		05BE99A718F96F4F0015D7D9 /* UIView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */; };
 		05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ABB18F6904C0061C1BC /* UIView+Extension.m */; };
 		05F75AC018F69A9B0061C1BC /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75ABF18F69A9B0061C1BC /* Experience.plist */; };
 		05F75AC218F69AAF0061C1BC /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC118F69AAF0061C1BC /* Referees.plist */; };
@@ -93,8 +98,6 @@
 		0568733C18F65B6B00132551 /* CVExtraCurricularTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVExtraCurricularTableViewController.h; sourceTree = "<group>"; };
 		0568733D18F65B6B00132551 /* CVExtraCurricularTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVExtraCurricularTableViewController.m; sourceTree = "<group>"; };
 		0568734018F65DB300132551 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
-		0568734218F65DF700132551 /* CVPreviewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPreviewItem.h; sourceTree = "<group>"; };
-		0568734318F65DF700132551 /* CVPreviewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPreviewItem.m; sourceTree = "<group>"; };
 		0568734818F664FE00132551 /* CVProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVProfileView.h; sourceTree = "<group>"; };
 		0568734918F664FE00132551 /* CVProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVProfileView.m; sourceTree = "<group>"; };
 		0568734C18F6788E00132551 /* JOCircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOCircleImageView.h; sourceTree = "<group>"; };
@@ -112,6 +115,20 @@
 		05BE998918F8FA320015D7D9 /* JOCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOCircleView.m; sourceTree = "<group>"; };
 		05BE998B18F908EE0015D7D9 /* NSError+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Extension.h"; sourceTree = "<group>"; };
 		05BE998C18F908EE0015D7D9 /* NSError+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Extension.m"; sourceTree = "<group>"; };
+		05BE999118F93A970015D7D9 /* CVPageContentNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPageContentNavigationController.h; sourceTree = "<group>"; };
+		05BE999218F93A970015D7D9 /* CVPageContentNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPageContentNavigationController.m; sourceTree = "<group>"; };
+		05BE999418F93AD80015D7D9 /* CVPageContentSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPageContentSplitViewController.h; sourceTree = "<group>"; };
+		05BE999518F93AD80015D7D9 /* CVPageContentSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPageContentSplitViewController.m; sourceTree = "<group>"; };
+		05BE999718F93B570015D7D9 /* CVTimelineNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineNavigationController.h; sourceTree = "<group>"; };
+		05BE999818F93B570015D7D9 /* CVTimelineNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTimelineNavigationController.m; sourceTree = "<group>"; };
+		05BE999B18F93B870015D7D9 /* CVExtraCurricularNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVExtraCurricularNavigationController.h; sourceTree = "<group>"; };
+		05BE999C18F93B870015D7D9 /* CVExtraCurricularNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVExtraCurricularNavigationController.m; sourceTree = "<group>"; };
+		05BE999F18F93D630015D7D9 /* CVDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVDetailViewController.h; sourceTree = "<group>"; };
+		05BE99A018F93D630015D7D9 /* CVDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVDetailViewController.m; sourceTree = "<group>"; };
+		05BE99A218F96E950015D7D9 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		05BE99A318F96E950015D7D9 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		05BE99A518F96F4F0015D7D9 /* UIView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snapshot.h"; sourceTree = "<group>"; };
+		05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snapshot.m"; sourceTree = "<group>"; };
 		05F75ABA18F6904C0061C1BC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		05F75ABB18F6904C0061C1BC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		05F75ABF18F69A9B0061C1BC /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
@@ -142,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0568735018F678BD00132551 /* QuartzCore.framework in Frameworks */,
-				0568734118F65DB300132551 /* QuickLook.framework in Frameworks */,
 				056872F018F6361E00132551 /* CoreGraphics.framework in Frameworks */,
 				056872F218F6361E00132551 /* UIKit.framework in Frameworks */,
 				056872EE18F6361E00132551 /* Foundation.framework in Frameworks */,
@@ -248,11 +264,13 @@
 				0568733418F6509C00132551 /* CVPageContentViewController.h */,
 				0568733118F64F8500132551 /* CVPageViewController.h */,
 				0568733218F64F8500132551 /* CVPageViewController.m */,
+				05BE999A18F93B6B0015D7D9 /* Navigation Controllers */,
 				0594FFAA18F7D70B00422BA5 /* Split Controllers */,
 				0568733618F650B400132551 /* Timeline */,
 				0568733F18F65B7000132551 /* Extra Curricular */,
 				0568733B18F65B4800132551 /* Education */,
 				0568733718F650BC00132551 /* References */,
+				05BE999E18F93D430015D7D9 /* Detail */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -286,8 +304,6 @@
 			children = (
 				0568733818F65B4500132551 /* CVEducationViewController.h */,
 				0568733918F65B4500132551 /* CVEducationViewController.m */,
-				0568734218F65DF700132551 /* CVPreviewItem.h */,
-				0568734318F65DF700132551 /* CVPreviewItem.m */,
 			);
 			name = Education;
 			sourceTree = "<group>";
@@ -336,6 +352,26 @@
 			name = "Split Controllers";
 			sourceTree = "<group>";
 		};
+		05BE999A18F93B6B0015D7D9 /* Navigation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05BE999718F93B570015D7D9 /* CVTimelineNavigationController.h */,
+				05BE999818F93B570015D7D9 /* CVTimelineNavigationController.m */,
+				05BE999B18F93B870015D7D9 /* CVExtraCurricularNavigationController.h */,
+				05BE999C18F93B870015D7D9 /* CVExtraCurricularNavigationController.m */,
+			);
+			name = "Navigation Controllers";
+			sourceTree = "<group>";
+		};
+		05BE999E18F93D430015D7D9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				05BE999F18F93D630015D7D9 /* CVDetailViewController.h */,
+				05BE99A018F93D630015D7D9 /* CVDetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		05F75ABD18F690780061C1BC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +391,10 @@
 				05F75ABB18F6904C0061C1BC /* UIView+Extension.m */,
 				05F75ACE18F69EF70061C1BC /* NSDate+Extension.h */,
 				05F75ACF18F69EF70061C1BC /* NSDate+Extension.m */,
+				05BE99A218F96E950015D7D9 /* UIViewController+Extension.h */,
+				05BE99A318F96E950015D7D9 /* UIViewController+Extension.m */,
+				05BE99A518F96F4F0015D7D9 /* UIView+Snapshot.h */,
+				05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -364,6 +404,10 @@
 			children = (
 				05F75AD118F6A2B50061C1BC /* JOTableViewController.h */,
 				05F75AD218F6A2B50061C1BC /* JOTableViewController.m */,
+				05BE999118F93A970015D7D9 /* CVPageContentNavigationController.h */,
+				05BE999218F93A970015D7D9 /* CVPageContentNavigationController.m */,
+				05BE999418F93AD80015D7D9 /* CVPageContentSplitViewController.h */,
+				05BE999518F93AD80015D7D9 /* CVPageContentSplitViewController.m */,
 				05F75ADB18F6B0870061C1BC /* CVExtractedObject.h */,
 				05F75ADC18F6B0870061C1BC /* CVExtractedObject.m */,
 				05BE998818F8FA320015D7D9 /* JOCircleView.h */,
@@ -487,7 +531,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F75AD718F6AB800061C1BC /* CVExtraCurricularTableViewCell.m in Sources */,
+				05BE99A718F96F4F0015D7D9 /* UIView+Snapshot.m in Sources */,
 				05F75ADD18F6B0870061C1BC /* CVExtractedObject.m in Sources */,
+				05BE999318F93A970015D7D9 /* CVPageContentNavigationController.m in Sources */,
+				05BE999D18F93B870015D7D9 /* CVExtraCurricularNavigationController.m in Sources */,
 				0568733318F64F8500132551 /* CVPageViewController.m in Sources */,
 				0594FFAD18F7D72300422BA5 /* CVTimelineSplitViewController.m in Sources */,
 				0568734A18F664FE00132551 /* CVProfileView.m in Sources */,
@@ -498,19 +545,22 @@
 				05F75AD018F69EF70061C1BC /* NSDate+Extension.m in Sources */,
 				0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */,
 				05F75ADA18F6ABC90061C1BC /* CVExtraCurricularActivity.m in Sources */,
+				05BE999618F93AD80015D7D9 /* CVPageContentSplitViewController.m in Sources */,
 				0568733E18F65B6B00132551 /* CVExtraCurricularTableViewController.m in Sources */,
 				0568732718F6399200132551 /* CVHomeViewController.m in Sources */,
 				0568733A18F65B4500132551 /* CVEducationViewController.m in Sources */,
+				05BE99A418F96E950015D7D9 /* UIViewController+Extension.m in Sources */,
 				05F75AE018F6D35A0061C1BC /* CVMergeSorter.m in Sources */,
 				0568732A18F64EAB00132551 /* CVTimelineTableViewController.m in Sources */,
 				05F75AD318F6A2B50061C1BC /* JOTableViewController.m in Sources */,
 				05F75ACC18F69DF80061C1BC /* CVTimelineEventTableViewCell.m in Sources */,
 				056872FA18F6361E00132551 /* main.m in Sources */,
 				056872FE18F6361E00132551 /* CVAppDelegate.m in Sources */,
+				05BE99A118F93D630015D7D9 /* CVDetailViewController.m in Sources */,
 				05BE998D18F908EE0015D7D9 /* NSError+Extension.m in Sources */,
 				0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */,
+				05BE999918F93B570015D7D9 /* CVTimelineNavigationController.m in Sources */,
 				05F75AC918F69B120061C1BC /* CVTimelineEvent.m in Sources */,
-				0568734418F65DF700132551 /* CVPreviewItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

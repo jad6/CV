@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="j9y-VS-J44">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SQf-sB-2ji">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="yiW-af-Obn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j9y-VS-J44" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vx1-JZ-wwi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="SQf-sB-2ji" kind="relationship" relationship="rootViewController" id="mvf-eK-dwl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1pa-fb-xA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21" y="93"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="Pn3-3L-gYv">
             <objects>
@@ -46,14 +28,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Yb-L1-X5B">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="union_lake" translatesAutoresizingMaskIntoConstraints="NO" id="1Yb-L1-X5B">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sor-g9-zlH">
                                         <rect key="frame" x="278" y="53" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -73,13 +55,14 @@
                                         <rect key="frame" x="79" y="37" width="116" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFd-Bo-ehV">
                                         <rect key="frame" x="79" y="66" width="127" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="SUe-oo-T2R">
@@ -107,6 +90,7 @@
                                     <constraint firstItem="1Yb-L1-X5B" firstAttribute="leading" secondItem="WuD-7c-3u5" secondAttribute="leading" id="pwU-ad-76D"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="1Yb-L1-X5B" id="rzU-hO-wRD"/>
                                     <outlet property="descriptionLabel" destination="TFd-Bo-ehV" id="MKX-jz-tRt"/>
                                 </connections>
                             </view>
@@ -166,26 +150,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50980392159999999" green="0.74117647060000003" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37C-eB-opc">
-                                <rect key="frame" x="99" y="381" width="122" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Academic Record">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="academicTranscriptAction:" destination="qhc-x8-AVD" eventType="touchUpInside" id="hrs-vj-S5r"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="37C-eB-opc" secondAttribute="trailing" constant="99" id="Ih1-Rm-hrD"/>
-                            <constraint firstItem="B5T-jv-Tq2" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" id="MLg-Vt-P5y"/>
-                            <constraint firstItem="BW3-5i-wjE" firstAttribute="top" secondItem="37C-eB-opc" secondAttribute="bottom" constant="49" id="Ssy-KH-z14"/>
-                            <constraint firstItem="37C-eB-opc" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="99" id="VdH-Cd-vXj"/>
-                            <constraint firstItem="B5T-jv-Tq2" firstAttribute="centerX" secondItem="37C-eB-opc" secondAttribute="centerX" id="gRI-CC-5J6"/>
-                            <constraint firstItem="B5T-jv-Tq2" firstAttribute="top" secondItem="y8j-OU-Sms" secondAttribute="top" id="keX-kn-W4S"/>
-                            <constraint firstAttribute="bottom" secondItem="B5T-jv-Tq2" secondAttribute="bottom" id="lfj-sd-BGm"/>
+                            <constraint firstItem="B5T-jv-Tq2" firstAttribute="top" secondItem="y8j-OU-Sms" secondAttribute="top" id="5hv-2U-h41"/>
+                            <constraint firstAttribute="bottom" secondItem="B5T-jv-Tq2" secondAttribute="bottom" id="KUd-p5-KAm"/>
+                            <constraint firstItem="B5T-jv-Tq2" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" id="Za3-ht-PiP"/>
+                            <constraint firstAttribute="trailing" secondItem="B5T-jv-Tq2" secondAttribute="trailing" id="qTi-6Z-JxC"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -194,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81i-aD-4Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324" y="516"/>
+            <point key="canvasLocation" x="1344" y="781"/>
         </scene>
         <!--References Collection View Controller-->
         <scene sceneID="3Fi-zy-NHf">
@@ -269,7 +240,7 @@ referee@email.com.au</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEO-bP-Vpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="516"/>
+            <point key="canvasLocation" x="1742" y="781"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="7Fv-Nh-xgQ">
@@ -321,6 +292,7 @@ referee@email.com.au</string>
                                     <outlet property="dateLabel" destination="Q5g-93-PFC" id="veb-oX-xON"/>
                                     <outlet property="descriptionLabel" destination="W43-Jq-HcV" id="xBH-vd-veI"/>
                                     <outlet property="eventImageView" destination="0WN-Fq-zne" id="r0U-xW-4ap"/>
+                                    <segue destination="osg-3E-R9c" kind="push" id="IXz-RE-POV"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Minor Event Cell" rowHeight="66" id="88Q-tC-HS0" customClass="CVTimelineEventTableViewCell">
@@ -364,6 +336,7 @@ referee@email.com.au</string>
                                     <outlet property="dateLabel" destination="PHG-sW-605" id="iEh-If-DUI"/>
                                     <outlet property="descriptionLabel" destination="Gwb-xe-CT1" id="CoF-aG-3Ok"/>
                                     <outlet property="eventImageView" destination="HEF-o5-gy2" id="kb4-NW-OHj"/>
+                                    <segue destination="osg-3E-R9c" kind="push" id="VJR-NK-IR9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -372,13 +345,13 @@ referee@email.com.au</string>
                             <outlet property="delegate" destination="SNy-Ap-MKI" id="FbX-Z6-F18"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="v90-Ta-0I3"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="460"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E98-av-Pkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324" y="-45"/>
+            <point key="canvasLocation" x="1742" y="-380"/>
         </scene>
         <!--Extra Curricular Table View Controller-->
         <scene sceneID="KZM-V7-Sbt">
@@ -412,6 +385,7 @@ referee@email.com.au</string>
                                 <connections>
                                     <outlet property="activityImageView" destination="Mec-Mk-kMZ" id="qXi-dJ-6JF"/>
                                     <outlet property="organisationLabel" destination="h9B-QT-PFj" id="dQG-OK-OPD"/>
+                                    <segue destination="osg-3E-R9c" kind="push" id="qk1-AC-dWS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -420,21 +394,103 @@ referee@email.com.au</string>
                             <outlet property="delegate" destination="Oe8-13-B3a" id="wkv-23-l3E"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="qfg-bc-uMA"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="460"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXm-cW-V5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="-45"/>
+            <point key="canvasLocation" x="1742" y="181"/>
+        </scene>
+        <!--Timeline Navigation Controller-->
+        <scene sceneID="k0P-co-Ena">
+            <objects>
+                <navigationController storyboardIdentifier="CVTimelineNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mSw-CF-3Q9" customClass="CVTimelineNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="460"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gt-yb-LUR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SNy-Ap-MKI" kind="relationship" relationship="rootViewController" id="H3B-NK-qkV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v80-cY-ugi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="-380"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="gH0-FY-0dB">
+            <objects>
+                <viewController storyboardIdentifier="CVDetailViewController" id="osg-3E-R9c" customClass="CVDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7QK-i6-Uf4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ddx-Jl-ZxX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hsx-jw-Iea">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ug-9C-fhJ">
+                                <rect key="frame" x="20" y="20" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backAction:" destination="osg-3E-R9c" eventType="touchUpInside" id="y3k-hd-15S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uI4-ol-yKN"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="460"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2LA-uG-3VL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2215" y="-150"/>
+        </scene>
+        <!--Extra Curricular Navigation Controller-->
+        <scene sceneID="c2D-K6-kXW">
+            <objects>
+                <navigationController storyboardIdentifier="CVExtraCurricularNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="vii-wM-gmP" customClass="CVExtraCurricularNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="460"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NUR-6Z-6RU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Oe8-13-B3a" kind="relationship" relationship="rootViewController" id="QQ9-sa-2NK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWq-5W-hp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="181"/>
         </scene>
     </scenes>
     <resources>
-        <image name="profile_picture" width="54" height="54"/>
+        <image name="profile_picture" width="288" height="288"/>
+        <image name="union_lake" width="1024" height="1024"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="VJR-NK-IR9"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -42,4 +42,8 @@
  */
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated;
 
+- (void)setHidden:(BOOL)hidden
+         animated:(BOOL)animated
+         duration:(NSTimeInterval)duration;
+
 @end

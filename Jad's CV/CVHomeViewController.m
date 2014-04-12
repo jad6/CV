@@ -34,10 +34,10 @@
 
 #import "CVProfileView.h"
 
-/// Storyboard identifier for CVTimelineTableViewController.
-static NSString *CVTimelineViewControllerIdentifier = @"CVTimelineTableViewController";
-/// Storyboard identifier for CVExtraCurricularTableViewController.
-static NSString *CVExtraCurricularViewControllerIdentifier = @"CVExtraCurricularTableViewController";
+/// Storyboard identifier for CVTimelineNavigationController.
+static NSString *CVTimelineViewControllerIdentifier = @"CVTimelineNavigationController";
+/// Storyboard identifier for CVExtraCurricularNavigationController.
+static NSString *CVExtraCurricularViewControllerIdentifier = @"CVExtraCurricularNavigationController";
 /// Storyboard identifier for CVEducationViewController.
 static NSString *CVEducationViewControllerIdentifier = @"CVEducationViewController";
 /// Storyboard identifier for CVReferencesCollectionViewController.
@@ -78,8 +78,29 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 {
     [super loadView];
 
-    [self.navigationController setNavigationBarHidden:YES];
     self.profileView.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.profileView handleBackgroundImageBlur:animated];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    if (self.profileView.expanded)
+    {
+        return UIStatusBarStyleDefault;
+    }
+
+    return UIStatusBarStyleLightContent;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return UIStatusBarAnimationFade;
 }
 
 #pragma mark - Getters & Setters
@@ -111,6 +132,21 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     }
     
     return self->_pageContentViewControllerIdentifiers;
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Page Segue"])
+    {
+        // Set the page view controller's properties.
+        CVPageViewController *pageViewController = [segue destinationViewController];
+        pageViewController.delegate = self;
+        pageViewController.viewControllerIdentifiers = self.pageContentViewControllerIdentifiers;
+        // Refresh the UI.
+        [self refreshFromPageViewController:pageViewController];
+    }
 }
 
 #pragma mark - Logic
@@ -164,21 +200,6 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     }
 }
 
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Page Segue"])
-    {
-        // Set the page view controller's properties.
-        CVPageViewController *pageViewController = [segue destinationViewController];
-        pageViewController.delegate = self;
-        pageViewController.viewControllerIdentifiers = self.pageContentViewControllerIdentifiers;
-        // Refresh the UI.
-        [self refreshFromPageViewController:pageViewController];
-    }
-}
-
 #pragma mark - Profile View
 
 - (void)profileViewDidSelectInfoButton:(CVProfileView *)profileView
@@ -189,7 +210,9 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     // Set the UI changes.
     BOOL animated = YES;
     [self.pageControl setHidden:YES animated:animated];
+    [self setNeedsStatusBarAppearanceUpdate:animated];
     [self layoutSubviews:animated completion:nil];
+    [self.profileView handleBackgroundImageBlur:NO];
     
     // Save the current description label text.
     self.descriptionTextBeforeInfoTransition = self.profileView.descriptionLabel.text;
@@ -205,7 +228,9 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     // Set the UI changes.
     BOOL animated = YES;
     [self.pageControl setHidden:NO animated:animated];
+    [self setNeedsStatusBarAppearanceUpdate:animated];
     [self layoutSubviews:animated completion:^(BOOL finished) {
+        [self.profileView handleBackgroundImageBlur:animated];
         // Reset the description label text back to what it was.
         self.profileView.descriptionLabel.text = self.descriptionTextBeforeInfoTransition;
         // Remove the stored text.

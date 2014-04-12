@@ -34,8 +34,6 @@
 
 @implementation CVExtraCurricularSplitViewController
 
-@synthesize pageIndex = _pageIndex;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

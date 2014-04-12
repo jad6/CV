@@ -28,15 +28,13 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
-
-#import "CVPageContentViewController.h"
+#import "CVPageContentSplitViewController.h"
 
 /**
  *  A view controller that has two child view controllers.
  *  In this case the left hand controller is CVExtraCurricularTableViewController.
  *  The right hand one is its detail view controller.
  */
-@interface CVExtraCurricularSplitViewController : UIViewController <CVPageContentViewController>
+@interface CVExtraCurricularSplitViewController : CVPageContentSplitViewController
 
 @end

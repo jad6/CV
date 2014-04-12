@@ -30,20 +30,60 @@
 
 #import "CVProfileView.h"
 
+#import "UIView+Snapshot.h"
+
 @interface CVProfileView ()
 
-/// Flag set whenever the view has been expanded.
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, strong) UIImageView *blurredImageView;
+
 @property (nonatomic) BOOL expanded;
 
 @end
 
 @implementation CVProfileView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        [self awakeFromNib];
+    }
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    UIImageView *blurredImageView = [[UIImageView alloc] initWithFrame:self.frame];
+    
+    [self insertSubview:blurredImageView aboveSubview:self.backgroundImageView];
+    self.blurredImageView = blurredImageView;
+}
+
 #pragma mark - Layout
 
 - (CGFloat)length
 {
     return 108.0f;
+}
+
+#pragma mark - Logic
+
+- (void)handleBackgroundImageBlur:(BOOL)animated
+{
+    UIImageView *blurredImageView = self.blurredImageView;
+    if (blurredImageView.image == nil)
+    {
+        blurredImageView.image = [self.backgroundImageView imageWithBlurRadius:10.0f];
+    }
+
+#warning Why is this not blurring at the corrct duration?!
+    [blurredImageView setHidden:self.expanded
+                       animated:animated
+                       duration:6];
 }
 
 #pragma mark - Actions
@@ -55,8 +95,14 @@
  */
 - (IBAction)infoAction:(UIButton *)infoButton
 {
-    // Call the appropirate delegate method.
-    if (self.expanded)
+    // Save the old value to a scop variable.
+    BOOL expanded = self.expanded;
+    
+    // Update the expand flag.
+    self.expanded = !self.expanded;
+    
+    // Call the appropirate delegate method based on the old value.
+    if (expanded)
     {
         if ([self.delegate respondsToSelector:@selector(profileViewDidSelectCloseButton:)])
         {
@@ -70,9 +116,6 @@
             [self.delegate profileViewDidSelectInfoButton:self];
         }
     }
-    
-    // Update the expand flag.
-    self.expanded = !self.expanded;
 }
 
 @end

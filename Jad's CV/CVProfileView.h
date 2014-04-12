@@ -65,4 +65,9 @@
 /// The label describing the current views seen by the user.
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 
+/// Flag set whenever the view has been expanded.
+@property (nonatomic, readonly) BOOL expanded;
+
+- (void)handleBackgroundImageBlur:(BOOL)animated;
+
 @end

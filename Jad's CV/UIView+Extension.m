@@ -32,13 +32,15 @@
 
 @implementation UIView (Extension)
 
-- (void)setHidden:(BOOL)hidden animated:(BOOL)animated
+- (void)setHidden:(BOOL)hidden
+         animated:(BOOL)animated
+         duration:(NSTimeInterval)duration
 {
     if (animated)
     {
         if (hidden)
         {
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:duration animations:^{
                 self.alpha = 0.0f;
             } completion:^(BOOL finished) {
                 [self setHidden:YES];
@@ -47,7 +49,7 @@
         else
         {
             [self setHidden:NO];
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:duration animations:^{
                 self.alpha = 1.0f;
             }];
         }
@@ -56,6 +58,11 @@
     {
         [self setHidden:hidden];
     }
+}
+
+- (void)setHidden:(BOOL)hidden animated:(BOOL)animated
+{
+    [self setHidden:hidden animated:animated duration:0.3];
 }
 
 @end

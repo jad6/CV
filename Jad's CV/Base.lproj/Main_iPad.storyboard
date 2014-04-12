@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="yhY-NM-O1H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="SRU-qg-hgs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="giS-eS-5L8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yhY-NM-O1H" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lOh-kl-yPY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="SRU-qg-hgs" kind="relationship" relationship="rootViewController" id="NMx-vr-mBI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WSD-Xl-Win" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21" y="93"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="rdj-ZY-eWc">
             <objects>
@@ -46,10 +28,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bFq-mK-39f">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="union_lake" translatesAutoresizingMaskIntoConstraints="NO" id="bFq-mK-39f">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVo-Fa-McB">
                                         <rect key="frame" x="726" y="53" width="22" height="22"/>
@@ -258,24 +239,7 @@
                     <view key="view" contentMode="scaleToFill" id="kQt-J0-wQn">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyP-81-nnI">
-                                <rect key="frame" x="99" y="837" width="570" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Academic Record">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="academicTranscriptAction:" destination="joF-A5-xMO" eventType="touchUpInside" id="u9z-Ef-pV8"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="DyP-81-nnI" secondAttribute="trailing" constant="99" id="Z1L-1J-IN1"/>
-                            <constraint firstItem="DyP-81-nnI" firstAttribute="leading" secondItem="kQt-J0-wQn" secondAttribute="leading" constant="99" id="jHk-Vp-01w"/>
-                            <constraint firstItem="3cC-UN-IiL" firstAttribute="top" secondItem="DyP-81-nnI" secondAttribute="bottom" constant="49" id="mmW-W6-eEJ"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -555,7 +519,8 @@ referee@email.com.au</string>
         </scene>
     </scenes>
     <resources>
-        <image name="profile_picture" width="54" height="54"/>
+        <image name="profile_picture" width="288" height="288"/>
+        <image name="union_lake" width="1024" height="1024"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
