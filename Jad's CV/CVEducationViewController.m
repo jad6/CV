@@ -69,9 +69,7 @@
     CGRect idealTextViewFrame = textView.frame;
     CGSize maxSize = CGSizeMake(idealTextViewFrame.size.width, CGFLOAT_MAX);
     idealTextViewFrame.size = [textView sizeThatFits:maxSize];
-    
-    NSLog(@"%@", NSStringFromCGRect(self.view.bounds));
-    
+        
     CGFloat maxHeight = ABS(self.view.frame.size.height - textView.frame.origin.y) - floorf(self.fadeImageView.frame.size.height / 2.0);
     if (idealTextViewFrame.size.height > maxHeight)
     {

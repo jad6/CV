@@ -48,9 +48,8 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
     
     self.title = @"Extra Curricular";
     
-    NSString *activitiesFilePath = [[NSBundle mainBundle] pathForResource:@"Extra Curricular" ofType:@"plist"];
-    NSArray *activities = [CVExtraCurricularActivity extraCurricularActivitiesFromFileContents:activitiesFilePath];
-    [self setData:activities containsSections:YES];
+    NSArray *activities = [CVExtraCurricularActivity extraCurricularActivities];
+    [self setData:activities containsSections:NO];
 }
 
 #pragma mark - Table View
@@ -60,7 +59,7 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
     return CVExtraCurricularTableCellIdentifier;
 }
 
-- (void)tableView:(UITableView *)tableView
+- (void)listView:(id)listView
     configureCell:(CVExtraCurricularTableViewCell *)cell
        withObject:(CVExtraCurricularActivity *)activity
       atIndexPath:(NSIndexPath *)indexPath
@@ -68,7 +67,7 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
     cell.activity = activity;
 }
 
-- (void)tableView:(UITableView *)tableView
+- (void)listView:(id)listView
   didSelectObject:(CVExtraCurricularActivity *)activity
       atIndexPath:(NSIndexPath *)indexPath
 {

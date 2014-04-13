@@ -11,6 +11,10 @@
 		050A5CE618FA35C400244F50 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE518FA35C400244F50 /* union_lake.jpg */; };
 		050A5CE918FA35FA00244F50 /* uwa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE818FA35FA00244F50 /* uwa.jpg */; };
 		050A5CEC18FA3D8100244F50 /* CVEducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */; };
+		050A5CF018FA4B7900244F50 /* CVReferee.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CEF18FA4B7900244F50 /* CVReferee.m */; };
+		050A5CF418FA50FC00244F50 /* JOCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CF318FA50FC00244F50 /* JOCollectionViewController.m */; };
+		050A5CF618FA55EF00244F50 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050A5CF518FA55EF00244F50 /* MessageUI.framework */; };
+		050A5CF918FA593400244F50 /* UIApplication+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CF818FA593400244F50 /* UIApplication+Extension.m */; };
 		056872EE18F6361E00132551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872ED18F6361E00132551 /* Foundation.framework */; };
 		056872F018F6361E00132551 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872EF18F6361E00132551 /* CoreGraphics.framework */; };
 		056872F218F6361E00132551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872F118F6361E00132551 /* UIKit.framework */; };
@@ -60,7 +64,6 @@
 		05F75AD718F6AB800061C1BC /* CVExtraCurricularTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75AD618F6AB800061C1BC /* CVExtraCurricularTableViewCell.m */; };
 		05F75ADA18F6ABC90061C1BC /* CVExtraCurricularActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75AD918F6ABC90061C1BC /* CVExtraCurricularActivity.m */; };
 		05F75ADD18F6B0870061C1BC /* CVExtractedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ADC18F6B0870061C1BC /* CVExtractedObject.m */; };
-		05F75AE018F6D35A0061C1BC /* CVMergeSorter.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ADF18F6D35A0061C1BC /* CVMergeSorter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,14 @@
 		050A5CE818FA35FA00244F50 /* uwa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uwa.jpg; sourceTree = "<group>"; };
 		050A5CEA18FA3D8100244F50 /* CVEducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVEducationViewController.h; sourceTree = "<group>"; };
 		050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVEducationViewController.m; sourceTree = "<group>"; };
+		050A5CEE18FA4B7900244F50 /* CVReferee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVReferee.h; sourceTree = "<group>"; };
+		050A5CEF18FA4B7900244F50 /* CVReferee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVReferee.m; sourceTree = "<group>"; };
+		050A5CF118FA4FC600244F50 /* CVListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVListViewController.h; sourceTree = "<group>"; };
+		050A5CF218FA50FC00244F50 /* JOCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOCollectionViewController.h; sourceTree = "<group>"; };
+		050A5CF318FA50FC00244F50 /* JOCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOCollectionViewController.m; sourceTree = "<group>"; };
+		050A5CF518FA55EF00244F50 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		050A5CF718FA593400244F50 /* UIApplication+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Extension.h"; sourceTree = "<group>"; };
+		050A5CF818FA593400244F50 /* UIApplication+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Extension.m"; sourceTree = "<group>"; };
 		056872EA18F6361E00132551 /* Jad's CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jad's CV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056872ED18F6361E00132551 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		056872EF18F6361E00132551 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,8 +174,6 @@
 		05F75AD918F6ABC90061C1BC /* CVExtraCurricularActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVExtraCurricularActivity.m; sourceTree = "<group>"; };
 		05F75ADB18F6B0870061C1BC /* CVExtractedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVExtractedObject.h; sourceTree = "<group>"; };
 		05F75ADC18F6B0870061C1BC /* CVExtractedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVExtractedObject.m; sourceTree = "<group>"; };
-		05F75ADE18F6D35A0061C1BC /* CVMergeSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVMergeSorter.h; sourceTree = "<group>"; };
-		05F75ADF18F6D35A0061C1BC /* CVMergeSorter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVMergeSorter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050A5CF618FA55EF00244F50 /* MessageUI.framework in Frameworks */,
 				0568735018F678BD00132551 /* QuartzCore.framework in Frameworks */,
 				056872F018F6361E00132551 /* CoreGraphics.framework in Frameworks */,
 				056872F218F6361E00132551 /* UIKit.framework in Frameworks */,
@@ -233,6 +243,7 @@
 		056872EC18F6361E00132551 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				050A5CF518FA55EF00244F50 /* MessageUI.framework */,
 				0568734F18F678BD00132551 /* QuartzCore.framework */,
 				0568734018F65DB300132551 /* QuickLook.framework */,
 				056872ED18F6361E00132551 /* Foundation.framework */,
@@ -329,6 +340,8 @@
 				0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */,
 				0568735418F680C100132551 /* CVRefereeCollectionViewCell.h */,
 				0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */,
+				050A5CEE18FA4B7900244F50 /* CVReferee.h */,
+				050A5CEF18FA4B7900244F50 /* CVReferee.m */,
 			);
 			name = References;
 			sourceTree = "<group>";
@@ -407,7 +420,6 @@
 			children = (
 				05F75ABE18F690820061C1BC /* Categories */,
 				05F75AD418F6A2B80061C1BC /* Subclasses */,
-				05F75AE118F6D35E0061C1BC /* Other */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -425,6 +437,8 @@
 				05BE99A318F96E950015D7D9 /* UIViewController+Extension.m */,
 				05BE99A518F96F4F0015D7D9 /* UIView+Snapshot.h */,
 				05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */,
+				050A5CF718FA593400244F50 /* UIApplication+Extension.h */,
+				050A5CF818FA593400244F50 /* UIApplication+Extension.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -432,8 +446,11 @@
 		05F75AD418F6A2B80061C1BC /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				050A5CF118FA4FC600244F50 /* CVListViewController.h */,
 				05F75AD118F6A2B50061C1BC /* JOTableViewController.h */,
 				05F75AD218F6A2B50061C1BC /* JOTableViewController.m */,
+				050A5CF218FA50FC00244F50 /* JOCollectionViewController.h */,
+				050A5CF318FA50FC00244F50 /* JOCollectionViewController.m */,
 				05BE999118F93A970015D7D9 /* CVPageContentNavigationController.h */,
 				05BE999218F93A970015D7D9 /* CVPageContentNavigationController.m */,
 				05BE999418F93AD80015D7D9 /* CVPageContentSplitViewController.h */,
@@ -446,15 +463,6 @@
 				0568734D18F6788E00132551 /* JOCircleImageView.m */,
 			);
 			name = Subclasses;
-			sourceTree = "<group>";
-		};
-		05F75AE118F6D35E0061C1BC /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				05F75ADE18F6D35A0061C1BC /* CVMergeSorter.h */,
-				05F75ADF18F6D35A0061C1BC /* CVMergeSorter.m */,
-			);
-			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +577,7 @@
 				05F75ADD18F6B0870061C1BC /* CVExtractedObject.m in Sources */,
 				05BE999318F93A970015D7D9 /* CVPageContentNavigationController.m in Sources */,
 				05BE999D18F93B870015D7D9 /* CVExtraCurricularNavigationController.m in Sources */,
+				050A5CF918FA593400244F50 /* UIApplication+Extension.m in Sources */,
 				0568733318F64F8500132551 /* CVPageViewController.m in Sources */,
 				0594FFAD18F7D72300422BA5 /* CVTimelineSplitViewController.m in Sources */,
 				0568734A18F664FE00132551 /* CVProfileView.m in Sources */,
@@ -581,11 +590,12 @@
 				05F75AD018F69EF70061C1BC /* NSDate+Extension.m in Sources */,
 				0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */,
 				05F75ADA18F6ABC90061C1BC /* CVExtraCurricularActivity.m in Sources */,
+				050A5CF418FA50FC00244F50 /* JOCollectionViewController.m in Sources */,
+				050A5CF018FA4B7900244F50 /* CVReferee.m in Sources */,
 				05BE999618F93AD80015D7D9 /* CVPageContentSplitViewController.m in Sources */,
 				0568733E18F65B6B00132551 /* CVExtraCurricularTableViewController.m in Sources */,
 				0568732718F6399200132551 /* CVHomeViewController.m in Sources */,
 				05BE99A418F96E950015D7D9 /* UIViewController+Extension.m in Sources */,
-				05F75AE018F6D35A0061C1BC /* CVMergeSorter.m in Sources */,
 				0568732A18F64EAB00132551 /* CVTimelineTableViewController.m in Sources */,
 				05F75AD318F6A2B50061C1BC /* JOTableViewController.m in Sources */,
 				05F75ACC18F69DF80061C1BC /* CVTimelineEventTableViewCell.m in Sources */,

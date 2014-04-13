@@ -30,14 +30,33 @@
 
 #import "CVExtraCurricularActivity.h"
 
-#import "CVMergeSorter.h"
-
 @implementation CVExtraCurricularActivity
+
++ (NSArray *)extraCurricularActivities
+{
+    NSError *error = nil;
+    NSArray *activities = [super extraObjects:&error];
+    if (error != nil)
+    {
+        [error handle];
+        return nil;
+    }
+    
+    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
+    
+    return [activities sortedArrayUsingDescriptors:@[dateSortDescriptor]];
+}
+
++ (NSString *)filePathForResource
+{
+    return [[NSBundle mainBundle] pathForResource:@"Extra Curricular" ofType:@"plist"];
+}
 
 - (instancetype)initFromDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         self.organisation = dictionary[@"organisation"];
         self.organisationImage = [UIImage imageNamed:dictionary[@"imageName"]];
         self.position = dictionary[@"position"];
@@ -46,38 +65,6 @@
         self.activityDescription = dictionary[@"description"];
     }
     return self;
-}
-
-+ (NSArray *)extraCurricularActivitiesFromFileContents:(NSString *)filePath 
-{
-    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
-    
-    NSError *error = nil;
-    NSArray *activities = [[super extraObjectsFromPropertyListAtFilePath:filePath error:&error] sortedArrayUsingDescriptors:@[dateSortDescriptor]];
-    
-    if (error != nil)
-    {
-        [error handle];
-        return nil;
-    }
-    
-    NSMutableDictionary *sectionedActivities = [[NSMutableDictionary alloc] init];
-    for (CVExtraCurricularActivity *activity in activities)
-    {
-        NSString *organisation = activity.organisation;
-        NSMutableArray *section = sectionedActivities[organisation];
-        
-        if (section == nil)
-        {
-            section = [[NSMutableArray alloc] init];
-            sectionedActivities[organisation] = section;
-        }
-        
-        [section addObject:activity];
-    }
-    
-    return [sectionedActivities allValues];
-//    return [CVMergeSorter mergeSortedArray:[sectionedActivities allValues] acsending:YES objectKey:@"organisation"];
 }
 
 @end

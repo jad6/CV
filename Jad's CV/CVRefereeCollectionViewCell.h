@@ -30,10 +30,21 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CVReferee.h"
+
+@class CVRefereeCollectionViewCell;
+
+@protocol CVRefereeCollectionViewCellDelegate <NSObject>
+
+- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToCallReferee:(CVReferee *)referee;
+- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToEmailReferee:(CVReferee *)referee;
+
+@end
+
 @interface CVRefereeCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *firstNameLabel, *secondNameLabel;
-@property (nonatomic, weak) IBOutlet UITextView *informationTextView;
-@property (nonatomic, weak) IBOutlet UIImageView *pictureImageView;
+@property (nonatomic, weak) id<CVRefereeCollectionViewCellDelegate> delegate;
+
+@property (nonatomic, strong) CVReferee *referee;
 
 @end

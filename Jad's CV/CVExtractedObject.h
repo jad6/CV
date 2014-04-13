@@ -42,12 +42,13 @@
  *  each element as a Dictionary for this method to be successful.
  *  NOTE: If the method returns nil check the error parameter.
  *
- *  @param filePath The file path of the plist.
  *  @param error    An error is allocated if something went wrong.
  *
  *  @return An array of CVExtractedObjects from the resource data.
  */
-+ (NSArray *)extraObjectsFromPropertyListAtFilePath:(NSString *)filePath error:(NSError *__autoreleasing *)error;
++ (NSArray *)extraObjects:(NSError *__autoreleasing *)error;
+
++ (NSString *)filePathForResource;
 
 /**
  *  Creates an instance from a dictionary.

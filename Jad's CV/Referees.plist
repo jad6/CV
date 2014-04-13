@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<array>
+	<dict>
+		<key>fullName</key>
+		<string>Julie Plummer</string>
+		<key>position</key>
+		<string>Professor</string>
+		<key>location</key>
+		<string>UWA School of Plant Biology</string>
+		<key>email</key>
+		<string>jplummer@cyllene.uwa.edu.au</string>
+		<key>phoneNumber</key>
+		<string>+61 8 6488 1786</string>
+		<key>imageName</key>
+		<string>profile_picture</string>
+	</dict>
+	<dict>
+		<key>fullName</key>
+		<string>Julie Plummer</string>
+		<key>position</key>
+		<string>Professor</string>
+		<key>location</key>
+		<string>UWA School of Plant Biology</string>
+		<key>email</key>
+		<string>jplummer@cyllene.uwa.edu.au</string>
+		<key>phoneNumber</key>
+		<string>+61 412 345 678</string>
+		<key>imageName</key>
+		<string>profile_picture</string>
+	</dict>
+	<dict>
+		<key>fullName</key>
+		<string>Julie Plummer</string>
+		<key>position</key>
+		<string>Professor</string>
+		<key>location</key>
+		<string>UWA School of Plant Biology</string>
+		<key>email</key>
+		<string>jplummer@cyllene.uwa.edu.au</string>
+		<key>phoneNumber</key>
+		<string>+61 412 345 678</string>
+		<key>imageName</key>
+		<string>profile_picture</string>
+	</dict>
+</array>
 </plist>

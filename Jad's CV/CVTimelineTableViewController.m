@@ -47,9 +47,7 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     
     self.title = @"Experience";
     
-    // Set the table view data from "Experience.plist".
-    NSString *eventsFilePath = [[NSBundle mainBundle] pathForResource:@"Experience" ofType:@"plist"];
-    NSArray *events = [CVTimelineEvent timetableEventsFromFileContents:eventsFilePath];
+    NSArray *events = [CVTimelineEvent timetableEvents];
     [self setData:events containsSections:NO];
 }
 
@@ -73,10 +71,10 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     return CellIdentifier;
 }
 
-- (void)tableView:(UITableView *)tableView
-    configureCell:(CVTimelineEventTableViewCell *)cell
-       withObject:(CVTimelineEvent *)event
-      atIndexPath:(NSIndexPath *)indexPath
+- (void)listView:(id)listView
+   configureCell:(CVTimelineEventTableViewCell *)cell
+      withObject:(CVTimelineEvent *)event
+     atIndexPath:(NSIndexPath *)indexPath
 {
     cell.event = event;
 }

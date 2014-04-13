@@ -37,6 +37,6 @@
 @property (nonatomic, strong) UIImage *organisationImage;
 @property (nonatomic, strong) NSDate *startDate, *endDate;
 
-+ (NSArray *)extraCurricularActivitiesFromFileContents:(NSString *)filePath;
++ (NSArray *)extraCurricularActivities;
 
 @end

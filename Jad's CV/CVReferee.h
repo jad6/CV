@@ -1,13 +1,11 @@
+//  CVReferee.h
 //
-//  CVTimelineEvent.h
-//  Jad's CV
-//
-//  Created by Jad Osseiran on 10/04/2014.
+//  Created by Jad Osseiran on 13/04/2014.
 //  Copyright (c) 2014 Jad Osseiran. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
-//
+// 
 //  Redistributions of source code must retain the above copyright notice, this
 //  list of conditions and the following disclaimer. Redistributions in binary
 //  form must reproduce the above copyright notice, this list of conditions and
@@ -15,7 +13,7 @@
 //  provided with the distribution. Neither the name of the nor the names of
 //  its contributors may be used to endorse or promote products derived from
 //  this software without specific prior written permission.
-//
+// 
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 //  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 //  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -30,40 +28,15 @@
 
 #import "CVExtractedObject.h"
 
-/**
- *  The level of importance of the event.
- */
-typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
-    /// Importance not set.
-    CVTimelineEventImportanceNone,
-    /// Big event, usually start of work somewhere.
-    CVTimelineEventImportanceMajor,
-    /// Small event, usually end of work somewhere.
-    CVTimelineEventImportanceMinor
-};
+@interface CVReferee : CVExtractedObject
 
-/**
- *  An object representing an event in my work experience.
- */
-@interface CVTimelineEvent : CVExtractedObject
+@property (nonatomic, strong) NSString *fullName;
+@property (nonatomic, strong) NSString *position;
+@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) UIImage *picture;
 
-/// The thumbnail image for the event.
-@property (nonatomic, strong) UIImage *thumbnailImage;
-/// The description of the event.
-@property (nonatomic, strong) NSString *eventDescription;
-/// The start date of the event.
-@property (nonatomic, strong) NSDate *startDate;
-/// The end date of the event.
-@property (nonatomic, strong) NSDate *endDate;
-
-/// Importance of the event.
-@property (nonatomic) CVTimelineEventImportance importance;
-
-/**
- *  Returns an array of CVTimelineEvent from the resource data.
- *
- *  @return An array of CVTimelineEvent populated from the resource data.
- */
-+ (NSArray *)timetableEvents;
++ (NSArray *)referees;
 
 @end

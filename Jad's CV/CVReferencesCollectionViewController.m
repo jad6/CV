@@ -28,13 +28,15 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
+#import <MessageUI/MessageUI.h>
+
 #import "CVReferencesCollectionViewController.h"
 
 #import "CVRefereeCollectionViewCell.h"
 
 static NSString *CVRefereeCollectionViewCellIdentifier = @"Referee Cell";
 
-@interface CVReferencesCollectionViewController ()
+@interface CVReferencesCollectionViewController () <MFMailComposeViewControllerDelegate, CVRefereeCollectionViewCellDelegate>
 
 @end
 
@@ -47,6 +49,9 @@ static NSString *CVRefereeCollectionViewCellIdentifier = @"Referee Cell";
     [super viewDidLoad];
     
     self.title = @"References";
+    
+    NSArray *referees = [CVReferee referees];
+    [self setData:referees containsSections:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,18 +62,58 @@ static NSString *CVRefereeCollectionViewCellIdentifier = @"Referee Cell";
 
 #pragma mark - Collection View
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
-    return 3;
+    return CVRefereeCollectionViewCellIdentifier;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)listView:(id)listView
+   configureCell:(CVRefereeCollectionViewCell *)cell
+      withObject:(CVReferee *)referee
+     atIndexPath:(NSIndexPath *)indexPath
 {
-    CVRefereeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CVRefereeCollectionViewCellIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.referee = referee;
+}
+
+#pragma mark - Referee Cell Delegate
+
+- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToCallReferee:(CVReferee *)referee
+{
+    if ([UIApplication phoneAvailable])
+    {
+        NSString *telPhone = [[[NSString alloc] initWithFormat:@"tel://%@", referee.phoneNumber] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSURL *phoneURL = [NSURL URLWithString:telPhone];
+        if ([[UIApplication sharedApplication] canOpenURL:phoneURL])
+        {
+            [[UIApplication sharedApplication] openURL:phoneURL];
+        }
+    }
+}
+
+- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToEmailReferee:(CVReferee *)referee
+{
+    if ([UIApplication emailAvailable])
+    {
+        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+        composer.mailComposeDelegate = self;
+        [composer setToRecipients:@[referee.email]];
+        [self presentViewController:composer animated:YES completion:nil];
+    }
+}
+
+#pragma mark - Mail Delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    if (error)
+    {
+        [error handle];
+    }
     
-    
-    
-    return cell;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

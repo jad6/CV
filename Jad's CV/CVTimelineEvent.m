@@ -32,6 +32,26 @@
 
 @implementation CVTimelineEvent
 
++ (NSArray *)timetableEvents
+{
+    NSError *error = nil;
+    NSArray *events = [super extraObjects:&error];
+    if (error != nil)
+    {
+        [error handle];
+        return nil;
+    }
+    
+    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
+    
+    return [events sortedArrayUsingDescriptors:@[dateSortDescriptor]];
+}
+
++ (NSString *)filePathForResource
+{
+    return [[NSBundle mainBundle] pathForResource:@"Experience" ofType:@"plist"];
+}
+
 - (instancetype)initFromDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
@@ -44,22 +64,6 @@
         self.endDate = dictionary[@"endDate"];
     }
     return self;
-}
-
-+ (NSArray *)timetableEventsFromFileContents:(NSString *)filePath
-{
-    NSError *error = nil;
-    NSArray *events = [super extraObjectsFromPropertyListAtFilePath:filePath error:&error];
-    
-    if (error != nil)
-    {
-        [error handle];
-        return nil;
-    }
-    
-    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
-    
-    return [events sortedArrayUsingDescriptors:@[dateSortDescriptor]];
 }
 
 @end

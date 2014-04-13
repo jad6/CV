@@ -28,10 +28,10 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import "JOCollectionViewController.h"
 
 #import "CVPageContentViewController.h"
 
-@interface CVReferencesCollectionViewController : UICollectionViewController <CVPageContentViewController>
+@interface CVReferencesCollectionViewController : JOCollectionViewController <CVPageContentViewController>
 
 @end

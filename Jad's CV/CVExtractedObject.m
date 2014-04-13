@@ -32,10 +32,11 @@
 
 @implementation CVExtractedObject
 
-+ (NSArray *)extraObjectsFromPropertyListAtFilePath:(NSString *)filePath error:(NSError *__autoreleasing *)error;
++ (NSArray *)extraObjects:(NSError *__autoreleasing *)error;
 {
 //    NSPropertyListSerialization *propertyListSer
     
+    NSString *filePath = [self filePathForResource];
     NSArray *allInfo = [[NSArray alloc] initWithContentsOfFile:filePath];
     
     if (allInfo == nil)
@@ -58,6 +59,11 @@
     }
     
     return objects;
+}
+
++ (NSString *)filePathForResource
+{
+    return nil;
 }
 
 - (instancetype)initFromDictionary:(NSDictionary *)dictionary
