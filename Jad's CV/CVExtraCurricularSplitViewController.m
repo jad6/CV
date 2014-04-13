@@ -32,8 +32,6 @@
 
 #import "CVExtraCurricularTableViewController.h"
 
-static NSString *CVDetailSegueIdentifier = @"Extra Curricular Detail Segue";
-
 @interface CVExtraCurricularSplitViewController () <CVExtraCurricularTableViewControllerDelegate>
 
 @end

@@ -176,23 +176,6 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     }
 }
 
-- (void)layoutTextView
-{
-    UITextView *textView = nil;
-    if (self.expanded)
-    {
-        textView = [[UITextView alloc] init];
-        
-    }
-    else
-    {
-        textView = self.textView;
-        
-        [textView removeFromSuperview];
-        textView = nil;
-    }
-}
-
 #pragma mark - Logic
 
 - (void)handleBackgroundImageBlur:(BOOL)animated
@@ -203,7 +186,7 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
         blurredImageView.image = [self.backgroundImageView imageWithBlurRadius:10.0f];
     }
 
-#warning Why is this not blurring at the corrct duration?!
+#warning Why is this not blurring at the correct duration?!
     [blurredImageView setHidden:self.expanded
                        animated:animated
                        duration:6];

@@ -32,8 +32,6 @@
 
 #import "CVTimelineTableViewController.h"
 
-static NSString *CVDetailSegueIdentifier = @"Experience Detail Segue";
-
 @interface CVTimelineSplitViewController () <CVTimelineTableViewControllerDelegate>
 
 @end

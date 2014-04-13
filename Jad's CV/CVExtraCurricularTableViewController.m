@@ -68,6 +68,19 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
     }
 }
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:CVDetailSegueIdentifier]
+        && IPHONE())
+    {
+        CVDetailViewController *detailViewController = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        detailViewController.experience = [self objectAtIndexPath:selectedIndexPath];
+    }
+}
+
 #pragma mark - Table View
 
 - (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath

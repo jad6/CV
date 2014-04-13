@@ -35,6 +35,8 @@
 @class CVExperienceObject;
 @class CVTimelineTableViewController;
 
+static NSString *CVDetailSegueIdentifier = @"Experience Detail Segue";
+
 @protocol CVTimelineTableViewControllerDelegate <NSObject>
 
 @optional

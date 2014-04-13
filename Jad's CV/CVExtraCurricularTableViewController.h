@@ -35,6 +35,8 @@
 @class CVExperienceObject;
 @class CVExtraCurricularTableViewController;
 
+static NSString *CVDetailSegueIdentifier = @"Extra Curricular Detail Segue";
+
 @protocol CVExtraCurricularTableViewControllerDelegate <NSObject>
 
 @optional

@@ -22,4 +22,5 @@
     #import "UIColor+Extension.h"
 
     #define IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    #define IPHONE() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #endif

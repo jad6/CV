@@ -88,8 +88,7 @@
             self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ -\n  %@", startDateText, endDateText];
         }
         
-        UIColor *tintColor = self.tintColor;
-        tintColor = event.color;
+        UIColor *tintColor = event.color;
         self.dateLabel.textColor = tintColor;
         self.descriptionLabel.textColor = tintColor;
         self.dotView.backgroundColor = tintColor;
