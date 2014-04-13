@@ -78,8 +78,14 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     [super awakeFromNib];
     
     UIImageView *blurredImageView = [[UIImageView alloc] initWithFrame:self.frame];
+    blurredImageView.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self insertSubview:blurredImageView aboveSubview:self.backgroundImageView];
+    
+    NSDictionary *bindings = NSDictionaryOfVariableBindings(blurredImageView);
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[blurredImageView]|" options:0 metrics:nil views:bindings]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[blurredImageView]|" options:0 metrics:nil views:bindings]];
+    
     self.blurredImageView = blurredImageView;
 }
 

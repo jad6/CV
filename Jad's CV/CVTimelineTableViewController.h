@@ -32,10 +32,23 @@
 
 #import "CVPageContentViewController.h"
 
+@class CVExperienceObject;
+@class CVTimelineTableViewController;
+
+@protocol CVTimelineTableViewControllerDelegate <NSObject>
+
+@optional
+- (void)timelineViewController:(CVTimelineTableViewController *)controller
+           didSelectExperience:(CVExperienceObject *)experience;
+
+@end
+
 /**
  *  The timeline table view controller displaus a graphical timeline for
  *  my work experience.
  */
 @interface CVTimelineTableViewController : JOTableViewController <CVPageContentViewController>
+
+@property (nonatomic, weak) id<CVTimelineTableViewControllerDelegate> delegate;
 
 @end

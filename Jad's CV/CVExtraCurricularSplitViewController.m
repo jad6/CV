@@ -32,6 +32,12 @@
 
 #import "CVExtraCurricularTableViewController.h"
 
+static NSString *CVDetailSegueIdentifier = @"Extra Curricular Detail Segue";
+
+@interface CVExtraCurricularSplitViewController () <CVExtraCurricularTableViewControllerDelegate>
+
+@end
+
 @implementation CVExtraCurricularSplitViewController
 
 - (void)viewDidLoad
@@ -39,6 +45,34 @@
     [super viewDidLoad];
     
     self.title = @"Extra Curricular";
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+    
+    if ([segue.identifier isEqualToString:@"Extra Curricular Segue"])
+    {
+        CVExtraCurricularTableViewController *extraCurricularViewController = segue.destinationViewController;
+        extraCurricularViewController.delegate = self;
+    }
+}
+
+#pragma mark - Logic
+
+- (NSString *)detailSegueIdentifier
+{
+    return CVDetailSegueIdentifier;
+}
+
+#pragma mark - Timeline Delegate
+
+- (void)extraCurricularViewController:(CVExtraCurricularTableViewController *)controller
+                  didSelectExperience:(CVExperienceObject *)experience
+{
+    [self updateDetailControllerWithExperienceObject:experience];
 }
 
 @end

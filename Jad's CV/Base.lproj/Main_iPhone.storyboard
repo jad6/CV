@@ -176,54 +176,46 @@
                                     <constraint firstAttribute="height" constant="249" id="ymo-h0-UJM"/>
                                 </constraints>
                             </imageView>
-                            <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wef-B0-Fg5">
-                                <rect key="frame" x="20" y="87" width="280" height="184"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final year,  Bachelor of Software Engineering" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-Hg-OMc">
+                                <rect key="frame" x="78" y="8" width="165" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University of Western Australia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="210" translatesAutoresizingMaskIntoConstraints="NO" id="smw-56-24v">
+                                <rect key="frame" x="55" y="47" width="210" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t1g-my-rVo">
+                                <rect key="frame" x="20" y="73" width="280" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="184" id="hFh-Ub-wJ9"/>
-                                    <constraint firstAttribute="width" constant="280" id="vHq-wR-cNd"/>
+                                    <constraint firstAttribute="height" constant="184" id="2wg-iG-Kou"/>
+                                    <constraint firstAttribute="width" constant="280" id="de3-84-koO"/>
                                 </constraints>
                                 <string key="text">I am actively involved in the charity Uni Camp for Kids as a Leader. The charity is for disadvantaged children to spend time with a large group of university students where they will be taken to pools, ovals and camps to play many different games. I volunteer at four picnics and 1 camp each year. I also volunteer yearly at the city to surf and take part in the charity’s annual tin rattle.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final year,  Bachelor of Software Engineering" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="155" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-Hg-OMc">
-                                <rect key="frame" x="83" y="8" width="155" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="jC8-iU-gE8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University of Western Australia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="155" translatesAutoresizingMaskIntoConstraints="NO" id="smw-56-24v">
-                                <rect key="frame" x="83" y="45" width="155" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="bz1-Qn-KCc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="EfR-Hg-OMc" secondAttribute="trailing" constant="82" id="11x-tO-u0k"/>
-                            <constraint firstItem="smw-56-24v" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="83" id="344-QS-KUZ"/>
                             <constraint firstAttribute="trailing" secondItem="B5T-jv-Tq2" secondAttribute="trailing" id="3a9-Xu-Y8x"/>
-                            <constraint firstAttribute="trailing" secondItem="wef-B0-Fg5" secondAttribute="trailing" constant="20" id="7G9-tW-rpI"/>
-                            <constraint firstItem="wef-B0-Fg5" firstAttribute="top" secondItem="smw-56-24v" secondAttribute="bottom" constant="8" id="ACR-IM-PIa"/>
+                            <constraint firstAttribute="trailing" secondItem="t1g-my-rVo" secondAttribute="trailing" constant="20" id="3xa-SK-Ljc"/>
+                            <constraint firstItem="smw-56-24v" firstAttribute="top" secondItem="EfR-Hg-OMc" secondAttribute="bottom" constant="3" id="HIR-yB-RTp"/>
+                            <constraint firstItem="smw-56-24v" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="55" id="N2K-0Z-AMV"/>
                             <constraint firstItem="B5T-jv-Tq2" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" id="Nbv-Qr-uUa"/>
-                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="top" secondItem="zdP-Dd-B84" secondAttribute="bottom" constant="8" id="SCK-7S-4nl"/>
-                            <constraint firstItem="wef-B0-Fg5" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="20" id="XUK-d0-Kit"/>
+                            <constraint firstItem="t1g-my-rVo" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="20" id="PuB-Zt-yqj"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="top" secondItem="zdP-Dd-B84" secondAttribute="bottom" constant="8" id="UWw-lR-pP2"/>
+                            <constraint firstItem="t1g-my-rVo" firstAttribute="top" secondItem="smw-56-24v" secondAttribute="bottom" constant="8" id="VSq-Wc-L3T"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="78" id="WVl-jr-iDt"/>
                             <constraint firstItem="BW3-5i-wjE" firstAttribute="top" secondItem="axq-RK-xo1" secondAttribute="bottom" id="gYu-DX-pxx"/>
                             <constraint firstAttribute="trailing" secondItem="axq-RK-xo1" secondAttribute="trailing" id="hye-M6-PzU"/>
                             <constraint firstItem="axq-RK-xo1" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" id="qE7-nC-1OX"/>
-                            <constraint firstAttribute="trailing" secondItem="smw-56-24v" secondAttribute="trailing" constant="82" id="rEV-Yb-Fx1"/>
-                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="83" id="rGt-b7-aOx"/>
                             <constraint firstItem="BW3-5i-wjE" firstAttribute="top" secondItem="B5T-jv-Tq2" secondAttribute="bottom" id="rt6-EW-No0"/>
-                            <constraint firstItem="smw-56-24v" firstAttribute="top" secondItem="EfR-Hg-OMc" secondAttribute="bottom" constant="3" id="z9L-Zt-PRC"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -233,8 +225,8 @@
                         <outlet property="establishmentLabel" destination="smw-56-24v" id="A4A-b6-5fa"/>
                         <outlet property="fadeImageView" destination="B5T-jv-Tq2" id="KQ4-LL-0NQ"/>
                         <outlet property="statusLabel" destination="EfR-Hg-OMc" id="fyh-p3-CAN"/>
-                        <outlet property="textView" destination="wef-B0-Fg5" id="CaV-yM-UV4"/>
-                        <outlet property="textViewHeightLayoutConstraint" destination="hFh-Ub-wJ9" id="X9H-12-I9Y"/>
+                        <outlet property="textView" destination="t1g-my-rVo" id="xYK-rs-mzr"/>
+                        <outlet property="textViewHeightLayoutConstraint" destination="2wg-iG-Kou" id="6ao-x8-foo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81i-aD-4Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -746,6 +738,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qk1-AC-dWS"/>
+        <segue reference="IXz-RE-POV"/>
     </inferredMetricsTieBreakers>
 </document>

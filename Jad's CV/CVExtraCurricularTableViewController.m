@@ -50,19 +50,21 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
     
     self.title = @"Extra Curricular";
     
+    self.clearsSelectionOnViewWillAppear = !IPAD();
+    
     NSArray *activities = [CVExtraCurricularActivity extraCurricularActivities];
     [self setData:activities containsSections:NO];
 }
 
-#pragma mark - Segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)viewWillAppear:(BOOL)animated
 {
-    if ([segue.identifier isEqualToString:@"Extra Curricular Detail Segue"])
+    [super viewWillAppear:animated];
+    
+    if (IPAD())
     {
-        CVDetailViewController *detailViewController = segue.destinationViewController;
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        detailViewController.experience = [self objectAtIndexPath:selectedIndexPath];
+        NSIndexPath *firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self tableView:self.tableView didSelectRowAtIndexPath:firstIndexPath];
+        [self.tableView selectRowAtIndexPath:firstIndexPath animated:animated scrollPosition:UITableViewScrollPositionTop];
     }
 }
 
@@ -85,7 +87,11 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
   didSelectObject:(CVExtraCurricularActivity *)activity
       atIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if ([self.delegate respondsToSelector:@selector(extraCurricularViewController:didSelectExperience:)])
+    {
+        [self.delegate extraCurricularViewController:self
+                                 didSelectExperience:activity];
+    }
 }
 
 @end

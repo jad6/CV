@@ -51,6 +51,13 @@
 
     self.title = @"Education";
     
+    if (IPAD())
+    {
+        UIImage *ipadFadeImage = [UIImage imageNamed:@"ipade_fade"];
+        UIImage *strechedImage = [ipadFadeImage resizableImageWithCapInsets:UIEdgeInsetsMake(80.0f, 80.0f, 80.0f, 80.0f) resizingMode:UIImageResizingModeStretch];
+        self.fadeImageView.image = strechedImage;
+    }
+    
     [self populateSubviews];
 }
 
@@ -69,8 +76,9 @@
     CGRect idealTextViewFrame = textView.frame;
     CGSize maxSize = CGSizeMake(idealTextViewFrame.size.width, CGFLOAT_MAX);
     idealTextViewFrame.size = [textView sizeThatFits:maxSize];
-        
-    CGFloat maxHeight = ABS(self.view.frame.size.height - textView.frame.origin.y) - floorf(self.fadeImageView.frame.size.height / 2.0);
+    
+    UIView *fadeSuperview = self.fadeImageView.superview;
+    CGFloat maxHeight = ABS(fadeSuperview.frame.size.height - textView.frame.origin.y) - floorf(self.fadeImageView.frame.size.height / 2.0);
     if (idealTextViewFrame.size.height > maxHeight)
     {
         self.textView.scrollEnabled = YES;

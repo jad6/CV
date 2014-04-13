@@ -31,6 +31,12 @@
 
 #import "CVPageContentViewController.h"
 
+#import "CVExperienceObject.h"
+
 @interface CVPageContentSplitViewController : UIViewController <CVPageContentViewController>
+
+- (NSString *)detailSegueIdentifier;
+
+- (void)updateDetailControllerWithExperienceObject:(CVExperienceObject *)experienceObject;
 
 @end

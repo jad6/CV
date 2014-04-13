@@ -48,13 +48,7 @@
 {
     [super viewDidLoad];
 
-    CVExperienceObject *experience = self.experience;
-    self.organisationImageView.image = experience.organisationImage;
-    self.positionLabel.text = experience.position;
-    self.organisationLabel.text = experience.organisation;
-    self.detailTextView.text = experience.detailedDescription;
-    
-    self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [experience.startDate condensedString], [experience.endDate condensedString]];
+    [self refreshSubviews];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -62,6 +56,34 @@
     [super viewDidDisappear:animated];
     
     [self.navigationController popToRootViewControllerAnimated:animated];
+}
+
+#pragma mark - Setters & Getters
+
+- (void)setExperience:(CVExperienceObject *)experience
+{
+    if (self->_experience != experience)
+    {
+        self->_experience = experience;
+        
+        if (IPAD())
+        {
+            [self refreshSubviews];
+        }
+    }
+}
+
+#pragma mark - Logic
+
+- (void)refreshSubviews
+{
+    CVExperienceObject *experience = self.experience;
+    self.organisationImageView.image = experience.organisationImage;
+    self.positionLabel.text = experience.position;
+    self.organisationLabel.text = experience.organisation;
+    self.detailTextView.text = experience.detailedDescription;
+    
+    self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [experience.startDate condensedString], [experience.endDate condensedString]];
 }
 
 #pragma mark - Actions

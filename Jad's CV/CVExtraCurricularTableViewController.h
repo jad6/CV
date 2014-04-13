@@ -32,6 +32,19 @@
 
 #import "CVPageContentViewController.h"
 
+@class CVExperienceObject;
+@class CVExtraCurricularTableViewController;
+
+@protocol CVExtraCurricularTableViewControllerDelegate <NSObject>
+
+@optional
+- (void)extraCurricularViewController:(CVExtraCurricularTableViewController *)controller
+           didSelectExperience:(CVExperienceObject *)experience;
+
+@end
+
 @interface CVExtraCurricularTableViewController : JOTableViewController <CVPageContentViewController>
+
+@property (nonatomic, weak) id<CVExtraCurricularTableViewControllerDelegate> delegate;
 
 @end

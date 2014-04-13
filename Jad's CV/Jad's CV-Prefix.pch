@@ -20,4 +20,6 @@
     #import "UIViewController+Extension.h"
     #import "UIApplication+Extension.h"
     #import "UIColor+Extension.h"
+
+    #define IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #endif

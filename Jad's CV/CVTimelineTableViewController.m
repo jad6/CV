@@ -49,19 +49,21 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     
     self.title = @"Experience";
     
+    self.clearsSelectionOnViewWillAppear = !IPAD();
+    
     NSArray *events = [CVTimelineEvent timetableEvents];
     [self setData:events containsSections:NO];
 }
 
-#pragma mark - Segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)viewWillAppear:(BOOL)animated
 {
-    if ([segue.identifier isEqualToString:@"Experience Detail Segue"])
+    [super viewWillAppear:animated];
+    
+    if (IPAD())
     {
-        CVDetailViewController *detailViewController = segue.destinationViewController;
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        detailViewController.experience = [self objectAtIndexPath:selectedIndexPath];
+        NSIndexPath *firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self tableView:self.tableView didSelectRowAtIndexPath:firstIndexPath];
+        [self.tableView selectRowAtIndexPath:firstIndexPath animated:animated scrollPosition:UITableViewScrollPositionTop];
     }
 }
 
@@ -91,6 +93,17 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
      atIndexPath:(NSIndexPath *)indexPath
 {
     cell.event = event;
+}
+
+- (void)listView:(id)listView
+ didSelectObject:(id)object
+     atIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate respondsToSelector:@selector(timelineViewController:didSelectExperience:)])
+    {
+        [self.delegate timelineViewController:self
+                        didSelectExperience:object];
+    }
 }
 
 @end

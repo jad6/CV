@@ -14,7 +14,7 @@
 		<key>phoneNumber</key>
 		<string>+61 8 6488 1786</string>
 		<key>imageName</key>
-		<string>profile_picture</string>
+		<string>boss</string>
 	</dict>
 	<dict>
 		<key>fullName</key>
@@ -28,7 +28,7 @@
 		<key>phoneNumber</key>
 		<string>+61 412 345 678</string>
 		<key>imageName</key>
-		<string>profile_picture</string>
+		<string>boss</string>
 	</dict>
 	<dict>
 		<key>fullName</key>
@@ -42,7 +42,7 @@
 		<key>phoneNumber</key>
 		<string>+61 412 345 678</string>
 		<key>imageName</key>
-		<string>profile_picture</string>
+		<string>boss</string>
 	</dict>
 </array>
 </plist>
