@@ -55,6 +55,7 @@
         {
             // Create the initial view contorller from the given controller identifiers.
             UIViewController *startingViewController = [self viewControllerWithIdentifier:[self->_viewControllerIdentifiers firstObject]];
+            startingViewController.view.frame = self.view.frame;
             // Add it the the page controller.
             [self setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         }
@@ -99,6 +100,7 @@
     // Instantiate the view controller and set its page index.
     UIViewController<CVPageContentViewController> *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     viewController.pageIndex = index;
+    viewController.view.frame = self.view.frame;
     
     return viewController;
 }

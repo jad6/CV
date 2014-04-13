@@ -32,28 +32,9 @@
 
 @implementation JOCircleView
 
-- (id)initWithFrame:(CGRect)frame
+- (void)layoutSubviews
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [self awakeFromNib];
-    }
-    return self;
-}
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self awakeFromNib];
-    }
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
+    [super layoutSubviews];
     
     [self.layer setCornerRadius:self.frame.size.width / 2.0];
     self.layer.masksToBounds = YES;

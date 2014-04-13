@@ -51,8 +51,10 @@ typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
 @property (nonatomic, strong) UIImage *thumbnailImage;
 /// The description of the event.
 @property (nonatomic, strong) NSString *eventDescription;
-/// The dtae of the event.
-@property (nonatomic, strong) NSDate *date;
+/// The start date of the event.
+@property (nonatomic, strong) NSDate *startDate;
+/// The end date of the event.
+@property (nonatomic, strong) NSDate *endDate;
 
 /// Importance of the event.
 @property (nonatomic) CVTimelineEventImportance importance;

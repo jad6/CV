@@ -30,6 +30,8 @@
 
 #import "CVTimelineEventTableViewCell.h"
 
+static NSString *CVCondensedDateFormat = @"MMM YY";
+
 @interface CVTimelineEventTableViewCell ()
 
 /// The image view for the event (ususally the company logo).
@@ -52,11 +54,19 @@
         // Set the UI elements from the event.
         self.eventImageView.image = event.thumbnailImage;
         self.descriptionLabel.text = event.eventDescription;
-        self.dateLabel.text = [event.date stringFromFormatter:^(NSDateFormatter *formatter) {
-            [formatter setDateStyle:NSDateFormatterMediumStyle];
-            [formatter setTimeStyle:NSDateFormatterNoStyle];
-        }];
+        
+        NSString *startDateText = [self condensedTextFromDate:event.startDate];
+        NSString *endDateText = [self condensedTextFromDate:event.endDate];
+        
+        self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ -\n  %@", startDateText, endDateText];
     }
+}
+
+- (NSString *)condensedTextFromDate:(NSDate *)date
+{
+    return [date stringFromFormatter:^(NSDateFormatter *formatter) {
+        [formatter setDateFormat:CVCondensedDateFormat];
+    }];
 }
 
 @end

@@ -5,8 +5,10 @@
 	<dict>
 		<key>importance</key>
 		<integer>1</integer>
-		<key>date</key>
+		<key>startDate</key>
 		<date>2014-08-25T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2014-09-14T04:00:00Z</date>
 		<key>imageName</key>
 		<string>Frontier</string>
 		<key>description</key>
@@ -15,7 +17,9 @@
 	<dict>
 		<key>importance</key>
 		<integer>2</integer>
-		<key>date</key>
+		<key>startDate</key>
+		<date>2014-09-14T04:00:00Z</date>
+		<key>endDate</key>
 		<date>2014-09-14T04:00:00Z</date>
 		<key>imageName</key>
 		<string></string>

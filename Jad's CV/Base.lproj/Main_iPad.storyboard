@@ -88,6 +88,7 @@
                                     <constraint firstItem="tMq-Gd-gxa" firstAttribute="leading" secondItem="Jli-de-a3b" secondAttribute="leading" constant="11" id="yE6-Tm-sI0"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="bFq-mK-39f" id="pud-M8-UwO"/>
                                     <outlet property="descriptionLabel" destination="tuY-P4-za0" id="l3j-MP-Dvo"/>
                                 </connections>
                             </view>
@@ -409,7 +410,7 @@ referee@email.com.au</string>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="U6D-f3-YIc" id="UEx-sL-9LJ"/>
+                                    <outlet property="dateLabel" destination="U6D-f3-YIc" id="egz-bE-ftR"/>
                                     <outlet property="descriptionLabel" destination="xBm-Me-PAG" id="TGp-tH-m5Q"/>
                                     <outlet property="eventImageView" destination="isW-Vh-gDO" id="S0V-xg-J2U"/>
                                 </connections>
@@ -452,7 +453,7 @@ referee@email.com.au</string>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="AII-Tm-01k" id="AKi-wR-n02"/>
+                                    <outlet property="dateLabel" destination="AII-Tm-01k" id="bmF-x3-bvm"/>
                                     <outlet property="descriptionLabel" destination="Lh4-78-45a" id="LgI-NE-sdo"/>
                                     <outlet property="eventImageView" destination="kau-At-P6Z" id="9Jj-W6-UnZ"/>
                                 </connections>

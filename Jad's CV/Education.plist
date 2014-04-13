@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>status</key>
+	<string>Final Year,  Bachelor of Software Engineering</string>
+	<key>establishment</key>
+	<string>University of Western Australia</string>
+	<key>description</key>
+	<string>I was elected by the software engineering / computer science cohort to act as their representative. This requires me to liaise between the student body and the course lecturers. I conduct meetings with faculty members to help improve the educational system of the school of computer science. I also work on improving the social aspect of student’s life on campus through encouraging active social and educational involvements in university clubs. I was re-elected this year.</string>
+</dict>
 </plist>

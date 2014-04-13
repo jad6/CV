@@ -32,12 +32,32 @@
 
 #import "UIView+Snapshot.h"
 
+static CGFloat CVPhotoScaleFactor = 2.0f;
+
 @interface CVProfileView ()
 
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *photoWidthLayoutConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *photoHeightLayoutConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *photoHorizontalLayoutConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *photoVerticalLayoutConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *nameVerticalLayoutConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *nameHorizontalLayoutConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *descriptionHorizontalLayoutConstraint;
+
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UIButton *infoButton;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
-@property (nonatomic, strong) UIImageView *blurredImageView;
+@property (nonatomic, weak) UIImageView *blurredImageView;
+
+@property (nonatomic, weak) UITextView *textView;
 
 @property (nonatomic) BOOL expanded;
+
+@property (nonatomic) CGFloat initialPhotoHorizontalConstant;
+@property (nonatomic) CGFloat initialPhotoVerticalConstant;
+@property (nonatomic) CGFloat initialNameVerticalConstant;
+@property (nonatomic) CGFloat initialNameHorizontalConstant;
+@property (nonatomic) CGFloat initialDescriptionHorizontalConstant;
 
 @end
 
@@ -63,11 +83,108 @@
     self.blurredImageView = blurredImageView;
 }
 
+#pragma mark - Getters & Setters 
+
+- (void)setExpanded:(BOOL)expanded
+{
+    if (self->_expanded != expanded)
+    {
+        self->_expanded = expanded;
+        
+        self.tintColor = (expanded) ? [UIColor blackColor] : [UIColor whiteColor];
+
+        [self layoutMainInformation];
+    }
+}
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    
+    self.infoButton.tintColor = tintColor;
+}
+
 #pragma mark - Layout
 
 - (CGFloat)length
 {
     return 108.0f;
+}
+
+- (void)layoutMainInformation
+{
+    CGFloat photoHeightConstant = self.photoHeightLayoutConstraint.constant;
+    CGFloat photoWidthConstant = self.photoWidthLayoutConstraint.constant;
+    CGFloat photoHorizontalConstant = self.photoHorizontalLayoutConstraint.constant;
+    CGFloat photoVerticalConstant = self.photoVerticalLayoutConstraint.constant;
+    CGFloat nameVerticalConstant = self.nameVerticalLayoutConstraint.constant;
+    CGFloat nameHorizontalConstant = self.nameHorizontalLayoutConstraint.constant;
+    CGFloat descriptionHorizontalConstant = self.descriptionHorizontalLayoutConstraint.constant;
+    
+    CGRect frame = self.frame;
+    
+    if (self.expanded)
+    {
+        photoHeightConstant = photoHeightConstant * CVPhotoScaleFactor;
+        self.photoHeightLayoutConstraint.constant = photoHeightConstant;
+        
+        photoWidthConstant = photoWidthConstant * CVPhotoScaleFactor;
+        self.photoWidthLayoutConstraint.constant = photoWidthConstant;
+        
+        self.initialPhotoHorizontalConstant = photoHorizontalConstant;
+        photoHorizontalConstant = floorf(frame.size.width / 2.0 - photoWidthConstant / 2.0);
+        self.photoHorizontalLayoutConstraint.constant = photoHorizontalConstant;
+        
+        self.initialPhotoVerticalConstant = photoVerticalConstant;
+        photoVerticalConstant = photoVerticalConstant * CVPhotoScaleFactor;
+        self.photoVerticalLayoutConstraint.constant = photoVerticalConstant;
+        
+        self.initialNameVerticalConstant = nameVerticalConstant;
+        nameVerticalConstant = photoVerticalConstant + photoWidthConstant + 15.0f;
+        self.nameVerticalLayoutConstraint.constant = nameVerticalConstant;
+        
+        self.initialNameHorizontalConstant = nameHorizontalConstant;
+        nameHorizontalConstant = floorf(frame.size.width / 2.0 - self.nameLabel.frame.size.width / 2.0);
+        self.nameHorizontalLayoutConstraint.constant = nameHorizontalConstant;
+        
+        self.initialDescriptionHorizontalConstant = descriptionHorizontalConstant;
+        descriptionHorizontalConstant = floorf(frame.size.width / 2.0 - self.descriptionLabel.frame.size.width / 2.0);
+        self.descriptionHorizontalLayoutConstraint.constant = descriptionHorizontalConstant;
+    }
+    else
+    {
+        photoHeightConstant = photoHeightConstant / CVPhotoScaleFactor;
+        self.photoHeightLayoutConstraint.constant = photoHeightConstant;
+        
+        photoWidthConstant = photoWidthConstant / CVPhotoScaleFactor;
+        self.photoWidthLayoutConstraint.constant = photoWidthConstant;
+        
+        self.photoHorizontalLayoutConstraint.constant = self.initialPhotoHorizontalConstant;
+        
+        photoVerticalConstant = photoVerticalConstant / CVPhotoScaleFactor;
+        self.photoVerticalLayoutConstraint.constant = photoVerticalConstant;
+        
+        self.nameVerticalLayoutConstraint.constant = self.initialNameVerticalConstant;
+        self.nameHorizontalLayoutConstraint.constant = self.initialNameHorizontalConstant;
+        self.descriptionHorizontalLayoutConstraint.constant = self.initialDescriptionHorizontalConstant;
+    }
+}
+
+- (void)layoutTextView
+{
+    UITextView *textView = nil;
+    if (self.expanded)
+    {
+        textView = [[UITextView alloc] init];
+        
+    }
+    else
+    {
+        textView = self.textView;
+        
+        [textView removeFromSuperview];
+        textView = nil;
+    }
 }
 
 #pragma mark - Logic

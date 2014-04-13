@@ -49,6 +49,10 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 @interface CVHomeViewController () <CVProfileViewDelegate, UIPageViewControllerDelegate>
 
+/// The constraint for the height of the profile view. Changing its constant
+/// value changes the height of the pagesView.
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *profileViewHeightLayoutConstraint;
+
 /// The profile view
 @property (nonatomic, weak) IBOutlet CVProfileView *profileView;
 /// Container view which handles displaying the views for each page.
@@ -56,10 +60,6 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 /// A visual indicator to show what page is currently displayed.
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
-
-/// The constraint for the height of the profile view. Changing its constant
-/// value changes the height of the pagesView.
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *profileViewHeightLayoutConstraint;
 
 /// An array to store the storyboard identifiers for the view controllers
 /// to be paged.

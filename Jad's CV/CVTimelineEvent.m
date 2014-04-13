@@ -40,7 +40,8 @@
         self.eventDescription = dictionary[@"description"];
         self.thumbnailImage = [UIImage imageNamed:dictionary[@"imageName"]];
         self.importance = [dictionary[@"importance"] integerValue];
-        self.date = dictionary[@"date"];
+        self.startDate = dictionary[@"startDate"];
+        self.endDate = dictionary[@"endDate"];
     }
     return self;
 }
@@ -56,7 +57,7 @@
         return nil;
     }
     
-    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
     
     return [events sortedArrayUsingDescriptors:@[dateSortDescriptor]];
 }
