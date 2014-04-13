@@ -79,9 +79,4 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     cell.event = event;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100.0f;
-}
-
 @end

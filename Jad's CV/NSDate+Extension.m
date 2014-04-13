@@ -30,6 +30,8 @@
 
 #import "NSDate+Extension.h"
 
+static NSString *CVCondensedDateFormat = @"MMM YY";
+
 @implementation NSDate (Extension)
 
 - (NSString *)stringFromFormatter:(void(^)(NSDateFormatter *formatter))formatterBlock
@@ -45,6 +47,13 @@
     }
     
     return [formatter stringFromDate:self];
+}
+
+- (NSString *)condensedString
+{
+    return [self stringFromFormatter:^(NSDateFormatter *formatter) {
+        [formatter setDateFormat:CVCondensedDateFormat];
+    }];
 }
 
 @end

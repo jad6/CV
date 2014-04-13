@@ -42,9 +42,10 @@
         return nil;
     }
     
-    NSSortDescriptor *dateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
+    NSSortDescriptor *startDateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:NO];
+    NSSortDescriptor *endDateSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"endDate" ascending:NO];
     
-    return [activities sortedArrayUsingDescriptors:@[dateSortDescriptor]];
+    return [activities sortedArrayUsingDescriptors:@[startDateSortDescriptor, endDateSortDescriptor]];
 }
 
 + (NSString *)filePathForResource

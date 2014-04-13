@@ -32,8 +32,6 @@
 
 #import "JOCircleView.h"
 
-static NSString *CVCondensedDateFormat = @"MMM YY";
-
 @interface CVTimelineEventTableViewCell ()
 
 @property (nonatomic, weak) IBOutlet JOCircleView *dotView;
@@ -78,8 +76,8 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
         // Set the UI elements from the event.
         self.descriptionLabel.text = event.eventDescription;
         
-        NSString *startDateText = [self condensedTextFromDate:event.startDate];
-        NSString *endDateText = [self condensedTextFromDate:event.endDate];
+        NSString *startDateText = [event.startDate condensedString];
+        NSString *endDateText = [event.endDate condensedString];
         
         if ([startDateText isEqualToString:endDateText])
         {
@@ -97,15 +95,6 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
         self.dotView.backgroundColor = tintColor;
         self.accessoryView.tintColor = tintColor;
     }
-}
-
-#pragma mark - Logic
-
-- (NSString *)condensedTextFromDate:(NSDate *)date
-{
-    return [date stringFromFormatter:^(NSDateFormatter *formatter) {
-        [formatter setDateFormat:CVCondensedDateFormat];
-    }];
 }
 
 @end

@@ -34,4 +34,6 @@
 
 - (NSString *)stringFromFormatter:(void(^)(NSDateFormatter *formatter))formatterBlock;
 
+- (NSString *)condensedString;
+
 @end
