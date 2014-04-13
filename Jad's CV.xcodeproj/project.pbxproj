@@ -15,6 +15,7 @@
 		050A5CF418FA50FC00244F50 /* JOCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CF318FA50FC00244F50 /* JOCollectionViewController.m */; };
 		050A5CF618FA55EF00244F50 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050A5CF518FA55EF00244F50 /* MessageUI.framework */; };
 		050A5CF918FA593400244F50 /* UIApplication+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CF818FA593400244F50 /* UIApplication+Extension.m */; };
+		050A5D0218FA738D00244F50 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5D0118FA738D00244F50 /* UIColor+Extension.m */; };
 		056872EE18F6361E00132551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872ED18F6361E00132551 /* Foundation.framework */; };
 		056872F018F6361E00132551 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872EF18F6361E00132551 /* CoreGraphics.framework */; };
 		056872F218F6361E00132551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872F118F6361E00132551 /* UIKit.framework */; };
@@ -90,6 +91,8 @@
 		050A5CF518FA55EF00244F50 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		050A5CF718FA593400244F50 /* UIApplication+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Extension.h"; sourceTree = "<group>"; };
 		050A5CF818FA593400244F50 /* UIApplication+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Extension.m"; sourceTree = "<group>"; };
+		050A5D0018FA738D00244F50 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		050A5D0118FA738D00244F50 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		056872EA18F6361E00132551 /* Jad's CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jad's CV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056872ED18F6361E00132551 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		056872EF18F6361E00132551 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -439,6 +442,8 @@
 				05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */,
 				050A5CF718FA593400244F50 /* UIApplication+Extension.h */,
 				050A5CF818FA593400244F50 /* UIApplication+Extension.m */,
+				050A5D0018FA738D00244F50 /* UIColor+Extension.h */,
+				050A5D0118FA738D00244F50 /* UIColor+Extension.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				056872FE18F6361E00132551 /* CVAppDelegate.m in Sources */,
 				05BE99A118F93D630015D7D9 /* CVDetailViewController.m in Sources */,
 				05BE99B618F97FEF0015D7D9 /* CVAboutMeButton.m in Sources */,
+				050A5D0218FA738D00244F50 /* UIColor+Extension.m in Sources */,
 				05BE998D18F908EE0015D7D9 /* NSError+Extension.m in Sources */,
 				0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */,
 				05BE999918F93B570015D7D9 /* CVTimelineNavigationController.m in Sources */,

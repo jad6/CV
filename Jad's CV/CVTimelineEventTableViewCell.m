@@ -30,12 +30,13 @@
 
 #import "CVTimelineEventTableViewCell.h"
 
+#import "JOCircleView.h"
+
 static NSString *CVCondensedDateFormat = @"MMM YY";
 
 @interface CVTimelineEventTableViewCell ()
 
-/// The image view for the event (ususally the company logo).
-@property (nonatomic, weak) IBOutlet UIImageView *eventImageView;
+@property (nonatomic, weak) IBOutlet JOCircleView *dotView;
 /// The description label for the event.
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 /// The date label for the event.
@@ -45,6 +46,29 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
 
 @implementation CVTimelineEventTableViewCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        [self awakeFromNib];
+    }
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    UIImage *chevronImage = [UIImage imageNamed:@"chevron"];
+    chevronImage = [chevronImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImageView *chevronImageView = [[UIImageView alloc] initWithImage:chevronImage];
+    [chevronImageView sizeToFit];
+    self.accessoryView = chevronImageView;
+}
+
+#pragma mark - Setters & Getters
+
 - (void)setEvent:(CVTimelineEvent *)event
 {
     if (self->_event != event)
@@ -52,15 +76,30 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
         self->_event = event;
         
         // Set the UI elements from the event.
-        self.eventImageView.image = event.thumbnailImage;
         self.descriptionLabel.text = event.eventDescription;
         
         NSString *startDateText = [self condensedTextFromDate:event.startDate];
         NSString *endDateText = [self condensedTextFromDate:event.endDate];
         
-        self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ -\n  %@", startDateText, endDateText];
+        if ([startDateText isEqualToString:endDateText])
+        {
+            self.dateLabel.text = startDateText;
+        }
+        else
+        {
+            self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ -\n  %@", startDateText, endDateText];
+        }
+        
+        UIColor *tintColor = self.tintColor;
+        tintColor = event.color;
+        self.dateLabel.textColor = tintColor;
+        self.descriptionLabel.textColor = tintColor;
+        self.dotView.backgroundColor = tintColor;
+        self.accessoryView.tintColor = tintColor;
     }
 }
+
+#pragma mark - Logic
 
 - (NSString *)condensedTextFromDate:(NSDate *)date
 {

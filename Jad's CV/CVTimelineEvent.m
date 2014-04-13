@@ -58,7 +58,7 @@
     if (self)
     {
         self.eventDescription = dictionary[@"description"];
-        self.thumbnailImage = [UIImage imageNamed:dictionary[@"imageName"]];
+        self.color = [UIColor colorFromString:dictionary[@"color"]];
         self.importance = [dictionary[@"importance"] integerValue];
         self.startDate = dictionary[@"startDate"];
         self.endDate = dictionary[@"endDate"];

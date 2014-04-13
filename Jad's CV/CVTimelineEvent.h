@@ -47,8 +47,7 @@ typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
  */
 @interface CVTimelineEvent : CVExtractedObject
 
-/// The thumbnail image for the event.
-@property (nonatomic, strong) UIImage *thumbnailImage;
+@property (nonatomic, strong) UIColor *color;
 /// The description of the event.
 @property (nonatomic, strong) NSString *eventDescription;
 /// The start date of the event.

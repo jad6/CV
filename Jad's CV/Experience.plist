@@ -6,25 +6,85 @@
 		<key>importance</key>
 		<integer>1</integer>
 		<key>startDate</key>
-		<date>2014-08-25T04:00:00Z</date>
+		<date>2011-02-01T04:00:00Z</date>
 		<key>endDate</key>
-		<date>2014-09-14T04:00:00Z</date>
-		<key>imageName</key>
-		<string>Frontier</string>
+		<date>2011-12-01T04:00:00Z</date>
+		<key>color</key>
+		<string>165,124,85,1</string>
 		<key>description</key>
-		<string>Hired at The Frontier Group</string>
+		<string>Apple Campus Representative</string>
 	</dict>
 	<dict>
 		<key>importance</key>
 		<integer>2</integer>
 		<key>startDate</key>
-		<date>2014-09-14T04:00:00Z</date>
+		<date>2010-12-01T04:00:00Z</date>
 		<key>endDate</key>
-		<date>2014-09-14T04:00:00Z</date>
-		<key>imageName</key>
-		<string></string>
+		<date>2010-12-01T04:00:00Z</date>
+		<key>color</key>
+		<string>198,68,252,1</string>
 		<key>description</key>
-		<string>Left The Frontier Group</string>
+		<string>iOS SDK Workshop Scholarship</string>
+	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>1</integer>
+		<key>startDate</key>
+		<date>2010-06-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2010-07-01T04:00:00Z</date>
+		<key>color</key>
+		<string>252,49,89,1</string>
+		<key>description</key>
+		<string>UWA</string>
+	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>1</integer>
+		<key>startDate</key>
+		<date>2012-03-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-06-01T04:00:00Z</date>
+		<key>color</key>
+		<string>60,171,218,1</string>
+		<key>description</key>
+		<string>Xcite Logic Development</string>
+	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>1</integer>
+		<key>startDate</key>
+		<date>2013-09-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-10-01T04:00:00Z</date>
+		<key>color</key>
+		<string>246,144,49,1</string>
+		<key>description</key>
+		<string>The Frontier Group</string>
+	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>1</integer>
+		<key>startDate</key>
+		<date>2013-10-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2014-04-01T04:00:00Z</date>
+		<key>color</key>
+		<string>254,203,46,1</string>
+		<key>description</key>
+		<string>Datacom</string>
+	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>1</integer>
+		<key>startDate</key>
+		<date>2010-02-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2014-04-01T04:00:00Z</date>
+		<key>color</key>
+		<string>85,215,105,1</string>
+		<key>description</key>
+		<string>Appulse</string>
 	</dict>
 </array>
 </plist>
