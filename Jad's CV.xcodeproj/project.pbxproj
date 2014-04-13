@@ -16,6 +16,8 @@
 		050A5CF618FA55EF00244F50 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050A5CF518FA55EF00244F50 /* MessageUI.framework */; };
 		050A5CF918FA593400244F50 /* UIApplication+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CF818FA593400244F50 /* UIApplication+Extension.m */; };
 		050A5D0218FA738D00244F50 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5D0118FA738D00244F50 /* UIColor+Extension.m */; };
+		050A5D0518FA8C4400244F50 /* CVExperienceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5D0418FA8C4400244F50 /* CVExperienceObject.m */; };
+		050A5D0B18FA8FF200244F50 /* CVRoundedRectImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5D0A18FA8FF200244F50 /* CVRoundedRectImageView.m */; };
 		056872EE18F6361E00132551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872ED18F6361E00132551 /* Foundation.framework */; };
 		056872F018F6361E00132551 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872EF18F6361E00132551 /* CoreGraphics.framework */; };
 		056872F218F6361E00132551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872F118F6361E00132551 /* UIKit.framework */; };
@@ -93,6 +95,10 @@
 		050A5CF818FA593400244F50 /* UIApplication+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Extension.m"; sourceTree = "<group>"; };
 		050A5D0018FA738D00244F50 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		050A5D0118FA738D00244F50 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		050A5D0318FA8C4400244F50 /* CVExperienceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVExperienceObject.h; sourceTree = "<group>"; };
+		050A5D0418FA8C4400244F50 /* CVExperienceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVExperienceObject.m; sourceTree = "<group>"; };
+		050A5D0918FA8FF200244F50 /* CVRoundedRectImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVRoundedRectImageView.h; sourceTree = "<group>"; };
+		050A5D0A18FA8FF200244F50 /* CVRoundedRectImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVRoundedRectImageView.m; sourceTree = "<group>"; };
 		056872EA18F6361E00132551 /* Jad's CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jad's CV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056872ED18F6361E00132551 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		056872EF18F6361E00132551 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -222,6 +228,46 @@
 				050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */,
 			);
 			name = Education;
+			sourceTree = "<group>";
+		};
+		050A5D0618FA8FC200244F50 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				050A5CF118FA4FC600244F50 /* CVListViewController.h */,
+				05F75AD118F6A2B50061C1BC /* JOTableViewController.h */,
+				05F75AD218F6A2B50061C1BC /* JOTableViewController.m */,
+				050A5CF218FA50FC00244F50 /* JOCollectionViewController.h */,
+				050A5CF318FA50FC00244F50 /* JOCollectionViewController.m */,
+				05BE999118F93A970015D7D9 /* CVPageContentNavigationController.h */,
+				05BE999218F93A970015D7D9 /* CVPageContentNavigationController.m */,
+				05BE999418F93AD80015D7D9 /* CVPageContentSplitViewController.h */,
+				05BE999518F93AD80015D7D9 /* CVPageContentSplitViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		050A5D0718FA8FCA00244F50 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				05F75ADB18F6B0870061C1BC /* CVExtractedObject.h */,
+				05F75ADC18F6B0870061C1BC /* CVExtractedObject.m */,
+				050A5D0318FA8C4400244F50 /* CVExperienceObject.h */,
+				050A5D0418FA8C4400244F50 /* CVExperienceObject.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		050A5D0818FA8FCF00244F50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05BE998818F8FA320015D7D9 /* JOCircleView.h */,
+				05BE998918F8FA320015D7D9 /* JOCircleView.m */,
+				0568734C18F6788E00132551 /* JOCircleImageView.h */,
+				0568734D18F6788E00132551 /* JOCircleImageView.m */,
+				050A5D0918FA8FF200244F50 /* CVRoundedRectImageView.h */,
+				050A5D0A18FA8FF200244F50 /* CVRoundedRectImageView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		056872E118F6361E00132551 = {
@@ -451,21 +497,9 @@
 		05F75AD418F6A2B80061C1BC /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				050A5CF118FA4FC600244F50 /* CVListViewController.h */,
-				05F75AD118F6A2B50061C1BC /* JOTableViewController.h */,
-				05F75AD218F6A2B50061C1BC /* JOTableViewController.m */,
-				050A5CF218FA50FC00244F50 /* JOCollectionViewController.h */,
-				050A5CF318FA50FC00244F50 /* JOCollectionViewController.m */,
-				05BE999118F93A970015D7D9 /* CVPageContentNavigationController.h */,
-				05BE999218F93A970015D7D9 /* CVPageContentNavigationController.m */,
-				05BE999418F93AD80015D7D9 /* CVPageContentSplitViewController.h */,
-				05BE999518F93AD80015D7D9 /* CVPageContentSplitViewController.m */,
-				05F75ADB18F6B0870061C1BC /* CVExtractedObject.h */,
-				05F75ADC18F6B0870061C1BC /* CVExtractedObject.m */,
-				05BE998818F8FA320015D7D9 /* JOCircleView.h */,
-				05BE998918F8FA320015D7D9 /* JOCircleView.m */,
-				0568734C18F6788E00132551 /* JOCircleImageView.h */,
-				0568734D18F6788E00132551 /* JOCircleImageView.m */,
+				050A5D0618FA8FC200244F50 /* Controllers */,
+				050A5D0718FA8FCA00244F50 /* Objects */,
+				050A5D0818FA8FCF00244F50 /* Views */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -596,6 +630,7 @@
 				0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */,
 				05F75ADA18F6ABC90061C1BC /* CVExtraCurricularActivity.m in Sources */,
 				050A5CF418FA50FC00244F50 /* JOCollectionViewController.m in Sources */,
+				050A5D0B18FA8FF200244F50 /* CVRoundedRectImageView.m in Sources */,
 				050A5CF018FA4B7900244F50 /* CVReferee.m in Sources */,
 				05BE999618F93AD80015D7D9 /* CVPageContentSplitViewController.m in Sources */,
 				0568733E18F65B6B00132551 /* CVExtraCurricularTableViewController.m in Sources */,
@@ -608,6 +643,7 @@
 				056872FE18F6361E00132551 /* CVAppDelegate.m in Sources */,
 				05BE99A118F93D630015D7D9 /* CVDetailViewController.m in Sources */,
 				05BE99B618F97FEF0015D7D9 /* CVAboutMeButton.m in Sources */,
+				050A5D0518FA8C4400244F50 /* CVExperienceObject.m in Sources */,
 				050A5D0218FA738D00244F50 /* UIColor+Extension.m in Sources */,
 				05BE998D18F908EE0015D7D9 /* NSError+Extension.m in Sources */,
 				0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */,

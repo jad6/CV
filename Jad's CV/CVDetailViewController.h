@@ -28,6 +28,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CVExperienceObject.h"
+
 @interface CVDetailViewController : UIViewController
+
+@property (nonatomic, strong) CVExperienceObject *experience;
 
 @end

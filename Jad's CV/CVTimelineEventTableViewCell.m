@@ -74,7 +74,7 @@
         self->_event = event;
         
         // Set the UI elements from the event.
-        self.descriptionLabel.text = event.eventDescription;
+        self.descriptionLabel.text = event.detailedDescription;
         
         NSString *startDateText = [event.startDate condensedString];
         NSString *endDateText = [event.endDate condensedString];

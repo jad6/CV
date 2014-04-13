@@ -30,6 +30,8 @@
 
 #import "CVTimelineTableViewController.h"
 
+#import "CVDetailViewController.h"
+
 #import "CVTimelineEventTableViewCell.h"
 
 /// Cell identifier for major events.
@@ -49,6 +51,18 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     
     NSArray *events = [CVTimelineEvent timetableEvents];
     [self setData:events containsSections:NO];
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Experience Detail Segue"])
+    {
+        CVDetailViewController *detailViewController = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        detailViewController.experience = [self objectAtIndexPath:selectedIndexPath];
+    }
 }
 
 #pragma mark - Table View

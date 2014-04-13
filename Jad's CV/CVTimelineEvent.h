@@ -28,7 +28,7 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import "CVExtractedObject.h"
+#import "CVExperienceObject.h"
 
 /**
  *  The level of importance of the event.
@@ -45,15 +45,9 @@ typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
 /**
  *  An object representing an event in my work experience.
  */
-@interface CVTimelineEvent : CVExtractedObject
+@interface CVTimelineEvent : CVExperienceObject
 
 @property (nonatomic, strong) UIColor *color;
-/// The description of the event.
-@property (nonatomic, strong) NSString *eventDescription;
-/// The start date of the event.
-@property (nonatomic, strong) NSDate *startDate;
-/// The end date of the event.
-@property (nonatomic, strong) NSDate *endDate;
 
 /// Importance of the event.
 @property (nonatomic) CVTimelineEventImportance importance;

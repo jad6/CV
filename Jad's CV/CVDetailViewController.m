@@ -28,7 +28,34 @@
 
 #import "CVDetailViewController.h"
 
+#import "CVRoundedRectImageView.h"
+
+@interface CVDetailViewController ()
+
+@property (nonatomic, weak) IBOutlet CVRoundedRectImageView *organisationImageView;
+
+@property (nonatomic, weak) IBOutlet UILabel *positionLabel;
+@property (nonatomic, weak) IBOutlet UILabel *organisationLabel;
+@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
+
+@property (nonatomic, weak) IBOutlet UITextView *detailTextView;
+
+@end
+
 @implementation CVDetailViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    CVExperienceObject *experience = self.experience;
+    self.organisationImageView.image = experience.organisationImage;
+    self.positionLabel.text = experience.position;
+    self.organisationLabel.text = experience.organisation;
+    self.detailTextView.text = experience.detailedDescription;
+    
+    self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [experience.startDate condensedString], [experience.endDate condensedString]];
+}
 
 - (void)viewDidDisappear:(BOOL)animated
 {

@@ -436,7 +436,7 @@
                                     <outlet property="dateLabel" destination="QbY-SM-sdk" id="BEZ-OG-Ncn"/>
                                     <outlet property="descriptionLabel" destination="6lB-wZ-NmM" id="T7B-jZ-zmN"/>
                                     <outlet property="dotView" destination="4vh-Xp-bpi" id="rn1-yV-Jec"/>
-                                    <segue destination="osg-3E-R9c" kind="push" id="IXz-RE-POV"/>
+                                    <segue destination="osg-3E-R9c" kind="push" identifier="Experience Detail Segue" id="IXz-RE-POV"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Minor Event Cell" rowHeight="100" id="uMy-4l-r8N" customClass="CVTimelineEventTableViewCell">
@@ -548,7 +548,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zFA-Pk-LU8">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zFA-Pk-LU8" customClass="CVRoundedRectImageView">
                                             <rect key="frame" x="15" y="26" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <constraints>
@@ -576,7 +576,7 @@
                                     <outlet property="dateLabel" destination="Yho-3x-lWM" id="PyV-G1-QdB"/>
                                     <outlet property="organisationLabel" destination="7oA-N1-OFt" id="Ew1-CE-fvg"/>
                                     <outlet property="positionLabel" destination="h9B-QT-PFj" id="xdv-lx-Umw"/>
-                                    <segue destination="osg-3E-R9c" kind="push" id="qk1-AC-dWS"/>
+                                    <segue destination="osg-3E-R9c" kind="push" identifier="Extra Curricular Detail Segue" id="qk1-AC-dWS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -627,7 +627,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ug-9C-fhJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ug-9C-fhJ">
                                 <rect key="frame" x="20" y="20" width="35" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back">
@@ -637,13 +637,75 @@
                                     <action selector="backAction:" destination="osg-3E-R9c" eventType="touchUpInside" id="y3k-hd-15S"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="174" translatesAutoresizingMaskIntoConstraints="NO" id="T6D-yz-jN9">
+                                <rect key="frame" x="73" y="104" width="174" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VZe-ub-1Wy" customClass="CVRoundedRectImageView">
+                                <rect key="frame" x="125" y="20" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4ZW-Nm-znr"/>
+                                    <constraint firstAttribute="width" constant="70" id="q31-NZ-Yhf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="174" translatesAutoresizingMaskIntoConstraints="NO" id="sQR-H6-Gc8">
+                                <rect key="frame" x="73" y="124" width="174" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date - End Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gN-KL-zah">
+                                <rect key="frame" x="73" y="145" width="174" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g3r-Tb-U6P">
+                                <rect key="frame" x="20" y="171" width="280" height="269"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VZe-ub-1Wy" firstAttribute="top" secondItem="7QK-i6-Uf4" secondAttribute="bottom" constant="20" id="1m2-Qu-9bc"/>
+                            <constraint firstItem="9gN-KL-zah" firstAttribute="leading" secondItem="sQR-H6-Gc8" secondAttribute="leading" id="8S2-oY-vBr"/>
+                            <constraint firstItem="9gN-KL-zah" firstAttribute="top" secondItem="sQR-H6-Gc8" secondAttribute="bottom" constant="3" id="F9V-Ph-MDm"/>
+                            <constraint firstAttribute="trailing" secondItem="VZe-ub-1Wy" secondAttribute="trailing" constant="125" id="IW2-EH-LVI"/>
+                            <constraint firstAttribute="trailing" secondItem="g3r-Tb-U6P" secondAttribute="trailing" constant="20" id="K50-pk-P8J"/>
+                            <constraint firstItem="g3r-Tb-U6P" firstAttribute="top" secondItem="9gN-KL-zah" secondAttribute="bottom" constant="8" symbolic="YES" id="N7o-O4-qdU"/>
+                            <constraint firstItem="T6D-yz-jN9" firstAttribute="centerX" secondItem="VZe-ub-1Wy" secondAttribute="centerX" id="OyW-kF-8ae"/>
+                            <constraint firstItem="sQR-H6-Gc8" firstAttribute="leading" secondItem="T6D-yz-jN9" secondAttribute="leading" id="TxW-J7-Lge"/>
+                            <constraint firstItem="T6D-yz-jN9" firstAttribute="leading" secondItem="hsx-jw-Iea" secondAttribute="leading" constant="73" id="UGj-BL-hGN"/>
+                            <constraint firstItem="3ug-9C-fhJ" firstAttribute="top" secondItem="7QK-i6-Uf4" secondAttribute="bottom" constant="20" id="XaS-aM-BF8"/>
+                            <constraint firstItem="Ddx-Jl-ZxX" firstAttribute="top" secondItem="g3r-Tb-U6P" secondAttribute="bottom" constant="20" id="gNk-y1-LTs"/>
+                            <constraint firstItem="sQR-H6-Gc8" firstAttribute="top" secondItem="T6D-yz-jN9" secondAttribute="bottom" constant="2" id="gRM-6p-uz0"/>
+                            <constraint firstItem="g3r-Tb-U6P" firstAttribute="leading" secondItem="hsx-jw-Iea" secondAttribute="leading" constant="20" id="ojW-Su-vxg"/>
+                            <constraint firstItem="sQR-H6-Gc8" firstAttribute="trailing" secondItem="T6D-yz-jN9" secondAttribute="trailing" id="pQI-uI-j9v"/>
+                            <constraint firstItem="VZe-ub-1Wy" firstAttribute="leading" secondItem="3ug-9C-fhJ" secondAttribute="trailing" constant="70" id="qZX-jm-TCU"/>
+                            <constraint firstItem="9gN-KL-zah" firstAttribute="trailing" secondItem="sQR-H6-Gc8" secondAttribute="trailing" id="rEv-Su-nVP"/>
+                            <constraint firstItem="T6D-yz-jN9" firstAttribute="top" secondItem="VZe-ub-1Wy" secondAttribute="bottom" constant="14" id="ujt-SJ-OVs"/>
+                            <constraint firstItem="3ug-9C-fhJ" firstAttribute="leading" secondItem="hsx-jw-Iea" secondAttribute="leading" constant="20" id="xAa-sP-WBb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uI4-ol-yKN"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="460"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="9gN-KL-zah" id="CJr-s0-7eE"/>
+                        <outlet property="detailTextView" destination="g3r-Tb-U6P" id="WDt-3y-TL2"/>
+                        <outlet property="organisationImageView" destination="VZe-ub-1Wy" id="jpe-yP-uFj"/>
+                        <outlet property="organisationLabel" destination="sQR-H6-Gc8" id="wQR-xe-Foq"/>
+                        <outlet property="positionLabel" destination="T6D-yz-jN9" id="gTD-jT-NfC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LA-uG-3VL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -684,6 +746,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="IXz-RE-POV"/>
+        <segue reference="qk1-AC-dWS"/>
     </inferredMetricsTieBreakers>
 </document>

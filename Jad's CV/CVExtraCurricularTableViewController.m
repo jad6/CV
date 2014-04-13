@@ -30,6 +30,8 @@
 
 #import "CVExtraCurricularTableViewController.h"
 
+#import "CVDetailViewController.h"
+
 #import "CVExtraCurricularTableViewCell.h"
 
 static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell";
@@ -50,6 +52,18 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
     
     NSArray *activities = [CVExtraCurricularActivity extraCurricularActivities];
     [self setData:activities containsSections:NO];
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Extra Curricular Detail Segue"])
+    {
+        CVDetailViewController *detailViewController = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        detailViewController.experience = [self objectAtIndexPath:selectedIndexPath];
+    }
 }
 
 #pragma mark - Table View
@@ -73,16 +87,5 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
 {
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

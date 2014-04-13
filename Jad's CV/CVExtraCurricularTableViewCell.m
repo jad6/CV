@@ -28,13 +28,13 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import <QuartzCore/QuartzCore.h>
-
 #import "CVExtraCurricularTableViewCell.h"
+
+#import "CVRoundedRectImageView.h"
 
 @interface CVExtraCurricularTableViewCell ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *activityImageView;
+@property (nonatomic, weak) IBOutlet CVRoundedRectImageView *activityImageView;
 @property (nonatomic, weak) IBOutlet UILabel *positionLabel;
 @property (nonatomic, weak) IBOutlet UILabel *organisationLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
@@ -42,14 +42,6 @@
 @end
 
 @implementation CVExtraCurricularTableViewCell
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-    [self.activityImageView.layer setCornerRadius:18.0];
-    self.activityImageView.layer.masksToBounds = YES;
-}
 
 - (void)setActivity:(CVExtraCurricularActivity *)activity
 {

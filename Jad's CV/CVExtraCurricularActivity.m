@@ -55,15 +55,9 @@
 
 - (instancetype)initFromDictionary:(NSDictionary *)dictionary
 {
-    self = [super init];
+    self = [super initFromDictionary:dictionary];
     if (self)
     {
-        self.organisation = dictionary[@"organisation"];
-        self.organisationImage = [UIImage imageNamed:dictionary[@"imageName"]];
-        self.position = dictionary[@"position"];
-        self.startDate = dictionary[@"startDate"];
-        self.endDate = dictionary[@"endDate"];
-        self.activityDescription = dictionary[@"description"];
     }
     return self;
 }

@@ -55,14 +55,11 @@
 
 - (instancetype)initFromDictionary:(NSDictionary *)dictionary
 {
-    self = [super init];
+    self = [super initFromDictionary:dictionary];
     if (self)
     {
-        self.eventDescription = dictionary[@"description"];
         self.color = [UIColor colorFromString:dictionary[@"color"]];
         self.importance = [dictionary[@"importance"] integerValue];
-        self.startDate = dictionary[@"startDate"];
-        self.endDate = dictionary[@"endDate"];
     }
     return self;
 }
