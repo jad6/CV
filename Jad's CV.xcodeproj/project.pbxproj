@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		050A5CE418FA335100244F50 /* AboutMe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE318FA335100244F50 /* AboutMe.xib */; };
+		050A5CE418FA335100244F50 /* AboutMe~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE318FA335100244F50 /* AboutMe~iphone.xib */; };
 		050A5CE618FA35C400244F50 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE518FA35C400244F50 /* union_lake.jpg */; };
-		050A5CE918FA35FA00244F50 /* uwa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE818FA35FA00244F50 /* uwa.jpg */; };
+		050A5CE918FA35FA00244F50 /* winthrop_hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */; };
 		050A5CEC18FA3D8100244F50 /* CVEducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */; };
 		050A5CF018FA4B7900244F50 /* CVReferee.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CEF18FA4B7900244F50 /* CVReferee.m */; };
 		050A5CF418FA50FC00244F50 /* JOCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CF318FA50FC00244F50 /* JOCollectionViewController.m */; };
@@ -55,6 +55,7 @@
 		05BE99AC18F97DB30015D7D9 /* About Me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05BE99AB18F97DB20015D7D9 /* About Me.txt */; };
 		05BE99AF18F97F010015D7D9 /* CVAboutMeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99AE18F97F010015D7D9 /* CVAboutMeView.m */; };
 		05BE99B618F97FEF0015D7D9 /* CVAboutMeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99B518F97FEF0015D7D9 /* CVAboutMeButton.m */; };
+		05E1011F18FBA6E3008E2554 /* AboutMe~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E1011E18FBA6E3008E2554 /* AboutMe~ipad.xib */; };
 		05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ABB18F6904C0061C1BC /* UIView+Extension.m */; };
 		05F75AC018F69A9B0061C1BC /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75ABF18F69A9B0061C1BC /* Experience.plist */; };
 		05F75AC218F69AAF0061C1BC /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC118F69AAF0061C1BC /* Referees.plist */; };
@@ -80,9 +81,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		050A5CE318FA335100244F50 /* AboutMe.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMe.xib; sourceTree = "<group>"; };
+		050A5CE318FA335100244F50 /* AboutMe~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AboutMe~iphone.xib"; sourceTree = "<group>"; };
 		050A5CE518FA35C400244F50 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
-		050A5CE818FA35FA00244F50 /* uwa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uwa.jpg; sourceTree = "<group>"; };
+		050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winthrop_hall.jpg; sourceTree = "<group>"; };
 		050A5CEA18FA3D8100244F50 /* CVEducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVEducationViewController.h; sourceTree = "<group>"; };
 		050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVEducationViewController.m; sourceTree = "<group>"; };
 		050A5CEE18FA4B7900244F50 /* CVReferee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVReferee.h; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 		05BE99AE18F97F010015D7D9 /* CVAboutMeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVAboutMeView.m; sourceTree = "<group>"; };
 		05BE99B418F97FEF0015D7D9 /* CVAboutMeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVAboutMeButton.h; sourceTree = "<group>"; };
 		05BE99B518F97FEF0015D7D9 /* CVAboutMeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVAboutMeButton.m; sourceTree = "<group>"; };
+		05E1011E18FBA6E3008E2554 /* AboutMe~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AboutMe~ipad.xib"; sourceTree = "<group>"; };
 		05F75ABA18F6904C0061C1BC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		05F75ABB18F6904C0061C1BC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		05F75ABF18F69A9B0061C1BC /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 			children = (
 				0568730818F6361E00132551 /* Images.xcassets */,
 				050A5CE518FA35C400244F50 /* union_lake.jpg */,
-				050A5CE818FA35FA00244F50 /* uwa.jpg */,
+				050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -310,7 +312,8 @@
 				056872FD18F6361E00132551 /* CVAppDelegate.m */,
 				056872FF18F6361E00132551 /* Main_iPhone.storyboard */,
 				0568730218F6361E00132551 /* Main_iPad.storyboard */,
-				050A5CE318FA335100244F50 /* AboutMe.xib */,
+				050A5CE318FA335100244F50 /* AboutMe~iphone.xib */,
+				05E1011E18FBA6E3008E2554 /* AboutMe~ipad.xib */,
 				0568732518F6399200132551 /* CVHomeViewController.h */,
 				0568732618F6399200132551 /* CVHomeViewController.m */,
 				0568734B18F6650100132551 /* Profile */,
@@ -583,9 +586,10 @@
 			files = (
 				05F75AC418F69ACD0061C1BC /* Extra Curricular.plist in Resources */,
 				0568730418F6361E00132551 /* Main_iPad.storyboard in Resources */,
+				05E1011F18FBA6E3008E2554 /* AboutMe~ipad.xib in Resources */,
 				05BE99AC18F97DB30015D7D9 /* About Me.txt in Resources */,
-				050A5CE918FA35FA00244F50 /* uwa.jpg in Resources */,
-				050A5CE418FA335100244F50 /* AboutMe.xib in Resources */,
+				050A5CE918FA35FA00244F50 /* winthrop_hall.jpg in Resources */,
+				050A5CE418FA335100244F50 /* AboutMe~iphone.xib in Resources */,
 				0568730918F6361E00132551 /* Images.xcassets in Resources */,
 				0568730118F6361E00132551 /* Main_iPhone.storyboard in Resources */,
 				050A5CE618FA35C400244F50 /* union_lake.jpg in Resources */,

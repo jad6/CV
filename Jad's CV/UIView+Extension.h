@@ -44,6 +44,7 @@
 
 - (void)setHidden:(BOOL)hidden
          animated:(BOOL)animated
-         duration:(NSTimeInterval)duration;
+         duration:(NSTimeInterval)duration
+       completion:(void (^)(BOOL finished))completion;
 
 @end

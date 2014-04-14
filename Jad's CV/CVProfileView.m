@@ -30,6 +30,8 @@
 
 #import "CVProfileView.h"
 
+#import "CVAboutMeView.h"
+
 #import "UIView+Snapshot.h"
 
 static CGFloat CVPhotoScaleFactor = 2.0f;
@@ -47,6 +49,8 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIButton *infoButton;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
+
+@property (nonatomic, weak) CVAboutMeView *aboutMeView;
 @property (nonatomic, weak) UIImageView *blurredImageView;
 
 @property (nonatomic, weak) UITextView *textView;
@@ -76,9 +80,9 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
+        
     UIImageView *blurredImageView = [[UIImageView alloc] initWithFrame:self.frame];
-    blurredImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [blurredImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self insertSubview:blurredImageView aboveSubview:self.backgroundImageView];
     
@@ -97,9 +101,13 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     {
         self->_expanded = expanded;
         
-        self.tintColor = (expanded) ? [UIColor blackColor] : [UIColor whiteColor];
+        UIColor *tintColor = (expanded) ? [UIColor blackColor] : [UIColor whiteColor];
+        self.nameLabel.textColor = tintColor;
+        self.descriptionLabel.textColor = tintColor;
+        self.tintColor = tintColor;
 
         [self layoutMainInformation];
+        [self layoutAboutMe];
     }
 }
 
@@ -176,6 +184,39 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     }
 }
 
+- (void)layoutAboutMe
+{
+    if (self.expanded)
+    {
+        CVAboutMeView *aboutMeView = [[[NSBundle mainBundle] loadNibNamed:@"AboutMe" owner:nil options:nil] firstObject];
+        aboutMeView.hidden = YES;
+        
+#warning I really want to use constraints... or do i?
+        CGRect aboutMeViewFrame = aboutMeView.frame;
+#warning and I feel like UIScreen mainScreen is dirty...
+        aboutMeViewFrame.origin.y = [UIScreen mainScreen].bounds.size.height - aboutMeViewFrame.size.height;
+        aboutMeView.frame = aboutMeViewFrame;
+        
+        [self insertSubview:aboutMeView aboveSubview:self.backgroundImageView];
+        
+#warning And this is not animating...
+        [aboutMeView setHidden:NO animated:YES];
+        
+        self.aboutMeView = aboutMeView;
+    }
+    else
+    {
+        CVAboutMeView *aboutMeView = self.aboutMeView;
+        [aboutMeView setHidden:NO
+                      animated:YES
+                      duration:0.3
+                    completion:^(BOOL finished) {
+                        [self.aboutMeView removeFromSuperview];
+                        self.aboutMeView = nil;
+                    }];
+    }
+}
+
 #pragma mark - Logic
 
 - (void)handleBackgroundImageBlur:(BOOL)animated
@@ -189,7 +230,8 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 #warning Why is this not blurring at the correct duration?!
     [blurredImageView setHidden:self.expanded
                        animated:animated
-                       duration:6];
+                       duration:6
+                     completion:nil];
 }
 
 #pragma mark - Actions

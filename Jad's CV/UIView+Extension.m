@@ -35,6 +35,7 @@
 - (void)setHidden:(BOOL)hidden
          animated:(BOOL)animated
          duration:(NSTimeInterval)duration
+       completion:(void (^)(BOOL finished))completion
 {
     if (animated)
     {
@@ -44,6 +45,11 @@
                 self.alpha = 0.0f;
             } completion:^(BOOL finished) {
                 [self setHidden:YES];
+                
+                if (completion)
+                {
+                    completion(finished);
+                }
             }];
         }
         else
@@ -51,18 +57,22 @@
             [self setHidden:NO];
             [UIView animateWithDuration:duration animations:^{
                 self.alpha = 1.0f;
-            }];
+            } completion:completion];
         }
     }
     else
     {
         [self setHidden:hidden];
+        if (completion)
+        {
+            completion(YES);
+        }
     }
 }
 
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated
 {
-    [self setHidden:hidden animated:animated duration:0.3];
+    [self setHidden:hidden animated:animated duration:0.3 completion:nil];
 }
 
 @end

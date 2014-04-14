@@ -207,17 +207,17 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     // Set the profile view height to the full height of the view.
     self.profileViewHeightLayoutConstraint.constant = self.view.frame.size.height;
     
+    // Save the current description label text.
+    self.descriptionTextBeforeInfoTransition = self.profileView.descriptionLabel.text;
+    // Update the description label text.
+    self.profileView.descriptionLabel.text = @"Perth, Western Australia";
+
     // Set the UI changes.
     BOOL animated = YES;
     [self.pageControl setHidden:YES animated:animated];
     [self setNeedsStatusBarAppearanceUpdate:animated];
     [self layoutSubviews:animated completion:nil];
     [self.profileView handleBackgroundImageBlur:NO];
-    
-    // Save the current description label text.
-    self.descriptionTextBeforeInfoTransition = self.profileView.descriptionLabel.text;
-    // Update the description label text.
-    self.profileView.descriptionLabel.text = @"About Me";
 }
 
 - (void)profileViewDidSelectCloseButton:(CVProfileView *)profileView

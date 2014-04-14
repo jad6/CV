@@ -43,6 +43,27 @@
 
 @implementation CVExtraCurricularTableViewCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        [self awakeFromNib];
+    }
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    UIView *backgroundView = [[UIView alloc] initWithFrame:self.frame];
+    backgroundView.backgroundColor = [UIColor backgroundGrayColor];
+    self.selectedBackgroundView = backgroundView;
+}
+
+#pragma mark - Setters & Getters
+
 - (void)setActivity:(CVExtraCurricularActivity *)activity
 {
     if (self->_activity != activity)

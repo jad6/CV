@@ -35,6 +35,7 @@
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 @property (nonatomic, weak) IBOutlet UILabel *establishmentLabel;
 @property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic, weak) IBOutlet UILabel *completionDateLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *fadeImageView;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *textViewHeightLayoutConstraint;
@@ -53,7 +54,7 @@
     
     if (IPAD())
     {
-        UIImage *ipadFadeImage = [UIImage imageNamed:@"ipade_fade"];
+        UIImage *ipadFadeImage = [UIImage imageNamed:@"ipad_fade"];
         UIImage *strechedImage = [ipadFadeImage resizableImageWithCapInsets:UIEdgeInsetsMake(80.0f, 80.0f, 80.0f, 80.0f) resizingMode:UIImageResizingModeStretch];
         self.fadeImageView.image = strechedImage;
     }
@@ -98,6 +99,7 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Education" ofType:@"plist"];
     NSDictionary *educationInfo = [[NSDictionary alloc] initWithContentsOfFile:filePath];
     
+    self.completionDateLabel.text = educationInfo[@"completion"];
     self.establishmentLabel.text = educationInfo[@"establishment"];
     self.statusLabel.text = educationInfo[@"status"];
     self.textView.text = educationInfo[@"description"];

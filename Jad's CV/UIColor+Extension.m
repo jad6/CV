@@ -50,4 +50,9 @@
     return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha];
 }
 
++ (UIColor *)backgroundGrayColor
+{
+    return [UIColor colorFromString:@"245,245,245,1"];
+}
+
 @end

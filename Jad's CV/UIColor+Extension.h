@@ -34,4 +34,6 @@
 
 + (UIColor *)colorFromString:(NSString *)string;
 
++ (UIColor *)backgroundGrayColor;
+
 @end

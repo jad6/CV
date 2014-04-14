@@ -42,6 +42,7 @@
 {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor backgroundGrayColor];
     self.dataSource = self;
 }
 

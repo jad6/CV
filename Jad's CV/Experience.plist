@@ -11,8 +11,14 @@
 		<date>2011-12-01T04:00:00Z</date>
 		<key>color</key>
 		<string>165,124,85,1</string>
-		<key>description</key>
+		<key>organisation</key>
+		<string>Student Marketing Australia</string>
+		<key>position</key>
 		<string>Apple Campus Representative</string>
+		<key>description</key>
+		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<key>imageName</key>
+		<string>apple</string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -23,8 +29,14 @@
 		<date>2010-12-01T04:00:00Z</date>
 		<key>color</key>
 		<string>198,68,252,1</string>
+		<key>organisation</key>
+		<string>AUC, iOS Workshop</string>
+		<key>position</key>
+		<string>Scholarship Receipient</string>
 		<key>description</key>
-		<string>iOS SDK Workshop Scholarship</string>
+		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<key>imageName</key>
+		<string>auc</string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -35,8 +47,14 @@
 		<date>2010-07-01T04:00:00Z</date>
 		<key>color</key>
 		<string>252,49,89,1</string>
+		<key>organisation</key>
+		<string>Uniersity of Western Australia</string>
+		<key>position</key>
+		<string>Database Manager</string>
 		<key>description</key>
-		<string>UWA</string>
+		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<key>imageName</key>
+		<string>uwa</string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -47,8 +65,14 @@
 		<date>2013-06-01T04:00:00Z</date>
 		<key>color</key>
 		<string>60,171,218,1</string>
+		<key>organisation</key>
+		<string>XciteLogic Development</string>
+		<key>position</key>
+		<string>Software Engineer</string>
 		<key>description</key>
-		<string>Xcite Logic Development</string>
+		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<key>imageName</key>
+		<string>xcite</string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -59,8 +83,14 @@
 		<date>2013-10-01T04:00:00Z</date>
 		<key>color</key>
 		<string>246,144,49,1</string>
-		<key>description</key>
+		<key>organisation</key>
 		<string>The Frontier Group</string>
+		<key>position</key>
+		<string>Software Engineer</string>
+		<key>description</key>
+		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<key>imageName</key>
+		<string>frontier</string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -71,8 +101,14 @@
 		<date>2014-04-01T04:00:00Z</date>
 		<key>color</key>
 		<string>254,203,46,1</string>
-		<key>description</key>
+		<key>organisation</key>
 		<string>Datacom</string>
+		<key>position</key>
+		<string>Software Engineer</string>
+		<key>description</key>
+		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<key>imageName</key>
+		<string>datacom</string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -83,8 +119,12 @@
 		<date>2014-04-01T04:00:00Z</date>
 		<key>color</key>
 		<string>85,215,105,1</string>
-		<key>description</key>
+		<key>organisation</key>
 		<string>Appulse</string>
+		<key>position</key>
+		<string>Partner</string>
+		<key>description</key>
+		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
 	</dict>
 </array>
 </plist>

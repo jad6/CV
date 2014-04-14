@@ -117,6 +117,12 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
         [self.delegate timelineViewController:self
                         didSelectExperience:object];
     }
+    
+    if (IPHONE())
+    {
+        [self performSegueWithIdentifier:CVDetailSegueIdentifier
+                                  sender:self];
+    }
 }
 
 @end
