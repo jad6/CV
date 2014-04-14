@@ -58,5 +58,19 @@
 		<key>imageName</key>
 		<string>ucfk</string>
 	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>Apple</string>
+		<key>position</key>
+		<string>WWDC Attendee</string>
+		<key>startDate</key>
+		<date>2013-06-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-06-01T04:00:00Z</date>
+		<key>description</key>
+		<string>I am actively involved in the charity Uni Camp for Kids as a Leader. The charity is for disadvantaged children to spend time with a large group of university students where they will be taken to pools, ovals and camps to play many different games. I volunteer at four picnics and 1 camp each year. I also volunteer yearly at the city to surf and take part in the charity’s annual tin rattle.</string>
+		<key>imageName</key>
+		<string>wwdc</string>
+	</dict>
 </array>
 </plist>

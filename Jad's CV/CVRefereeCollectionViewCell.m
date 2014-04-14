@@ -37,6 +37,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *fullNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *positionLabel;
 @property (nonatomic, weak) IBOutlet UILabel *locationlabel;
+@property (nonatomic, weak) IBOutlet UILabel *connectionLabel;
 @property (nonatomic, weak) IBOutlet UIButton *phoneButton;
 @property (nonatomic, weak) IBOutlet UIButton *emailButton;
 @property (nonatomic, weak) IBOutlet JOCircleImageView *pictureImageView;
@@ -80,6 +81,7 @@
         self.fullNameLabel.text = referee.fullName;
         self.positionLabel.text = referee.position;
         self.locationlabel.text = referee.location;
+        self.connectionLabel.text = referee.connection;
         
         [self.phoneButton setTitle:referee.phoneNumber forState:UIControlStateNormal];
         [self.emailButton setTitle:referee.email forState:UIControlStateNormal];

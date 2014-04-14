@@ -36,4 +36,7 @@
 
 - (NSString *)condensedString;
 
+- (NSString *)combinedCondensedStringWithEndDate:(NSDate *)endDate
+                                   withMidString:(NSString *)midString;
+
 @end

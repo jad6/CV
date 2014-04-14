@@ -58,6 +58,7 @@
         self.fullName = dictionary[@"fullName"];
         self.position = dictionary[@"position"];
         self.location = dictionary[@"location"];
+        self.connection = dictionary[@"connection"];
         self.phoneNumber = dictionary[@"phoneNumber"];
         self.email = dictionary[@"email"];
         self.picture = [UIImage imageNamed:dictionary[@"imageName"]];

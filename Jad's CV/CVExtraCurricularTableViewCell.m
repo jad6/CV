@@ -73,8 +73,8 @@
         self.positionLabel.text = activity.position;
         self.activityImageView.image = activity.organisationImage;
         self.organisationLabel.text = activity.organisation;
-        
-        self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [activity.startDate condensedString], [activity.endDate condensedString]];
+
+        self.dateLabel.text = [activity.startDate combinedCondensedStringWithEndDate:activity.endDate withMidString:@" - "];
     }
 }
 

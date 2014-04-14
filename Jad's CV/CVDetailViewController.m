@@ -83,7 +83,7 @@
     self.organisationLabel.text = experience.organisation;
     self.detailTextView.text = experience.detailedDescription;
     
-    self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [experience.startDate condensedString], [experience.endDate condensedString]];
+    self.dateLabel.text = [experience.startDate combinedCondensedStringWithEndDate:experience.endDate withMidString:@" - "];
 }
 
 #pragma mark - Actions

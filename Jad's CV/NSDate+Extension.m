@@ -56,4 +56,20 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
     }];
 }
 
+- (NSString *)combinedCondensedStringWithEndDate:(NSDate *)endDate
+                                   withMidString:(NSString *)midString
+{
+    NSString *startDateText = [self condensedString];
+    NSString *endDateText = [endDate condensedString];
+    
+    if ([startDateText isEqualToString:endDateText])
+    {
+        return startDateText;
+    }
+    else
+    {
+        return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, endDateText];
+    }
+}
+
 @end

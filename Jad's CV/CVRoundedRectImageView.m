@@ -36,7 +36,7 @@
 {
     [super layoutSubviews];
     
-    [self.layer setCornerRadius:18.0];
+    [self.layer setCornerRadius:18.0f];
     self.layer.masksToBounds = YES;
 }
 

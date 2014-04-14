@@ -33,6 +33,7 @@
 @property (nonatomic, strong) NSString *fullName;
 @property (nonatomic, strong) NSString *position;
 @property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSString *connection;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *phoneNumber;
 @property (nonatomic, strong) UIImage *picture;
