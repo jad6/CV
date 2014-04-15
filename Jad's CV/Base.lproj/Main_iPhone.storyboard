@@ -44,7 +44,7 @@
                                             <action selector="infoAction:" destination="WuD-7c-3u5" eventType="touchUpInside" id="TGA-QR-NwB"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="vGe-pv-kfx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vGe-pv-kfx">
                                         <rect key="frame" x="15" y="27" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -108,6 +108,7 @@
                                     <outlet property="photoHorizontalLayoutConstraint" destination="b4X-K4-b9f" id="3FH-WE-Ucs"/>
                                     <outlet property="photoVerticalLayoutConstraint" destination="qBu-h7-Igx" id="ex1-5i-LIn"/>
                                     <outlet property="photoWidthLayoutConstraint" destination="BoQ-7w-9ne" id="UZe-H9-NrA"/>
+                                    <outlet property="profilePicImageView" destination="vGe-pv-kfx" id="AA9-K4-vGt"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -796,10 +797,10 @@
     <resources>
         <image name="back" width="12" height="20"/>
         <image name="fade_down" width="320" height="264"/>
-        <image name="profile_pic" width="144" height="144"/>
         <image name="union_lake.jpg" width="2048" height="2048"/>
         <image name="winthrop_hall.jpg" width="2048" height="1536"/>
     </resources>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

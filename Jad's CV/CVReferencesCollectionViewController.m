@@ -28,15 +28,15 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import <MessageUI/MessageUI.h>
-
 #import "CVReferencesCollectionViewController.h"
 
 #import "CVRefereeCollectionViewCell.h"
 
+#import "CVContactor.h"
+
 static NSString *CVRefereeCollectionViewCellIdentifier = @"Referee Cell";
 
-@interface CVReferencesCollectionViewController () <MFMailComposeViewControllerDelegate, CVRefereeCollectionViewCellDelegate>
+@interface CVReferencesCollectionViewController () <CVRefereeCollectionViewCellDelegate>
 
 @end
 
@@ -80,40 +80,13 @@ static NSString *CVRefereeCollectionViewCellIdentifier = @"Referee Cell";
 
 - (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToCallReferee:(CVReferee *)referee
 {
-    if ([UIApplication phoneAvailable])
-    {
-        NSString *telPhone = [[[NSString alloc] initWithFormat:@"tel://%@", referee.phoneNumber] stringByReplacingOccurrencesOfString:@" " withString:@""];
-        NSURL *phoneURL = [NSURL URLWithString:telPhone];
-        if ([[UIApplication sharedApplication] canOpenURL:phoneURL])
-        {
-            [[UIApplication sharedApplication] openURL:phoneURL];
-        }
-    }
+    [CVContactor callNumber:referee.phoneNumber];
 }
 
 - (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToEmailReferee:(CVReferee *)referee
 {
-    if ([UIApplication emailAvailable])
-    {
-        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-        composer.mailComposeDelegate = self;
-        [composer setToRecipients:@[referee.email]];
-        [self presentViewController:composer animated:YES completion:nil];
-    }
-}
-
-#pragma mark - Mail Delegate
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller
-          didFinishWithResult:(MFMailComposeResult)result
-                        error:(NSError *)error
-{
-    if (error)
-    {
-        [error handle];
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[CVContactor sharedContactor] emailReciepients:@[referee.email]
+                                       inController:self];
 }
 
 @end

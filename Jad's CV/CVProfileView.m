@@ -48,6 +48,7 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 
 @property (nonatomic, strong) NSMapTable *initialConstraintConstants;
 
+@property (nonatomic, weak) IBOutlet UIImageView *profilePicImageView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIButton *infoButton;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
@@ -92,6 +93,17 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 
 #pragma mark - Getters & Setters 
 
+- (void)setPersonalInfo:(CVPersonalInfo *)personalInfo
+{
+    if (self->_personalInfo != personalInfo)
+    {
+        self->_personalInfo = personalInfo;
+        
+        self.nameLabel.text = personalInfo.fullName;
+        self.profilePicImageView.image = personalInfo.profileImage;
+    }
+}
+
 - (void)setExpanded:(BOOL)expanded
 {
     if (self->_expanded != expanded)
@@ -108,6 +120,13 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     }
 }
 
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    
+    self.infoButton.tintColor = tintColor;
+}
+
 - (CGSize)expandedPhotoSize
 {
     if (CGSizeEqualToSize(self->_expandedPhotoSize, CGSizeZero))
@@ -115,13 +134,6 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
         self->_expandedPhotoSize = CGSizeMake(self.photoWidthLayoutConstraint.constant * CVPhotoScaleFactor, self.photoHeightLayoutConstraint.constant * CVPhotoScaleFactor);
     }
     return self->_expandedPhotoSize;
-}
-
-- (void)setTintColor:(UIColor *)tintColor
-{
-    [super setTintColor:tintColor];
-    
-    self.infoButton.tintColor = tintColor;
 }
 
 - (NSMapTable *)initialConstraintConstants
@@ -193,12 +205,38 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 {
     if (self.expanded)
     {
-        CVAboutMeView *aboutMeView = [[[NSBundle mainBundle] loadNibNamed:@"AboutMe" owner:nil options:nil] firstObject];
+        CVAboutMeView *aboutMeView = nil;
+        for (id view in [[NSBundle mainBundle] loadNibNamed:@"AboutMe" owner:nil options:nil])
+        {
+            if ([view isKindOfClass:[CVAboutMeView class]])
+            {
+                aboutMeView = view;
+                break;
+            }
+        }
+        
         [aboutMeView setHidden:YES animated:NO];
+        aboutMeView.tintColor = [UIColor defaultBlueColor];
+        aboutMeView.personalInfo = self.personalInfo;
+        if ([self.dataSource respondsToSelector:@selector(controllerForEmailPresentationInProfileView:)])
+        {
+            aboutMeView.emailPresentController = [self.dataSource controllerForEmailPresentationInProfileView:self];
+        }
         
         CGRect aboutMeViewFrame = aboutMeView.frame;
         aboutMeViewFrame.origin.y = [UIScreen mainScreen].bounds.size.height - aboutMeViewFrame.size.height;
         aboutMeView.frame = aboutMeViewFrame;
+        
+        CGRect descriptionLabelFrame = self.descriptionLabel.frame;
+        CGFloat minYOrigin = descriptionLabelFrame.size.height + descriptionLabelFrame.origin.y;
+        CGFloat minAboutMeViewYOrigin = aboutMeView.emailButton.frame.origin.y;
+        
+        if (minAboutMeViewYOrigin < minYOrigin)
+        {
+            CGFloat yDelta = minYOrigin - minAboutMeViewYOrigin;
+            CGFloat newTextViewHeight = aboutMeView.textViewHeightConstraint.constant - yDelta;
+            aboutMeView.textViewHeightConstraint.constant = newTextViewHeight;
+        }
         
         [self insertSubview:aboutMeView aboveSubview:self.backgroundImageView];
         [aboutMeView setHidden:NO animated:YES];
@@ -261,6 +299,7 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     [finalTable setObject:@(nameHorizontalConstant)
                    forKey:self.nameHorizontalLayoutConstraint];
     
+    [self.descriptionLabel sizeToFit];
     descriptionHorizontalConstant = floorf(frame.size.width / 2.0 - self.descriptionLabel.frame.size.width / 2.0);
     [finalTable setObject:@(descriptionHorizontalConstant)
                    forKey:self.descriptionHorizontalLayoutConstraint];

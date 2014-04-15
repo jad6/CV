@@ -47,7 +47,7 @@ static NSString *CVTimelineSplitViewControllerIdentifier = @"CVTimelineSplitView
 /// Storyboard identifier for CVExtraCurricularSplitViewController.
 static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurricularSplitViewController";
 
-@interface CVHomeViewController () <CVProfileViewDelegate, UIPageViewControllerDelegate>
+@interface CVHomeViewController () <CVProfileViewDelegate, CVProfileViewDataSource, UIPageViewControllerDelegate>
 
 /// The constraint for the height of the profile view. Changing its constant
 /// value changes the height of the pagesView.
@@ -78,7 +78,10 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 {
     [super loadView];
 
-    self.profileView.delegate = self;
+    CVProfileView *profileView = self.profileView;
+    profileView.delegate = self;
+    profileView.dataSource = self;
+    profileView.personalInfo = [CVPersonalInfo personalInfo];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -210,7 +213,7 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     // Save the current description label text.
     self.descriptionTextBeforeInfoTransition = self.profileView.descriptionLabel.text;
     // Update the description label text.
-    self.profileView.descriptionLabel.text = @"Perth, Western Australia";
+    self.profileView.descriptionLabel.text = self.profileView.personalInfo.location;
 
     // Set the UI changes.
     BOOL animated = YES;
@@ -236,6 +239,11 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
         // Remove the stored text.
         self.descriptionTextBeforeInfoTransition = nil;
     }];
+}
+
+- (UIViewController *)controllerForEmailPresentationInProfileView:(CVProfileView *)profileView
+{
+    return self;
 }
 
 #pragma mark - Page Control

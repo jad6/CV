@@ -30,6 +30,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CVPersonalInfo.h"
+
 @class CVProfileView;
 
 /**
@@ -52,6 +54,12 @@
  *  @param profileView The profile view who's button is triggered.
  */
 - (void)profileViewDidSelectCloseButton:(CVProfileView *)profileView;
+@end
+
+@protocol CVProfileViewDataSource <NSObject>
+
+@optional
+- (UIViewController *)controllerForEmailPresentationInProfileView:(CVProfileView *)profileView;
 
 @end
 
@@ -62,8 +70,11 @@
 
 /// The delegate property.
 @property (nonatomic, weak) id<CVProfileViewDelegate> delegate;
+@property (nonatomic, weak) id<CVProfileViewDataSource> dataSource;
 /// The label describing the current views seen by the user.
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+
+@property (nonatomic, strong) CVPersonalInfo *personalInfo;
 
 /// Flag set whenever the view has been expanded.
 @property (nonatomic, readonly) BOOL expanded;

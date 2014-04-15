@@ -1,6 +1,6 @@
-//  CVAboutMeButton.m
-// 
-//  Created by Jad Osseiran on 12/04/2014.
+//  CVPersonalInfo.h
+//
+//  Created by Jad Osseiran on 15/04/2014.
 //  Copyright (c) 2014 Jad Osseiran. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -22,14 +22,21 @@
 //  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 //  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
 //  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-//  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+//  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import "CVAboutMeButton.h"
+#import "CVExperienceObject.h"
 
-@implementation CVAboutMeButton
+@interface CVPersonalInfo : CVExperienceObject
 
+@property (nonatomic, strong) NSString *fullName;
+@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) NSString *detailDescription;
+@property (nonatomic, strong) UIImage *profileImage;
 
++ (CVPersonalInfo *)personalInfo;
 
 @end

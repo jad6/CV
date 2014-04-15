@@ -28,6 +28,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class CVPersonalInfo;
+
 @interface CVAboutMeView : UIView
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
+
+@property (nonatomic, weak) IBOutlet UIButton *emailButton;
+@property (nonatomic, weak) IBOutlet UIButton *phoneButton;
+
+@property (nonatomic, strong) UIViewController *emailPresentController;
+
+@property (nonatomic, strong) CVPersonalInfo *personalInfo;
 
 @end

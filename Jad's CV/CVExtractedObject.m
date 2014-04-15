@@ -34,28 +34,38 @@
 
 + (NSArray *)extraObjects:(NSError *__autoreleasing *)error;
 {
-//    NSPropertyListSerialization *propertyListSer
-    
     NSString *filePath = [self filePathForResource];
-    NSArray *allInfo = [[NSArray alloc] initWithContentsOfFile:filePath];
     
-    if (allInfo == nil)
+    NSPropertyListFormat plistFormat = 0;
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    id allInfo = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:&plistFormat error:error];
+    
+    NSMutableArray *objects = nil;
+    
+    if ([allInfo isKindOfClass:[NSArray class]])
+    {
+        objects = [[NSMutableArray alloc] initWithCapacity:[allInfo count]];
+        
+        // For each of the resource create an new object.
+        for (id info in allInfo)
+        {
+            if (![info respondsToSelector:@selector(objectForKey:)])
+            {
+                return nil;
+            }
+            
+            CVExtractedObject *object = [[[self class] alloc] initFromDictionary:info];
+            [objects addObject:object];
+        }
+    }
+    else if ([allInfo isKindOfClass:[NSDictionary class]])
+    {
+        objects = [[NSMutableArray alloc] initWithCapacity:1];
+        [objects addObject:[[[self class] alloc] initFromDictionary:allInfo]];
+    }
+    else
     {
         return nil;
-    }
-    
-    NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity:[allInfo count]];
-    
-    // For each of the resource create an new object.
-    for (id info in allInfo)
-    {
-        if (![info respondsToSelector:@selector(objectForKey:)])
-        {
-            return nil;
-        }
-        
-        CVExtractedObject *object = [[[self class] alloc] initFromDictionary:info];
-        [objects addObject:object];
     }
     
     return objects;

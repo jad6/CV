@@ -1,6 +1,6 @@
-//  CVAboutMeButton.h
+//  CVContactor.h
 //
-//  Created by Jad Osseiran on 12/04/2014.
+//  Created by Jad Osseiran on 15/04/2014.
 //  Copyright (c) 2014 Jad Osseiran. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -26,16 +26,15 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, CVAboutMeButtonType) {
-    CVAboutMeButtonTypeNone,
-    CVAboutMeButtonTypePhone,
-    CVAboutMeButtonTypeEmail
-};
+@interface CVContactor : NSObject
 
-@interface CVAboutMeButton : UIButton
++ (instancetype)sharedContactor;
 
-@property (nonatomic) CVAboutMeButtonType aboutMeButtonType;
++ (void)callNumber:(NSString *)number;
+
+- (void)emailReciepients:(NSArray *)reciepients
+            inController:(UIViewController *)controller;
 
 @end

@@ -28,17 +28,55 @@
 
 #import "CVAboutMeView.h"
 
+#import "CVPersonalInfo.h"
+
+#import "CVContactor.h"
+
 @interface CVAboutMeView ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *featheredImageView;
+
+@property (nonatomic, weak) IBOutlet UITextView *textView;
 
 @end
 
 @implementation CVAboutMeView
 
-//- (void)awakeFromNib
-//{
-//    [su]
-//}
+- (void)didMoveToWindow
+{
+    [super didMoveToWindow];
+    
+    self.emailButton.enabled = [UIApplication emailAvailable];
+    self.phoneButton.enabled = [UIApplication phoneAvailable];
+}
+
+#pragma mark - Setters & Getters
+
+- (void)setPersonalInfo:(CVPersonalInfo *)personalInfo
+{
+    if (self->_personalInfo != personalInfo)
+    {
+        self->_personalInfo = personalInfo;
+        
+        [self.emailButton setTitle:personalInfo.email forState:UIControlStateNormal];
+        [self.phoneButton setTitle:personalInfo.phoneNumber forState:UIControlStateNormal];
+        self.textView.text = personalInfo.detailDescription;
+    }
+}
+
+#pragma mark - Actions
+
+- (IBAction)callAction:(id)sender
+{
+    [CVContactor callNumber:self.personalInfo.phoneNumber];
+}
+
+- (IBAction)emailAction:(id)sender
+{
+    if (self.emailPresentController)
+    {
+        [[CVContactor sharedContactor] emailReciepients:@[self.personalInfo.email] inController:self.emailPresentController];
+    }
+}
 
 @end
