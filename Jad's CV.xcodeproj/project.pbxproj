@@ -560,6 +560,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jad Osseiran";
 				TargetAttributes = {
+					056872E918F6361E00132551 = {
+						DevelopmentTeam = GGB7WW5V29;
+					};
 					0568730D18F6361E00132551 = {
 						TestTargetID = 056872E918F6361E00132551;
 					};
@@ -793,10 +796,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jad Osseiran (GGB7WW5V29)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jad Osseiran (GGB7WW5V29)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jad's CV/Jad's CV-Prefix.pch";
 				INFOPLIST_FILE = "Jad's CV/Jad's CV-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8EF9DB6A-D3CA-45F2-AC63-A86B1BB6BCED";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -806,10 +812,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jad Osseiran (GGB7WW5V29)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jad's CV/Jad's CV-Prefix.pch";
 				INFOPLIST_FILE = "Jad's CV/Jad's CV-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8EF9DB6A-D3CA-45F2-AC63-A86B1BB6BCED";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
