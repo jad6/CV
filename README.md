@@ -2,7 +2,7 @@
 
 ## iOS Application
 
-I am an avid iOS & Mac OS X developer who likes to think of new ways to present things. Therefore, my CV has been written in the form of a universal iOS application. The code (under a [BSD 3-Clause](http://opensource.org/licenses/BSD-3-Clause)) is available to download, browse and use.
+I am an avid iOS & Mac OS X developer who likes to think of new ways to present things. Therefore, my CV has been written in the form of a universal iOS application. The code (under a [BSD 3-Clause](http://opensource.org/licenses/BSD-3-Clause)) is [available](https://github.com/jad6/CV/releases) to download, browse and use.
 
 ### Compiling The Application
 
