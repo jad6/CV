@@ -16,7 +16,7 @@
 		<key>position</key>
 		<string>Apple Campus Representative</string>
 		<key>description</key>
-		<string>I was chosen from a vast group of students as being the most approachable and outgoing to represent Apple products at UWA to students and staff. This job required the employees to be very independent as it was up to the campus representatives to create their roasters to meet targets. </string>
+		<string>I was chosen from a vast group of students for being the most approachable and outgoing to represent Apple products at UWA to students and staff. This job required the employees to be very independent as it was up to the campus representatives to create their roasters to meet targets. </string>
 		<key>imageName</key>
 		<string>apple</string>
 	</dict>
@@ -32,9 +32,9 @@
 		<key>organisation</key>
 		<string>AUC, iOS Workshop</string>
 		<key>position</key>
-		<string>Scholarship Receipient</string>
+		<string>Scholarship Recipient </string>
 		<key>description</key>
-		<string>I was a recipient for a scholarship from the Apple University Consortium to an iOS workshop in Sydney. During the workshop I was introduced to iOS development and have since continued to improve my skills and keep my expertise up to date.</string>
+		<string>I received scholarship from the Apple University Consortium to an iOS workshop in Sydney. During the workshop I was introduced to iOS development and have since continued to improve my skills and keep my expertise up to date.</string>
 		<key>imageName</key>
 		<string>auc</string>
 	</dict>
@@ -48,11 +48,11 @@
 		<key>color</key>
 		<string>198,68,252,1</string>
 		<key>organisation</key>
-		<string>Uniersity of Western Australia</string>
+		<string>University of Western Australia</string>
 		<key>position</key>
 		<string>Database Manager</string>
 		<key>description</key>
-		<string>I assisted a UWA Professor in the School of Plant Biology create and maintain a database of plants she recorded for research. The main goal was that the database could be made available for students as a learning tool during expeditions.</string>
+		<string>I assisted a UWA Professor in the School of Plant Biology create and maintain a database of plants she recorded for research. The main goal was that the database be made available for students as a learning tool during expeditions.</string>
 		<key>imageName</key>
 		<string>uwa</string>
 	</dict>
@@ -88,7 +88,7 @@
 		<key>position</key>
 		<string>Software Engineer</string>
 		<key>description</key>
-		<string>I was amongst a small group which was kept after Datacom acquired XciteLogic Development. My role is to develop iOS applications for both internal and external projects. I create, maintain and fix projects for clients of various size. </string>
+		<string>I was amongst a small group of employees which were kept after Datacom acquired XciteLogic Development. My role is to develop iOS applications for both internal and external projects. I create, maintain and fix projects for clients of various size. </string>
 		<key>imageName</key>
 		<string>datacom</string>
 	</dict>
@@ -122,7 +122,7 @@
 		<key>position</key>
 		<string>Coach&apos;s Box App</string>
 		<key>description</key>
-		<string>Appulse’s first project was to produce an iPad application for an Australian Rules Football board game. The project proved to be a great learning experience in for iOS programming, scoping deliverables and team development. The app is available on the App Store via this link: https://itunes.apple.com/au/app/coachs-box/id500384054?mt=8.</string>
+		<string>Appulse’s first project was to produce an iPad application for an Australian Rules Football board game. The project proved to be a great learning experience in iOS programming, scoping deliverables and team development. The app is available on the App Store via this link: https://itunes.apple.com/au/app/coachs-box/id500384054?mt=8.</string>
 		<key>imageName</key>
 		<string>cb</string>
 	</dict>
@@ -156,7 +156,7 @@
 		<key>organisation</key>
 		<string>XciteLogic Development</string>
 		<key>position</key>
-		<string>Departement of Fisheries Kiosk App</string>
+		<string>Department of Fisheries Kiosk App</string>
 		<key>description</key>
 		<string>I was part of the development team for an iPad kiosk application which is on display at the Department of Fisheries in Hillarys, Western Australia. The application allows the visitors to explore different regions&apos; flora and fauna through pictures, movies and interactive games.</string>
 		<key>imageName</key>
@@ -176,7 +176,7 @@
 		<key>position</key>
 		<string>Liberal Victoria App</string>
 		<key>description</key>
-		<string>My first commercial application was released for the Liberal Party during my employment at XciteLogic Development. The application which is now managed by another party  and can be found at this link: https://itunes.apple.com/au/app/liberal-vic/id516471497?mt=8.</string>
+		<string>My first commercial application was released for the Liberal Party during my employment at XciteLogic Development. The application is now managed by another party  and can be found at this link: https://itunes.apple.com/au/app/liberal-vic/id516471497?mt=8.</string>
 		<key>imageName</key>
 		<string>liberal</string>
 	</dict>
@@ -212,7 +212,7 @@
 		<key>position</key>
 		<string>Billanook College App </string>
 		<key>description</key>
-		<string>I lead a project which aims to greatly improve the use iPads in schools. The iOS application called My Billanook integrates with the school’s administration system to provide modules such as calendar, homework, notices, lesson plans and newsletters. My Billanook will be in use starting from term two 2014.</string>
+		<string>I led a project which aims to greatly improve the use iPads in schools. The iOS application called My Billanook integrates with the school’s administration system to provide modules such as calendar, homework, notices, lesson plans and newsletters. My Billanook will be in use starting from term two 2014.</string>
 		<key>imageName</key>
 		<string>billanook</string>
 	</dict>
