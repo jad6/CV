@@ -33,16 +33,14 @@
 + (NSArray *)referees
 {
     NSError *error = nil;
-    NSArray *activities = [super extraObjects:&error];
+    NSArray *referees = [super extraObjects:&error];
     if (error != nil)
     {
         [error handle];
         return nil;
     }
     
-    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"fullName" ascending:YES];
-    
-    return [activities sortedArrayUsingDescriptors:@[nameDescriptor]];
+    return referees;
 }
 
 + (NSString *)filePathForResource

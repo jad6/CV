@@ -10,13 +10,13 @@
 		<key>endDate</key>
 		<date>2011-12-01T04:00:00Z</date>
 		<key>color</key>
-		<string>254,203,46,1</string>
+		<string>246,144,49,1</string>
 		<key>organisation</key>
 		<string>Student Marketing Australia</string>
 		<key>position</key>
 		<string>Apple Campus Representative</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>I was chosen from a vast group of students as being the most approachable and outgoing to represent Apple products at UWA to students and staff. This job required the employees to be very independent as it was up to the campus representatives to create their roasters to meet targets. </string>
 		<key>imageName</key>
 		<string>apple</string>
 	</dict>
@@ -28,13 +28,13 @@
 		<key>endDate</key>
 		<date>2010-12-01T04:00:00Z</date>
 		<key>color</key>
-		<string>198,68,252,1</string>
+		<string>252,49,89,1</string>
 		<key>organisation</key>
 		<string>AUC, iOS Workshop</string>
 		<key>position</key>
 		<string>Scholarship Receipient</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>I was a recipient for a scholarship from the Apple University Consortium to an iOS workshop in Sydney. During the workshop I was introduced to iOS development and have since continued to improve my skills and keep my expertise up to date.</string>
 		<key>imageName</key>
 		<string>auc</string>
 	</dict>
@@ -46,13 +46,13 @@
 		<key>endDate</key>
 		<date>2010-07-01T04:00:00Z</date>
 		<key>color</key>
-		<string>252,49,89,1</string>
+		<string>198,68,252,1</string>
 		<key>organisation</key>
 		<string>Uniersity of Western Australia</string>
 		<key>position</key>
 		<string>Database Manager</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>I assisted a UWA Professor in the School of Plant Biology create and maintain a database of plants she recorded for research. The main goal was that the database could be made available for students as a learning tool during expeditions.</string>
 		<key>imageName</key>
 		<string>uwa</string>
 	</dict>
@@ -64,13 +64,13 @@
 		<key>endDate</key>
 		<date>2013-06-01T04:00:00Z</date>
 		<key>color</key>
-		<string>60,171,218,1</string>
+		<string>85,215,105,1</string>
 		<key>organisation</key>
 		<string>XciteLogic Development</string>
 		<key>position</key>
 		<string>Software Engineer</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>Working at XciteLogic Development improved my software development skills. I worked on several projects in teams of various sizes and I regularly met with clients to discuss ideas, scope and support. My specialisation was in iOS development and deployment. XciteLogic Development has been acquired by another IT company.</string>
 		<key>imageName</key>
 		<string>xcite</string>
 	</dict>
@@ -82,13 +82,13 @@
 		<key>endDate</key>
 		<date>2100-04-01T04:00:00Z</date>
 		<key>color</key>
-		<string>246,144,49,1</string>
+		<string>60,171,218,1</string>
 		<key>organisation</key>
 		<string>Datacom</string>
 		<key>position</key>
 		<string>Software Engineer</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>I was amongst a small group which was kept after Datacom acquired XciteLogic Development. My role is to develop iOS applications for both internal and external projects. I create, maintain and fix projects for clients of various size. </string>
 		<key>imageName</key>
 		<string>datacom</string>
 	</dict>
@@ -100,13 +100,13 @@
 		<key>endDate</key>
 		<date>2100-04-01T04:00:00Z</date>
 		<key>color</key>
-		<string>85,215,105,1</string>
+		<string>254,203,46,1</string>
 		<key>organisation</key>
 		<string>Appulse</string>
 		<key>position</key>
 		<string>Partner &amp; Co-founder</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>I started a business partnership called Appulse with two fellow students which creates websites and mobile applications. We use Appulse as our creative outlet for developing experiments. Its current focus is to try new ways to develop software and learn from them. </string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -116,13 +116,13 @@
 		<key>endDate</key>
 		<date>2012-02-01T04:00:00Z</date>
 		<key>color</key>
-		<string>85,215,105,1</string>
+		<string>254,203,46,1</string>
 		<key>organisation</key>
 		<string>Appulse</string>
 		<key>position</key>
-		<string>Released Coach&apos;s Box App</string>
+		<string>Coach&apos;s Box App</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>Appulse’s first project was to produce an iPad application for an Australian Rules Football board game. The project proved to be a great learning experience in for iOS programming, scoping deliverables and team development. The app is available on the App Store via this link: https://itunes.apple.com/au/app/coachs-box/id500384054?mt=8.</string>
 		<key>imageName</key>
 		<string>cb</string>
 	</dict>
@@ -134,13 +134,13 @@
 		<key>endDate</key>
 		<date>2014-02-01T04:00:00Z</date>
 		<key>color</key>
-		<string>85,215,105,1</string>
+		<string>254,203,46,1</string>
 		<key>organisation</key>
 		<string>Appulse</string>
 		<key>position</key>
-		<string>Released UEC App</string>
+		<string>UEC App</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>Appulse released an application for the University Engineer Club of Western Australia. The universal iOS application keeps track of the latest news and events of the club and is available on the App Store at the following link: https://itunes.apple.com/au/app/uec/id805489954?mt=8.</string>
 		<key>imageName</key>
 		<string>uec</string>
 	</dict>
@@ -152,13 +152,13 @@
 		<key>endDate</key>
 		<date>2012-08-01T04:00:00Z</date>
 		<key>color</key>
-		<string>60,171,218,1</string>
+		<string>85,215,105,1</string>
 		<key>organisation</key>
 		<string>XciteLogic Development</string>
 		<key>position</key>
 		<string>Departement of Fisheries Kiosk App</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>I was part of the development team for an iPad kiosk application which is on display at the Department of Fisheries in Hillarys, Western Australia. The application allows the visitors to explore different regions&apos; flora and fauna through pictures, movies and interactive games.</string>
 		<key>imageName</key>
 		<string>gov</string>
 	</dict>
@@ -170,13 +170,13 @@
 		<key>endDate</key>
 		<date>2012-04-01T04:00:00Z</date>
 		<key>color</key>
-		<string>60,171,218,1</string>
+		<string>85,215,105,1</string>
 		<key>organisation</key>
 		<string>XciteLogic Development</string>
 		<key>position</key>
 		<string>Liberal Victoria App</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>My first commercial application was released for the Liberal Party during my employment at XciteLogic Development. The application which is now managed by another party  and can be found at this link: https://itunes.apple.com/au/app/liberal-vic/id516471497?mt=8.</string>
 		<key>imageName</key>
 		<string>liberal</string>
 	</dict>
@@ -188,13 +188,13 @@
 		<key>endDate</key>
 		<date>2013-12-01T04:00:00Z</date>
 		<key>color</key>
-		<string>246,144,49,1</string>
+		<string>60,171,218,1</string>
 		<key>organisation</key>
 		<string>Datacom</string>
 		<key>position</key>
 		<string>Catholic Education Australia App</string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>My first project at Datacom was to fix the iCE iOS application for the Catholic Education Office of WA. The project was successfully brought back on track and it has since been uploaded on the App Store at the following link: https://itunes.apple.com/au/app/ice/id766249312?mt=8.</string>
 		<key>imageName</key>
 		<string>ice</string>
 	</dict>
@@ -206,13 +206,13 @@
 		<key>endDate</key>
 		<date>2014-03-01T04:00:00Z</date>
 		<key>color</key>
-		<string>246,144,49,1</string>
+		<string>60,171,218,1</string>
 		<key>organisation</key>
 		<string>Datacom</string>
 		<key>position</key>
 		<string>Billanook College App </string>
 		<key>description</key>
-		<string>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+		<string>I lead a project which aims to greatly improve the use iPads in schools. The iOS application called My Billanook integrates with the school’s administration system to provide modules such as calendar, homework, notices, lesson plans and newsletters. My Billanook will be in use starting from term two 2014.</string>
 		<key>imageName</key>
 		<string>billanook</string>
 	</dict>

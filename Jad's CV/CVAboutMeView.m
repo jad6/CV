@@ -36,4 +36,9 @@
 
 @implementation CVAboutMeView
 
+//- (void)awakeFromNib
+//{
+//    [su]
+//}
+
 @end

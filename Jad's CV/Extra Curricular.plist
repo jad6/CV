@@ -10,9 +10,9 @@
 		<key>startDate</key>
 		<date>2003-09-01T04:00:00Z</date>
 		<key>endDate</key>
-		<date>2010-09-01T04:00:00Z</date>
+		<date>2009-09-01T04:00:00Z</date>
 		<key>description</key>
-		<string>I committed to patrolling Scarborough beach on a biweekly basis. This greatly enhanced my personal fitness, patience and alertness as I was required to act rationally under intense situations.I committed to patrolling Scarborough beach on a biweekly basis. This greatly enhanced my personal fitness, patience and alertness as I was required to act rationally under intense situations.I committed to patrolling Scarborough beach on a biweekly basis. This greatly enhanced my personal fitness, patience and alertness as I was required to act rationally under intense situations.I committed to patrolling Scarborough beach on a biweekly basis. This greatly enhanced my personal fitness, patience and alertness as I was required to act rationally under intense situations.I committed to patrolling Scarborough beach on a biweekly basis. This greatly enhanced my personal fitness, patience and alertness as I was required to act rationally under intense situations.</string>
+		<string>I committed to patrolling Scarborough beach on a biweekly basis. This greatly enhanced my personal fitness, patience and alertness as I was required to act rationally under intense situations. </string>
 		<key>imageName</key>
 		<string>slsa</string>
 	</dict>
@@ -26,7 +26,7 @@
 		<key>endDate</key>
 		<date>2011-02-01T04:00:00Z</date>
 		<key>description</key>
-		<string>I was elected by the software engineering / computer science cohort to act as their representative. This requires me to liaise between the student body and the course lecturers. I conduct meetings with faculty members to help improve the educational system of the school of computer science. I also work on improving the social aspect of student’s life on campus through encouraging active social and educational involvements in university clubs. I was re-elected this year.</string>
+		<string>For two years, I was elected by the software engineering / computer science cohort to act as their representative. This required me to liaise between the student body and the faculty.</string>
 		<key>imageName</key>
 		<string>uec</string>
 	</dict>
@@ -40,7 +40,7 @@
 		<key>endDate</key>
 		<date>2009-11-01T04:00:00Z</date>
 		<key>description</key>
-		<string>In my first year, I was elected to be the first year engineering representative. I represented 800 students and helped with their choice of future engineering studies. I also helped first year engineering students integrate within the wider engineering faculty.</string>
+		<string>I was elected to be the first year engineering representative by the engineering student body. I represented a large cohort of students and assisted them with their choices of future engineering studies. I also helped them integrate within the wider engineering faculty through social and educational events.</string>
 		<key>imageName</key>
 		<string>uec</string>
 	</dict>
@@ -54,7 +54,7 @@
 		<key>endDate</key>
 		<date>2013-11-01T04:00:00Z</date>
 		<key>description</key>
-		<string>I am actively involved in the charity Uni Camp for Kids as a Leader. The charity is for disadvantaged children to spend time with a large group of university students where they will be taken to pools, ovals and camps to play many different games. I volunteer at four picnics and 1 camp each year. I also volunteer yearly at the city to surf and take part in the charity’s annual tin rattle.</string>
+		<string>Throughout my degree I was actively involved in the charity Uni Camp for Kids. This charity is for disadvantaged children to participate in fun activities with university students. I volunteered as a leader at four picnics and one camp each year. I also assisted the charity at the City to Surf marathon and took part in its annual tin rattle. </string>
 		<key>imageName</key>
 		<string>ucfk</string>
 	</dict>
@@ -68,7 +68,7 @@
 		<key>endDate</key>
 		<date>2013-06-01T04:00:00Z</date>
 		<key>description</key>
-		<string>I am actively involved in the charity Uni Camp for Kids as a Leader. The charity is for disadvantaged children to spend time with a large group of university students where they will be taken to pools, ovals and camps to play many different games. I volunteer at four picnics and 1 camp each year. I also volunteer yearly at the city to surf and take part in the charity’s annual tin rattle.</string>
+		<string>During my stay in San Francisco I attended Apple’s 2013 World Wide Developer Conference (WWDC). My employer at the time (XciteLogic Development) sponsored me to attend the conference. I capitalised on the opportunity to improve my Objective-C skills by collaborating with Apple engineers and other WWDC members.</string>
 		<key>imageName</key>
 		<string>wwdc</string>
 	</dict>

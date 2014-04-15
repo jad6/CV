@@ -30,6 +30,8 @@
 
 #import "CVPageViewController.h"
 
+#import "CVPageContentNavigationController.h"
+
 #import "CVPageContentViewController.h"
 
 @interface CVPageViewController () <UIPageViewControllerDataSource>
@@ -55,8 +57,9 @@
         if ([viewControllerIdentifiers count] > 0)
         {
             // Create the initial view contorller from the given controller identifiers.
-            UIViewController *startingViewController = [self viewControllerWithIdentifier:[self->_viewControllerIdentifiers firstObject]];
-            startingViewController.view.frame = self.view.frame;
+            UIViewController<CVPageContentViewController> *startingViewController = [self viewControllerWithIdentifier:[self->_viewControllerIdentifiers firstObject]];
+            [self setupViewController:startingViewController];
+            
             // Add it the the page controller.
             [self setViewControllers:@[startingViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         }
@@ -65,6 +68,26 @@
 
 #pragma mark - Logic
 
+- (void)setupViewController:(UIViewController<CVPageContentViewController> *)viewController
+{
+    if ([viewController respondsToSelector:@selector(allowsPaging)])
+    {
+        [viewController addObserver:self
+                         forKeyPath:NSStringFromSelector(@selector(allowsPaging))
+                            options:0
+                            context:NULL];
+    }
+    if ([viewController respondsToSelector:@selector(isFinished)])
+    {
+        [viewController addObserver:self
+                         forKeyPath:NSStringFromSelector(@selector(isFinished))
+                            options:0
+                            context:NULL];
+    }
+    
+    viewController.view.frame = self.view.frame;
+}
+
 /**
  *  Helper method to instantiate a storyboard view controller from its identifier.
  *
@@ -72,7 +95,7 @@
  *
  *  @return The instantiated view controller.
  */
-- (UIViewController *)viewControllerWithIdentifier:(NSString *)identifier
+- (UIViewController<CVPageContentViewController> *)viewControllerWithIdentifier:(NSString *)identifier
 {
     return [self.storyboard instantiateViewControllerWithIdentifier:identifier];
 }
@@ -100,10 +123,50 @@
     
     // Instantiate the view controller and set its page index.
     UIViewController<CVPageContentViewController> *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+    
+    [self setupViewController:viewController];
+    
     viewController.pageIndex = index;
-    viewController.view.frame = self.view.frame;
     
     return viewController;
+}
+
+- (void)setScrollEnabled:(BOOL)enabled
+{
+    for (UIView *view in self.view.subviews)
+    {
+        if ([view isKindOfClass:[UIScrollView class]])
+        {
+            [(UIScrollView *)view setScrollEnabled:enabled];
+            return;
+        }
+    }
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(CVPageContentNavigationController *)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(allowsPaging))])
+    {
+        [self setScrollEnabled:object.allowsPaging];
+    }
+    
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(isFinished))])
+    {
+        if (object.isFinished)
+        {
+            @try
+            {
+                [object removeObserver:self forKeyPath:NSStringFromSelector(@selector(allowsPaging))];
+                [object removeObserver:self forKeyPath:NSStringFromSelector(@selector(isFinished))];
+            }
+            @catch (NSException * __unused exception) {}
+        }
+    }
 }
 
 #pragma mark - Page View Controller Data Source

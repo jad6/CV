@@ -44,7 +44,10 @@
             [UIView animateWithDuration:duration animations:^{
                 self.alpha = 0.0f;
             } completion:^(BOOL finished) {
-                [self setHidden:YES];
+                if (finished)
+                {
+                    [self setHidden:YES];
+                }
                 
                 if (completion)
                 {
@@ -62,6 +65,7 @@
     }
     else
     {
+        self.alpha = hidden ? 0.0f : 1.0f;
         [self setHidden:hidden];
         if (completion)
         {

@@ -38,4 +38,8 @@
 /// The page number for the particular page controller.
 @property (nonatomic) NSInteger pageIndex;
 
+@optional
+@property (nonatomic) BOOL allowsPaging;
+@property (nonatomic) BOOL isFinished;
+
 @end

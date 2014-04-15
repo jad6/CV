@@ -28,9 +28,11 @@
 
 #import "CVDetailViewController.h"
 
+#import "CVPageContentNavigationController.h"
+
 #import "CVRoundedRectImageView.h"
 
-@interface CVDetailViewController ()
+@interface CVDetailViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet CVRoundedRectImageView *organisationImageView;
 
@@ -47,8 +49,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
     [self refreshSubviews];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([self.navigationController respondsToSelector:@selector(allowsPaging)])
+    {
+        ((CVPageContentNavigationController *)self.navigationController).allowsPaging = NO;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if ([self.navigationController respondsToSelector:@selector(allowsPaging)])
+    {
+        ((CVPageContentNavigationController *)self.navigationController).allowsPaging = YES;
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated

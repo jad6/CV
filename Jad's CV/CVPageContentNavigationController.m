@@ -32,12 +32,22 @@
 @implementation CVPageContentNavigationController
 
 @synthesize pageIndex = _pageIndex;
+@synthesize allowsPaging = _allowsPaging;
+@synthesize isFinished = _isFinished;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.navigationBarHidden = YES;
+}
+
+- (void)dealloc
+{
+    if ([self respondsToSelector:@selector(isFinished)])
+    {
+        self.isFinished = YES;
+    }
 }
 
 @end
