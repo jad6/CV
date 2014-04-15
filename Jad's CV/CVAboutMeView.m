@@ -34,7 +34,10 @@
 
 @interface CVAboutMeView ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *featheredImageView;
+@property (nonatomic, weak) IBOutlet UIButton *emailButton;
+@property (nonatomic, weak) IBOutlet UIButton *phoneButton;
+
+@property (nonatomic, weak) IBOutlet UIImageView *fadeImageView;
 
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 
@@ -48,6 +51,13 @@
     
     self.emailButton.enabled = [UIApplication emailAvailable];
     self.phoneButton.enabled = [UIApplication phoneAvailable];
+    
+    if (IPAD())
+    {
+        UIImage *ipadFadeImage = [UIImage imageNamed:@"ipad_fade"];
+        UIImage *strechedImage = [ipadFadeImage resizableImageWithCapInsets:UIEdgeInsetsMake(80.0f, 80.0f, 80.0f, 80.0f) resizingMode:UIImageResizingModeStretch];
+        self.fadeImageView.image = strechedImage;
+    }
 }
 
 #pragma mark - Setters & Getters

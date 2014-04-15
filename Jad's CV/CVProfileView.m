@@ -116,7 +116,7 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
         self.tintColor = tintColor;
 
         [self layoutMainInformation];
-        [self layoutAboutMe];
+        [self handleAboutMeView];
     }
 }
 
@@ -175,6 +175,11 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     [self layoutMainInformation];
     
     [super layoutSubviews];
+    
+    if (self.aboutMeView)
+    {
+        [self layoutAboutMe];
+    }
 }
 
 - (void)layoutMainInformation
@@ -203,6 +208,28 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 
 - (void)layoutAboutMe
 {
+    // Because I have lost all faith in Autolayout.
+    CVAboutMeView *aboutMeView = self.aboutMeView;
+    CGRect bounds = self.bounds;
+    CGRect aboutMeViewFrame = aboutMeView.frame;
+    if (IPHONE())
+    {
+        aboutMeViewFrame.size = CGSizeMake(320.0f, floorf(bounds.size.height * 0.85));
+        aboutMeViewFrame.origin.y = bounds.size.height - aboutMeViewFrame.size.height;
+    }
+    else
+    {
+        aboutMeViewFrame.size = CGSizeMake(480.0f, 480.0f);
+        aboutMeViewFrame.origin.y = floorf(bounds.size.height * 0.3);
+        aboutMeViewFrame.origin.x = floorf(bounds.size.width / 2.0 - aboutMeViewFrame.size.width / 2.0);
+    }
+    aboutMeView.frame = aboutMeViewFrame;
+}
+
+#pragma mark - Logic
+
+- (void)handleAboutMeView
+{
     if (self.expanded)
     {
         CVAboutMeView *aboutMeView = nil;
@@ -223,31 +250,16 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
             aboutMeView.emailPresentController = [self.dataSource controllerForEmailPresentationInProfileView:self];
         }
         
-        CGRect aboutMeViewFrame = aboutMeView.frame;
-        aboutMeViewFrame.origin.y = [UIScreen mainScreen].bounds.size.height - aboutMeViewFrame.size.height;
-        aboutMeView.frame = aboutMeViewFrame;
-        
-        CGRect descriptionLabelFrame = self.descriptionLabel.frame;
-        CGFloat minYOrigin = descriptionLabelFrame.size.height + descriptionLabelFrame.origin.y;
-        CGFloat minAboutMeViewYOrigin = aboutMeView.emailButton.frame.origin.y;
-        
-        if (minAboutMeViewYOrigin < minYOrigin)
-        {
-            CGFloat yDelta = minYOrigin - minAboutMeViewYOrigin;
-            CGFloat newTextViewHeight = aboutMeView.textViewHeightConstraint.constant - yDelta;
-            aboutMeView.textViewHeightConstraint.constant = newTextViewHeight;
-        }
-        
         [self insertSubview:aboutMeView aboveSubview:self.backgroundImageView];
         [aboutMeView setHidden:NO animated:YES];
-
+        
         self.aboutMeView = aboutMeView;
     }
     else
     {
         CVAboutMeView *aboutMeView = self.aboutMeView;
         [aboutMeView setHidden:YES
-                      animated:YES
+                      animated:NO
                       duration:0.3
                     completion:^(BOOL finished) {
                         if (finished)
@@ -259,19 +271,17 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     }
 }
 
-#pragma mark - Logic
-
 - (NSMapTable *)recalculatedFinalConstraintConstants
 {
     CGRect frame = self.frame;
     
-    CGFloat photoHeightConstant = self.photoHeightLayoutConstraint.constant;
-    CGFloat photoWidthConstant = self.photoWidthLayoutConstraint.constant;
-    CGFloat photoHorizontalConstant = self.photoHorizontalLayoutConstraint.constant;
-    CGFloat photoVerticalConstant = self.photoVerticalLayoutConstraint.constant;
-    CGFloat nameVerticalConstant = self.nameVerticalLayoutConstraint.constant;
-    CGFloat nameHorizontalConstant = self.nameHorizontalLayoutConstraint.constant;
-    CGFloat descriptionHorizontalConstant = self.descriptionHorizontalLayoutConstraint.constant;
+    CGFloat photoHeightConstant = 0.0f;
+    CGFloat photoWidthConstant = 0.0f;
+    CGFloat photoHorizontalConstant = 0.0f;
+    CGFloat photoVerticalConstant = 0.0f;
+    CGFloat nameVerticalConstant = 0.0f;
+    CGFloat nameHorizontalConstant = 0.0f;
+    CGFloat descriptionHorizontalConstant = 0.0f;
     
     NSMapTable *finalTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory
                                                    valueOptions:NSMapTableStrongMemory];
@@ -315,10 +325,9 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
         blurredImageView.image = [self.backgroundImageView imageWithBlurRadius:10.0f];
     }
 
-#warning Why is this not blurring at the correct duration?!
     [blurredImageView setHidden:self.expanded
                        animated:animated
-                       duration:6
+                       duration:0.3
                      completion:nil];
 }
 
