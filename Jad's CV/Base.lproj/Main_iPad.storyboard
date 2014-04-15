@@ -431,6 +431,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="djZ-zj-Nim" id="YmC-VJ-wxR"/>
                         <outlet property="detailTextView" destination="cIr-zb-oui" id="TSt-vE-tef"/>
+                        <outlet property="organisationImageView" destination="WRa-uB-s8d" id="1JH-mc-5b1"/>
                         <outlet property="organisationLabel" destination="0zf-NI-bLF" id="kvE-X3-f7i"/>
                         <outlet property="positionLabel" destination="iIu-YY-hqM" id="7Gx-Xn-KBH"/>
                     </connections>

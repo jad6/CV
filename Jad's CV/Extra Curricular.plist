@@ -6,7 +6,7 @@
 		<key>organisation</key>
 		<string>Surf Life Saving Australia</string>
 		<key>position</key>
-		<string>Patrol member, Scarborough Beach</string>
+		<string>Patrol Member Scarborough Beach</string>
 		<key>startDate</key>
 		<date>2003-09-01T04:00:00Z</date>
 		<key>endDate</key>
@@ -20,7 +20,7 @@
 		<key>organisation</key>
 		<string>Engineer University Club</string>
 		<key>position</key>
-		<string>Software Engineering representative</string>
+		<string>Software Engineering Representative</string>
 		<key>startDate</key>
 		<date>2009-11-01T04:00:00Z</date>
 		<key>endDate</key>
@@ -34,7 +34,7 @@
 		<key>organisation</key>
 		<string>Engineer University Club</string>
 		<key>position</key>
-		<string>First Year Engineer representative</string>
+		<string>First Year Engineer Representative</string>
 		<key>startDate</key>
 		<date>2009-02-01T03:00:00Z</date>
 		<key>endDate</key>

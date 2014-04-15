@@ -60,15 +60,22 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
                                    withMidString:(NSString *)midString
 {
     NSString *startDateText = [self condensedString];
-    NSString *endDateText = [endDate condensedString];
-    
-    if ([startDateText isEqualToString:endDateText])
+
+    if ([endDate compare:[NSDate date]] == NSOrderedDescending)
     {
-        return startDateText;
+        return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, @"Present"];
     }
     else
     {
-        return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, endDateText];
+        NSString *endDateText = [endDate condensedString];
+        if ([startDateText isEqualToString:endDateText])
+        {
+            return startDateText;
+        }
+        else
+        {
+            return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, endDateText];
+        }
     }
 }
 

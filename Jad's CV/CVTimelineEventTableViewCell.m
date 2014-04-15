@@ -103,14 +103,7 @@
         self.organisationLabel.text = event.organisation;
         self.positionLabel.text = event.position;
         
-        if ([event.endDate compare:[NSDate date]] == NSOrderedDescending)
-        {
-            self.dateLabel.text = [[NSString alloc] initWithFormat:@"%@ -\n  %@", [event.startDate condensedString], @"Present"];
-        }
-        else
-        {
-            self.dateLabel.text = [event.startDate combinedCondensedStringWithEndDate:event.endDate withMidString:@" -\n  "];
-        }
+        self.dateLabel.text = [event.startDate combinedCondensedStringWithEndDate:event.endDate withMidString:@" -\n  "];
         
         UIColor *tintColor = event.color;
         self.dateLabel.textColor = tintColor;
