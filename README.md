@@ -18,4 +18,4 @@ By completing the [recruitment information](http://tflig.ht/1gycrc2) I will be a
 
 ## Old Fashioned Way
 
-If you cannot compile or download the app, the file ```Jad's CV.pdf``` above can be downloaded. However, the PDF version of my CV is slightly less informative than the app as the projects I worked on have been omitted.
+If you cannot compile or download the app, you can download [Jad's CV.pdf](https://raw.githubusercontent.com/jad6/CV/master/Jad's%20CV.pdf). However, the PDF version of my CV is slightly less informative than the app as the projects I worked on have been omitted.
