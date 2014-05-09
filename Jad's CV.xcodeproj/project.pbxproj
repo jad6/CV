@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		050A5CE418FA335100244F50 /* AboutMe~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE318FA335100244F50 /* AboutMe~iphone.xib */; };
 		050A5CE618FA35C400244F50 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE518FA35C400244F50 /* union_lake.jpg */; };
 		050A5CE918FA35FA00244F50 /* winthrop_hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */; };
 		050A5CEC18FA3D8100244F50 /* CVEducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */; };
@@ -56,7 +55,8 @@
 		05BE99A418F96E950015D7D9 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99A318F96E950015D7D9 /* UIViewController+Extension.m */; };
 		05BE99A718F96F4F0015D7D9 /* UIView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */; };
 		05BE99AF18F97F010015D7D9 /* CVAboutMeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE99AE18F97F010015D7D9 /* CVAboutMeView.m */; };
-		05E1011F18FBA6E3008E2554 /* AboutMe~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E1011E18FBA6E3008E2554 /* AboutMe~ipad.xib */; };
+		05BECD02191CBA7D002445E3 /* AboutMe~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BECD04191CBA7D002445E3 /* AboutMe~iphone.xib */; };
+		05BECD05191CBA82002445E3 /* AboutMe~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BECD07191CBA82002445E3 /* AboutMe~ipad.xib */; };
 		05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ABB18F6904C0061C1BC /* UIView+Extension.m */; };
 		05F75AC018F69A9B0061C1BC /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75ABF18F69A9B0061C1BC /* Experience.plist */; };
 		05F75AC218F69AAF0061C1BC /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC118F69AAF0061C1BC /* Referees.plist */; };
@@ -82,7 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		050A5CE318FA335100244F50 /* AboutMe~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AboutMe~iphone.xib"; sourceTree = "<group>"; };
 		050A5CE518FA35C400244F50 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
 		050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winthrop_hall.jpg; sourceTree = "<group>"; };
 		050A5CEA18FA3D8100244F50 /* CVEducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVEducationViewController.h; sourceTree = "<group>"; };
@@ -167,7 +166,8 @@
 		05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snapshot.m"; sourceTree = "<group>"; };
 		05BE99AD18F97F010015D7D9 /* CVAboutMeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVAboutMeView.h; sourceTree = "<group>"; };
 		05BE99AE18F97F010015D7D9 /* CVAboutMeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVAboutMeView.m; sourceTree = "<group>"; };
-		05E1011E18FBA6E3008E2554 /* AboutMe~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AboutMe~ipad.xib"; sourceTree = "<group>"; };
+		05BECD03191CBA7D002445E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/AboutMe~iphone.xib"; sourceTree = "<group>"; };
+		05BECD06191CBA82002445E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/AboutMe~ipad.xib"; sourceTree = "<group>"; };
 		05F75ABA18F6904C0061C1BC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		05F75ABB18F6904C0061C1BC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		05F75ABF18F69A9B0061C1BC /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 				050A5CE518FA35C400244F50 /* union_lake.jpg */,
 				050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */,
 			);
-			name = Images;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		050A5CED18FA3D8500244F50 /* Education */ = {
@@ -232,7 +232,7 @@
 				050A5CEA18FA3D8100244F50 /* CVEducationViewController.h */,
 				050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */,
 			);
-			name = Education;
+			path = Education;
 			sourceTree = "<group>";
 		};
 		050A5D0618FA8FC200244F50 /* Controllers */ = {
@@ -248,7 +248,7 @@
 				05BE999418F93AD80015D7D9 /* CVPageContentSplitViewController.h */,
 				05BE999518F93AD80015D7D9 /* CVPageContentSplitViewController.m */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		050A5D0718FA8FCA00244F50 /* Objects */ = {
@@ -261,7 +261,7 @@
 				0550424E18FD19A000CEDF2C /* CVContactor.h */,
 				0550424F18FD19A000CEDF2C /* CVContactor.m */,
 			);
-			name = Objects;
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		050A5D0818FA8FCF00244F50 /* Views */ = {
@@ -274,7 +274,7 @@
 				050A5D0918FA8FF200244F50 /* CVRoundedRectImageView.h */,
 				050A5D0A18FA8FF200244F50 /* CVRoundedRectImageView.m */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		056872E118F6361E00132551 = {
@@ -315,12 +315,8 @@
 			children = (
 				056872FC18F6361E00132551 /* CVAppDelegate.h */,
 				056872FD18F6361E00132551 /* CVAppDelegate.m */,
-				056872FF18F6361E00132551 /* Main_iPhone.storyboard */,
-				0568730218F6361E00132551 /* Main_iPad.storyboard */,
-				050A5CE318FA335100244F50 /* AboutMe~iphone.xib */,
-				05E1011E18FBA6E3008E2554 /* AboutMe~ipad.xib */,
-				0568732518F6399200132551 /* CVHomeViewController.h */,
-				0568732618F6399200132551 /* CVHomeViewController.m */,
+				05BECD08191CBA90002445E3 /* User Interface */,
+				05BECD01191CBA61002445E3 /* Home */,
 				0568734B18F6650100132551 /* Profile */,
 				0568733518F650A200132551 /* Pages */,
 				05F75ABD18F690780061C1BC /* Helpers */,
@@ -374,7 +370,7 @@
 				0568733718F650BC00132551 /* References */,
 				05BE999E18F93D430015D7D9 /* Detail */,
 			);
-			name = Pages;
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		0568733618F650B400132551 /* Timeline */ = {
@@ -387,7 +383,7 @@
 				05F75AC718F69B120061C1BC /* CVTimelineEvent.h */,
 				05F75AC818F69B120061C1BC /* CVTimelineEvent.m */,
 			);
-			name = Timeline;
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 		0568733718F650BC00132551 /* References */ = {
@@ -400,7 +396,7 @@
 				050A5CEE18FA4B7900244F50 /* CVReferee.h */,
 				050A5CEF18FA4B7900244F50 /* CVReferee.m */,
 			);
-			name = References;
+			path = References;
 			sourceTree = "<group>";
 		};
 		0568733F18F65B7000132551 /* Extra Curricular */ = {
@@ -414,6 +410,7 @@
 				05F75AD918F6ABC90061C1BC /* CVExtraCurricularActivity.m */,
 			);
 			name = "Extra Curricular";
+			path = ExtraCurricular;
 			sourceTree = "<group>";
 		};
 		0568734518F6618400132551 /* Resources */ = {
@@ -425,7 +422,7 @@
 				05F75AC518F69AE40061C1BC /* Education.plist */,
 				0550425118FD1C0900CEDF2C /* About Me.plist */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		0568734B18F6650100132551 /* Profile */ = {
@@ -438,7 +435,7 @@
 				0550425318FD1C5400CEDF2C /* CVPersonalInfo.h */,
 				0550425418FD1C5400CEDF2C /* CVPersonalInfo.m */,
 			);
-			name = Profile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		0594FFAA18F7D70B00422BA5 /* Split Controllers */ = {
@@ -450,6 +447,7 @@
 				0594FFAF18F7D73500422BA5 /* CVExtraCurricularSplitViewController.m */,
 			);
 			name = "Split Controllers";
+			path = SplitControllers;
 			sourceTree = "<group>";
 		};
 		05BE999A18F93B6B0015D7D9 /* Navigation Controllers */ = {
@@ -461,6 +459,7 @@
 				05BE999C18F93B870015D7D9 /* CVExtraCurricularNavigationController.m */,
 			);
 			name = "Navigation Controllers";
+			path = NavigationControllers;
 			sourceTree = "<group>";
 		};
 		05BE999E18F93D430015D7D9 /* Detail */ = {
@@ -469,7 +468,27 @@
 				05BE999F18F93D630015D7D9 /* CVDetailViewController.h */,
 				05BE99A018F93D630015D7D9 /* CVDetailViewController.m */,
 			);
-			name = Detail;
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		05BECD01191CBA61002445E3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0568732518F6399200132551 /* CVHomeViewController.h */,
+				0568732618F6399200132551 /* CVHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		05BECD08191CBA90002445E3 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				056872FF18F6361E00132551 /* Main_iPhone.storyboard */,
+				0568730218F6361E00132551 /* Main_iPad.storyboard */,
+				05BECD04191CBA7D002445E3 /* AboutMe~iphone.xib */,
+				05BECD07191CBA82002445E3 /* AboutMe~ipad.xib */,
+			);
+			name = "User Interface";
 			sourceTree = "<group>";
 		};
 		05F75ABD18F690780061C1BC /* Helpers */ = {
@@ -478,7 +497,7 @@
 				05F75ABE18F690820061C1BC /* Categories */,
 				05F75AD418F6A2B80061C1BC /* Subclasses */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		05F75ABE18F690820061C1BC /* Categories */ = {
@@ -499,7 +518,7 @@
 				05BE99A518F96F4F0015D7D9 /* UIView+Snapshot.h */,
 				05BE99A618F96F4F0015D7D9 /* UIView+Snapshot.m */,
 			);
-			name = Categories;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		05F75AD418F6A2B80061C1BC /* Subclasses */ = {
@@ -509,7 +528,7 @@
 				050A5D0718FA8FCA00244F50 /* Objects */,
 				050A5D0818FA8FCF00244F50 /* Views */,
 			);
-			name = Subclasses;
+			path = Subclasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,9 +610,9 @@
 			files = (
 				05F75AC418F69ACD0061C1BC /* Extra Curricular.plist in Resources */,
 				0568730418F6361E00132551 /* Main_iPad.storyboard in Resources */,
-				05E1011F18FBA6E3008E2554 /* AboutMe~ipad.xib in Resources */,
+				05BECD05191CBA82002445E3 /* AboutMe~ipad.xib in Resources */,
 				050A5CE918FA35FA00244F50 /* winthrop_hall.jpg in Resources */,
-				050A5CE418FA335100244F50 /* AboutMe~iphone.xib in Resources */,
+				05BECD02191CBA7D002445E3 /* AboutMe~iphone.xib in Resources */,
 				0568730918F6361E00132551 /* Images.xcassets in Resources */,
 				0568730118F6361E00132551 /* Main_iPhone.storyboard in Resources */,
 				050A5CE618FA35C400244F50 /* union_lake.jpg in Resources */,
@@ -711,6 +730,22 @@
 				0568731918F6361E00132551 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		05BECD04191CBA7D002445E3 /* AboutMe~iphone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05BECD03191CBA7D002445E3 /* Base */,
+			);
+			name = "AboutMe~iphone.xib";
+			sourceTree = "<group>";
+		};
+		05BECD07191CBA82002445E3 /* AboutMe~ipad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05BECD06191CBA82002445E3 /* Base */,
+			);
+			name = "AboutMe~ipad.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
