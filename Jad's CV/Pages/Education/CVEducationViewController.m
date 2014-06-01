@@ -52,7 +52,7 @@
 
     self.title = @"Education";
     
-    if (IPAD())
+    if (IS_IPAD)
     {
         UIImage *ipadFadeImage = [UIImage imageNamed:@"ipad_fade"];
         UIImage *strechedImage = [ipadFadeImage resizableImageWithCapInsets:UIEdgeInsetsMake(80.0f, 80.0f, 80.0f, 80.0f) resizingMode:UIImageResizingModeStretch];

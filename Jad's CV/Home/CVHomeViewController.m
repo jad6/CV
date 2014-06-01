@@ -113,7 +113,7 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     if (self->_pageContentViewControllerIdentifiers == nil) {
         // Set the identifiers for the decive.
         NSArray *identifiers = nil;
-        if (IPAD())
+        if (IS_IPAD)
         {
             identifiers = @[CVTimelineSplitViewControllerIdentifier,
                             CVExtraCurricularSplitViewControllerIdentifier,

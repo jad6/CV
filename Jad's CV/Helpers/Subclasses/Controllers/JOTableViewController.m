@@ -39,6 +39,19 @@ static NSString *CVTableDefaultCellIdentifier = @"Cell";
 
 @implementation JOTableViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (IS_IPHONE)
+    {
+        UITableView *tableView = self.tableView;
+        
+        for (NSIndexPath *selectedIndexPath in [tableView indexPathsForSelectedRows])
+            [self.tableView deselectRowAtIndexPath:selectedIndexPath animated:animated];
+    }
+}
+
 #pragma mark - Logic
 
 - (void)setData:(NSArray *)data containsSections:(BOOL)containsSections

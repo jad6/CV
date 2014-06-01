@@ -61,7 +61,7 @@
 {
     [super awakeFromNib];
     
-    if (IPHONE())
+    if (IS_IPHONE)
     {
         UIImage *chevronImage = [UIImage imageNamed:@"chevron"];
         chevronImage = [chevronImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];

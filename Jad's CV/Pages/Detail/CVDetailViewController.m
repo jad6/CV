@@ -90,7 +90,7 @@
     {
         self->_experience = experience;
         
-        if (IPAD())
+        if (IS_IPAD)
         {
             [self refreshSubviews];
         }

@@ -10,7 +10,7 @@
 		<key>endDate</key>
 		<date>2011-12-01T04:00:00Z</date>
 		<key>color</key>
-		<string>246,144,49,1</string>
+		<string>237,142,43,1</string>
 		<key>organisation</key>
 		<string>Student Marketing Australia</string>
 		<key>position</key>
@@ -215,6 +215,24 @@
 		<string>I led a project which aims to greatly improve the use iPads in schools. The iOS application called My Billanook integrates with the school’s administration system to provide modules such as calendar, homework, notices, lesson plans and newsletters. My Billanook will be in use starting from term two 2014.</string>
 		<key>imageName</key>
 		<string>billanook</string>
+	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>1</integer>
+		<key>startDate</key>
+		<date>2014-05-26T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2014-05-26T04:00:00Z</date>
+		<key>color</key>
+		<string>198,68,252,1</string>
+		<key>organisation</key>
+		<string>University of Western Asutralia</string>
+		<key>position</key>
+		<string>Honours Thesis</string>
+		<key>description</key>
+		<string>For my thesis I researched and implemented an algorithm to calculate the strength of a touch using the motions it induces on a smartphone or tablet. The research project was a year long and involved writing a paper, programming a mobile application, presenting the research and creating a conference poster. The application demonstrating the algorithm and the dissertation paper can be found at this link: https://github.com/jad6/DOMATI-iOS.</string>
+		<key>imageName</key>
+		<string>domati</string>
 	</dict>
 </array>
 </plist>

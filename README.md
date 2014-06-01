@@ -1,4 +1,6 @@
-# Jad's Curriculum Vitae iOS App
+# Jad's Curriculum Vitae
+
+![image](cover_image.png)
 
 ## iOS Application
 

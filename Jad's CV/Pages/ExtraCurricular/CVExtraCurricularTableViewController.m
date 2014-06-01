@@ -50,7 +50,7 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
     
     self.title = @"Extra Curricular";
     
-    self.clearsSelectionOnViewWillAppear = !IPAD();
+    self.clearsSelectionOnViewWillAppear = !IS_IPAD;
     
     NSArray *activities = [CVExtraCurricularActivity extraCurricularActivities];
     [self setData:activities containsSections:NO];
@@ -60,7 +60,7 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
 {
     [super viewWillAppear:animated];
     
-    if (IPAD())
+    if (IS_IPAD)
     {
         NSIndexPath *firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self tableView:self.tableView didSelectRowAtIndexPath:firstIndexPath];
@@ -73,7 +73,7 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:CVDetailSegueIdentifier]
-        && IPHONE())
+        && IS_IPHONE)
     {
         CVDetailViewController *detailViewController = segue.destinationViewController;
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];

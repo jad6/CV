@@ -49,7 +49,7 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
     
     self.title = @"Experience";
     
-    self.clearsSelectionOnViewWillAppear = IPHONE();
+    self.clearsSelectionOnViewWillAppear = IS_IPHONE;
     
     NSArray *events = [CVTimelineEvent timetableEvents];
     [self setData:events containsSections:NO];
@@ -59,7 +59,7 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
 {
     [super viewWillAppear:animated];
     
-    if (IPAD())
+    if (IS_IPAD)
     {
         NSIndexPath *firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self tableView:self.tableView didSelectRowAtIndexPath:firstIndexPath];
@@ -72,7 +72,7 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:CVDetailSegueIdentifier]
-        && IPHONE())
+        && IS_IPHONE)
     {
         CVDetailViewController *detailViewController = segue.destinationViewController;
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
@@ -118,7 +118,7 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
                         didSelectExperience:object];
     }
     
-    if (IPHONE())
+    if (IS_IPHONE)
     {
         [self performSegueWithIdentifier:CVDetailSegueIdentifier
                                   sender:self];
