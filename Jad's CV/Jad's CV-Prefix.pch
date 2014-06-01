@@ -14,12 +14,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-    #import "UIView+Extension.h"
-    #import "NSDate+Extension.h"
-    #import "NSError+Extension.h"
-    #import "UIViewController+Extension.h"
-    #import "UIApplication+Extension.h"
-    #import "UIColor+Extension.h"
+    #import "CVCategories.h"
+    #import "CVPagingConstants.h"
 
     #define IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     #define IPHONE() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)

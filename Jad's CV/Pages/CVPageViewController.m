@@ -169,7 +169,7 @@
     }
 }
 
-#pragma mark - Page View Controller Data Source
+#pragma mark - Page View Controller
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController<CVPageContentViewController> *)viewController

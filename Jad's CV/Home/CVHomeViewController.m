@@ -248,6 +248,11 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 #pragma mark - Page Control
 
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:CVPagingNotification object:self userInfo:@{CVPagingStateKey: @(CVPagingStateBeganScroll), CVPagingControllersKey: pendingViewControllers}];
+}
+
 - (void)pageViewController:(UIPageViewController *)pageViewController
         didFinishAnimating:(BOOL)finished
    previousViewControllers:(NSArray *)previousViewControllers
@@ -257,6 +262,11 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     if (completed)
     {
         [self refreshFromPageViewController:pageViewController];
+    }
+    
+    if (finished)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:CVPagingNotification object:self userInfo:@{CVPagingStateKey: @(CVPagingStateFinishedScroll), CVPagingControllersKey: previousViewControllers}];
     }
 }
 
