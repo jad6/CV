@@ -35,4 +35,14 @@ class HomeViewController: UIViewController {
     override func loadView() {
         view = HomeView(sectionsPageView: sectionsPageViewController.view)
     }
+    
+    override func viewDidLoad() {
+        homeView.profileView.infoButton.addTarget(self, action: "profileInfoAction:", forControlEvents: .TouchUpInside)
+    }
+    
+    //-- Actions
+    
+    func profileInfoAction(sender: AnyObject) {
+        homeView.handleProfileViewFocus()
+    }
 }

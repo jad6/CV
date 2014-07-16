@@ -26,10 +26,16 @@ class ProfileView: UIView, UILayoutSupport {
     var profilePictureImageView: UIImageView!
     var nameLabel: UILabel!
     var descriptionLabel: UILabel!
-    var inforButton: UIButton!
-    var emailButton: UIButton!
-    var phoneButton: UIButton!
-    var textView: UITextView!
+    var infoButton: UIButton!
+    var emailButton: UIButton? {
+    didSet {
+
+    }
+    }
+    var phoneButton: UIButton?
+    var textView: UITextView?
+    
+    let optionalViews: [UIView?]
     
     var expanded: Bool {
     didSet {
@@ -38,6 +44,18 @@ class ProfileView: UIView, UILayoutSupport {
         nameLabel.textColor = color
         descriptionLabel.textColor = color
         tintColor = color
+        
+        for optionalView in optionalViews {
+            
+            if optionalView is UIButton {
+                var button = optionalView as UIButton
+                button = UIButton()
+            }
+            if optionalView is UITextView {
+                var textView = optionalView as UITextView
+                textView = UITextView()
+            }
+        }
     }
     }
     
@@ -50,14 +68,19 @@ class ProfileView: UIView, UILayoutSupport {
         self.profilePictureImageView = UIImageView()
         self.nameLabel = UILabel()
         self.descriptionLabel = UILabel()
-        self.inforButton = UIButton()
-        self.emailButton = UIButton()
-        self.phoneButton = UIButton()
-        self.textView = UITextView()
+        self.infoButton = UIButton.buttonWithType(.InfoLight) as UIButton
         
         self.expanded = false
         
+        self.optionalViews = [self.emailButton, self.phoneButton, self.textView]
+        
         super.init(frame: frame)
+        
+        self.addSubview(self.backgroundImageView)
+        self.addSubview(self.profilePictureImageView)
+        self.addSubview(self.nameLabel)
+        self.addSubview(self.descriptionLabel)
+        self.addSubview(self.infoButton)
     }
     
     convenience init() {

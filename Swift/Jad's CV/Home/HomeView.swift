@@ -35,14 +35,25 @@ class HomeView: UIView {
         super.layoutSubviews()
         
         var profileViewFrame = profileView.frame
-        profileViewFrame.size.height = profileView.length
+        profileViewFrame.size.height = (profileView.expanded) ? bounds.size.height : profileView.length
         profileViewFrame.size.width = bounds.size.width
         profileView.frame = profileViewFrame
         
         var sectionsPageViewFrame = sectionsPageView.frame
-        sectionsPageViewFrame.size.height = bounds.size.height - profileView.length
+        sectionsPageViewFrame.size.height = bounds.size.height - CGRectGetMaxY(profileViewFrame)
         sectionsPageViewFrame.size.width = bounds.size.width
-        sectionsPageViewFrame.origin.y = profileView.length
+        sectionsPageViewFrame.origin.y = CGRectGetMaxY(profileViewFrame)
         sectionsPageView.frame = sectionsPageViewFrame
+    }
+    
+    //-- Logic
+    
+    func handleProfileViewFocus() {
+        profileView.expanded = !profileView.expanded
+
+        UIView.animateWithDuration(0.6) {
+            self.layoutSubviews()
+            self.profileView.layoutSubviews()
+        }
     }
 }

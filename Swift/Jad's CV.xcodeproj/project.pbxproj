@@ -18,6 +18,7 @@
 		056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */; };
 		056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */; };
 		056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */; };
+		056C9B4619766FE20047F3E5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4519766FE20047F3E5 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVIew_Pad.swift; sourceTree = "<group>"; };
 		056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView_Phone.swift; sourceTree = "<group>"; };
+		056C9B4519766FE20047F3E5 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				056C9B39197662420047F3E5 /* Device.swift */,
+				056C9B4519766FE20047F3E5 /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			files = (
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
+				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
 				056C9B3A197662420047F3E5 /* Device.swift in Sources */,

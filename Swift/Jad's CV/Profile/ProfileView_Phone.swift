@@ -13,5 +13,12 @@ class ProfileView_Phone: ProfileView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        var infoButtonFrame = infoButton.frame
+        infoButtonFrame.size = infoButton.sizeThatFits(CGSizeZero)
+        infoButtonFrame.origin.y = floor((bounds.size.height - infoButtonFrame.size.height) / 2.0)
+        infoButtonFrame.origin.x = bounds.size.width - infoButtonFrame.size.width - 18.0
+        infoButton.frame = infoButtonFrame
+        
+        
     }
 }
