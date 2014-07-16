@@ -1,0 +1,57 @@
+{
+  "images" : [
+    {
+      "orientation" : "portrait",
+      "idiom" : "iphone",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "filename" : "iOS Simulator Screen shot 15 Apr 2014 6.41.18 pm.png",
+      "scale" : "2x"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
+      "subtype" : "retina4",
+      "filename" : "iOS Simulator Screen shot 15 Apr 2014 6.41.36 pm.png",
+      "minimum-system-version" : "7.0",
+      "orientation" : "portrait",
+      "scale" : "2x"
+    },
+    {
+      "orientation" : "portrait",
+      "idiom" : "ipad",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "filename" : "iOS Simulator Screen shot 15 Apr 2014 6.43.40 pm.png",
+      "scale" : "1x"
+    },
+    {
+      "orientation" : "landscape",
+      "idiom" : "ipad",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "filename" : "iOS Simulator Screen shot 15 Apr 2014 6.43.42 pm.png",
+      "scale" : "1x"
+    },
+    {
+      "orientation" : "portrait",
+      "idiom" : "ipad",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "filename" : "iOS Simulator Screen shot 15 Apr 2014 6.43.23 pm.png",
+      "scale" : "2x"
+    },
+    {
+      "orientation" : "landscape",
+      "idiom" : "ipad",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "filename" : "iOS Simulator Screen shot 15 Apr 2014 6.43.26 pm.png",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
