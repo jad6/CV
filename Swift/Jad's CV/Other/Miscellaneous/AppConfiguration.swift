@@ -6,9 +6,17 @@
 //  Copyright (c) 2014 Jad. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Notifications {
     struct PageController {
+    }
+}
+
+struct Animations {
+    enum Durations: Double {
+        case Short = 0.3
+        case Medium = 0.6
+        case Long = 0.9
     }
 }

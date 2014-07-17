@@ -26,9 +26,6 @@ class HomeView: UIView {
         
         self.addSubview(sectionsPageView)
         self.sectionsPageView = sectionsPageView
-        
-        self.profileView.backgroundColor = UIColor.greenColor()
-        self.sectionsPageView.backgroundColor = UIColor.redColor()
     }
     
     override func layoutSubviews() {
@@ -51,9 +48,18 @@ class HomeView: UIView {
     func handleProfileViewFocus() {
         profileView.expanded = !profileView.expanded
 
-        UIView.animateWithDuration(0.6) {
+        let duration = Animations.Durations.Medium.toRaw()
+        
+        if profileView.expanded {
+            profileView.backgroundImageView.blurEffectView.setHidden(true, animated: true, duration: duration, completion: nil)
+        }
+        UIView.animateWithDuration(duration, animations: {
             self.layoutSubviews()
             self.profileView.layoutSubviews()
-        }
+        }, completion: { finished in
+            if finished && !self.profileView.expanded {
+                self.profileView.backgroundImageView.blurEffectView.setHidden(false, animated: true, duration: Animations.Durations.Short.toRaw(), completion: nil)
+            }
+        })
     }
 }

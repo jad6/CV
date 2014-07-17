@@ -40,6 +40,18 @@ class HomeViewController: UIViewController {
         homeView.profileView.infoButton.addTarget(self, action: "profileInfoAction:", forControlEvents: .TouchUpInside)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(Animations.Durations.Short.toRaw()) {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    //-- Status bar
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     //-- Actions
     
     func profileInfoAction(sender: AnyObject) {

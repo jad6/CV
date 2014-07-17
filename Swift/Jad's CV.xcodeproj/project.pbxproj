@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054D63411977789A0022D63A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D63401977789A0022D63A /* Font.swift */; };
+		0564EADE197757950003DA44 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADC197757950003DA44 /* union_lake.jpg */; };
+		0564EADF197757950003DA44 /* winthrop_hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADD197757950003DA44 /* winthrop_hall.jpg */; };
 		056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9AFE197655CD0047F3E5 /* AppDelegate.swift */; };
 		056C9B12197655CD0047F3E5 /* Jad_s_CVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B11197655CD0047F3E5 /* Jad_s_CVTests.swift */; };
 		056C9B1F197656DC0047F3E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056C9B1E197656DC0047F3E5 /* Images.xcassets */; };
@@ -19,6 +22,11 @@
 		056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */; };
 		056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */; };
 		056C9B4619766FE20047F3E5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4519766FE20047F3E5 /* View.swift */; };
+		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
+		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
+		05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D61977A99500AF6BB7 /* PersonObject.swift */; };
+		05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99DA1977AEA300AF6BB7 /* Error.swift */; };
+		05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6C30819775C54007CCD66 /* BlurImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		054D63401977789A0022D63A /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		0564EADC197757950003DA44 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
+		0564EADD197757950003DA44 /* winthrop_hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winthrop_hall.jpg; sourceTree = "<group>"; };
 		056C9AF9197655CD0047F3E5 /* Jad's CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jad's CV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056C9AFD197655CD0047F3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		056C9AFE197655CD0047F3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +59,11 @@
 		056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVIew_Pad.swift; sourceTree = "<group>"; };
 		056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView_Phone.swift; sourceTree = "<group>"; };
 		056C9B4519766FE20047F3E5 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
+		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
+		05DC99D61977A99500AF6BB7 /* PersonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
+		05DC99DA1977AEA300AF6BB7 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		05F6C30819775C54007CCD66 /* BlurImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,7 @@
 				056C9B20197657180047F3E5 /* Profile */,
 				056C9B21197657330047F3E5 /* Sections */,
 				056C9B281976582E0047F3E5 /* Other */,
+				05DC99D11977868100AF6BB7 /* Models */,
 				056C9B1C197656960047F3E5 /* Resources */,
 				056C9AFC197655CD0047F3E5 /* Supporting Files */,
 			);
@@ -137,6 +154,7 @@
 		056C9B1C197656960047F3E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05DC99D01977866000AF6BB7 /* Property Lists */,
 				056C9B1D197656AF0047F3E5 /* Images */,
 			);
 			path = Resources;
@@ -146,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				056C9B1E197656DC0047F3E5 /* Images.xcassets */,
+				0564EADC197757950003DA44 /* union_lake.jpg */,
+				0564EADD197757950003DA44 /* winthrop_hall.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -215,7 +235,9 @@
 			isa = PBXGroup;
 			children = (
 				056C9B39197662420047F3E5 /* Device.swift */,
+				054D63401977789A0022D63A /* Font.swift */,
 				056C9B4519766FE20047F3E5 /* View.swift */,
+				05DC99DA1977AEA300AF6BB7 /* Error.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +245,7 @@
 		056C9B2A1976584B0047F3E5 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				05F6C30819775C54007CCD66 /* BlurImageView.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -233,6 +256,24 @@
 				056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */,
 			);
 			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		05DC99D01977866000AF6BB7 /* Property Lists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Property Lists";
+			path = PropertyLists;
+			sourceTree = "<group>";
+		};
+		05DC99D11977868100AF6BB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */,
+				05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */,
+				05DC99D61977A99500AF6BB7 /* PersonObject.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +356,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0564EADE197757950003DA44 /* union_lake.jpg in Resources */,
 				056C9B1F197656DC0047F3E5 /* Images.xcassets in Resources */,
+				0564EADF197757950003DA44 /* winthrop_hall.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,13 +376,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
+				05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */,
+				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
+				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
+				05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */,
 				056C9B3A197662420047F3E5 /* Device.swift in Sources */,
 				056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */,
+				054D63411977789A0022D63A /* Font.swift in Sources */,
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
 				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
 				056C9B2C19765B160047F3E5 /* HomeViewController.swift in Sources */,
