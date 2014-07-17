@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052C2A421977CCAF00D85C98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C2A411977CCAF00D85C98 /* Color.swift */; };
 		054D63411977789A0022D63A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D63401977789A0022D63A /* Font.swift */; };
 		0564EADE197757950003DA44 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADC197757950003DA44 /* union_lake.jpg */; };
 		0564EADF197757950003DA44 /* winthrop_hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADD197757950003DA44 /* winthrop_hall.jpg */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052C2A411977CCAF00D85C98 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		054D63401977789A0022D63A /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		0564EADC197757950003DA44 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
 		0564EADD197757950003DA44 /* winthrop_hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winthrop_hall.jpg; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				054D63401977789A0022D63A /* Font.swift */,
 				056C9B4519766FE20047F3E5 /* View.swift */,
 				05DC99DA1977AEA300AF6BB7 /* Error.swift */,
+				052C2A411977CCAF00D85C98 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
+				052C2A421977CCAF00D85C98 /* Color.swift in Sources */,
 				05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */,
 				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
 				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,

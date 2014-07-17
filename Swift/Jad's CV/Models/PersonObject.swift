@@ -32,8 +32,22 @@ class PersonObject: ExtractedObject {
     }
 }
 
-class UserObject : PersonObject {
+class ResumeHolderObject : PersonObject {
     let detailDescription: String
+    
+    class func resumeHolder() -> PersonObject? {
+        var error = NSError?()
+        var holderObjects = self.extractObjects(&error)
+        error?.handle()
+
+        assert(holderObjects.count == 1, "There needs to be exactly one (1) resume holder object")
+        
+        return holderObjects[0] as? PersonObject
+    }
+    
+    override class func filePathForResource() -> String {
+        return NSBundle.mainBundle().pathForResource("About Me", ofType: "plist")
+    }
     
     init(dictionary: NSDictionary) {
         self.detailDescription = dictionary["description"] as String
@@ -45,6 +59,18 @@ class UserObject : PersonObject {
 class RefereeObject : PersonObject {
     let position: String
     let connection: String
+    
+    class func referees() -> [RefereeObject]? {
+        var error = NSError?()
+        var objects = self.extractObjects(&error)
+        error?.handle()
+        
+        return objects as? [RefereeObject]
+    }
+    
+    override class func filePathForResource() -> String {
+        return NSBundle.mainBundle().pathForResource("Referees", ofType: "plist")
+    }
     
     init(dictionary: NSDictionary) {
         self.position = dictionary["position"] as String

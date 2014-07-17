@@ -21,8 +21,8 @@ class ExperienceObject: ExtractedObject {
     class func sortedExperiences() -> [ExperienceObject]? {
         var error = NSError?()
         var objects = self.extractObjects(&error)
-        
         error?.handle()
+        
         if var experiences = objects as? [ExperienceObject] {
             experiences.sort() {
                 return ($0.startDate.compare($1.startDate) != .OrderedAscending) &&
@@ -68,8 +68,18 @@ class ExtraCurricularObject: ExperienceObject {
 
 class TimelineEventObject: ExperienceObject {
     
-    enum Importance {
-        case None, Major, Minor
+    enum Importance: Int, IntegerLiteralConvertible {
+        case None = 0, Major, Minor
+        
+        static func convertFromIntegerLiteral(value: IntegerLiteralType) -> Importance {
+            if value == 1 {
+                return .Major
+            } else if value == 2 {
+                return .Minor
+            } else {
+                return .None
+            }
+        }
     }
     
     let color: UIColor
@@ -84,7 +94,11 @@ class TimelineEventObject: ExperienceObject {
     }
     
     init(dictionary: NSDictionary) {
-        
+        self.color = UIColor.colorFromRGBString(dictionary["color"] as String)
+        let importance = (dictionary["importance"] as NSNumber).integerValue
+        //-- TODO ...yay... Swift impossible "type safe" bullshit.
+//        self.importance = importance
+        self.importance = 0
         
         super.init(dictionary: dictionary)
     }
