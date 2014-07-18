@@ -27,6 +27,11 @@
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
 		05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D61977A99500AF6BB7 /* PersonObject.swift */; };
 		05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99DA1977AEA300AF6BB7 /* Error.swift */; };
+		05DC99E11978A5E000AF6BB7 /* About Me.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DC1978A5E000AF6BB7 /* About Me.plist */; };
+		05DC99E21978A5E000AF6BB7 /* Education.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DD1978A5E000AF6BB7 /* Education.plist */; };
+		05DC99E31978A5E000AF6BB7 /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DE1978A5E000AF6BB7 /* Experience.plist */; };
+		05DC99E41978A5E000AF6BB7 /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */; };
+		05DC99E51978A5E000AF6BB7 /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99E01978A5E000AF6BB7 /* Referees.plist */; };
 		05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6C30819775C54007CCD66 /* BlurImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +70,11 @@
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
 		05DC99D61977A99500AF6BB7 /* PersonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
 		05DC99DA1977AEA300AF6BB7 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		05DC99DC1978A5E000AF6BB7 /* About Me.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "About Me.plist"; sourceTree = "<group>"; };
+		05DC99DD1978A5E000AF6BB7 /* Education.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Education.plist; sourceTree = "<group>"; };
+		05DC99DE1978A5E000AF6BB7 /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
+		05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Extra Curricular.plist"; sourceTree = "<group>"; };
+		05DC99E01978A5E000AF6BB7 /* Referees.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Referees.plist; sourceTree = "<group>"; };
 		05F6C30819775C54007CCD66 /* BlurImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +274,11 @@
 		05DC99D01977866000AF6BB7 /* Property Lists */ = {
 			isa = PBXGroup;
 			children = (
+				05DC99DC1978A5E000AF6BB7 /* About Me.plist */,
+				05DC99DD1978A5E000AF6BB7 /* Education.plist */,
+				05DC99DE1978A5E000AF6BB7 /* Experience.plist */,
+				05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */,
+				05DC99E01978A5E000AF6BB7 /* Referees.plist */,
 			);
 			name = "Property Lists";
 			path = PropertyLists;
@@ -360,6 +375,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0564EADE197757950003DA44 /* union_lake.jpg in Resources */,
+				05DC99E51978A5E000AF6BB7 /* Referees.plist in Resources */,
+				05DC99E41978A5E000AF6BB7 /* Extra Curricular.plist in Resources */,
+				05DC99E11978A5E000AF6BB7 /* About Me.plist in Resources */,
+				05DC99E31978A5E000AF6BB7 /* Experience.plist in Resources */,
+				05DC99E21978A5E000AF6BB7 /* Education.plist in Resources */,
 				056C9B1F197656DC0047F3E5 /* Images.xcassets in Resources */,
 				0564EADF197757950003DA44 /* winthrop_hall.jpg in Resources */,
 			);

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>organisation</key>
+		<string>Surf Life Saving Australia</string>
+		<key>position</key>
+		<string>Patrol Member Scarborough Beach</string>
+		<key>startDate</key>
+		<date>2003-09-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2009-09-01T04:00:00Z</date>
+		<key>description</key>
+		<string>I committed to patrolling Scarborough beach on a biweekly basis. This greatly enhanced my personal fitness, patience and alertness as I was required to act rationally in intense situations. </string>
+		<key>imageName</key>
+		<string>slsa</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>University Engineers Club</string>
+		<key>position</key>
+		<string>Software Engineering Representative</string>
+		<key>startDate</key>
+		<date>2009-11-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2011-02-01T04:00:00Z</date>
+		<key>description</key>
+		<string>For two years, I was elected by the software engineering / computer science cohort to act as their representative. This required me to liaise between the student body and the faculty. I voiced the students’ opinions in several meetings when the university executed a major change to its course structures. I also was responsible for organising education events and maintaining a strong relationship between Perth IT companies and the UEC.</string>
+		<key>imageName</key>
+		<string>uec</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>University Engineers Club</string>
+		<key>position</key>
+		<string>First Year Engineer Representative</string>
+		<key>startDate</key>
+		<date>2009-02-01T03:00:00Z</date>
+		<key>endDate</key>
+		<date>2009-11-01T04:00:00Z</date>
+		<key>description</key>
+		<string>I was elected to be the first year engineering representative by the engineering student body. I represented a large cohort of students and assisted them with their choices of future engineering studies. I also helped them integrate within the wider engineering faculty through social and educational events.</string>
+		<key>imageName</key>
+		<string>uec</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>Uni Camp for Kids</string>
+		<key>position</key>
+		<string>Volunteer</string>
+		<key>startDate</key>
+		<date>2009-02-01T03:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-11-01T04:00:00Z</date>
+		<key>description</key>
+		<string>Throughout my degree I was actively involved in the charity Uni Camp for Kids. This charity is for disadvantaged children to participate in fun activities with university students. I volunteered as a leader at four picnics and one camp each year. I also assisted the charity at the City to Surf marathon and took part in its annual tin rattle. </string>
+		<key>imageName</key>
+		<string>ucfk</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>Apple</string>
+		<key>position</key>
+		<string>WWDC Attendee</string>
+		<key>startDate</key>
+		<date>2013-06-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-06-01T04:00:00Z</date>
+		<key>description</key>
+		<string>During my stay in San Francisco I attended Apple’s 2013 World Wide Developer Conference (WWDC). My employer at the time (XciteLogic Development) sponsored me to attend the conference. I capitalised on the opportunity to improve my Objective-C skills by collaborating with Apple engineers and other WWDC members.</string>
+		<key>imageName</key>
+		<string>wwdc</string>
+	</dict>
+</array>
+</plist>

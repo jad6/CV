@@ -51,13 +51,13 @@ class ExperienceObject: ExtractedObject {
     }
 }
 
-class ExtraCurricularObject: ExperienceObject {
+class ExtraCurricularActivity: ExperienceObject {
     
-    class func extraCurricularActivities() -> [ExtraCurricularObject]? {
-        return self.sortedExperiences() as [ExtraCurricularObject]?
+    class func extraCurricularActivities() -> [ExtraCurricularActivity]? {
+        return self.sortedExperiences() as? [ExtraCurricularActivity]
     }
     
-    override class func filePathForResource() -> String {
+    override class func filePathForResource() -> String? {
         return NSBundle.mainBundle().pathForResource("Extra Curricular", ofType: "plist")
     }
     
@@ -66,7 +66,7 @@ class ExtraCurricularObject: ExperienceObject {
     }
 }
 
-class TimelineEventObject: ExperienceObject {
+class TimelineEvent: ExperienceObject {
     
     enum Importance: Int, IntegerLiteralConvertible {
         case None = 0, Major, Minor
@@ -85,20 +85,19 @@ class TimelineEventObject: ExperienceObject {
     let color: UIColor
     let importance: Importance
     
-    class func timelineEvents() -> [TimelineEventObject]? {
-        return self.sortedExperiences() as [TimelineEventObject]?
+    class func timelineEvents() -> [TimelineEvent]? {
+        return self.sortedExperiences() as? [TimelineEvent]
     }
     
-    override class func filePathForResource() -> String {
-        return NSBundle.mainBundle().pathForResource("Extra Curricular", ofType: "plist")
+    override class func filePathForResource() -> String? {
+        return NSBundle.mainBundle().pathForResource("Experience", ofType: "plist")
     }
     
     init(dictionary: NSDictionary) {
         self.color = UIColor.colorFromRGBString(dictionary["color"] as String)
-        let importance = (dictionary["importance"] as NSNumber).integerValue
-        //-- TODO ...yay... Swift impossible "type safe" bullshit.
-//        self.importance = importance
-        self.importance = 0
+        
+        let importance = dictionary["importance"] as Int
+        self.importance = Importance.convertFromIntegerLiteral(importance)
         
         super.init(dictionary: dictionary)
     }

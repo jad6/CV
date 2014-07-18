@@ -9,6 +9,7 @@
 import UIKit
 
 class PersonObject: ExtractedObject {
+    var title: String?
     let firstName: String
     let lastName: String
     let location: String
@@ -17,10 +18,15 @@ class PersonObject: ExtractedObject {
     let picture: UIImage
     
     var fullName: String {
-    return firstName + " " + lastName
+    var name = String()
+    if title {
+        name = title!
+    }
+    return name + " " + firstName + " " + lastName
     }
     
     init(dictionary: NSDictionary) {
+        self.title = dictionary["title"] as? String
         self.firstName = dictionary["firstName"] as String
         self.lastName = dictionary["lastName"] as String
         self.location = dictionary["location"] as String
@@ -32,20 +38,20 @@ class PersonObject: ExtractedObject {
     }
 }
 
-class ResumeHolderObject : PersonObject {
+class ResumeHolder : PersonObject {
     let detailDescription: String
     
-    class func resumeHolder() -> PersonObject? {
+    class func resumeHolder() -> ResumeHolder? {
         var error = NSError?()
         var holderObjects = self.extractObjects(&error)
         error?.handle()
 
-        assert(holderObjects.count == 1, "There needs to be exactly one (1) resume holder object")
+        assert(holderObjects && holderObjects!.count == 1, "There needs to be exactly one (1) resume holder object")
         
-        return holderObjects[0] as? PersonObject
+        return holderObjects![0] as? ResumeHolder
     }
     
-    override class func filePathForResource() -> String {
+    override class func filePathForResource() -> String? {
         return NSBundle.mainBundle().pathForResource("About Me", ofType: "plist")
     }
     
@@ -56,19 +62,19 @@ class ResumeHolderObject : PersonObject {
     }
 }
 
-class RefereeObject : PersonObject {
+class Referee : PersonObject {
     let position: String
     let connection: String
     
-    class func referees() -> [RefereeObject]? {
+    class func referees() -> [Referee]? {
         var error = NSError?()
         var objects = self.extractObjects(&error)
         error?.handle()
         
-        return objects as? [RefereeObject]
+        return objects as? [Referee]
     }
     
-    override class func filePathForResource() -> String {
+    override class func filePathForResource() -> String? {
         return NSBundle.mainBundle().pathForResource("Referees", ofType: "plist")
     }
     
