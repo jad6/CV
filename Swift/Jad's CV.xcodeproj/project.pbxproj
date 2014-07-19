@@ -32,6 +32,9 @@
 		05DC99E31978A5E000AF6BB7 /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DE1978A5E000AF6BB7 /* Experience.plist */; };
 		05DC99E41978A5E000AF6BB7 /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */; };
 		05DC99E51978A5E000AF6BB7 /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99E01978A5E000AF6BB7 /* Referees.plist */; };
+		05F18805197A214A0025756F /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18804197A214A0025756F /* Size.swift */; };
+		05F18808197A23470025756F /* Contactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18807197A23470025756F /* Contactor.swift */; };
+		05F1880A197A41570025756F /* FormattedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18809197A41570025756F /* FormattedTextView.swift */; };
 		05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6C30819775C54007CCD66 /* BlurImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,9 @@
 		05DC99DE1978A5E000AF6BB7 /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
 		05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Extra Curricular.plist"; sourceTree = "<group>"; };
 		05DC99E01978A5E000AF6BB7 /* Referees.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Referees.plist; sourceTree = "<group>"; };
+		05F18804197A214A0025756F /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		05F18807197A23470025756F /* Contactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contactor.swift; sourceTree = "<group>"; };
+		05F18809197A41570025756F /* FormattedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedTextView.swift; sourceTree = "<group>"; };
 		05F6C30819775C54007CCD66 /* BlurImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +242,7 @@
 		056C9B281976582E0047F3E5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				05F18806197A232E0025756F /* Helpers */,
 				056C9B3B197663FF0047F3E5 /* Miscellaneous */,
 				056C9B2A1976584B0047F3E5 /* Subclasses */,
 				056C9B291976583E0047F3E5 /* Extensions */,
@@ -251,6 +258,7 @@
 				056C9B4519766FE20047F3E5 /* View.swift */,
 				05DC99DA1977AEA300AF6BB7 /* Error.swift */,
 				052C2A411977CCAF00D85C98 /* Color.swift */,
+				05F18804197A214A0025756F /* Size.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				05F6C30819775C54007CCD66 /* BlurImageView.swift */,
+				05F18809197A41570025756F /* FormattedTextView.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -292,6 +301,14 @@
 				05DC99D61977A99500AF6BB7 /* PersonObject.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		05F18806197A232E0025756F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				05F18807197A23470025756F /* Contactor.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,13 +416,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F1880A197A41570025756F /* FormattedTextView.swift in Sources */,
 				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
+				05F18805197A214A0025756F /* Size.swift in Sources */,
 				052C2A421977CCAF00D85C98 /* Color.swift in Sources */,
 				05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */,
 				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
+				05F18808197A23470025756F /* Contactor.swift in Sources */,
 				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,

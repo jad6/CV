@@ -19,5 +19,12 @@ am an avid traveller and I have learnt to adapt in almost any environment. I lik
 programming on personal projects.</string>
 	<key>imageName</key>
 	<string>profile_pic</string>
+	<key>backgroundImageInfo</key>
+	<dict>
+		<key>name</key>
+		<string>union_lake</string>
+		<key>extension</key>
+		<string>jpg</string>
+	</dict>
 </dict>
 </plist>

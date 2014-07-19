@@ -8,23 +8,15 @@
 
 import UIKit
 
-protocol ProfileViewDelegate {
-    func profileViewDidSelectInfoButton(_: ProfileView)
-    func profileViewDidSelectCloseButton(_: ProfileView)
-}
-
-protocol ProfileViewDataSource {
-    func controllerForEmailPresentationInProfileView(_: ProfileView) -> UIViewController
-}
-
 struct LayoutConstants {
     struct ProfilePictureSizes {
-        static let small = CGSizeMake(55.0, 55.0)
-        static let big = CGSizeMake(144.0, 144.0)
+        static let small = CGSizeMake(54.0, 54.0)
+        static let big = CGSizeMake(108.0, 108.0)
     }
     
     struct Padding {
         static let side = 18.0
+        static let top = 44.0
         static let betweenHorizontal = 8.0
         static let betweenVertical = 4.0
     }
@@ -36,11 +28,9 @@ struct LayoutConstants {
     }
 }
 
-class ProfileView: UIView, UILayoutSupport {
+let kProfileViewAnimationDuration = Animations.Durations.Medium.toRaw()
 
-    var delegate: ProfileViewDelegate?
-    var dataSource: ProfileViewDataSource?
-    
+class ProfileView: UIView, UILayoutSupport {
     var backgroundImageView: BlurImageView!
     var profilePictureImageView: UIImageView!
     var nameLabel: UILabel!
@@ -52,14 +42,17 @@ class ProfileView: UIView, UILayoutSupport {
     
     var expanded: Bool {
     didSet {
-        let color = (expanded) ? UIColor.blackColor() : UIColor.whiteColor()
+        let color = (self.expanded) ? UIColor.blackColor() : UIColor.whiteColor()
+
+        UIView.animateWithDuration(kProfileViewAnimationDuration) {
+            self.infoButton.tintColor = color
+        }
         nameLabel.textColor = color
         descriptionLabel.textColor = color
-        tintColor = color
-                
-        self.handleSubview(emailButton, toBeHidden: !expanded, animated: true)
-        self.handleSubview(phoneButton, toBeHidden: !expanded, animated: true)
-        self.handleSubview(textView, toBeHidden: !expanded, animated: true)
+    
+        handleSubview(emailButton, toBeHidden: !expanded, animated: true)
+        handleSubview(phoneButton, toBeHidden: !expanded, animated: true)
+        handleSubview(textView, toBeHidden: !expanded, animated: true)
     }
     }
     
@@ -68,59 +61,67 @@ class ProfileView: UIView, UILayoutSupport {
     }
     
     init(frame: CGRect) {
-        self.backgroundImageView = BlurImageView(blurEffectStyle: .Dark)
-        self.profilePictureImageView = UIImageView()
+        self.backgroundImageView = BlurImageView(blurEffectStyle: .Light)
         self.nameLabel = UILabel()
         self.descriptionLabel = UILabel()
         self.infoButton = UIButton.buttonWithType(.InfoLight) as UIButton
         self.emailButton = UIButton()
         self.phoneButton = UIButton()
-        self.textView = UITextView()
+        self.textView = FormattedTextView(horizontalPadding: 40.0, verticalPadding: 0.0)
+        self.profilePictureImageView = UIImageView()
         
         self.expanded = false
         
         super.init(frame: frame)
                 
-        let imagePath = NSBundle.mainBundle().pathForResource("union_lake", ofType: "jpg")
-        self.backgroundImageView.image = UIImage(contentsOfFile: imagePath)
         self.backgroundImageView.clipsToBounds = true
         self.backgroundImageView.contentMode = .ScaleAspectFill
         self.addSubview(self.backgroundImageView)
         
-        self.profilePictureImageView.image = UIImage(named: "profile_pic")
-        self.addSubview(self.profilePictureImageView)
-        
         self.nameLabel.font = UIFont.helveticaNeueThinFontOfSize(21.0)
         self.nameLabel.textColor = UIColor.whiteColor()
+        self.nameLabel.backgroundColor = UIColor.redColor()
         self.addSubview(self.nameLabel)
         
-        self.nameLabel.font = UIFont.helveticaNeueLightFontOfSize(15.0)
-        self.nameLabel.textColor = UIColor.whiteColor()
+        self.descriptionLabel.font = UIFont.helveticaNeueLightFontOfSize(15.0)
+        self.descriptionLabel.textColor = UIColor.whiteColor()
+        self.descriptionLabel.backgroundColor = UIColor.redColor()
         self.addSubview(self.descriptionLabel)
         
         self.infoButton.tintColor = UIColor.whiteColor()
         self.addSubview(self.infoButton)
+        
+        self.profilePictureImageView.image = UIImage(named: "profile_pic")
+        self.addSubview(self.profilePictureImageView)
+        
+        self.emailButton.backgroundColor = UIColor.redColor()
+        self.emailButton.titleLabel.font = UIFont.systemFontOfSize(15.0)
+        self.emailButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
+        
+        self.phoneButton.backgroundColor = UIColor.redColor()
+        self.phoneButton.titleLabel.font = UIFont.systemFontOfSize(15.0)
+        self.phoneButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
+        
+        self.textView.backgroundColor = UIColor.clearColor()
     }
     
     convenience init() {
         self.init(frame: CGRectZero)
     }
     
-    //-- Logic 
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         backgroundImageView.frame = bounds
         
-        var infoButtonFrame = infoButton.frame
-        infoButtonFrame.size = infoButton.sizeThatFits(CGSizeZero)
-        infoButtonFrame.origin.y = LayoutConstants.statusBarHeight + floor((LayoutConstants.headerHeight - infoButtonFrame.size.height) / 2.0)
-        infoButtonFrame.origin.x = bounds.size.width - infoButtonFrame.size.width - LayoutConstants.Padding.side
-        infoButton.frame = infoButtonFrame
-        
         // When the view is not expanded the iPad and iPhone share the same layout
         if !expanded {
+            var infoButtonFrame = infoButton.frame
+            infoButtonFrame.size = CGSizeFloor(infoButton.sizeThatFits(CGSizeZero))
+            infoButtonFrame.origin.y = LayoutConstants.statusBarHeight + floor((LayoutConstants.headerHeight - infoButtonFrame.size.height) / 2.0)
+            infoButtonFrame.origin.x = bounds.size.width - infoButtonFrame.size.width - LayoutConstants.Padding.side
+            infoButton.frame = infoButtonFrame
+            
             var profilePictureImageViewFrame = profilePictureImageView.frame
             profilePictureImageViewFrame.size = LayoutConstants.ProfilePictureSizes.small
             profilePictureImageViewFrame.origin.x = LayoutConstants.Padding.side
@@ -129,29 +130,42 @@ class ProfileView: UIView, UILayoutSupport {
             
             var nameLabelFrame = nameLabel.frame
             nameLabelFrame.origin.x = CGRectGetMaxX(profilePictureImageViewFrame) + LayoutConstants.Padding.betweenHorizontal
-            let labelsBoundingWidth = bounds.size.width - nameLabelFrame.origin.x - infoButtonFrame.origin.x - LayoutConstants.Padding.side
-            nameLabelFrame.size = nameLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0))
+            let labelsBoundingWidth = bounds.size.width - nameLabelFrame.origin.x - LayoutConstants.Padding.betweenHorizontal - infoButtonFrame.size.width - LayoutConstants.Padding.side
+            nameLabelFrame.size = CGSizeFloor(nameLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
             
             var descriptionLabelFrame = descriptionLabel.frame
             descriptionLabelFrame.origin.x = nameLabelFrame.origin.x
-            descriptionLabelFrame.size = descriptionLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0))
+            descriptionLabelFrame.size = CGSizeFloor(descriptionLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
             
             let labelsTotoalHeights = nameLabelFrame.size.height + LayoutConstants.Padding.betweenVertical + descriptionLabelFrame.size.height
             
-            nameLabelFrame.origin.y = LayoutConstants.statusBarHeight + floor((labelsTotoalHeights - LayoutConstants.headerHeight) / 2.0)
+            nameLabelFrame.origin.y = LayoutConstants.statusBarHeight + floor((LayoutConstants.headerHeight - labelsTotoalHeights) / 2.0)
             descriptionLabelFrame.origin.y = CGRectGetMaxY(nameLabelFrame) + LayoutConstants.Padding.betweenVertical
+            
+            nameLabel.frame = nameLabelFrame
+            descriptionLabel.frame = descriptionLabelFrame
         }
     }
     
-    func handleSubview(subview: UIView, toBeHidden hide: Bool, animated: Bool) {
+    //-- Logic
+    
+    func handleSubview(subview: UIView, insertedAboveSubview bewlowSubview: UIView?, toBeHidden hide: Bool, animated: Bool) {
         if !hide {
-            self.addSubview(subview)
+            if bewlowSubview {
+                self.insertSubview(subview, aboveSubview: bewlowSubview!)
+            } else {
+                self.addSubview(subview)
+            }
         }
         
-        subview.setHidden(hide, animated: animated, duration: Animations.Durations.Medium.toRaw()) { finished in
+        subview.setHidden(hide, animated: animated, duration: kProfileViewAnimationDuration) { finished in
             if finished && hide {
                 subview.removeFromSuperview()
             }
         }
+    }
+    
+    func handleSubview(subview: UIView, toBeHidden hide: Bool, animated: Bool) {
+        self.handleSubview(subview, insertedAboveSubview: nil, toBeHidden: hide, animated: animated)
     }
 }

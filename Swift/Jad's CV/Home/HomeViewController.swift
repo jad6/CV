@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var résuméHolder: RésuméHolder?
+    
     var sectionsPageViewController: SectionsPageViewController!
     
     var homeView: HomeView! {
@@ -20,7 +22,8 @@ class HomeViewController: UIViewController {
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         self.sectionsPageViewController = SectionsPageViewController()
-
+        self.résuméHolder = RésuméHolder.résuméHolder()
+        
         super.init(nibName: nil, bundle: nil)
         
         self.addChildViewController(self.sectionsPageViewController)
@@ -37,10 +40,12 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        homeView.profileView.infoButton.addTarget(self, action: "profileInfoAction:", forControlEvents: .TouchUpInside)
+        setupProfileView()
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         UIView.animateWithDuration(Animations.Durations.Short.toRaw()) {
             self.setNeedsStatusBarAppearanceUpdate()
         }
@@ -49,12 +54,49 @@ class HomeViewController: UIViewController {
     //-- Status bar
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return (homeView.profileView.expanded) ? .Default : .LightContent
     }
     
     //-- Actions
     
     func profileInfoAction(sender: AnyObject) {
         homeView.handleProfileViewFocus()
+        
+        UIView.animateWithDuration(kProfileViewAnimationDuration) {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    func emailAction(sender: AnyObject) {
+        Contactor.sharedContactor.email(reciepients: [résuméHolder!.email], fromController: self)
+    }
+
+    func phoneAction(sender: AnyObject) {
+        Contactor.call(number: résuméHolder!.phoneNumber)
+    }
+    
+    //-- Logic
+    
+    func setupProfileView() {
+        let profileView = homeView.profileView
+        
+        profileView.infoButton.addTarget(self, action: "profileInfoAction:", forControlEvents: .TouchUpInside)
+
+        if let holder = résuméHolder {
+            profileView.nameLabel.text = holder.fullName
+            profileView.descriptionLabel.text = holder.location
+            profileView.profilePictureImageView.image = holder.picture
+            profileView.backgroundImageView.image = holder.backgroundImage
+            profileView.textView.text = holder.detailDescription
+            profileView.emailButton.setTitle(holder.email, forState: .Normal)
+            profileView.phoneButton.setTitle(holder.phoneNumber, forState: .Normal)
+            
+            profileView.emailButton.addTarget(self, action: "emailAction:", forControlEvents: .TouchUpInside)
+            profileView.phoneButton.addTarget(self, action: "phoneAction:", forControlEvents: .TouchUpInside)
+        } else {
+            profileView.nameLabel.text = "Invalid Data"
+            profileView.descriptionLabel.text = "Check the plist data"
+            println("hmm looks like you have a wrong data format for the résumé holder")
+        }
     }
 }

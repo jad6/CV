@@ -47,13 +47,11 @@ class HomeView: UIView {
     
     func handleProfileViewFocus() {
         profileView.expanded = !profileView.expanded
-
-        let duration = Animations.Durations.Medium.toRaw()
         
         if profileView.expanded {
-            profileView.backgroundImageView.blurEffectView.setHidden(true, animated: true, duration: duration, completion: nil)
+            profileView.backgroundImageView.blurEffectView.setHidden(true, animated: true, duration: kProfileViewAnimationDuration, completion: nil)
         }
-        UIView.animateWithDuration(duration, animations: {
+        UIView.animateWithDuration(kProfileViewAnimationDuration, animations: {
             self.layoutSubviews()
             self.profileView.layoutSubviews()
         }, completion: { finished in

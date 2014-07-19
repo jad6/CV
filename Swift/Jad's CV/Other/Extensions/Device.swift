@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import MessageUI
 
 extension UIDevice {
     
     class func isPad() -> Bool {
         return UIDevice.currentDevice().userInterfaceIdiom == .Pad
+    }
+    
+    class func canCall() -> Bool {
+        return UIApplication.sharedApplication().canOpenURL(NSURL(string: "tel://"))
+    }
+    
+    class func canEmail() -> Bool {
+        return MFMailComposeViewController.canSendMail()
     }
 }

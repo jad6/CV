@@ -38,25 +38,37 @@ class PersonObject: ExtractedObject {
     }
 }
 
-class ResumeHolder : PersonObject {
+class RésuméHolder : PersonObject {
     let detailDescription: String
+    let backgroundImage: UIImage
     
-    class func resumeHolder() -> ResumeHolder? {
+    class func résuméHolder() -> RésuméHolder? {
         var error = NSError?()
         var holderObjects = self.extractObjects(&error)
         error?.handle()
 
-        assert(holderObjects && holderObjects!.count == 1, "There needs to be exactly one (1) resume holder object")
+        assert(holderObjects && holderObjects!.count == 1, "There needs to be exactly one (1) résumé holder object")
         
-        return holderObjects![0] as? ResumeHolder
+        return holderObjects![0] as? RésuméHolder
     }
     
     override class func filePathForResource() -> String? {
         return NSBundle.mainBundle().pathForResource("About Me", ofType: "plist")
     }
     
+    class func loadBackgroundImage(backgrounfImageInfo: NSDictionary) -> UIImage {
+        let backgrounfImageName = backgrounfImageInfo["name"] as String
+        let backgrounfImageExtension = backgrounfImageInfo["extension"] as String
+        
+        let backgroundImagePath = NSBundle.mainBundle().pathForResource(backgrounfImageName, ofType: backgrounfImageExtension)
+        return UIImage(contentsOfFile: backgroundImagePath)
+    }
+    
     init(dictionary: NSDictionary) {
         self.detailDescription = dictionary["description"] as String
+        
+        let backgrounfImageInfo = dictionary["backgroundImageInfo"] as NSDictionary
+        self.backgroundImage = RésuméHolder.loadBackgroundImage(backgrounfImageInfo)
         
         super.init(dictionary: dictionary)
     }
