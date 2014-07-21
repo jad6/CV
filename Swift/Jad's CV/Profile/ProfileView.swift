@@ -21,6 +21,7 @@ struct LayoutConstants {
         static let betweenVertical = 4.0
     }
     
+    static let textViewMaxSize = CGSizeMake(320.0, 480.0)
     static let statusBarHeight = 20.0
     static let topLayoutLength = 108.0
     static var headerHeight: Double {
@@ -67,7 +68,7 @@ class ProfileView: UIView, UILayoutSupport {
         self.infoButton = UIButton.buttonWithType(.InfoLight) as UIButton
         self.emailButton = UIButton()
         self.phoneButton = UIButton()
-        self.textView = FormattedTextView(horizontalPadding: 40.0, verticalPadding: 0.0)
+        self.textView = FormattedTextView()
         self.profilePictureImageView = UIImageView()
         
         self.expanded = false

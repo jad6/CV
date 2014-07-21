@@ -16,10 +16,4 @@ class FormattedTextView: UITextView {
         self.editable = false
         self.textAlignment = .Center
     }
-    
-    convenience init(horizontalPadding: Double, verticalPadding: Double) {
-        self.init(frame: CGRectZero, textContainer: nil)
-        
-        self.textContainerInset = UIEdgeInsetsMake(verticalPadding, horizontalPadding, verticalPadding, horizontalPadding)
-    }
 }

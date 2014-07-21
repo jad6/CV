@@ -22,13 +22,13 @@ class ProfileView_Phone: ProfileView {
         let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsetsMake(263.0, 0.0, 0.0, 0.0))
         self.fadeImageView = UIImageView(image: fadeImage)
         super.init(frame: frame)
+        
+        self.textView.textContainerInset = UIEdgeInsetsMake(0.0, 40.0, 0.0, 40.0)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-            
-        fadeImageView.frame = bounds
-
+        
         if expanded {
             var profilePictureImageViewFrame = profilePictureImageView.frame
             profilePictureImageViewFrame.size = LayoutConstants.ProfilePictureSizes.big
@@ -68,8 +68,9 @@ class ProfileView_Phone: ProfileView {
         var textViewFrame = textView.frame
         textViewFrame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
         textViewFrame.origin.x = 0.0
-        textViewFrame.size.width = bounds.size.width
-        textViewFrame.size.height = bounds.size.height - textViewFrame.origin.y
+        textViewFrame.size = CGSizeFloor(textView.sizeThatFits(CGSizeMake(LayoutConstants.textViewMaxSize.width, min(bounds.size.height - textViewFrame.origin.y, LayoutConstants.textViewMaxSize.height))))
         textView.frame = textViewFrame
+        
+        fadeImageView.frame = bounds
     }
 }
