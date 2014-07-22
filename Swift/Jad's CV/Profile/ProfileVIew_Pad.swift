@@ -37,7 +37,7 @@ class ProfileView_Pad: ProfileView {
         
         if expanded {
             var profilePictureImageViewFrame = profilePictureImageView.frame
-            profilePictureImageViewFrame.size = LayoutConstants.ProfilePictureSizes.big
+            profilePictureImageViewFrame.size = LayoutConstants.PictureSizes.big
             profilePictureImageViewFrame.origin.x = floor((bounds.size.width - profilePictureImageViewFrame.size.width) / 2.0)
             
             var nameLabelFrame = nameLabel.frame

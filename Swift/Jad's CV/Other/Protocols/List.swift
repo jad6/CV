@@ -13,7 +13,8 @@ protocol List {
     
     /// The data for the list view. The format will always include multiple
     /// sections.
-    var data: ([[DataType]])! { get set }
+    //FIXME: Multidimensional array is not friends with Xcode
+    var data: ([DataType])! { get set }
     
     func isValidIndexPath(indexPath: NSIndexPath) -> Bool
     

@@ -31,7 +31,7 @@ class ProfileView_Phone: ProfileView {
         
         if expanded {
             var profilePictureImageViewFrame = profilePictureImageView.frame
-            profilePictureImageViewFrame.size = LayoutConstants.ProfilePictureSizes.big
+            profilePictureImageViewFrame.size = LayoutConstants.PictureSizes.big
             profilePictureImageViewFrame.origin.x = floor((bounds.size.width - profilePictureImageViewFrame.size.width) / 2.0)
             profilePictureImageViewFrame.origin.y = LayoutConstants.statusBarHeight + LayoutConstants.Padding.top
             profilePictureImageView.frame = profilePictureImageViewFrame

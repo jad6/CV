@@ -31,6 +31,8 @@
 		056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */; };
 		056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */; };
 		056C9B4619766FE20047F3E5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4519766FE20047F3E5 /* View.swift */; };
+		0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */; };
+		0579C959197E4CBF000233EC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C958197E4CBF000233EC /* Date.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
 		05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D61977A99500AF6BB7 /* PersonObject.swift */; };
@@ -91,6 +93,8 @@
 		056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVIew_Pad.swift; sourceTree = "<group>"; };
 		056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView_Phone.swift; sourceTree = "<group>"; };
 		056C9B4519766FE20047F3E5 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEventTableViewCell.swift; sourceTree = "<group>"; };
+		0579C958197E4CBF000233EC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
 		05DC99D61977A99500AF6BB7 /* PersonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				0529482E197E0FC700739084 /* TimelineTableViewController.swift */,
+				0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				056C9B4519766FE20047F3E5 /* View.swift */,
 				05DC99DA1977AEA300AF6BB7 /* Error.swift */,
 				052C2A411977CCAF00D85C98 /* Color.swift */,
+				0579C958197E4CBF000233EC /* Date.swift */,
 				05F18804197A214A0025756F /* Size.swift */,
 			);
 			path = Extensions;
@@ -458,6 +464,7 @@
 				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
 				05F18808197A23470025756F /* Contactor.swift in Sources */,
 				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,
+				0579C959197E4CBF000233EC /* Date.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
 				05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */,
@@ -469,6 +476,7 @@
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
 				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
 				0529482D197E0BBE00739084 /* List.swift in Sources */,
+				0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */,
 				0529482F197E0FC700739084 /* TimelineTableViewController.swift in Sources */,
 				056C9B2C19765B160047F3E5 /* HomeViewController.swift in Sources */,
 			);

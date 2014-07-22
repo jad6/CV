@@ -8,24 +8,28 @@
 
 import UIKit
 
-class TableViewController<DataType>: UITableViewController, List {
+class TableViewController: UITableViewController, List {
+    
+    typealias DataType = Any
     
     //TODO: re-enable that once Swift supports class variables
-//    class let defaultCellIdentifier = "Cell"
+//    private class let defaultCellIdentifier = "Cell"
     
-    class func defaultCellIdentifier() -> String {
+    private class func defaultCellIdentifier() -> String {
         return "Cell"
     }
     
-    var data: ([[DataType]])! {
+    var data: ([Any])! {
     didSet {
         tableView.reloadData()
     }
     }
     
-    init(style: UITableViewStyle, data: ([[DataType]])!) {
+    init(style: UITableViewStyle, data: ([Any])!) {
         self.data = data
         super.init(style: style)
+                
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: TableViewController.defaultCellIdentifier())
     }
 
     //MARK: List
@@ -41,19 +45,21 @@ class TableViewController<DataType>: UITableViewController, List {
         return true
     }
     
-    func objectAtIndexPath(indexPath: NSIndexPath) -> DataType! {
+    func objectAtIndexPath(indexPath: NSIndexPath) -> Any! {
         if !isValidIndexPath(indexPath) {
             return nil
         }
-        
-        return data[indexPath.section][indexPath.row]
+
+        //FIXME: Multidimensional array is not friends with Xcode
+//        return data[indexPath.section][indexPath.row]
+        return data[indexPath.row]
     }
 
-    func listView(listView: UIView, configureCell cell: UIView, withObject object: DataType?, atIndexPath indexPath: NSIndexPath) {
+    func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
         // Override me!
     }
     
-    func listView(listView: UIView, didSelectObject object: DataType, atIndexPath indexPath: NSIndexPath) {
+    func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
         // Override me!
     }
 
@@ -63,12 +69,15 @@ class TableViewController<DataType>: UITableViewController, List {
     
     //MARK: Table view 
     
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        return data.count
-    }
+    //FIXME: Multidimensional array is not friends with Xcode
+//    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+//        return data.count
+//    }
     
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return data[section].count
+        //FIXME: Multidimensional array is not friends with Xcode
+//        return data[section].count
+        return data.count
     }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {

@@ -8,30 +8,30 @@
 
 import UIKit
 
-struct LayoutConstants {
-    struct ProfilePictureSizes {
-        static let small = CGSizeMake(54.0, 54.0)
-        static let big = CGSizeMake(108.0, 108.0)
-    }
-    
-    struct Padding {
-        static let side: CGFloat = 18.0
-        static let top: CGFloat = 44.0
-        static let betweenHorizontal: CGFloat = 8.0
-        static let betweenVertical: CGFloat = 4.0
-    }
-    
-    static let textViewMaxSize = CGSizeMake(320.0, 480.0)
-    static let statusBarHeight: CGFloat = 20.0
-    static let topLayoutLength: CGFloat = 108.0
-    static var headerHeight: CGFloat {
-    return topLayoutLength - statusBarHeight
-    }
-}
-
 let kProfileViewAnimationDuration = Animations.Durations.Medium.toRaw()
 
 class ProfileView: UIView, UILayoutSupport {
+    struct LayoutConstants {
+        struct PictureSizes {
+            static let small = CGSizeMake(54.0, 54.0)
+            static let big = CGSizeMake(108.0, 108.0)
+        }
+        
+        struct Padding {
+            static let side: CGFloat = 18.0
+            static let top: CGFloat = 44.0
+            static let betweenHorizontal: CGFloat = 8.0
+            static let betweenVertical: CGFloat = 4.0
+        }
+        
+        static let textViewMaxSize = CGSizeMake(320.0, 480.0)
+        static let statusBarHeight: CGFloat = 20.0
+        static let topLayoutLength: CGFloat = 108.0
+        static var headerHeight: CGFloat {
+        return topLayoutLength - statusBarHeight
+        }
+    }
+    
     var backgroundImageView: BlurImageView!
     var profilePictureImageView: UIImageView!
     var nameLabel: UILabel!
@@ -96,11 +96,11 @@ class ProfileView: UIView, UILayoutSupport {
         self.addSubview(self.profilePictureImageView)
         
         self.emailButton.backgroundColor = UIColor.redColor()
-        self.emailButton.titleLabel.font = UIFont.systemFontOfSize(15.0)
+        self.emailButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.emailButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
         
         self.phoneButton.backgroundColor = UIColor.redColor()
-        self.phoneButton.titleLabel.font = UIFont.systemFontOfSize(15.0)
+        self.phoneButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.phoneButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
         
         self.textView.backgroundColor = UIColor.clearColor()
@@ -124,7 +124,7 @@ class ProfileView: UIView, UILayoutSupport {
             infoButton.frame = infoButtonFrame
             
             var profilePictureImageViewFrame = profilePictureImageView.frame
-            profilePictureImageViewFrame.size = LayoutConstants.ProfilePictureSizes.small
+            profilePictureImageViewFrame.size = LayoutConstants.PictureSizes.small
             profilePictureImageViewFrame.origin.x = LayoutConstants.Padding.side
             profilePictureImageViewFrame.origin.y = LayoutConstants.statusBarHeight + floor((LayoutConstants.headerHeight - profilePictureImageViewFrame.size.height) / 2.0)
             profilePictureImageView.frame = profilePictureImageViewFrame

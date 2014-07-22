@@ -18,6 +18,10 @@ class ExperienceObject: ExtractedObject {
     let position: String
     let detailedDescription: String
     
+    var timeSpentString: String {
+    return startDate.combinedCondensedStringWithEndDate(endDate, withSeparator: " -\n  ")
+    }
+    
     class func sortedExperiences() -> [ExperienceObject]? {
         var error = NSError?()
         var objects = self.extractObjects(&error)
