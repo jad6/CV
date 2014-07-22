@@ -15,10 +15,10 @@ extension UIColor {
         
         assert(components.count == 4, "To convert an RGB color string there must be exactly 4 elements")
         
-        let red = components[0].bridgeToObjectiveC().doubleValue
-        let green = components[1].bridgeToObjectiveC().doubleValue
-        let blue = components[2].bridgeToObjectiveC().doubleValue
-        let alpha = components[3].bridgeToObjectiveC().doubleValue
+        let red = CGFloat(components[0].bridgeToObjectiveC().doubleValue)
+        let green = CGFloat(components[1].bridgeToObjectiveC().doubleValue)
+        let blue = CGFloat(components[2].bridgeToObjectiveC().doubleValue)
+        let alpha = CGFloat(components[3].bridgeToObjectiveC().doubleValue)
 
         return self(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
     }

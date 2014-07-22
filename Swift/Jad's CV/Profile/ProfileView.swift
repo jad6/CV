@@ -15,16 +15,16 @@ struct LayoutConstants {
     }
     
     struct Padding {
-        static let side = 18.0
-        static let top = 44.0
-        static let betweenHorizontal = 8.0
-        static let betweenVertical = 4.0
+        static let side: CGFloat = 18.0
+        static let top: CGFloat = 44.0
+        static let betweenHorizontal: CGFloat = 8.0
+        static let betweenVertical: CGFloat = 4.0
     }
     
     static let textViewMaxSize = CGSizeMake(320.0, 480.0)
-    static let statusBarHeight = 20.0
-    static let topLayoutLength = 108.0
-    static var headerHeight: Double {
+    static let statusBarHeight: CGFloat = 20.0
+    static let topLayoutLength: CGFloat = 108.0
+    static var headerHeight: CGFloat {
     return topLayoutLength - statusBarHeight
     }
 }
@@ -148,7 +148,7 @@ class ProfileView: UIView, UILayoutSupport {
         }
     }
     
-    //-- Logic
+    //MARK: Logic
     
     func handleSubview(subview: UIView, insertedAboveSubview bewlowSubview: UIView?, toBeHidden hide: Bool, animated: Bool) {
         if !hide {

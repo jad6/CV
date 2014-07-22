@@ -12,16 +12,16 @@ class HomeViewController: UIViewController {
 
     var résuméHolder: RésuméHolder?
     
-    var sectionsPageViewController: SectionsPageViewController!
+    var sectionsPageViewController: TimelineTableViewController<TimelineEvent>!
     
     var homeView: HomeView! {
     return view as? HomeView
     }
     
-    //-- Init
+    //MARK: Init
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        self.sectionsPageViewController = SectionsPageViewController()
+        self.sectionsPageViewController = TimelineTableViewController<TimelineEvent>()
         self.résuméHolder = RésuméHolder.résuméHolder()
         
         super.init(nibName: nil, bundle: nil)
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         self.init(nibName: nil, bundle: nil)
     }
     
-    //-- View lifecycle
+    //MARK: View lifecycle
     
     override func loadView() {
         view = HomeView(sectionsPageView: sectionsPageViewController.view)
@@ -51,13 +51,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    //-- Status bar
+    //MARK: Status bar
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return (homeView.profileView.expanded) ? .Default : .LightContent
     }
     
-    //-- Actions
+    //MARK: Actions
     
     func profileInfoAction(sender: AnyObject) {
         homeView.handleProfileViewFocus()
@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
         Contactor.call(number: résuméHolder!.phoneNumber)
     }
     
-    //-- Logic
+    //MARK: Logic
     
     func setupProfileView() {
         let profileView = homeView.profileView

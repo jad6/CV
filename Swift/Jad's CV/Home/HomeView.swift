@@ -43,7 +43,7 @@ class HomeView: UIView {
         sectionsPageView.frame = sectionsPageViewFrame
     }
     
-    //-- Logic
+    //MARK: Logic
     
     func handleProfileViewFocus() {
         profileView.expanded = !profileView.expanded

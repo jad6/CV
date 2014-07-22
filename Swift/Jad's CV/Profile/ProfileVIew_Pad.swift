@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileView_Pad: ProfileView {
 
-    //-- TODO when class variables are allowed make this one.
+    //TODO: when class variables are allowed make this one.
     struct CloudImageLayout {
         static let resizableInsets = UIEdgeInsetsMake(80.0, 75.0, 80.0, 75.0)
     }
@@ -88,7 +88,7 @@ class ProfileView_Pad: ProfileView {
         cloudImageView.frame = cloudImageViewFrame
     }
     
-    //-- Logic 
+    //MARK: Logic 
     
     func widestView(#views: [UIView]) -> UIView {
         var widestView = UIView(frame: CGRectZero)

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0529482A197E031E00739084 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05294829197E031E00739084 /* TableViewController.swift */; };
+		0529482D197E0BBE00739084 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529482C197E0BBE00739084 /* List.swift */; };
+		0529482F197E0FC700739084 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529482E197E0FC700739084 /* TimelineTableViewController.swift */; };
+		05294858197E19F700739084 /* About Me.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0529485A197E19F700739084 /* About Me.plist */; };
+		0529485D197E1A0800739084 /* Education.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0529485F197E1A0800739084 /* Education.plist */; };
+		05294862197E1A1100739084 /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294864197E1A1100739084 /* Experience.plist */; };
+		05294867197E1A1700739084 /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294869197E1A1700739084 /* Extra Curricular.plist */; };
+		0529486C197E1A1E00739084 /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0529486E197E1A1E00739084 /* Referees.plist */; };
 		052C2A421977CCAF00D85C98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C2A411977CCAF00D85C98 /* Color.swift */; };
 		054D63411977789A0022D63A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D63401977789A0022D63A /* Font.swift */; };
 		0564EADE197757950003DA44 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADC197757950003DA44 /* union_lake.jpg */; };
@@ -27,11 +35,7 @@
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
 		05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D61977A99500AF6BB7 /* PersonObject.swift */; };
 		05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99DA1977AEA300AF6BB7 /* Error.swift */; };
-		05DC99E11978A5E000AF6BB7 /* About Me.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DC1978A5E000AF6BB7 /* About Me.plist */; };
-		05DC99E21978A5E000AF6BB7 /* Education.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DD1978A5E000AF6BB7 /* Education.plist */; };
-		05DC99E31978A5E000AF6BB7 /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DE1978A5E000AF6BB7 /* Experience.plist */; };
-		05DC99E41978A5E000AF6BB7 /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */; };
-		05DC99E51978A5E000AF6BB7 /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05DC99E01978A5E000AF6BB7 /* Referees.plist */; };
+		05DF17FA197CC10F003AA613 /* ScrollPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DF17F9197CC10F003AA613 /* ScrollPageViewController.swift */; };
 		05F18805197A214A0025756F /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18804197A214A0025756F /* Size.swift */; };
 		05F18808197A23470025756F /* Contactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18807197A23470025756F /* Contactor.swift */; };
 		05F1880A197A41570025756F /* FormattedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18809197A41570025756F /* FormattedTextView.swift */; };
@@ -49,6 +53,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05294829197E031E00739084 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		0529482C197E0BBE00739084 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		0529482E197E0FC700739084 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		05294859197E19F700739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "Base.lproj/About Me.plist"; sourceTree = "<group>"; };
+		0529485B197E19F900739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/About Me.plist"; sourceTree = "<group>"; };
+		0529485C197E1A0200739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = "fr.lproj/About Me.plist"; sourceTree = "<group>"; };
+		0529485E197E1A0800739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Education.plist; sourceTree = "<group>"; };
+		05294860197E1A0900739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Education.plist; sourceTree = "<group>"; };
+		05294861197E1A0A00739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Education.plist; sourceTree = "<group>"; };
+		05294863197E1A1100739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Experience.plist; sourceTree = "<group>"; };
+		05294865197E1A1300739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Experience.plist; sourceTree = "<group>"; };
+		05294866197E1A1300739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Experience.plist; sourceTree = "<group>"; };
+		05294868197E1A1700739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "Base.lproj/Extra Curricular.plist"; sourceTree = "<group>"; };
+		0529486A197E1A1800739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/Extra Curricular.plist"; sourceTree = "<group>"; };
+		0529486B197E1A1900739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = "fr.lproj/Extra Curricular.plist"; sourceTree = "<group>"; };
+		0529486D197E1A1E00739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Referees.plist; sourceTree = "<group>"; };
+		0529486F197E1A1F00739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Referees.plist; sourceTree = "<group>"; };
+		05294870197E1A2000739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Referees.plist; sourceTree = "<group>"; };
 		052C2A411977CCAF00D85C98 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		054D63401977789A0022D63A /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		0564EADC197757950003DA44 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
@@ -73,11 +95,7 @@
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
 		05DC99D61977A99500AF6BB7 /* PersonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
 		05DC99DA1977AEA300AF6BB7 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		05DC99DC1978A5E000AF6BB7 /* About Me.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "About Me.plist"; sourceTree = "<group>"; };
-		05DC99DD1978A5E000AF6BB7 /* Education.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Education.plist; sourceTree = "<group>"; };
-		05DC99DE1978A5E000AF6BB7 /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
-		05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Extra Curricular.plist"; sourceTree = "<group>"; };
-		05DC99E01978A5E000AF6BB7 /* Referees.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Referees.plist; sourceTree = "<group>"; };
+		05DF17F9197CC10F003AA613 /* ScrollPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPageViewController.swift; sourceTree = "<group>"; };
 		05F18804197A214A0025756F /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		05F18807197A23470025756F /* Contactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contactor.swift; sourceTree = "<group>"; };
 		05F18809197A41570025756F /* FormattedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedTextView.swift; sourceTree = "<group>"; };
@@ -102,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0529482B197E0B8D00739084 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0529482C197E0BBE00739084 /* List.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		056C9AF0197655CD0047F3E5 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +239,7 @@
 		056C9B24197657AA0047F3E5 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				0529482E197E0FC700739084 /* TimelineTableViewController.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -242,6 +269,7 @@
 		056C9B281976582E0047F3E5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				0529482B197E0B8D00739084 /* Protocols */,
 				05F18806197A232E0025756F /* Helpers */,
 				056C9B3B197663FF0047F3E5 /* Miscellaneous */,
 				056C9B2A1976584B0047F3E5 /* Subclasses */,
@@ -268,6 +296,8 @@
 			children = (
 				05F6C30819775C54007CCD66 /* BlurImageView.swift */,
 				05F18809197A41570025756F /* FormattedTextView.swift */,
+				05DF17F9197CC10F003AA613 /* ScrollPageViewController.swift */,
+				05294829197E031E00739084 /* TableViewController.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -283,11 +313,11 @@
 		05DC99D01977866000AF6BB7 /* Property Lists */ = {
 			isa = PBXGroup;
 			children = (
-				05DC99DC1978A5E000AF6BB7 /* About Me.plist */,
-				05DC99DD1978A5E000AF6BB7 /* Education.plist */,
-				05DC99DE1978A5E000AF6BB7 /* Experience.plist */,
-				05DC99DF1978A5E000AF6BB7 /* Extra Curricular.plist */,
-				05DC99E01978A5E000AF6BB7 /* Referees.plist */,
+				0529485A197E19F700739084 /* About Me.plist */,
+				0529485F197E1A0800739084 /* Education.plist */,
+				05294864197E1A1100739084 /* Experience.plist */,
+				05294869197E1A1700739084 /* Extra Curricular.plist */,
+				0529486E197E1A1E00739084 /* Referees.plist */,
 			);
 			name = "Property Lists";
 			path = PropertyLists;
@@ -374,6 +404,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 056C9AF0197655CD0047F3E5;
 			productRefGroup = 056C9AFA197655CD0047F3E5 /* Products */;
@@ -392,11 +423,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0564EADE197757950003DA44 /* union_lake.jpg in Resources */,
-				05DC99E51978A5E000AF6BB7 /* Referees.plist in Resources */,
-				05DC99E41978A5E000AF6BB7 /* Extra Curricular.plist in Resources */,
-				05DC99E11978A5E000AF6BB7 /* About Me.plist in Resources */,
-				05DC99E31978A5E000AF6BB7 /* Experience.plist in Resources */,
-				05DC99E21978A5E000AF6BB7 /* Education.plist in Resources */,
+				0529486C197E1A1E00739084 /* Referees.plist in Resources */,
+				05294867197E1A1700739084 /* Extra Curricular.plist in Resources */,
+				05294858197E19F700739084 /* About Me.plist in Resources */,
+				05294862197E1A1100739084 /* Experience.plist in Resources */,
+				0529485D197E1A0800739084 /* Education.plist in Resources */,
 				056C9B1F197656DC0047F3E5 /* Images.xcassets in Resources */,
 				0564EADF197757950003DA44 /* winthrop_hall.jpg in Resources */,
 			);
@@ -431,10 +462,14 @@
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
 				05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */,
 				056C9B3A197662420047F3E5 /* Device.swift in Sources */,
+				05DF17FA197CC10F003AA613 /* ScrollPageViewController.swift in Sources */,
 				056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */,
+				0529482A197E031E00739084 /* TableViewController.swift in Sources */,
 				054D63411977789A0022D63A /* Font.swift in Sources */,
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
 				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
+				0529482D197E0BBE00739084 /* List.swift in Sources */,
+				0529482F197E0FC700739084 /* TimelineTableViewController.swift in Sources */,
 				056C9B2C19765B160047F3E5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +491,59 @@
 			targetProxy = 056C9B0C197655CD0047F3E5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0529485A197E19F700739084 /* About Me.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05294859197E19F700739084 /* Base */,
+				0529485B197E19F900739084 /* en */,
+				0529485C197E1A0200739084 /* fr */,
+			);
+			name = "About Me.plist";
+			sourceTree = "<group>";
+		};
+		0529485F197E1A0800739084 /* Education.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0529485E197E1A0800739084 /* Base */,
+				05294860197E1A0900739084 /* en */,
+				05294861197E1A0A00739084 /* fr */,
+			);
+			name = Education.plist;
+			sourceTree = "<group>";
+		};
+		05294864197E1A1100739084 /* Experience.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05294863197E1A1100739084 /* Base */,
+				05294865197E1A1300739084 /* en */,
+				05294866197E1A1300739084 /* fr */,
+			);
+			name = Experience.plist;
+			sourceTree = "<group>";
+		};
+		05294869197E1A1700739084 /* Extra Curricular.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05294868197E1A1700739084 /* Base */,
+				0529486A197E1A1800739084 /* en */,
+				0529486B197E1A1900739084 /* fr */,
+			);
+			name = "Extra Curricular.plist";
+			sourceTree = "<group>";
+		};
+		0529486E197E1A1E00739084 /* Referees.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0529486D197E1A1E00739084 /* Base */,
+				0529486F197E1A1F00739084 /* en */,
+				05294870197E1A2000739084 /* fr */,
+			);
+			name = Referees.plist;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		056C9B13197655CD0047F3E5 /* Debug */ = {
@@ -543,6 +631,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Jad's CV/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -554,6 +643,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Jad's CV/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

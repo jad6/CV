@@ -8,9 +8,14 @@
 
 import UIKit
 
-class SectionsPageViewController: UIPageViewController {
-    
-    convenience init() {
-        self.init(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-    }
-}
+//class SectionsPageViewController<T: UIViewController where T: PageContent>: ScrollPageViewController<T> {
+//    
+//    //TODO: when class variables are allowed make this one.
+////    struct SectionsInfo {
+////        let sectionsClassTypes = [
+////    }
+//    
+//    init() {
+//        super.init(numberOfPages: 0, initialIndex: 0, navigationOrientation: .Horizontal)
+//    }
+//}

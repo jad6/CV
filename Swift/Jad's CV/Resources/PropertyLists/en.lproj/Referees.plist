@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Dr.</string>
+		<key>firstName</key>
+		<string>Julie</string>
+		<key>lastName</key>
+		<string>Plummer</string>
+		<key>position</key>
+		<string>Retired Professor</string>
+		<key>location</key>
+		<string>UWA School of Plant Biology</string>
+		<key>connection</key>
+		<string>I managed Julie&apos;s plant database for research.</string>
+		<key>email</key>
+		<string>towerplummer@gmail.com</string>
+		<key>phoneNumber</key>
+		<string>+61 415 104 108</string>
+		<key>imageName</key>
+		<string>julie</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Dr.</string>
+		<key>firstName</key>
+		<string>Amitava</string>
+		<key>lastName</key>
+		<string>Datta</string>
+		<key>position</key>
+		<string>Professor</string>
+		<key>location</key>
+		<string>University of Western Australia</string>
+		<key>connection</key>
+		<string>Final year thesis supervisor.</string>
+		<key>email</key>
+		<string>amitava.datta@uwa.edu.au</string>
+		<key>phoneNumber</key>
+		<string>+61 8 6488 3449</string>
+		<key>imageName</key>
+		<string>datta</string>
+	</dict>
+	<dict>
+		<key>firstName</key>
+		<string>Monica</string>
+		<key>lastName</key>
+		<string>Sacroug</string>
+		<key>position</key>
+		<string>Project Manager</string>
+		<key>location</key>
+		<string>XciteLogic Development</string>
+		<key>connection</key>
+		<string>Ex project manager at XciteLogic Development.</string>
+		<key>email</key>
+		<string>monica@ramiken.com</string>
+		<key>phoneNumber</key>
+		<string>+61 422 581 744</string>
+		<key>imageName</key>
+		<string>monica</string>
+	</dict>
+	<dict>
+		<key>firstName</key>
+		<string>Matt</string>
+		<key>lastName</key>
+		<string>Urquhart</string>
+		<key>position</key>
+		<string>Software Developer</string>
+		<key>location</key>
+		<string>Express VPN</string>
+		<key>connection</key>
+		<string>Matt was a colleague at Xcite and Datacom.</string>
+		<key>email</key>
+		<string>matt.u@chengbao.com.hk</string>
+		<key>phoneNumber</key>
+		<string>+852 6342 5280</string>
+		<key>imageName</key>
+		<string>matt</string>
+	</dict>
+	<dict>
+		<key>firstName</key>
+		<string>Cameron</string>
+		<key>lastName</key>
+		<string>Fitzgerald</string>
+		<key>position</key>
+		<string>Guild VP, Ex-Google Intern</string>
+		<key>location</key>
+		<string>University of Western Australia</string>
+		<key>connection</key>
+		<string>I worked with Cam on the UEC app.</string>
+		<key>email</key>
+		<string>vp@guild.uwa.edu.au</string>
+		<key>phoneNumber</key>
+		<string>+61 405 031 177</string>
+		<key>imageName</key>
+		<string>cam</string>
+	</dict>
+</array>
+</plist>

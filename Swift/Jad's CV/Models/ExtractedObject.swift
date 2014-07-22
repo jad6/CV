@@ -10,7 +10,7 @@ import Foundation
 
 class ExtractedObject {
     
-    //-- TODO re-enable that once Swift supports class variables
+    //TODO: re-enable that once Swift supports class variables
 //    class var filePathForResource: String?
     
     class func filePathForResource() -> String? {
@@ -20,7 +20,7 @@ class ExtractedObject {
     class func extractObjects(error: NSErrorPointer) -> [ExtractedObject]? {
         var plistFormat: NSPropertyListFormat = .XMLFormat_v1_0
         let data = NSData(contentsOfFile: filePathForResource())
-        //-- Warning NSPropertyListReadOptions should be the option
+        //FIXME: Warning NSPropertyListReadOptions should be the option
         let collection: AnyObject! = NSPropertyListSerialization.propertyListWithData(data, options:0, format: &plistFormat, error: error)
         
         var objects = [ExtractedObject]()
@@ -42,7 +42,7 @@ class ExtractedObject {
         return objects
     }
     
-    @required init(dictionary: NSDictionary) {
+    required init(dictionary: NSDictionary) {
         
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>firstName</key>
+	<string>Jad</string>
+	<key>lastName</key>
+	<string>Osseiran</string>
+	<key>location</key>
+	<string>Perth, Western Australia</string>
+	<key>email</key>
+	<string>jad6@icloud.com</string>
+	<key>phoneNumber</key>
+	<string>+61 413 849 770</string>
+	<key>description</key>
+	<string>I was born in Switzerland and lived my childhood in Lausanne. My family is very multicultural and as a result I am a Swiss, French, Australian and
+Lebanese citizen. I am fluent in French, English, and comfortable in Arabic. I
+am an avid traveller and I have learnt to adapt in almost any environment. I like to spend my free time with my friends, at martial arts training and
+programming on personal projects.</string>
+	<key>imageName</key>
+	<string>profile_pic</string>
+	<key>backgroundImageInfo</key>
+	<dict>
+		<key>name</key>
+		<string>union_lake</string>
+		<key>extension</key>
+		<string>jpg</string>
+	</dict>
+</dict>
+</plist>
