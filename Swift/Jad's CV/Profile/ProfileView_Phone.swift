@@ -37,7 +37,7 @@ class ProfileView_Phone: ProfileView {
             profilePictureImageView.frame = profilePictureImageViewFrame
             
             var nameLabelFrame = nameLabel.frame
-            nameLabelFrame.size = CGSizeFloor(nameLabel.sizeThatFits(bounds.size))
+            nameLabelFrame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
             nameLabelFrame.origin.x = floor((bounds.size.width - nameLabelFrame.size.width) / 2.0)
             nameLabelFrame.origin.y = CGRectGetMaxY(profilePictureImageViewFrame) + LayoutConstants.Padding.side
             nameLabel.frame = nameLabelFrame
@@ -49,13 +49,13 @@ class ProfileView_Phone: ProfileView {
             descriptionLabel.frame = descriptionLabelFrame
             
             var emailButtonFrame = emailButton.frame
-            emailButtonFrame.size = CGSizeFloor(emailButton.sizeThatFits(bounds.size))
+            emailButtonFrame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
             emailButtonFrame.origin.x = floor((bounds.size.width - emailButtonFrame.size.width) / 2.0)
             emailButtonFrame.origin.y = CGRectGetMaxY(descriptionLabelFrame) + (2 * LayoutConstants.Padding.betweenVertical)
             emailButton.frame = emailButtonFrame
             
             var phoneButtonFrame = phoneButton.frame
-            phoneButtonFrame.size = CGSizeFloor(phoneButton.sizeThatFits(bounds.size))
+            phoneButtonFrame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
             phoneButtonFrame.origin.x = floor((bounds.size.width - phoneButtonFrame.size.width) / 2.0)
             phoneButtonFrame.origin.y = CGRectGetMaxY(emailButtonFrame) + LayoutConstants.Padding.betweenVertical
             phoneButton.frame = phoneButtonFrame
@@ -68,7 +68,7 @@ class ProfileView_Phone: ProfileView {
         var textViewFrame = textView.frame
         textViewFrame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
         textViewFrame.origin.x = 0.0
-        textViewFrame.size = CGSizeFloor(textView.sizeThatFits(CGSizeMake(LayoutConstants.textViewMaxSize.width, min(bounds.size.height - textViewFrame.origin.y, LayoutConstants.textViewMaxSize.height))))
+        textViewFrame.size = CGSizeCeil(textView.sizeThatFits(CGSizeMake(LayoutConstants.textViewMaxSize.width, min(bounds.size.height - textViewFrame.origin.y, LayoutConstants.textViewMaxSize.height))))
         textView.frame = textViewFrame
         
         fadeImageView.frame = bounds

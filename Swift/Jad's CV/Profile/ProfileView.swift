@@ -118,7 +118,7 @@ class ProfileView: UIView, UILayoutSupport {
         // When the view is not expanded the iPad and iPhone share the same layout
         if !expanded {
             var infoButtonFrame = infoButton.frame
-            infoButtonFrame.size = CGSizeFloor(infoButton.sizeThatFits(CGSizeZero))
+            infoButtonFrame.size = CGSizeCeil(infoButton.sizeThatFits(CGSizeZero))
             infoButtonFrame.origin.y = LayoutConstants.statusBarHeight + floor((LayoutConstants.headerHeight - infoButtonFrame.size.height) / 2.0)
             infoButtonFrame.origin.x = bounds.size.width - infoButtonFrame.size.width - LayoutConstants.Padding.side
             infoButton.frame = infoButtonFrame
@@ -132,11 +132,11 @@ class ProfileView: UIView, UILayoutSupport {
             var nameLabelFrame = nameLabel.frame
             nameLabelFrame.origin.x = CGRectGetMaxX(profilePictureImageViewFrame) + LayoutConstants.Padding.betweenHorizontal
             let labelsBoundingWidth = bounds.size.width - nameLabelFrame.origin.x - LayoutConstants.Padding.betweenHorizontal - infoButtonFrame.size.width - LayoutConstants.Padding.side
-            nameLabelFrame.size = CGSizeFloor(nameLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
+            nameLabelFrame.size = CGSizeCeil(nameLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
             
             var descriptionLabelFrame = descriptionLabel.frame
             descriptionLabelFrame.origin.x = nameLabelFrame.origin.x
-            descriptionLabelFrame.size = CGSizeFloor(descriptionLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
+            descriptionLabelFrame.size = CGSizeCeil(descriptionLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
             
             let labelsTotoalHeights = nameLabelFrame.size.height + LayoutConstants.Padding.betweenVertical + descriptionLabelFrame.size.height
             

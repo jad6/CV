@@ -22,7 +22,7 @@ class ExperienceObject: ExtractedObject {
     return startDate.combinedCondensedStringWithEndDate(endDate, withSeparator: " -\n  ")
     }
     
-    class func sortedExperiences() -> [ExperienceObject]? {
+    class func sortedExperiences() -> [ExperienceObject] {
         var error = NSError?()
         var objects = self.extractObjects(&error)
         error?.handle()
@@ -35,7 +35,7 @@ class ExperienceObject: ExtractedObject {
             
             return experiences
         } else {
-            return nil
+            return [ExperienceObject]()
         }
     }
     
@@ -57,8 +57,8 @@ class ExperienceObject: ExtractedObject {
 
 class ExtraCurricularActivity: ExperienceObject {
     
-    class func extraCurricularActivities() -> [ExtraCurricularActivity]? {
-        return self.sortedExperiences() as? [ExtraCurricularActivity]
+    class func extraCurricularActivities() -> [ExtraCurricularActivity] {
+        return self.sortedExperiences() as [ExtraCurricularActivity]
     }
     
     override class func filePathForResource() -> String? {
@@ -89,8 +89,14 @@ class TimelineEvent: ExperienceObject {
     let color: UIColor
     let importance: Importance
     
-    class func timelineEvents() -> [TimelineEvent]? {
-        return self.sortedExperiences() as? [TimelineEvent]
+    class func timelineEventsListData() -> ListData<TimelineEvent> {
+        let timelineEvents = ListData<TimelineEvent>()
+        timelineEvents.sections += ListData.ListSection(rowObjects: TimelineEvent.timelineEvents(), name: nil)
+        
+    }
+    
+    class func timelineEvents() -> [TimelineEvent] {
+        return self.sortedExperiences() as [TimelineEvent]
     }
     
     override class func filePathForResource() -> String? {

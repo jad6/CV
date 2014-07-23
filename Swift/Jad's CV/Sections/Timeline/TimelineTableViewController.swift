@@ -16,15 +16,17 @@ class TimelineTableViewController: TableViewController {
     private class func timelineCellIdentifier() -> String {
         return "Cell"
     }
-    
-    var timelineEvents: ([TimelineEvent])! {
-    return data as ([TimelineEvent])!
+        
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nil, bundle: nil)
     }
     
     init() {
-        super.init(style: .Plain, data: TimelineEvent.timelineEvents())
+        var data = TimelineEvent.timelineEvents()
         
-        tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
+        super.init(style: .Plain, data: data)
+        
+        self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
     }
     
     //MARK: Abstract Methods

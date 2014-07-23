@@ -17,7 +17,7 @@ class ExtractedObject {
         return nil
     }
     
-    class func extractObjects(error: NSErrorPointer) -> [ExtractedObject]? {
+    class func extractObjects(error: NSErrorPointer) -> [ExtractedObject] {
         var plistFormat: NSPropertyListFormat = .XMLFormat_v1_0
         let data = NSData(contentsOfFile: filePathForResource())
         //FIXME: Warning NSPropertyListReadOptions should be the option
@@ -30,13 +30,13 @@ class ExtractedObject {
                 if let info = element as? NSDictionary {
                     objects.append(self(dictionary: info))
                 } else {
-                    return nil
+                    return [ExtractedObject]()
                 }
             }
         } else if let dictionary = collection as? NSDictionary {
             objects.append(self(dictionary: dictionary))
         } else {
-            return nil
+            return [ExtractedObject]()
         }
         
         return objects

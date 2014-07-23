@@ -11,3 +11,7 @@ import UIKit
 func CGSizeFloor(size: CGSize) -> CGSize {
     return CGSizeMake(floor(size.width), floor(size.height))
 }
+
+func CGSizeCeil(size: CGSize) -> CGSize {
+    return CGSizeMake(ceil(size.width), ceil(size.height))
+}

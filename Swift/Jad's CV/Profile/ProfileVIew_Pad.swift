@@ -33,7 +33,7 @@ class ProfileView_Pad: ProfileView {
         super.layoutSubviews()
         
         var textViewFrame = textView.frame
-        textViewFrame.size = CGSizeFloor(textView.sizeThatFits(LayoutConstants.textViewMaxSize))
+        textViewFrame.size = CGSizeCeil(textView.sizeThatFits(LayoutConstants.textViewMaxSize))
         
         if expanded {
             var profilePictureImageViewFrame = profilePictureImageView.frame
@@ -41,7 +41,7 @@ class ProfileView_Pad: ProfileView {
             profilePictureImageViewFrame.origin.x = floor((bounds.size.width - profilePictureImageViewFrame.size.width) / 2.0)
             
             var nameLabelFrame = nameLabel.frame
-            nameLabelFrame.size = CGSizeFloor(nameLabel.sizeThatFits(bounds.size))
+            nameLabelFrame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
             nameLabelFrame.origin.x = floor((bounds.size.width - nameLabelFrame.size.width) / 2.0)
             
             var descriptionLabelFrame = descriptionLabel.frame
@@ -49,11 +49,11 @@ class ProfileView_Pad: ProfileView {
             descriptionLabelFrame.origin.x = floor((bounds.size.width - descriptionLabelFrame.size.width) / 2.0)
             
             var emailButtonFrame = emailButton.frame
-            emailButtonFrame.size = CGSizeFloor(emailButton.sizeThatFits(bounds.size))
+            emailButtonFrame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
             emailButtonFrame.origin.x = floor((bounds.size.width - emailButtonFrame.size.width) / 2.0)
             
             var phoneButtonFrame = phoneButton.frame
-            phoneButtonFrame.size = CGSizeFloor(phoneButton.sizeThatFits(bounds.size))
+            phoneButtonFrame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
             phoneButtonFrame.origin.x = floor((bounds.size.width - phoneButtonFrame.size.width) / 2.0)
             
             let fadeContentTopPadding = 16 * LayoutConstants.Padding.betweenVertical

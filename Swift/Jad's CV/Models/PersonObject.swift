@@ -42,14 +42,14 @@ class RésuméHolder : PersonObject {
     let detailDescription: String
     let backgroundImage: UIImage
     
-    class func résuméHolder() -> RésuméHolder? {
+    class func résuméHolder() -> RésuméHolder {
         var error = NSError?()
         var holderObjects = self.extractObjects(&error)
         error?.handle()
 
-        assert(holderObjects && holderObjects!.count == 1, "There needs to be exactly one (1) résumé holder object")
+        assert(holderObjects.count == 1, "There needs to be exactly one (1) résumé holder object")
         
-        return holderObjects![0] as? RésuméHolder
+        return holderObjects[0] as RésuméHolder
     }
     
     override class func filePathForResource() -> String? {
@@ -78,12 +78,12 @@ class Referee : PersonObject {
     let position: String
     let connection: String
     
-    class func referees() -> [Referee]? {
+    class func referees() -> [Referee] {
         var error = NSError?()
         var objects = self.extractObjects(&error)
         error?.handle()
         
-        return objects as? [Referee]
+        return objects as [Referee]
     }
     
     override class func filePathForResource() -> String? {
