@@ -45,8 +45,12 @@ extension UIView {
         setHidden(hide, animated: animated, duration: Animations.Durations.Short.toRaw(), completion: nil)
     }
     
-    func maskToCircle() {
-        layer.cornerRadius = frame.size.width / 2.0
+    func maskToRadius(radius: CGFloat) {
+        layer.cornerRadius = radius
         layer.masksToBounds = true
+    }
+    
+    func maskToCircle() {
+        maskToRadius(frame.size.width / 2.0)
     }
 }

@@ -34,6 +34,8 @@
 		0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */; };
 		0579C959197E4CBF000233EC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C958197E4CBF000233EC /* Date.swift */; };
 		05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */; };
+		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
+		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
 		05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D61977A99500AF6BB7 /* PersonObject.swift */; };
@@ -97,6 +99,8 @@
 		0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEventTableViewCell.swift; sourceTree = "<group>"; };
 		0579C958197E4CBF000233EC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableBackgroundView.swift; sourceTree = "<group>"; };
+		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
+		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
 		05DC99D61977A99500AF6BB7 /* PersonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				056C9B25197657BD0047F3E5 /* Extra Curricular */,
 				056C9B26197657D90047F3E5 /* Education */,
 				056C9B27197657EE0047F3E5 /* References */,
+				05BF82071980C04A0070DE37 /* Experience Detail */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -317,6 +322,16 @@
 				056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */,
 			);
 			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		05BF82071980C04A0070DE37 /* Experience Detail */ = {
+			isa = PBXGroup;
+			children = (
+				05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */,
+				05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */,
+			);
+			name = "Experience Detail";
+			path = ExperienceDetail;
 			sourceTree = "<group>";
 		};
 		05DC99D01977866000AF6BB7 /* Property Lists */ = {
@@ -460,6 +475,7 @@
 				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
 				05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
+				05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
 				05F18805197A214A0025756F /* Size.swift in Sources */,
@@ -469,6 +485,7 @@
 				05F18808197A23470025756F /* Contactor.swift in Sources */,
 				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,
 				0579C959197E4CBF000233EC /* Date.swift in Sources */,
+				05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
 				05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */,

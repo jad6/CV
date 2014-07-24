@@ -60,7 +60,8 @@ class TimelineTableViewController: TableViewController {
     }
     
     override func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
-        // Override me!
+        let detailViewController = ExperienceDetailViewController(experienceObject: object as TimelineEvent)
+        navigationController.pushViewController(detailViewController, animated: true)
     }
     
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {

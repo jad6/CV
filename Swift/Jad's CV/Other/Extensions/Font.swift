@@ -12,15 +12,21 @@ extension UIFont {
     struct FontDescriptorSingletons {
         struct HelveticaNeue {
             static let base: UIFontDescriptor = UIFontDescriptor(name: "Helvetica Neue", size: 0.0)
-            static let light: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Light"]);
-            static let thin: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Thin"]);
-            static let medium: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Medium"]);
-            static let italic: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Italic"]);
+            static let bold: UIFontDescriptor = base.fontDescriptorWithSymbolicTraits(.TraitBold)
+
+            static let light: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Light"])
+            static let thin: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Thin"])
+            static let medium: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Medium"])
+            static let italic: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Italic"])
         }
     }
     
     class func helveticaNeueFontOfSize(fontSize: CGFloat) -> UIFont {
         return UIFont.systemFontOfSize(fontSize)
+    }
+
+    class func helveticaNeueBoldFontOfSize(fontSize: CGFloat) -> UIFont {
+        return UIFont(descriptor: FontDescriptorSingletons.HelveticaNeue.bold, size: fontSize)
     }
     
     class func helveticaNeueLightFontOfSize(fontSize: CGFloat) -> UIFont {

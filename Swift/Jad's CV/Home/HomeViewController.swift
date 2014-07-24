@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
 
     var résuméHolder: RésuméHolder?
     
-    var sectionsPageViewController: TimelineTableViewController!
+    var sectionsPageViewController: UINavigationController!
     
     var homeView: HomeView! {
     return view as? HomeView
@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     //MARK: Init
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        self.sectionsPageViewController = TimelineTableViewController()
+        self.sectionsPageViewController = UINavigationController(rootViewController: TimelineTableViewController())
         self.résuméHolder = RésuméHolder.résuméHolder()
         
         super.init(nibName: nil, bundle: nil)
