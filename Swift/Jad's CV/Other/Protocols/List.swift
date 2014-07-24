@@ -8,19 +8,21 @@
 
 import UIKit
 
+//FIXME: bring this back into ListData
+struct ListSection<T>: Section {
+    var rowObjects: [T]
+    var name: String?
+}
+
 struct ListData<T> {
-    struct ListSection: Section {
-        var rowObjects: [T]
-        var name: String?
-    }
-    
-    var sections: [ListSection]
+
+    var sections: [ListSection<T>]
     
     init() {
-        self.sections = [ListSection]()
+        self.sections = [ListSection<T>]()
     }
     
-    subscript (index: Int) -> ListSection {
+    subscript (index: Int) -> ListSection<T> {
         return sections[index]
     }
     subscript (indexPath: NSIndexPath) -> T? {
@@ -52,7 +54,7 @@ protocol List {
     
     /// The data for the list view. The format will always include multiple
     /// sections.
-    var data: Data { get set }
+    var listData: Data { get set }
     
     /**
     *  Helper method to configure a cell at the given index path with a given

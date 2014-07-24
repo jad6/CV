@@ -57,6 +57,13 @@ class ExperienceObject: ExtractedObject {
 
 class ExtraCurricularActivity: ExperienceObject {
     
+    class func extraCurricularActivitiesListData() -> ListData<ExtraCurricularActivity> {
+        var extraCurricularActivitiesListData = ListData<ExtraCurricularActivity>()
+        extraCurricularActivitiesListData.sections += ListSection(rowObjects: ExtraCurricularActivity.extraCurricularActivities(), name: "Extra Curricular")
+        
+        return extraCurricularActivitiesListData
+    }
+    
     class func extraCurricularActivities() -> [ExtraCurricularActivity] {
         return self.sortedExperiences() as [ExtraCurricularActivity]
     }
@@ -90,9 +97,10 @@ class TimelineEvent: ExperienceObject {
     let importance: Importance
     
     class func timelineEventsListData() -> ListData<TimelineEvent> {
-        let timelineEvents = ListData<TimelineEvent>()
-        timelineEvents.sections += ListData.ListSection(rowObjects: TimelineEvent.timelineEvents(), name: nil)
+        var timelineEventsListData = ListData<TimelineEvent>()
+        timelineEventsListData.sections += ListSection(rowObjects: TimelineEvent.timelineEvents(), name: "Timeline")
         
+        return timelineEventsListData
     }
     
     class func timelineEvents() -> [TimelineEvent] {

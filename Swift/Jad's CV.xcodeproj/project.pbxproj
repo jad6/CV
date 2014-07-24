@@ -33,6 +33,7 @@
 		056C9B4619766FE20047F3E5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4519766FE20047F3E5 /* View.swift */; };
 		0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */; };
 		0579C959197E4CBF000233EC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C958197E4CBF000233EC /* Date.swift */; };
+		05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
 		05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D61977A99500AF6BB7 /* PersonObject.swift */; };
@@ -95,6 +96,7 @@
 		056C9B4519766FE20047F3E5 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEventTableViewCell.swift; sourceTree = "<group>"; };
 		0579C958197E4CBF000233EC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableBackgroundView.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
 		05DC99D61977A99500AF6BB7 /* PersonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				0529482E197E0FC700739084 /* TimelineTableViewController.swift */,
 				0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */,
+				05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 			files = (
 				05F1880A197A41570025756F /* FormattedTextView.swift in Sources */,
 				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
+				05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,

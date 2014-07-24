@@ -15,7 +15,7 @@ class ProfileView_Pad: ProfileView {
         static let resizableInsets = UIEdgeInsetsMake(80.0, 75.0, 80.0, 75.0)
     }
     
-    var cloudImageView: UIImageView!
+    private var cloudImageView: UIImageView!
 
     override var expanded: Bool {
     didSet {

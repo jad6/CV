@@ -17,21 +17,19 @@ class TableViewController : UITableViewController, List {
         return "Cell"
     }
     
-    var data: ListData<TimelineEvent> {
+    var listData: ListData<TimelineEvent> {
     didSet {
         tableView.reloadData()
     }
     }
-    
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        self.data = ListData<TimelineEvent>()
+
+    init(listData: ListData<TimelineEvent>) {
+        self.listData = listData
+        
         super.init(nibName: nil, bundle: nil)
-    }
-    
-    init(style: UITableViewStyle, data: ListData<TimelineEvent>) {
-        self.data = data
-        super.init(style: style)
-                
+        
+        self.tableView.separatorStyle = .None
+        
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: TableViewController.defaultCellIdentifier())
     }
 
@@ -51,15 +49,16 @@ class TableViewController : UITableViewController, List {
     
     //MARK: Table view 
     
-    //FIXME: Multidimensional array is not friends with Xcode
-//    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-//        return data.count
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+        return listData.sections.count
+    }
     
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        //FIXME: Multidimensional array is not friends with Xcode
-//        return data[section].count
-        return data[section].rowObjects.count
+        return listData[section].rowObjects.count
+    }
+    
+    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return 100.0
     }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
@@ -68,7 +67,7 @@ class TableViewController : UITableViewController, List {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
         
         // Get object from overriden method.
-        let object = data[indexPath]
+        let object = listData[indexPath]
         // Let the subclasses configure the cell.
         listView(tableView, configureCell: cell, withObject: object, atIndexPath: indexPath)
         
@@ -77,7 +76,7 @@ class TableViewController : UITableViewController, List {
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         // Get object from overriden method.
-        let object = data[indexPath]
+        let object = listData[indexPath]
         // Call overridable method.
         listView(tableView, didSelectObject: object, atIndexPath: indexPath)
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileView_Phone: ProfileView {
     
-    var fadeImageView: UIImageView!
+    private var fadeImageView: UIImageView!
     
     override var expanded: Bool {
     didSet {
@@ -23,7 +23,7 @@ class ProfileView_Phone: ProfileView {
         self.fadeImageView = UIImageView(image: fadeImage)
         super.init(frame: frame)
         
-        self.textView.textContainerInset = UIEdgeInsetsMake(0.0, 40.0, 0.0, 40.0)
+        self.textView.textContainerInset = UIEdgeInsetsMake(0.0, 20, 0.0, 20)
     }
 
     override func layoutSubviews() {
@@ -68,7 +68,8 @@ class ProfileView_Phone: ProfileView {
         var textViewFrame = textView.frame
         textViewFrame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
         textViewFrame.origin.x = 0.0
-        textViewFrame.size = CGSizeCeil(textView.sizeThatFits(CGSizeMake(LayoutConstants.textViewMaxSize.width, min(bounds.size.height - textViewFrame.origin.y, LayoutConstants.textViewMaxSize.height))))
+        textViewFrame.size.width = bounds.size.width
+        textViewFrame.size.height = bounds.size.height - textViewFrame.origin.y
         textView.frame = textViewFrame
         
         fadeImageView.frame = bounds

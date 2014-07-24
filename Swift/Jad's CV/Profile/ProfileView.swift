@@ -19,7 +19,8 @@ class ProfileView: UIView, UILayoutSupport {
         
         struct Padding {
             static let side: CGFloat = 18.0
-            static let top: CGFloat = 44.0
+            static let top: CGFloat = 20.0
+            static let bottom: CGFloat = 10.0
             static let betweenHorizontal: CGFloat = 8.0
             static let betweenVertical: CGFloat = 4.0
         }
@@ -32,14 +33,14 @@ class ProfileView: UIView, UILayoutSupport {
         }
     }
     
-    var backgroundImageView: BlurImageView!
-    var profilePictureImageView: UIImageView!
-    var nameLabel: UILabel!
-    var descriptionLabel: UILabel!
-    var infoButton: UIButton!
-    var emailButton: UIButton!
-    var phoneButton: UIButton!
-    var textView: UITextView!
+    private(set) var backgroundImageView: BlurImageView!
+    private(set) var profilePictureImageView: UIImageView!
+    private(set) var nameLabel: UILabel!
+    private(set) var descriptionLabel: UILabel!
+    private(set) var infoButton: UIButton!
+    private(set) var emailButton: UIButton!
+    private(set) var phoneButton: UIButton!
+    private(set) var textView: UITextView!
     
     var expanded: Bool {
     didSet {
@@ -81,12 +82,10 @@ class ProfileView: UIView, UILayoutSupport {
         
         self.nameLabel.font = UIFont.helveticaNeueThinFontOfSize(21.0)
         self.nameLabel.textColor = UIColor.whiteColor()
-        self.nameLabel.backgroundColor = UIColor.redColor()
         self.addSubview(self.nameLabel)
         
         self.descriptionLabel.font = UIFont.helveticaNeueLightFontOfSize(15.0)
         self.descriptionLabel.textColor = UIColor.whiteColor()
-        self.descriptionLabel.backgroundColor = UIColor.redColor()
         self.addSubview(self.descriptionLabel)
         
         self.infoButton.tintColor = UIColor.whiteColor()
@@ -95,14 +94,13 @@ class ProfileView: UIView, UILayoutSupport {
         self.profilePictureImageView.image = UIImage(named: "profile_pic")
         self.addSubview(self.profilePictureImageView)
         
-        self.emailButton.backgroundColor = UIColor.redColor()
         self.emailButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.emailButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
         
-        self.phoneButton.backgroundColor = UIColor.redColor()
         self.phoneButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.phoneButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
         
+        self.textView.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.textView.backgroundColor = UIColor.clearColor()
     }
     

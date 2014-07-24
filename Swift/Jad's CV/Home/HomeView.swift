@@ -10,8 +10,8 @@ import UIKit
 
 class HomeView: UIView {
 
-    var sectionsPageView: UIView!
-    var profileView: ProfileView!
+    private(set) var sectionsPageView: UIView!
+    private(set) var profileView: ProfileView!
     
     init(frame: CGRect) {
         self.profileView = (UIDevice.isPad() ? ProfileView_Pad() : ProfileView_Phone())

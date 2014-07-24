@@ -11,14 +11,15 @@ import UIKit
 class TimelineEventTableViewCell: UITableViewCell {
     struct LayoutConstants {
         struct CircleSizes {
-            static let big = CGSizeMake(30.0, 30.0)
+            static let big = CGSizeMake(24.0, 24.0)
             static let small = CGSizeMake(10.0, 10.0)
         }
         
         struct Padding {
             static let side: CGFloat = 15.0
-            static let betweenHorizontal: CGFloat = 5.0
-            static let betweenVertical: CGFloat = 2.0
+            static let betweenDateAndCircle: CGFloat = 2.0
+            static let betweenCircleAndLabels: CGFloat = 10.0
+            static let betweenVertical: CGFloat = 4.0
         }
         
         static let lineViewWidth: CGFloat = 2.0
@@ -37,11 +38,11 @@ class TimelineEventTableViewCell: UITableViewCell {
     }
     
     private var circleView: UIView!
-    private var lineView: UIView!
+    private(set) var lineView: UIView!
     
-    var positionLabel: UILabel!
-    var organisationLabel: UILabel!
-    var dateLabel: UILabel!
+    private(set) var positionLabel: UILabel!
+    private(set) var organisationLabel: UILabel!
+    private(set) var dateLabel: UILabel!
     
     var importance: TimelineEvent.Importance {
     didSet {
@@ -103,9 +104,14 @@ class TimelineEventTableViewCell: UITableViewCell {
         
         var circleViewFrame = circleView.frame
         circleViewFrame.size = LayoutConstants.circleViewSizeForImportance(importance)
-        circleViewFrame.origin.x = CGRectGetMaxX(dateLabelFrame) + LayoutConstants.Padding.betweenHorizontal
+        if importance != .Major {
+            circleViewFrame.origin.x = CGRectGetMaxX(dateLabelFrame) + LayoutConstants.Padding.betweenDateAndCircle + floor((LayoutConstants.CircleSizes.big.width - circleViewFrame.size.width) / 2.0)
+        } else {
+            circleViewFrame.origin.x = CGRectGetMaxX(dateLabelFrame) + LayoutConstants.Padding.betweenDateAndCircle
+        }
         circleViewFrame.origin.y = floor((bounds.size.height - circleViewFrame.size.height) / 2.0)
         circleView.frame = circleViewFrame
+        circleView.maskToCircle()
         
         var lineViewFrame = lineView.frame
         lineViewFrame.size.width = LayoutConstants.lineViewWidth
@@ -113,7 +119,7 @@ class TimelineEventTableViewCell: UITableViewCell {
         lineViewFrame.origin.x = circleViewFrame.origin.x + floor((circleViewFrame.size.width - lineViewFrame.size.width) / 2.0)
         lineView.frame = lineViewFrame
         
-        let labelXOrigin = CGRectGetMaxX(circleViewFrame) + LayoutConstants.Padding.betweenHorizontal
+        let labelXOrigin = CGRectGetMaxX(circleViewFrame) + LayoutConstants.Padding.betweenCircleAndLabels
         let boundingLabelWidth = bounds.size.width - labelXOrigin - (bounds.size.width - CGRectGetMinX(accessoryView.frame))
         let boundingLabelSize = CGSizeMake(boundingLabelWidth, bounds.size.height)
         

@@ -17,16 +17,32 @@ class TimelineTableViewController: TableViewController {
         return "Cell"
     }
         
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nil, bundle: nil)
-    }
+//    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+//        super.init(nibName: nil, bundle: nil)
+//    }
     
-    init() {
-        var data = TimelineEvent.timelineEvents()
-        
-        super.init(style: .Plain, data: data)
+    init() {        
+        super.init(listData: TimelineEvent.timelineEventsListData())
         
         self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
+    }
+    
+    //MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.backgroundView = TimelineTableBackgroundView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let backgroundView = tableView.backgroundView as TimelineTableBackgroundView
+        if let cell = tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as? TimelineEventTableViewCell {
+            backgroundView.lineView.frame.size.width = cell.lineView.frame.size.width
+            backgroundView.lineView.frame.origin.x = cell.lineView.frame.origin.x
+        }
     }
     
     //MARK: Abstract Methods
@@ -39,6 +55,7 @@ class TimelineTableViewController: TableViewController {
             tableCell.positionLabel.text = timelineEvent.position
             tableCell.organisationLabel.text = timelineEvent.organisation
             tableCell.dateLabel.text = timelineEvent.timeSpentString
+            tableCell.importance = timelineEvent.importance
         }
     }
     

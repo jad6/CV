@@ -78,6 +78,13 @@ class Referee : PersonObject {
     let position: String
     let connection: String
     
+    class func refereesListData() -> ListData<Referee> {
+        var refereesListData = ListData<Referee>()
+        refereesListData.sections += ListSection(rowObjects: Referee.referees(), name: "Referees")
+        
+        return refereesListData
+    }
+    
     class func referees() -> [Referee] {
         var error = NSError?()
         var objects = self.extractObjects(&error)
