@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Jad. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ExtractedObject {
     
@@ -40,6 +40,14 @@ class ExtractedObject {
         }
         
         return objects
+    }
+    
+    class func loadBackgroundImage(backgrounfImageInfo: NSDictionary) -> UIImage {
+        let backgrounfImageName = backgrounfImageInfo["name"] as String
+        let backgrounfImageExtension = backgrounfImageInfo["extension"] as String
+        
+        let backgroundImagePath = NSBundle.mainBundle().pathForResource(backgrounfImageName, ofType: backgrounfImageExtension)
+        return UIImage(contentsOfFile: backgroundImagePath)
     }
     
     required init(dictionary: NSDictionary) {

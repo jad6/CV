@@ -17,23 +17,22 @@ class TimelineTableViewController: TableViewController {
         return "Timeline Cell"
     }
     
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
 //    init() {        
-//        super.init(listData: TimelineEvent.timelineEventsListData())
+//        super.init(style: .Plain, listData: TimelineEvent.timelineEventsListData())
 //        
 //        self.title = "Experience"
 //        
 //        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
 //        self.tableView.separatorStyle = .None
 //        self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
+//        self.tableView.backgroundView = TimelineTableBackgroundView()
 //    }
     
     //MARK: View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.backgroundView = TimelineTableBackgroundView()
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

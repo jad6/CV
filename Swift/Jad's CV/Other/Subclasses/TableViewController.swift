@@ -8,6 +8,7 @@
 
 import UIKit
 
+//TODO: Make class Generic once Apple fixes the bug in Beta 4
 class TableViewController : UITableViewController, List {
     
     //TODO: re-enable that once Swift supports class variables
@@ -17,17 +18,21 @@ class TableViewController : UITableViewController, List {
         return "Cell"
     }
     
-    var listData: ListData<ExtraCurricularActivity> {
+    var listData: ListData<ExtraCurricularActivity> = ListData<ExtraCurricularActivity>() {
     didSet {
         tableView.reloadData()
     }
     }
+    
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nil, bundle: nil)
+    }
 
-    init(listData: ListData<ExtraCurricularActivity>) {
+    init(style: UITableViewStyle, listData: ListData<ExtraCurricularActivity>) {
+        super.init(style: style)
+        
         self.listData = listData
         
-        super.init(nibName: nil, bundle: nil)
-                
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: TableViewController.defaultCellIdentifier())
     }
 

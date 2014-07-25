@@ -56,19 +56,11 @@ class RésuméHolder : PersonObject {
         return NSBundle.mainBundle().pathForResource("About Me", ofType: "plist")
     }
     
-    class func loadBackgroundImage(backgrounfImageInfo: NSDictionary) -> UIImage {
-        let backgrounfImageName = backgrounfImageInfo["name"] as String
-        let backgrounfImageExtension = backgrounfImageInfo["extension"] as String
-        
-        let backgroundImagePath = NSBundle.mainBundle().pathForResource(backgrounfImageName, ofType: backgrounfImageExtension)
-        return UIImage(contentsOfFile: backgroundImagePath)
-    }
-    
     init(dictionary: NSDictionary) {
         self.detailDescription = dictionary["description"] as String
         
         let backgrounfImageInfo = dictionary["backgroundImageInfo"] as NSDictionary
-        self.backgroundImage = RésuméHolder.loadBackgroundImage(backgrounfImageInfo)
+        self.backgroundImage = ExtractedObject.loadBackgroundImage(backgrounfImageInfo)
         
         super.init(dictionary: dictionary)
     }

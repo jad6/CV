@@ -37,6 +37,13 @@
 		0581032419821816005FDF8F /* GraySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */; };
 		0581032619821BA2005FDF8F /* ExtraCurricularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032519821BA2005FDF8F /* ExtraCurricularTableViewController.swift */; };
 		0581032819821C3C005FDF8F /* ExtraCurricularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032719821C3C005FDF8F /* ExtraCurricularTableViewCell.swift */; };
+		0581032A19824009005FDF8F /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032919824009005FDF8F /* EducationViewController.swift */; };
+		0581032C19824061005FDF8F /* EducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032B19824061005FDF8F /* EducationView.swift */; };
+		0581032E19824285005FDF8F /* EducationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032D19824285005FDF8F /* EducationObject.swift */; };
+		0581033019824596005FDF8F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032F19824596005FDF8F /* CollectionViewController.swift */; };
+		0581033419824760005FDF8F /* RefereesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581033319824760005FDF8F /* RefereesCollectionViewController.swift */; };
+		05810336198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05810335198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift */; };
+		058103381982544D005FDF8F /* RefereeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058103371982544D005FDF8F /* RefereeCollectionViewCell.swift */; };
 		05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */; };
 		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
 		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
@@ -106,6 +113,13 @@
 		0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraySelectionTableViewCell.swift; sourceTree = "<group>"; };
 		0581032519821BA2005FDF8F /* ExtraCurricularTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraCurricularTableViewController.swift; sourceTree = "<group>"; };
 		0581032719821C3C005FDF8F /* ExtraCurricularTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraCurricularTableViewCell.swift; sourceTree = "<group>"; };
+		0581032919824009005FDF8F /* EducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
+		0581032B19824061005FDF8F /* EducationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationView.swift; sourceTree = "<group>"; };
+		0581032D19824285005FDF8F /* EducationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationObject.swift; sourceTree = "<group>"; };
+		0581032F19824596005FDF8F /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		0581033319824760005FDF8F /* RefereesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefereesCollectionViewController.swift; sourceTree = "<group>"; };
+		05810335198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefereesCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		058103371982544D005FDF8F /* RefereeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefereeCollectionViewCell.swift; sourceTree = "<group>"; };
 		05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableBackgroundView.swift; sourceTree = "<group>"; };
 		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
@@ -278,6 +292,8 @@
 		056C9B26197657D90047F3E5 /* Education */ = {
 			isa = PBXGroup;
 			children = (
+				0581032919824009005FDF8F /* EducationViewController.swift */,
+				0581032B19824061005FDF8F /* EducationView.swift */,
 			);
 			path = Education;
 			sourceTree = "<group>";
@@ -285,6 +301,9 @@
 		056C9B27197657EE0047F3E5 /* References */ = {
 			isa = PBXGroup;
 			children = (
+				0581033319824760005FDF8F /* RefereesCollectionViewController.swift */,
+				05810335198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift */,
+				058103371982544D005FDF8F /* RefereeCollectionViewCell.swift */,
 			);
 			path = References;
 			sourceTree = "<group>";
@@ -321,9 +340,10 @@
 				05F6C30819775C54007CCD66 /* BlurImageView.swift */,
 				05F18809197A41570025756F /* FormattedTextView.swift */,
 				05DF17F9197CC10F003AA613 /* ScrollPageViewController.swift */,
-				05294829197E031E00739084 /* TableViewController.swift */,
 				058103211981DD08005FDF8F /* SectionNavigationController.swift */,
 				0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */,
+				05294829197E031E00739084 /* TableViewController.swift */,
+				0581032F19824596005FDF8F /* CollectionViewController.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -365,6 +385,7 @@
 				05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */,
 				05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */,
 				05DC99D61977A99500AF6BB7 /* PersonObject.swift */,
+				0581032D19824285005FDF8F /* EducationObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -490,10 +511,13 @@
 				05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */,
 				058103221981DD08005FDF8F /* SectionNavigationController.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
+				058103381982544D005FDF8F /* RefereeCollectionViewCell.swift in Sources */,
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
 				05F18805197A214A0025756F /* Size.swift in Sources */,
 				052C2A421977CCAF00D85C98 /* Color.swift in Sources */,
 				0581032619821BA2005FDF8F /* ExtraCurricularTableViewController.swift in Sources */,
+				0581033419824760005FDF8F /* RefereesCollectionViewController.swift in Sources */,
+				0581032E19824285005FDF8F /* EducationObject.swift in Sources */,
 				05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */,
 				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
 				05F18808197A23470025756F /* Contactor.swift in Sources */,
@@ -504,12 +528,16 @@
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
 				05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */,
 				0581032819821C3C005FDF8F /* ExtraCurricularTableViewCell.swift in Sources */,
+				0581032A19824009005FDF8F /* EducationViewController.swift in Sources */,
 				056C9B3A197662420047F3E5 /* Device.swift in Sources */,
 				05DF17FA197CC10F003AA613 /* ScrollPageViewController.swift in Sources */,
 				056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */,
+				0581032C19824061005FDF8F /* EducationView.swift in Sources */,
 				0581032419821816005FDF8F /* GraySelectionTableViewCell.swift in Sources */,
 				0529482A197E031E00739084 /* TableViewController.swift in Sources */,
+				0581033019824596005FDF8F /* CollectionViewController.swift in Sources */,
 				054D63411977789A0022D63A /* Font.swift in Sources */,
+				05810336198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift in Sources */,
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
 				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
 				0529482D197E0BBE00739084 /* List.swift in Sources */,

@@ -12,5 +12,12 @@
 UWA taught me to learn and to create my own opportunities which allowed me to move faster in the software industry. The School of Software Engineering showed me that people can create the most astonishing innovations. University was a hub where I met many similar minded students and lecturers with whom to share and challenge ideas.</string>
 	<key>completion</key>
 	<string>Completion: Mid 2014</string>
+	<key>backgroundImageInfo</key>
+	<dict>
+		<key>name</key>
+		<string>winthrop_hall</string>
+		<key>extension</key>
+		<string>jpg</string>
+	</dict>
 </dict>
 </plist>

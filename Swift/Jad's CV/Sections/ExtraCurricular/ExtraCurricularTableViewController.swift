@@ -17,8 +17,12 @@ class ExtraCurricularTableViewController: TableViewController {
         return "Extra Curricular Cell"
     }
     
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     init() {
-        super.init(listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
+        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
         
         self.title = "Extra Curricular"
         
