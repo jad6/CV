@@ -19,7 +19,7 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
             static let side: CGFloat = 15.0
             static let betweenDateAndCircle: CGFloat = 2.0
             static let betweenCircleAndLabels: CGFloat = 10.0
-            static let betweenVertical: CGFloat = 4.0
+            static let betweenVertical: CGFloat = 5.0
         }
         
         static let lineViewWidth: CGFloat = 2.0
@@ -72,22 +72,24 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.lineView.backgroundColor = UIColor.timelineGrayColor()
-        self.addSubview(self.lineView)
+        let contentView = self.contentView
         
-        self.addSubview(self.circleView)
+        self.lineView.backgroundColor = UIColor.timelineGrayColor()
+        contentView.addSubview(self.lineView)
+        
+        contentView.addSubview(self.circleView)
         
         self.positionLabel.font = UIFont.helveticaNeueMediumFontOfSize(15.0)
         self.positionLabel.numberOfLines = 2
-        self.addSubview(self.positionLabel)
+        contentView.addSubview(self.positionLabel)
         
         self.organisationLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.organisationLabel.numberOfLines = 2
-        self.addSubview(self.organisationLabel)
+        contentView.addSubview(self.organisationLabel)
         
         self.dateLabel.font = UIFont.helveticaNeueItalicFontOfSize(12.0)
         self.dateLabel.numberOfLines = 2
-        self.addSubview(self.dateLabel)
+        contentView.addSubview(self.dateLabel)
         
         if !UIDevice.isPad() {
             let accessoryImage = UIImage(named: "chevron").imageWithRenderingMode(.AlwaysTemplate)
@@ -118,7 +120,7 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         lineView.frame.origin.x = circleView.frame.origin.x + floor((circleView.frame.size.width - lineView.frame.size.width) / 2.0)
         
         let labelXOrigin = circleView.frame.maxX + LayoutConstants.Padding.betweenCircleAndLabels
-        let boundingLabelWidth = bounds.size.width - labelXOrigin - (bounds.size.width - accessoryView.frame.minX)
+        let boundingLabelWidth = bounds.size.width - labelXOrigin - (UIDevice.isPad() ? 0.0 : (bounds.size.width - accessoryView.frame.minX))
         let boundingLabelSize = CGSize(width: boundingLabelWidth, height: bounds.size.height)
         
         positionLabel.frame.size = positionLabel.sizeThatFits(boundingLabelSize).ceilSize

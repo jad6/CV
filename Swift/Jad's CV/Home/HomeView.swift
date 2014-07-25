@@ -34,7 +34,7 @@ class HomeView: UIView {
         profileView.frame.size.height = (profileView.expanded) ? bounds.size.height : profileView.length
         profileView.frame.size.width = bounds.size.width
         
-        sectionsPageView.frame.size.height = bounds.size.height - profileView.frame.maxY
+        sectionsPageView.frame.size.height = bounds.size.height - ProfileView.LayoutConstants.topLayoutLength
         sectionsPageView.frame.size.width = bounds.size.width
         sectionsPageView.frame.origin.y = profileView.frame.maxY
     }

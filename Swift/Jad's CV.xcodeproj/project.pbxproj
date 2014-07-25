@@ -35,6 +35,8 @@
 		0579C959197E4CBF000233EC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C958197E4CBF000233EC /* Date.swift */; };
 		058103221981DD08005FDF8F /* SectionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058103211981DD08005FDF8F /* SectionNavigationController.swift */; };
 		0581032419821816005FDF8F /* GraySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */; };
+		0581032619821BA2005FDF8F /* ExtraCurricularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032519821BA2005FDF8F /* ExtraCurricularTableViewController.swift */; };
+		0581032819821C3C005FDF8F /* ExtraCurricularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032719821C3C005FDF8F /* ExtraCurricularTableViewCell.swift */; };
 		05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */; };
 		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
 		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
@@ -102,6 +104,8 @@
 		0579C958197E4CBF000233EC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		058103211981DD08005FDF8F /* SectionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionNavigationController.swift; sourceTree = "<group>"; };
 		0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraySelectionTableViewCell.swift; sourceTree = "<group>"; };
+		0581032519821BA2005FDF8F /* ExtraCurricularTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraCurricularTableViewController.swift; sourceTree = "<group>"; };
+		0581032719821C3C005FDF8F /* ExtraCurricularTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraCurricularTableViewCell.swift; sourceTree = "<group>"; };
 		05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableBackgroundView.swift; sourceTree = "<group>"; };
 		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 		056C9B25197657BD0047F3E5 /* Extra Curricular */ = {
 			isa = PBXGroup;
 			children = (
+				0581032519821BA2005FDF8F /* ExtraCurricularTableViewController.swift */,
+				0581032719821C3C005FDF8F /* ExtraCurricularTableViewCell.swift */,
 			);
 			name = "Extra Curricular";
 			path = ExtraCurricular;
@@ -487,6 +493,7 @@
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
 				05F18805197A214A0025756F /* Size.swift in Sources */,
 				052C2A421977CCAF00D85C98 /* Color.swift in Sources */,
+				0581032619821BA2005FDF8F /* ExtraCurricularTableViewController.swift in Sources */,
 				05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */,
 				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
 				05F18808197A23470025756F /* Contactor.swift in Sources */,
@@ -496,6 +503,7 @@
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
 				05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */,
+				0581032819821C3C005FDF8F /* ExtraCurricularTableViewCell.swift in Sources */,
 				056C9B3A197662420047F3E5 /* Device.swift in Sources */,
 				05DF17FA197CC10F003AA613 /* ScrollPageViewController.swift in Sources */,
 				056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */,

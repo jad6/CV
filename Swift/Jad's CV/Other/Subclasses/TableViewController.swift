@@ -17,19 +17,17 @@ class TableViewController : UITableViewController, List {
         return "Cell"
     }
     
-    var listData: ListData<TimelineEvent> {
+    var listData: ListData<ExtraCurricularActivity> {
     didSet {
         tableView.reloadData()
     }
     }
 
-    init(listData: ListData<TimelineEvent>) {
+    init(listData: ListData<ExtraCurricularActivity>) {
         self.listData = listData
         
         super.init(nibName: nil, bundle: nil)
-        
-        self.tableView.separatorStyle = .None
-        
+                
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: TableViewController.defaultCellIdentifier())
     }
 
@@ -55,10 +53,6 @@ class TableViewController : UITableViewController, List {
     
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return listData[section].rowObjects.count
-    }
-    
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return 100.0
     }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {

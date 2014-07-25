@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperienceDetailViewController: UIViewController {
+class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var detailView: ExperienceDetailView! {
     return view as? ExperienceDetailView
@@ -22,7 +22,7 @@ class ExperienceDetailViewController: UIViewController {
 
         //FIXME: ... Words cannot describe this Xcode fail
 //        self.experience = experience
-        self.experience = TimelineEvent.timelineEvents()[0]
+        self.experience = ExtraCurricularActivity.extraCurricularActivities()[0]
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,15 +35,16 @@ class ExperienceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController.interactivePopGestureRecognizer.delegate = self
 
         detailView.backButton.addTarget(self, action: "backAction:", forControlEvents: .TouchUpInside)
-        detailView.swipeGestureReognizer.addTarget(self, action: "backAction:")
         
         if let image = experience.organisationImage {
             detailView.organisationImageView.image = image
         }
         detailView.organisationLabel.text = experience.organisation
-        detailView.dateLabel.text = experience.startDate.combinedCondensedStringWithEndDate(experience.endDate, withSeparator: " - ")
+        detailView.dateLabel.text = experience.timeSpentString(" - ")
         detailView.textView.text = experience.detailedDescription
         detailView.positionLabel.text = experience.position
     }

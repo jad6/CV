@@ -20,9 +20,7 @@ class ExperienceDetailView: UIView {
         static let imagveViewSize = CGSize(width: 70.0, height: 70.0)
         static let imageViewMaskingRadius: CGFloat = 18.0
     }
-    
-    private(set) var swipeGestureReognizer: UISwipeGestureRecognizer!
-    
+        
     private(set) var backButton: UIButton!
     private(set) var organisationImageView: UIImageView!
     private(set) var positionLabel: UILabel!
@@ -31,8 +29,6 @@ class ExperienceDetailView: UIView {
     private(set) var textView: FormattedTextView!
     
     init(frame: CGRect) {
-        self.swipeGestureReognizer = UISwipeGestureRecognizer(target: nil, action: nil)
-        
         self.backButton = UIButton()
         self.organisationImageView = UIImageView()
         self.positionLabel = UILabel()
@@ -41,8 +37,6 @@ class ExperienceDetailView: UIView {
         self.textView = FormattedTextView()
         
         super.init(frame: frame)
-        
-        self.addGestureRecognizer(self.swipeGestureReognizer)
         
         let backImage = UIImage(named: "back")
         self.backButton.setImage(backImage, forState: .Normal)

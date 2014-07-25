@@ -17,14 +17,15 @@ class TimelineTableViewController: TableViewController {
         return "Timeline Cell"
     }
     
-    init() {        
-        super.init(listData: TimelineEvent.timelineEventsListData())
-        
-        self.title = "Experience"
-        
-        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
-        self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
-    }
+//    init() {        
+//        super.init(listData: TimelineEvent.timelineEventsListData())
+//        
+//        self.title = "Experience"
+//        
+//        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
+//        self.tableView.separatorStyle = .None
+//        self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
+//    }
     
     //MARK: View lifecycle
     
@@ -53,7 +54,7 @@ class TimelineTableViewController: TableViewController {
             tableCell.color = timelineEvent.color
             tableCell.positionLabel.text = timelineEvent.position
             tableCell.organisationLabel.text = timelineEvent.organisation
-            tableCell.dateLabel.text = timelineEvent.timeSpentString
+            tableCell.dateLabel.text = timelineEvent.timeSpentString(" /n  ")
             tableCell.importance = timelineEvent.importance
         }
     }
@@ -71,5 +72,11 @@ class TimelineTableViewController: TableViewController {
     
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return TimelineTableViewController.timelineCellIdentifier()
+    }
+    
+    //MARK: Table view
+    
+    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return 100.0
     }
 }
