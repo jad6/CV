@@ -14,12 +14,15 @@ class ExperienceDetailViewController: UIViewController {
     return view as? ExperienceDetailView
     }
     
-    var experienceObject: ExperienceObject
+    let experience: ExperienceObject
     
     //MARK: Init
     
-    init(experienceObject: ExperienceObject) {
-        self.experienceObject = experienceObject
+    init(experience: ExperienceObject) {
+
+        //FIXME: ... Words cannot describe this Xcode fail
+//        self.experience = experience
+        self.experience = TimelineEvent.timelineEvents()[0]
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,6 +38,14 @@ class ExperienceDetailViewController: UIViewController {
 
         detailView.backButton.addTarget(self, action: "backAction:", forControlEvents: .TouchUpInside)
         detailView.swipeGestureReognizer.addTarget(self, action: "backAction:")
+        
+        if let image = experience.organisationImage {
+            detailView.organisationImageView.image = image
+        }
+        detailView.organisationLabel.text = experience.organisation
+        detailView.dateLabel.text = experience.startDate.combinedCondensedStringWithEndDate(experience.endDate, withSeparator: " - ")
+        detailView.textView.text = experience.detailedDescription
+        detailView.positionLabel.text = experience.position
     }
     
     //MARK: Actions

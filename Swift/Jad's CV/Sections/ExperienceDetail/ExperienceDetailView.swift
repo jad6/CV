@@ -11,10 +11,12 @@ import UIKit
 class ExperienceDetailView: UIView {
     struct LayoutConstants {
         struct Padding {
-
+            static let top: CGFloat = 20.0
+            static let betweenVerticalLarge: CGFloat = 15.0
+            static let betweenVerticalSmall: CGFloat = 5.0
         }
     
-        static let backButtonSize = CGSizeMake(44.0, 44.0)
+        static let backButtonSize = CGSizeMake(48.0, 44.0)
         static let imagveViewSize = CGSizeMake(70.0, 70.0)
         static let imageViewMaskingRadius: CGFloat = 18.0
     }
@@ -29,7 +31,7 @@ class ExperienceDetailView: UIView {
     private(set) var textView: FormattedTextView!
     
     init(frame: CGRect) {
-        self.swipeGestureReognizer = UISwipeGestureRecognizer()
+        self.swipeGestureReognizer = UISwipeGestureRecognizer(target: nil, action: nil)
         
         self.backButton = UIButton()
         self.organisationImageView = UIImageView()
@@ -40,7 +42,6 @@ class ExperienceDetailView: UIView {
         
         super.init(frame: frame)
         
-        self.swipeGestureReognizer.direction = .Right
         self.addGestureRecognizer(self.swipeGestureReognizer)
         
         let backImage = UIImage(named: "back")
@@ -64,7 +65,15 @@ class ExperienceDetailView: UIView {
         self.addSubview(self.dateLabel)
         
         self.textView.font = UIFont.helveticaNeueFontOfSize(15.0)
+        if UIDevice.isPad() {
+            self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 44.0, bottom: 0.0, right: 44.0)
+        } else {
+            self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+        }
+        
         self.addSubview(self.textView)
+        
+        self.backgroundColor = UIColor.backgroundGrayColor()
     }
     
     convenience init() {
@@ -74,6 +83,23 @@ class ExperienceDetailView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        organisationImageView.frame.origin.y = LayoutConstants.Padding.top
+        organisationImageView.centerHorizontallyWithReferenceView(self)
+        
+        positionLabel.frame.size = CGSizeCeil(positionLabel.sizeThatFits(bounds.size))
+        positionLabel.frame.origin.y = CGRectGetMaxY(organisationImageView.frame) + LayoutConstants.Padding.betweenVerticalLarge
+        positionLabel.centerHorizontallyWithReferenceView(self)
 
+        organisationLabel.frame.size = CGSizeCeil(organisationLabel.sizeThatFits(bounds.size))
+        organisationLabel.frame.origin.y = CGRectGetMaxY(positionLabel.frame) + LayoutConstants.Padding.betweenVerticalSmall
+        organisationLabel.centerHorizontallyWithReferenceView(self)
+    
+        dateLabel.frame.size = CGSizeCeil(dateLabel.sizeThatFits(bounds.size))
+        dateLabel.frame.origin.y = CGRectGetMaxY(organisationLabel.frame) + LayoutConstants.Padding.betweenVerticalSmall
+        dateLabel.centerHorizontallyWithReferenceView(self)
+        
+        textView.frame.origin.y = CGRectGetMaxY(dateLabel.frame) + LayoutConstants.Padding.betweenVerticalLarge
+        textView.frame.size.width = bounds.size.width
+        textView.frame.size.height = bounds.size.height - textView.frame.origin.y
     }
 }

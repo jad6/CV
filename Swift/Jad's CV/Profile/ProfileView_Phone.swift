@@ -30,47 +30,35 @@ class ProfileView_Phone: ProfileView {
         super.layoutSubviews()
         
         if expanded {
-            var profilePictureImageViewFrame = profilePictureImageView.frame
-            profilePictureImageViewFrame.size = LayoutConstants.PictureSizes.big
-            profilePictureImageViewFrame.origin.x = floor((bounds.size.width - profilePictureImageViewFrame.size.width) / 2.0)
-            profilePictureImageViewFrame.origin.y = LayoutConstants.statusBarHeight + LayoutConstants.Padding.top
-            profilePictureImageView.frame = profilePictureImageViewFrame
+            profilePictureImageView.frame.size = LayoutConstants.PictureSizes.big
+            profilePictureImageView.centerHorizontallyWithReferenceView(self)
+            profilePictureImageView.frame.origin.y = LayoutConstants.statusBarHeight + LayoutConstants.Padding.top
             
-            var nameLabelFrame = nameLabel.frame
-            nameLabelFrame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
-            nameLabelFrame.origin.x = floor((bounds.size.width - nameLabelFrame.size.width) / 2.0)
-            nameLabelFrame.origin.y = CGRectGetMaxY(profilePictureImageViewFrame) + LayoutConstants.Padding.side
-            nameLabel.frame = nameLabelFrame
+            nameLabel.frame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
+            nameLabel.centerHorizontallyWithReferenceView(self)
+            nameLabel.frame.origin.y = CGRectGetMaxY(profilePictureImageView.frame) + LayoutConstants.Padding.side
             
-            var descriptionLabelFrame = descriptionLabel.frame
-            descriptionLabelFrame.size = CGSizeFloor(descriptionLabel.sizeThatFits(bounds.size))
-            descriptionLabelFrame.origin.x = floor((bounds.size.width - descriptionLabelFrame.size.width) / 2.0)
-            descriptionLabelFrame.origin.y = CGRectGetMaxY(nameLabelFrame) + LayoutConstants.Padding.betweenVertical
-            descriptionLabel.frame = descriptionLabelFrame
+            descriptionLabel.frame.size = CGSizeFloor(descriptionLabel.sizeThatFits(bounds.size))
+            descriptionLabel.centerHorizontallyWithReferenceView(self)
+            descriptionLabel.frame.origin.y = CGRectGetMaxY(nameLabel.frame) + LayoutConstants.Padding.betweenVertical
             
-            var emailButtonFrame = emailButton.frame
-            emailButtonFrame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
-            emailButtonFrame.origin.x = floor((bounds.size.width - emailButtonFrame.size.width) / 2.0)
-            emailButtonFrame.origin.y = CGRectGetMaxY(descriptionLabelFrame) + (2 * LayoutConstants.Padding.betweenVertical)
-            emailButton.frame = emailButtonFrame
+            emailButton.frame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
+            emailButton.centerHorizontallyWithReferenceView(self)
+            emailButton.frame.origin.y = CGRectGetMaxY(descriptionLabel.frame) + (2 * LayoutConstants.Padding.betweenVertical)
             
-            var phoneButtonFrame = phoneButton.frame
-            phoneButtonFrame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
-            phoneButtonFrame.origin.x = floor((bounds.size.width - phoneButtonFrame.size.width) / 2.0)
-            phoneButtonFrame.origin.y = CGRectGetMaxY(emailButtonFrame) + LayoutConstants.Padding.betweenVertical
-            phoneButton.frame = phoneButtonFrame
+            phoneButton.frame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
+            phoneButton.centerHorizontallyWithReferenceView(self)
+            phoneButton.frame.origin.y = CGRectGetMaxY(emailButton.frame) + LayoutConstants.Padding.betweenVertical
         } else {
             // This makes the buttons disppear nicely with the animations
             emailButton.frame = nameLabel.frame
             phoneButton.frame = descriptionLabel.frame
         }
         
-        var textViewFrame = textView.frame
-        textViewFrame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
-        textViewFrame.origin.x = 0.0
-        textViewFrame.size.width = bounds.size.width
-        textViewFrame.size.height = bounds.size.height - textViewFrame.origin.y
-        textView.frame = textViewFrame
+        textView.frame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
+        textView.frame.origin.x = 0.0
+        textView.frame.size.width = bounds.size.width
+        textView.frame.size.height = bounds.size.height - textView.frame.origin.y
         
         fadeImageView.frame = bounds
     }

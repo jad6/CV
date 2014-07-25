@@ -17,7 +17,7 @@ class TimelineTableBackgroundView: UIView {
         
         super.init(frame: frame)
 
-        self.lineView.backgroundColor = UIColor.lightGrayColor()
+        self.lineView.backgroundColor = UIColor.backgroundGrayColor()
         self.addSubview(lineView)
     }
     

@@ -14,12 +14,8 @@ class TimelineTableViewController: TableViewController {
     //    private class let defaultCellIdentifier = "Cell"
     
     private class func timelineCellIdentifier() -> String {
-        return "Cell"
+        return "Timeline Cell"
     }
-        
-//    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-//        super.init(nibName: nil, bundle: nil)
-//    }
     
     init() {        
         super.init(listData: TimelineEvent.timelineEventsListData())
@@ -60,7 +56,9 @@ class TimelineTableViewController: TableViewController {
     }
     
     override func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
-        let detailViewController = ExperienceDetailViewController(experienceObject: object as TimelineEvent)
+        
+        let timelineEvent = object as TimelineEvent
+        let detailViewController = ExperienceDetailViewController(experience: timelineEvent)
         navigationController.pushViewController(detailViewController, animated: true)
     }
     

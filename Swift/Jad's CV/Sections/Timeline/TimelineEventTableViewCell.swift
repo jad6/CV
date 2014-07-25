@@ -75,7 +75,7 @@ class TimelineEventTableViewCell: UITableViewCell {
         accessoryImageView.sizeToFit()
         self.accessoryView = accessoryImageView
         
-        self.lineView.backgroundColor = UIColor.lightGrayColor()
+        self.lineView.backgroundColor = UIColor.backgroundGrayColor()
         self.addSubview(self.lineView)
         
         self.addSubview(self.circleView)
@@ -96,47 +96,36 @@ class TimelineEventTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var dateLabelFrame = dateLabel.frame
-        dateLabelFrame.size = LayoutConstants.dateLabelSize
-        dateLabelFrame.origin.x = LayoutConstants.Padding.side
-        dateLabelFrame.origin.y = floor((bounds.size.height - dateLabelFrame.size.height) / 2.0)
-        dateLabel.frame = dateLabelFrame
+        dateLabel.frame.size = LayoutConstants.dateLabelSize
+        dateLabel.frame.origin.x = LayoutConstants.Padding.side
+        dateLabel.centerVerticallyWithReferenceView(self)
         
-        var circleViewFrame = circleView.frame
-        circleViewFrame.size = LayoutConstants.circleViewSizeForImportance(importance)
+        circleView.frame.size = LayoutConstants.circleViewSizeForImportance(importance)
         if importance != .Major {
-            circleViewFrame.origin.x = CGRectGetMaxX(dateLabelFrame) + LayoutConstants.Padding.betweenDateAndCircle + floor((LayoutConstants.CircleSizes.big.width - circleViewFrame.size.width) / 2.0)
+            circleView.frame.origin.x = CGRectGetMaxX(dateLabel.frame) + LayoutConstants.Padding.betweenDateAndCircle + floor((LayoutConstants.CircleSizes.big.width - circleView.frame.size.width) / 2.0)
         } else {
-            circleViewFrame.origin.x = CGRectGetMaxX(dateLabelFrame) + LayoutConstants.Padding.betweenDateAndCircle
+            circleView.frame.origin.x = CGRectGetMaxX(dateLabel.frame) + LayoutConstants.Padding.betweenDateAndCircle
         }
-        circleViewFrame.origin.y = floor((bounds.size.height - circleViewFrame.size.height) / 2.0)
-        circleView.frame = circleViewFrame
+        circleView.centerVerticallyWithReferenceView(self)
         circleView.maskToCircle()
         
-        var lineViewFrame = lineView.frame
-        lineViewFrame.size.width = LayoutConstants.lineViewWidth
-        lineViewFrame.size.height = bounds.size.height
-        lineViewFrame.origin.x = circleViewFrame.origin.x + floor((circleViewFrame.size.width - lineViewFrame.size.width) / 2.0)
-        lineView.frame = lineViewFrame
+        lineView.frame.size.width = LayoutConstants.lineViewWidth
+        lineView.frame.size.height = bounds.size.height
+        lineView.frame.origin.x = circleView.frame.origin.x + floor((circleView.frame.size.width - lineView.frame.size.width) / 2.0)
         
-        let labelXOrigin = CGRectGetMaxX(circleViewFrame) + LayoutConstants.Padding.betweenCircleAndLabels
+        let labelXOrigin = CGRectGetMaxX(circleView.frame) + LayoutConstants.Padding.betweenCircleAndLabels
         let boundingLabelWidth = bounds.size.width - labelXOrigin - (bounds.size.width - CGRectGetMinX(accessoryView.frame))
         let boundingLabelSize = CGSizeMake(boundingLabelWidth, bounds.size.height)
         
-        var positionLabelFrame = positionLabel.frame
-        positionLabelFrame.size = CGSizeCeil(positionLabel.sizeThatFits(boundingLabelSize))
-        positionLabelFrame.origin.x = labelXOrigin
+        positionLabel.frame.size = CGSizeCeil(positionLabel.sizeThatFits(boundingLabelSize))
+        positionLabel.frame.origin.x = labelXOrigin
         
-        var organisationLabelFrame = organisationLabel.frame
-        organisationLabelFrame.size = CGSizeCeil(organisationLabel.sizeThatFits(boundingLabelSize))
-        organisationLabelFrame.origin.x = labelXOrigin
+        organisationLabel.frame.size = CGSizeCeil(organisationLabel.sizeThatFits(boundingLabelSize))
+        organisationLabel.frame.origin.x = labelXOrigin
         
-        let totalLabelHeights = positionLabelFrame.size.height + LayoutConstants.Padding.betweenVertical + organisationLabelFrame.size.height
+        let totalLabelHeights = positionLabel.frame.size.height + LayoutConstants.Padding.betweenVertical + organisationLabel.frame.size.height
         
-        positionLabelFrame.origin.y = floor((bounds.size.height - totalLabelHeights) / 2.0)
-        organisationLabelFrame.origin.y = CGRectGetMaxY(positionLabelFrame) + LayoutConstants.Padding.betweenVertical
-        
-        positionLabel.frame = positionLabelFrame
-        organisationLabel.frame = organisationLabelFrame
+        positionLabel.frame.origin.y = floor((bounds.size.height - totalLabelHeights) / 2.0)
+        organisationLabel.frame.origin.y = CGRectGetMaxY(positionLabel.frame) + LayoutConstants.Padding.betweenVertical
     }
 }

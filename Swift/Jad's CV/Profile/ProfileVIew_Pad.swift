@@ -32,71 +32,44 @@ class ProfileView_Pad: ProfileView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var textViewFrame = textView.frame
-        textViewFrame.size = CGSizeCeil(textView.sizeThatFits(LayoutConstants.textViewMaxSize))
+        textView.frame.size = CGSizeCeil(textView.sizeThatFits(LayoutConstants.textViewMaxSize))
         
         if expanded {
-            var profilePictureImageViewFrame = profilePictureImageView.frame
-            profilePictureImageViewFrame.size = LayoutConstants.PictureSizes.big
-            profilePictureImageViewFrame.origin.x = floor((bounds.size.width - profilePictureImageViewFrame.size.width) / 2.0)
+            profilePictureImageView.frame.size = LayoutConstants.PictureSizes.big
+            profilePictureImageView.centerHorizontallyWithReferenceView(self)
             
-            var nameLabelFrame = nameLabel.frame
-            nameLabelFrame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
-            nameLabelFrame.origin.x = floor((bounds.size.width - nameLabelFrame.size.width) / 2.0)
+            nameLabel.frame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
+            nameLabel.centerHorizontallyWithReferenceView(self)
             
-            var descriptionLabelFrame = descriptionLabel.frame
-            descriptionLabelFrame.size = CGSizeFloor(descriptionLabel.sizeThatFits(bounds.size))
-            descriptionLabelFrame.origin.x = floor((bounds.size.width - descriptionLabelFrame.size.width) / 2.0)
+            descriptionLabel.frame.size = CGSizeFloor(descriptionLabel.sizeThatFits(bounds.size))
+            descriptionLabel.centerHorizontallyWithReferenceView(self)
             
-            var emailButtonFrame = emailButton.frame
-            emailButtonFrame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
-            emailButtonFrame.origin.x = floor((bounds.size.width - emailButtonFrame.size.width) / 2.0)
+            emailButton.frame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
+            emailButton.centerHorizontallyWithReferenceView(self)
             
-            var phoneButtonFrame = phoneButton.frame
-            phoneButtonFrame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
-            phoneButtonFrame.origin.x = floor((bounds.size.width - phoneButtonFrame.size.width) / 2.0)
+            phoneButton.frame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
+            phoneButton.centerHorizontallyWithReferenceView(self)
             
             let fadeContentTopPadding = 16 * LayoutConstants.Padding.betweenVertical
             
-            profilePictureImageViewFrame.origin.y = floor(bounds.size.height / 6.0)
-            nameLabelFrame.origin.y = CGRectGetMaxY(profilePictureImageViewFrame) + LayoutConstants.Padding.side
-            descriptionLabelFrame.origin.y = CGRectGetMaxY(nameLabelFrame) + LayoutConstants.Padding.betweenVertical
-            emailButtonFrame.origin.y = CGRectGetMaxY(descriptionLabelFrame) + fadeContentTopPadding
-            phoneButtonFrame.origin.y = CGRectGetMaxY(emailButtonFrame) + LayoutConstants.Padding.betweenVertical
-
-            profilePictureImageView.frame = profilePictureImageViewFrame
-            nameLabel.frame = nameLabelFrame
-            descriptionLabel.frame = descriptionLabelFrame
-            emailButton.frame = emailButtonFrame
-            phoneButton.frame = phoneButtonFrame
+            profilePictureImageView.frame.origin.y = floor(bounds.size.height / 6.0)
+            nameLabel.frame.origin.y = CGRectGetMaxY(profilePictureImageView.frame) + LayoutConstants.Padding.side
+            descriptionLabel.frame.origin.y = CGRectGetMaxY(nameLabel.frame) + LayoutConstants.Padding.betweenVertical
+            emailButton.frame.origin.y = CGRectGetMaxY(descriptionLabel.frame) + fadeContentTopPadding
+            phoneButton.frame.origin.y = CGRectGetMaxY(emailButton.frame) + LayoutConstants.Padding.betweenVertical
         } else {
             // This makes the buttons disppear nicely with the animations
             emailButton.frame = nameLabel.frame
             phoneButton.frame = descriptionLabel.frame
         }
         
-        textViewFrame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
-        textViewFrame.origin.x = floor((bounds.size.width - textViewFrame.size.width) / 2.0)
-        textView.frame = textViewFrame
+        textView.frame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
+        textView.centerHorizontallyWithReferenceView(self)
         
-        var cloudImageViewFrame = cloudImageView.frame
-        cloudImageViewFrame.size.width = max(max(emailButton.frame.size.width, phoneButton.frame.size.width), textViewFrame.size.width) + CloudImageLayout.resizableInsets.left + CloudImageLayout.resizableInsets.right
-        cloudImageViewFrame.size.height = phoneButton.frame.size.height + emailButton.frame.size.height + textViewFrame.size.height + (5 * LayoutConstants.Padding.betweenVertical) + CloudImageLayout.resizableInsets.top + CloudImageLayout.resizableInsets.bottom
+        cloudImageView.frame.size.width = max(max(emailButton.frame.size.width, phoneButton.frame.size.width), textView.frame.size.width) + CloudImageLayout.resizableInsets.left + CloudImageLayout.resizableInsets.right
+        cloudImageView.frame.size.height = phoneButton.frame.size.height + emailButton.frame.size.height + textView.frame.size.height + (5 * LayoutConstants.Padding.betweenVertical) + CloudImageLayout.resizableInsets.top + CloudImageLayout.resizableInsets.bottom
         let widestCloudView = widestView(views: [emailButton, phoneButton, textView])
-        cloudImageViewFrame.origin.x = widestCloudView.frame.origin.x - CloudImageLayout.resizableInsets.left
-        cloudImageViewFrame.origin.y = emailButton.frame.origin.y - CloudImageLayout.resizableInsets.top
-        cloudImageView.frame = cloudImageViewFrame
-    }
-    
-    //MARK: Logic 
-    
-    func widestView(#views: [UIView]) -> UIView {
-        var widestView = UIView(frame: CGRectZero)
-        for view in views {
-            if widestView.frame.size.width < view.frame.size.width {
-                widestView = view
-            }
-        }
-        return widestView
+        cloudImageView.frame.origin.x = widestCloudView.frame.origin.x - CloudImageLayout.resizableInsets.left
+        cloudImageView.frame.origin.y = emailButton.frame.origin.y - CloudImageLayout.resizableInsets.top
     }
 }

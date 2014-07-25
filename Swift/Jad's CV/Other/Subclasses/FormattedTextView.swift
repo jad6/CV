@@ -15,5 +15,6 @@ class FormattedTextView: UITextView {
         
         self.editable = false
         self.textAlignment = .Center
+        self.backgroundColor = UIColor.clearColor()
     }
 }

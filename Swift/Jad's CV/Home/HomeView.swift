@@ -31,16 +31,12 @@ class HomeView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var profileViewFrame = profileView.frame
-        profileViewFrame.size.height = (profileView.expanded) ? bounds.size.height : profileView.length
-        profileViewFrame.size.width = bounds.size.width
-        profileView.frame = profileViewFrame
+        profileView.frame.size.height = (profileView.expanded) ? bounds.size.height : profileView.length
+        profileView.frame.size.width = bounds.size.width
         
-        var sectionsPageViewFrame = sectionsPageView.frame
-        sectionsPageViewFrame.size.height = bounds.size.height - CGRectGetMaxY(profileViewFrame)
-        sectionsPageViewFrame.size.width = bounds.size.width
-        sectionsPageViewFrame.origin.y = CGRectGetMaxY(profileViewFrame)
-        sectionsPageView.frame = sectionsPageViewFrame
+        sectionsPageView.frame.size.height = bounds.size.height - CGRectGetMaxY(profileView.frame)
+        sectionsPageView.frame.size.width = bounds.size.width
+        sectionsPageView.frame.origin.y = CGRectGetMaxY(profileView.frame)
     }
     
     //MARK: Logic
