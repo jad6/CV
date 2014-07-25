@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimelineEventTableViewCell: UITableViewCell {
+class TimelineEventTableViewCell: GraySelectionTableViewCell {
     struct LayoutConstants {
         struct CircleSizes {
             static let big = CGSize(width: 24.0, height: 24.0)
@@ -49,14 +49,16 @@ class TimelineEventTableViewCell: UITableViewCell {
         layoutIfNeeded()
     }
     }
-    
     var color: UIColor! {
     didSet {
         positionLabel.textColor = color
         organisationLabel.textColor = color
         dateLabel.textColor = color
         circleView.backgroundColor = color
-        accessoryView.tintColor = color
+        
+        if !UIDevice.isPad() {
+            accessoryView.tintColor = color
+        }
     }
     }
 
@@ -69,13 +71,8 @@ class TimelineEventTableViewCell: UITableViewCell {
         self.importance = .Minor
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        let accessoryImage = UIImage(named: "chevron").imageWithRenderingMode(.AlwaysTemplate)
-        let accessoryImageView = UIImageView(image: accessoryImage)
-        accessoryImageView.sizeToFit()
-        self.accessoryView = accessoryImageView
         
-        self.lineView.backgroundColor = UIColor.backgroundGrayColor()
+        self.lineView.backgroundColor = UIColor.timelineGrayColor()
         self.addSubview(self.lineView)
         
         self.addSubview(self.circleView)
@@ -91,6 +88,13 @@ class TimelineEventTableViewCell: UITableViewCell {
         self.dateLabel.font = UIFont.helveticaNeueItalicFontOfSize(12.0)
         self.dateLabel.numberOfLines = 2
         self.addSubview(self.dateLabel)
+        
+        if !UIDevice.isPad() {
+            let accessoryImage = UIImage(named: "chevron").imageWithRenderingMode(.AlwaysTemplate)
+            let accessoryImageView = UIImageView(image: accessoryImage)
+            accessoryImageView.sizeToFit()
+            self.accessoryView = accessoryImageView
+        }
     }
     
     override func layoutSubviews() {
@@ -127,5 +131,21 @@ class TimelineEventTableViewCell: UITableViewCell {
         
         positionLabel.frame.origin.y = floor((bounds.size.height - totalLabelHeights) / 2.0)
         organisationLabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
+    }
+    
+    //MARK: Selection
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        lineView.backgroundColor = UIColor.timelineGrayColor()
+        circleView.backgroundColor = color
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        lineView.backgroundColor = UIColor.timelineGrayColor()
+        circleView.backgroundColor = color
     }
 }

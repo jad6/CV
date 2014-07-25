@@ -30,4 +30,8 @@ extension UIColor {
     class func backgroundGrayColor() -> UIColor {
         return self.colorFromRGBString("245,245,245,1")
     }
+    
+    class func timelineGrayColor() -> UIColor {
+        return UIColor.lightGrayColor()
+    }
 }

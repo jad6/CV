@@ -20,6 +20,9 @@ class TimelineTableViewController: TableViewController {
     init() {        
         super.init(listData: TimelineEvent.timelineEventsListData())
         
+        self.title = "Experience"
+        
+        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
         self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
     }
     
@@ -56,10 +59,14 @@ class TimelineTableViewController: TableViewController {
     }
     
     override func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
-        
         let timelineEvent = object as TimelineEvent
-        let detailViewController = ExperienceDetailViewController(experience: timelineEvent)
-        navigationController.pushViewController(detailViewController, animated: true)
+        
+        if UIDevice.isPad() {
+            
+        } else {
+            let detailViewController = ExperienceDetailViewController(experience: timelineEvent)
+            navigationController.pushViewController(detailViewController, animated: true)
+        }
     }
     
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
