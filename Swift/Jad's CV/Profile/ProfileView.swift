@@ -13,8 +13,8 @@ let kProfileViewAnimationDuration = Animations.Durations.Medium.toRaw()
 class ProfileView: UIView, UILayoutSupport {
     struct LayoutConstants {
         struct PictureSizes {
-            static let small = CGSizeMake(54.0, 54.0)
-            static let big = CGSizeMake(108.0, 108.0)
+            static let small = CGSize(width: 54.0, height: 54.0)
+            static let big = CGSize(width: 108.0, height: 108.0)
         }
         
         struct Padding {
@@ -25,7 +25,7 @@ class ProfileView: UIView, UILayoutSupport {
             static let betweenVertical: CGFloat = 4.0
         }
         
-        static let textViewMaxSize = CGSizeMake(320.0, 480.0)
+        static let textViewMaxSize = CGSize(width: 320.0, height: 480.0)
         static let statusBarHeight: CGFloat = 20.0
         static let topLayoutLength: CGFloat = 108.0
         
@@ -116,7 +116,7 @@ class ProfileView: UIView, UILayoutSupport {
         
         // When the view is not expanded the iPad and iPhone share the same layout
         if !expanded {
-            infoButton.frame.size = CGSizeCeil(infoButton.sizeThatFits(CGSizeZero))
+            infoButton.frame.size = infoButton.sizeThatFits(CGSizeZero).ceilSize
             infoButton.frame.origin.y = infoButton.verticalCenterWithReferenceFrame(LayoutConstants.headerFrameInView(self))
             infoButton.frame.origin.x = bounds.size.width - infoButton.frame.size.width - LayoutConstants.Padding.side
             
@@ -124,17 +124,17 @@ class ProfileView: UIView, UILayoutSupport {
             profilePictureImageView.frame.origin.x = LayoutConstants.Padding.side
             profilePictureImageView.frame.origin.y = profilePictureImageView.verticalCenterWithReferenceFrame(LayoutConstants.headerFrameInView(self))
             
-            nameLabel.frame.origin.x = CGRectGetMaxX(profilePictureImageView.frame) + LayoutConstants.Padding.betweenHorizontal
+            nameLabel.frame.origin.x = profilePictureImageView.frame.maxX + LayoutConstants.Padding.betweenHorizontal
             let labelsBoundingWidth = bounds.size.width - nameLabel.frame.origin.x - LayoutConstants.Padding.betweenHorizontal - infoButton.frame.size.width - LayoutConstants.Padding.side
-            nameLabel.frame.size = CGSizeCeil(nameLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
+            nameLabel.frame.size = nameLabel.sizeThatFits(CGSize(width: labelsBoundingWidth, height: 0.0)).ceilSize
             
             descriptionLabel.frame.origin.x = nameLabel.frame.origin.x
-            descriptionLabel.frame.size = CGSizeCeil(descriptionLabel.sizeThatFits(CGSizeMake(labelsBoundingWidth, 0.0)))
+            descriptionLabel.frame.size = descriptionLabel.sizeThatFits(CGSize(width: labelsBoundingWidth, height: 0.0)).ceilSize
             
             let labelsTotoalHeights = nameLabel.frame.size.height + LayoutConstants.Padding.betweenVertical + descriptionLabel.frame.size.height
             
             nameLabel.frame.origin.y = LayoutConstants.statusBarHeight + floor((LayoutConstants.headerFrameInView(self).height - labelsTotoalHeights) / 2.0)
-            descriptionLabel.frame.origin.y = CGRectGetMaxY(nameLabel.frame) + LayoutConstants.Padding.betweenVertical
+            descriptionLabel.frame.origin.y = nameLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
         }
     }
     

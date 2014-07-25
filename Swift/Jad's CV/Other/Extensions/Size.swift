@@ -8,10 +8,12 @@
 
 import UIKit
 
-func CGSizeFloor(size: CGSize) -> CGSize {
-    return CGSizeMake(floor(size.width), floor(size.height))
-}
-
-func CGSizeCeil(size: CGSize) -> CGSize {
-    return CGSizeMake(ceil(size.width), ceil(size.height))
+extension CGSize {
+    var floorSize: CGSize {
+    return CGSize(width: floor(width), height: floor(height))
+    }
+    
+    var ceilSize: CGSize {
+    return CGSize(width: ceil(width), height: ceil(height))
+    }
 }

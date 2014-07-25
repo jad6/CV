@@ -19,11 +19,11 @@ class ProfileView_Phone: ProfileView {
     }
     
     init(frame: CGRect) {
-        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsetsMake(263.0, 0.0, 0.0, 0.0))
+        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsets(top: 263.0, left: 0.0, bottom: 0.0, right: 0.0))
         self.fadeImageView = UIImageView(image: fadeImage)
         super.init(frame: frame)
         
-        self.textView.textContainerInset = UIEdgeInsetsMake(0.0, 20, 0.0, 20)
+        self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 20, bottom: 0.0, right: 20)
     }
 
     override func layoutSubviews() {
@@ -34,28 +34,28 @@ class ProfileView_Phone: ProfileView {
             profilePictureImageView.centerHorizontallyWithReferenceView(self)
             profilePictureImageView.frame.origin.y = LayoutConstants.statusBarHeight + LayoutConstants.Padding.top
             
-            nameLabel.frame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
+            nameLabel.frame.size = nameLabel.sizeThatFits(bounds.size).ceilSize
             nameLabel.centerHorizontallyWithReferenceView(self)
-            nameLabel.frame.origin.y = CGRectGetMaxY(profilePictureImageView.frame) + LayoutConstants.Padding.side
+            nameLabel.frame.origin.y = profilePictureImageView.frame.maxY + LayoutConstants.Padding.side
             
-            descriptionLabel.frame.size = CGSizeFloor(descriptionLabel.sizeThatFits(bounds.size))
+            descriptionLabel.frame.size = descriptionLabel.sizeThatFits(bounds.size).ceilSize
             descriptionLabel.centerHorizontallyWithReferenceView(self)
-            descriptionLabel.frame.origin.y = CGRectGetMaxY(nameLabel.frame) + LayoutConstants.Padding.betweenVertical
+            descriptionLabel.frame.origin.y = nameLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
             
-            emailButton.frame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
+            emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
             emailButton.centerHorizontallyWithReferenceView(self)
-            emailButton.frame.origin.y = CGRectGetMaxY(descriptionLabel.frame) + (2 * LayoutConstants.Padding.betweenVertical)
+            emailButton.frame.origin.y = descriptionLabel.frame.maxY + (2 * LayoutConstants.Padding.betweenVertical)
             
-            phoneButton.frame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
+            phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
             phoneButton.centerHorizontallyWithReferenceView(self)
-            phoneButton.frame.origin.y = CGRectGetMaxY(emailButton.frame) + LayoutConstants.Padding.betweenVertical
+            phoneButton.frame.origin.y = emailButton.frame.maxY + LayoutConstants.Padding.betweenVertical
         } else {
             // This makes the buttons disppear nicely with the animations
             emailButton.frame = nameLabel.frame
             phoneButton.frame = descriptionLabel.frame
         }
         
-        textView.frame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
+        textView.frame.origin.y = phoneButton.frame.maxY + (4 * LayoutConstants.Padding.betweenVertical)
         textView.frame.origin.x = 0.0
         textView.frame.size.width = bounds.size.width
         textView.frame.size.height = bounds.size.height - textView.frame.origin.y

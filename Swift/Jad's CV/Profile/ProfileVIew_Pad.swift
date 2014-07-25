@@ -12,7 +12,7 @@ class ProfileView_Pad: ProfileView {
 
     //TODO: when class variables are allowed make this one.
     struct CloudImageLayout {
-        static let resizableInsets = UIEdgeInsetsMake(80.0, 75.0, 80.0, 75.0)
+        static let resizableInsets = UIEdgeInsets(top: 80.0, left: 75.0, bottom: 80.0, right: 75.0)
     }
     
     private var cloudImageView: UIImageView!
@@ -23,7 +23,7 @@ class ProfileView_Pad: ProfileView {
     }
     }
     
-    init(frame: CGRect) {
+    init(frame: CGRect) {        
         let cloudImage = UIImage(named: "ipad_fade").resizableImageWithCapInsets(CloudImageLayout.resizableInsets)
         self.cloudImageView = UIImageView(image: cloudImage)
         super.init(frame: frame)
@@ -32,38 +32,38 @@ class ProfileView_Pad: ProfileView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        textView.frame.size = CGSizeCeil(textView.sizeThatFits(LayoutConstants.textViewMaxSize))
+        textView.frame.size = textView.sizeThatFits(LayoutConstants.textViewMaxSize).ceilSize
         
         if expanded {
             profilePictureImageView.frame.size = LayoutConstants.PictureSizes.big
             profilePictureImageView.centerHorizontallyWithReferenceView(self)
             
-            nameLabel.frame.size = CGSizeCeil(nameLabel.sizeThatFits(bounds.size))
+            nameLabel.frame.size = nameLabel.sizeThatFits(bounds.size).ceilSize
             nameLabel.centerHorizontallyWithReferenceView(self)
             
-            descriptionLabel.frame.size = CGSizeFloor(descriptionLabel.sizeThatFits(bounds.size))
+            descriptionLabel.frame.size = descriptionLabel.sizeThatFits(bounds.size).ceilSize
             descriptionLabel.centerHorizontallyWithReferenceView(self)
             
-            emailButton.frame.size = CGSizeCeil(emailButton.sizeThatFits(bounds.size))
+            emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
             emailButton.centerHorizontallyWithReferenceView(self)
             
-            phoneButton.frame.size = CGSizeCeil(phoneButton.sizeThatFits(bounds.size))
+            phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
             phoneButton.centerHorizontallyWithReferenceView(self)
             
             let fadeContentTopPadding = 16 * LayoutConstants.Padding.betweenVertical
             
             profilePictureImageView.frame.origin.y = floor(bounds.size.height / 6.0)
-            nameLabel.frame.origin.y = CGRectGetMaxY(profilePictureImageView.frame) + LayoutConstants.Padding.side
-            descriptionLabel.frame.origin.y = CGRectGetMaxY(nameLabel.frame) + LayoutConstants.Padding.betweenVertical
-            emailButton.frame.origin.y = CGRectGetMaxY(descriptionLabel.frame) + fadeContentTopPadding
-            phoneButton.frame.origin.y = CGRectGetMaxY(emailButton.frame) + LayoutConstants.Padding.betweenVertical
+            nameLabel.frame.origin.y = profilePictureImageView.frame.maxY + LayoutConstants.Padding.side
+            descriptionLabel.frame.origin.y = nameLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
+            emailButton.frame.origin.y = descriptionLabel.frame.maxY + fadeContentTopPadding
+            phoneButton.frame.origin.y = emailButton.frame.maxY + LayoutConstants.Padding.betweenVertical
         } else {
             // This makes the buttons disppear nicely with the animations
             emailButton.frame = nameLabel.frame
             phoneButton.frame = descriptionLabel.frame
         }
         
-        textView.frame.origin.y = CGRectGetMaxY(phoneButton.frame) + (4 * LayoutConstants.Padding.betweenVertical)
+        textView.frame.origin.y = phoneButton.frame.maxY + (4 * LayoutConstants.Padding.betweenVertical)
         textView.centerHorizontallyWithReferenceView(self)
         
         cloudImageView.frame.size.width = max(max(emailButton.frame.size.width, phoneButton.frame.size.width), textView.frame.size.width) + CloudImageLayout.resizableInsets.left + CloudImageLayout.resizableInsets.right

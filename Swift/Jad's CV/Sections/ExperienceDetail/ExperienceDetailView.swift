@@ -16,8 +16,8 @@ class ExperienceDetailView: UIView {
             static let betweenVerticalSmall: CGFloat = 5.0
         }
     
-        static let backButtonSize = CGSizeMake(48.0, 44.0)
-        static let imagveViewSize = CGSizeMake(70.0, 70.0)
+        static let backButtonSize = CGSize(width: 48.0, height: 44.0)
+        static let imagveViewSize = CGSize(width: 70.0, height: 70.0)
         static let imageViewMaskingRadius: CGFloat = 18.0
     }
     
@@ -47,7 +47,6 @@ class ExperienceDetailView: UIView {
         let backImage = UIImage(named: "back")
         self.backButton.setImage(backImage, forState: .Normal)
         self.backButton.contentMode = .ScaleAspectFit
-        self.backButton.backgroundColor = UIColor.redColor()
         self.backButton.frame.size = LayoutConstants.backButtonSize
         self.addSubview(self.backButton)
         
@@ -86,19 +85,19 @@ class ExperienceDetailView: UIView {
         organisationImageView.frame.origin.y = LayoutConstants.Padding.top
         organisationImageView.centerHorizontallyWithReferenceView(self)
         
-        positionLabel.frame.size = CGSizeCeil(positionLabel.sizeThatFits(bounds.size))
-        positionLabel.frame.origin.y = CGRectGetMaxY(organisationImageView.frame) + LayoutConstants.Padding.betweenVerticalLarge
+        positionLabel.frame.size = positionLabel.sizeThatFits(bounds.size).ceilSize
+        positionLabel.frame.origin.y = organisationImageView.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
         positionLabel.centerHorizontallyWithReferenceView(self)
 
-        organisationLabel.frame.size = CGSizeCeil(organisationLabel.sizeThatFits(bounds.size))
-        organisationLabel.frame.origin.y = CGRectGetMaxY(positionLabel.frame) + LayoutConstants.Padding.betweenVerticalSmall
+        organisationLabel.frame.size = organisationLabel.sizeThatFits(bounds.size).ceilSize
+        organisationLabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
         organisationLabel.centerHorizontallyWithReferenceView(self)
     
-        dateLabel.frame.size = CGSizeCeil(dateLabel.sizeThatFits(bounds.size))
-        dateLabel.frame.origin.y = CGRectGetMaxY(organisationLabel.frame) + LayoutConstants.Padding.betweenVerticalSmall
+        dateLabel.frame.size = dateLabel.sizeThatFits(bounds.size).ceilSize
+        dateLabel.frame.origin.y = organisationLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
         dateLabel.centerHorizontallyWithReferenceView(self)
         
-        textView.frame.origin.y = CGRectGetMaxY(dateLabel.frame) + LayoutConstants.Padding.betweenVerticalLarge
+        textView.frame.origin.y = dateLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
         textView.frame.size.width = bounds.size.width
         textView.frame.size.height = bounds.size.height - textView.frame.origin.y
     }
