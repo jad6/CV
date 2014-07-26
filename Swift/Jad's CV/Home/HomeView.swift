@@ -47,6 +47,7 @@ class HomeView: UIView {
         if profileView.expanded {
             profileView.backgroundImageView.blurEffectView.setHidden(true, animated: true, duration: kProfileViewAnimationDuration, completion: nil)
         }
+        
         UIView.animateWithDuration(kProfileViewAnimationDuration, animations: {
             self.layoutSubviews()
             self.profileView.layoutSubviews()

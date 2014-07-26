@@ -28,6 +28,30 @@ func tallestView(#views: [UIView]) -> UIView {
     return tallestView
 }
 
+func totalWidth(#views: [UIView], #separatorLength: CGFloat) -> CGFloat {
+    var totalWidth: CGFloat = 0.0
+    for view in views {
+        totalWidth += view.frame.size.width
+    }
+    return totalWidth + (CGFloat(views.count - 1) * separatorLength)
+}
+
+func totalWidth(#views: [UIView]) -> CGFloat {
+    return totalWidth(views: views, separatorLength: 0.0)
+}
+
+func totalHeight(#views: [UIView], #separatorLength: CGFloat) -> CGFloat {
+    var totalHeight: CGFloat = 0.0
+    for view in views {
+        totalHeight += view.frame.size.height
+    }
+    return totalHeight + (CGFloat(views.count - 1) * separatorLength)
+}
+
+func totalHeight(#views: [UIView]) -> CGFloat {
+    return totalHeight(views: views, separatorLength: 0.0)
+}
+
 extension UIView {
     
     //MARK: Hiding

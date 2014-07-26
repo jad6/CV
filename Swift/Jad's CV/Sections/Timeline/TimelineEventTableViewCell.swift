@@ -72,24 +72,22 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let contentView = self.contentView
-        
         self.lineView.backgroundColor = UIColor.timelineGrayColor()
-        contentView.addSubview(self.lineView)
+        self.contentView.addSubview(self.lineView)
         
-        contentView.addSubview(self.circleView)
+        self.contentView.addSubview(self.circleView)
         
         self.positionLabel.font = UIFont.helveticaNeueMediumFontOfSize(15.0)
         self.positionLabel.numberOfLines = 2
-        contentView.addSubview(self.positionLabel)
+        self.contentView.addSubview(self.positionLabel)
         
         self.organisationLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.organisationLabel.numberOfLines = 2
-        contentView.addSubview(self.organisationLabel)
+        self.contentView.addSubview(self.organisationLabel)
         
         self.dateLabel.font = UIFont.helveticaNeueItalicFontOfSize(12.0)
         self.dateLabel.numberOfLines = 2
-        contentView.addSubview(self.dateLabel)
+        self.contentView.addSubview(self.dateLabel)
         
         if !UIDevice.isPad() {
             let accessoryImage = UIImage(named: "chevron").imageWithRenderingMode(.AlwaysTemplate)
@@ -104,7 +102,7 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         
         dateLabel.frame.size = LayoutConstants.dateLabelSize
         dateLabel.frame.origin.x = LayoutConstants.Padding.side
-        dateLabel.centerVerticallyWithReferenceView(self)
+        dateLabel.centerVerticallyWithReferenceView(self.contentView)
         
         circleView.frame.size = LayoutConstants.circleViewSizeForImportance(importance)
         if importance != .Major {
@@ -112,7 +110,7 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         } else {
             circleView.frame.origin.x = dateLabel.frame.maxX + LayoutConstants.Padding.betweenDateAndCircle
         }
-        circleView.centerVerticallyWithReferenceView(self)
+        circleView.centerVerticallyWithReferenceView(self.contentView)
         circleView.maskToCircle()
         
         lineView.frame.size.width = LayoutConstants.lineViewWidth
@@ -129,7 +127,7 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         organisationLabel.frame.size = organisationLabel.sizeThatFits(boundingLabelSize).ceilSize
         organisationLabel.frame.origin.x = labelXOrigin
         
-        let totalLabelHeights = positionLabel.frame.size.height + LayoutConstants.Padding.betweenVertical + organisationLabel.frame.size.height
+        let totalLabelHeights = totalHeight(views: [positionLabel, organisationLabel], separatorLength: LayoutConstants.Padding.betweenVertical)
         
         positionLabel.frame.origin.y = floor((bounds.size.height - totalLabelHeights) / 2.0)
         organisationLabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVertical

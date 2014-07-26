@@ -34,20 +34,18 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let contentView = self.contentView
-        
-        contentView.addSubview(self.activityImageView)
+        self.contentView.addSubview(self.activityImageView)
         
         self.positionLabel.font = UIFont.helveticaNeueBoldFontOfSize(15.0)
         self.positionLabel.numberOfLines = 2
-        contentView.addSubview(self.positionLabel)
+        self.contentView.addSubview(self.positionLabel)
         
         self.organistationLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.organistationLabel.numberOfLines = 2
-        contentView.addSubview(self.organistationLabel)
+        self.contentView.addSubview(self.organistationLabel)
         
         self.dateLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
-        contentView.addSubview(self.dateLabel)
+        self.contentView.addSubview(self.dateLabel)
         
         if !UIDevice.isPad() {
             self.accessoryType = .DisclosureIndicator
@@ -59,7 +57,7 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
 
         activityImageView.frame.size = LayoutConstants.imageViewSize
         activityImageView.frame.origin.x = LayoutConstants.Padding.side
-        activityImageView.centerVerticallyWithReferenceView(self)
+        activityImageView.centerVerticallyWithReferenceView(self.contentView)
         activityImageView.maskToRadius(LayoutConstants.imageViewMaskingRadius)
         
         let labelXOrigin = activityImageView.frame.maxX + LayoutConstants.Padding.betweenHorizontal
@@ -74,8 +72,8 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
         
         dateLabel.frame.size = dateLabel.sizeThatFits(boundingLabelSize).ceilSize
         dateLabel.frame.origin.x = labelXOrigin
-        
-        let totalLabelHeights = positionLabel.frame.size.height + organistationLabel.frame.size.height + dateLabel.frame.size.height + (2 * LayoutConstants.Padding.betweenVertical)
+
+        let totalLabelHeights = totalHeight(views: [positionLabel, organistationLabel, dateLabel], separatorLength: LayoutConstants.Padding.betweenVertical)
         
         positionLabel.frame.origin.y = floor((bounds.size.height - totalLabelHeights) / 2.0)
         organistationLabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVertical

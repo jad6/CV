@@ -28,13 +28,37 @@ class RefereesCollectionViewController: CollectionViewController {
         self.collectionView.backgroundColor = UIColor.backgroundGrayColor()
     }
     
+    //MARK: Actions
+    
+    func emailAction(sender: UIButton) {
+        Contactor.sharedContactor.email(reciepients: [sender.titleForState(.Normal)], fromController: self)
+    }
+    
+    func phoneAction(sender: UIButton) {
+        Contactor.call(number: sender.titleForState(.Normal))
+    }
+    
     //MARK: Abstract Methods
     
     override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
         let collectionCell = cell as RefereeCollectionViewCell
         
         if let referee = object as? Referee {
+            collectionCell.photoImageView.image = referee.picture
+            collectionCell.fullNameLabel.text = referee.fullName
+            collectionCell.connectionLabel.text = referee.connection
+            collectionCell.positionLabel.text = referee.position
+            collectionCell.locationlabel.text = referee.location
+            collectionCell.phoneButton.setTitle(referee.phoneNumber, forState: .Normal)
+            collectionCell.emailButton.setTitle(referee.email, forState: .Normal)
             
+            collectionCell.phoneButton.addTarget(self, action: "phoneAction:", forControlEvents: .TouchUpInside)
+            collectionCell.emailButton.addTarget(self, action: "emailAction:", forControlEvents: .TouchUpInside)
+            
+            collectionCell.phoneButton.enabled = UIDevice.canCall()
+            collectionCell.emailButton.enabled = UIDevice.canEmail()
+            
+            collectionCell.layoutSubviews()
         }
     }
     

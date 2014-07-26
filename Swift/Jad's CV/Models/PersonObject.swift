@@ -20,9 +20,9 @@ class PersonObject: ExtractedObject {
     var fullName: String {
     var name = String()
     if title {
-        name = title!
+        name = title! + " "
     }
-    return name + " " + firstName + " " + lastName
+    return name + firstName + " " + lastName
     }
     
     init(dictionary: NSDictionary) {

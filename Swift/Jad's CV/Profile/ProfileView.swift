@@ -96,10 +96,10 @@ class ProfileView: UIView, UILayoutSupport {
         self.addSubview(self.profilePictureImageView)
         
         self.emailButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
-        self.emailButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
+        self.emailButton.setTitleColor((UIDevice.canEmail() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
         
         self.phoneButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
-        self.phoneButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
+        self.phoneButton.setTitleColor((UIDevice.canCall() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
         
         self.textView.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.textView.backgroundColor = UIColor.clearColor()

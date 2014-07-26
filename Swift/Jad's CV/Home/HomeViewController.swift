@@ -93,6 +93,9 @@ class HomeViewController: UIViewController {
             
             profileView.emailButton.addTarget(self, action: "emailAction:", forControlEvents: .TouchUpInside)
             profileView.phoneButton.addTarget(self, action: "phoneAction:", forControlEvents: .TouchUpInside)
+            
+            profileView.emailButton.enabled = UIDevice.canEmail()
+            profileView.phoneButton.enabled = UIDevice.canCall()
         } else {
             profileView.nameLabel.text = "Invalid Data"
             profileView.descriptionLabel.text = "Check the plist data"

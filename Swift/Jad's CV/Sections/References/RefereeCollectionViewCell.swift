@@ -9,13 +9,126 @@
 import UIKit
 
 class RefereeCollectionViewCell: UICollectionViewCell {
-
-    init(frame: CGRect) {
+    struct LayoutConstants {
+        struct Padding {
+            static let top: CGFloat = 24.0
+            static let side: CGFloat = 15.0
+            static let bottom: CGFloat = 15.0
+            static let betweenHorizontal: CGFloat = 10.0
+            static let betweenVerticalSmall: CGFloat = 3.0
+            static let betweenVerticalLarge: CGFloat = 4.0
+        }
         
+        struct Separator {
+            static let height: CGFloat = 1.0
+            static let widthFactor: CGFloat = 0.66
+        }
+        
+        static let photoImageViewSize = CGSize(width: 70.0, height: 70.0)
+    }
+    
+    private var cardBackgroundImageView: UIImageView!
+    private var separatorView: UIView!
+    
+    private(set) var photoImageView: UIImageView!
+    private(set) var fullNameLabel: UILabel!
+    private(set) var positionLabel: UILabel!
+    private(set) var locationlabel: UILabel!
+    private(set) var connectionLabel: UILabel!
+    private(set) var phoneButton: UIButton!
+    private(set) var emailButton: UIButton!
+    
+    init(frame: CGRect) {
+        let cardImage = UIImage(named: "conatct-card").resizableImageWithCapInsets(UIEdgeInsets(top: 2.0, left: 4.0, bottom: 6.0, right: 4.0))
+        self.cardBackgroundImageView = UIImageView(image: cardImage)
+        self.separatorView = UIView()
+        
+        self.photoImageView = UIImageView()
+        self.fullNameLabel = UILabel()
+        self.positionLabel = UILabel()
+        self.locationlabel = UILabel()
+        self.connectionLabel = UILabel()
+        self.phoneButton = UIButton()
+        self.emailButton = UIButton()
         
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.whiteColor()
+        self.contentView.addSubview(self.cardBackgroundImageView)
+        
+        self.separatorView.backgroundColor = UIColor.lightGrayColor()
+        self.contentView.addSubview(self.separatorView)
+        
+        self.contentView.addSubview(self.photoImageView)
+        
+        self.fullNameLabel.font = UIFont.helveticaNeueBoldFontOfSize(15.0)
+        self.fullNameLabel.numberOfLines = 2
+        self.contentView.addSubview(self.fullNameLabel)
+        
+        self.positionLabel.font = UIFont.helveticaNeueFontOfSize(14.0)
+        self.positionLabel.numberOfLines = 2
+        self.contentView.addSubview(self.positionLabel)
+        
+        self.locationlabel.font = UIFont.helveticaNeueFontOfSize(14.0)
+        self.locationlabel.numberOfLines = 2
+        self.contentView.addSubview(self.locationlabel)
+        
+        self.connectionLabel.font = UIFont.helveticaNeueItalicFontOfSize(14.0)
+        self.connectionLabel.numberOfLines = 3
+        self.contentView.addSubview(self.connectionLabel)
+        
+        self.emailButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
+        self.emailButton.setTitleColor((UIDevice.canEmail() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
+        self.contentView.addSubview(self.emailButton)
+        
+        self.phoneButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
+        self.phoneButton.setTitleColor((UIDevice.canCall() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
+        self.contentView.addSubview(self.phoneButton)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        photoImageView.frame.size = LayoutConstants.photoImageViewSize
+        photoImageView.frame.origin.x = LayoutConstants.Padding.side
+        photoImageView.frame.origin.y = LayoutConstants.Padding.top
+        photoImageView.maskToCircle()
+        
+        let labelXOrigin = photoImageView.frame.maxX + LayoutConstants.Padding.betweenHorizontal
+        let boundingLabelWidth = bounds.size.width - labelXOrigin
+        let boundingLabelSize = CGSize(width: boundingLabelWidth, height: bounds.size.height)
+        
+        fullNameLabel.frame.size = fullNameLabel.sizeThatFits(boundingLabelSize).ceilSize
+        fullNameLabel.frame.origin.x = labelXOrigin
+        
+        positionLabel.frame.size = positionLabel.sizeThatFits(boundingLabelSize).ceilSize
+        positionLabel.frame.origin.x = labelXOrigin
+        
+        locationlabel.frame.size = locationlabel.sizeThatFits(boundingLabelSize).ceilSize
+        locationlabel.frame.origin.x = labelXOrigin
+        
+        connectionLabel.frame.size = connectionLabel.sizeThatFits(boundingLabelSize).ceilSize
+        connectionLabel.frame.origin.x = labelXOrigin
+        
+        let totallabelsHeight = totalHeight(views: [fullNameLabel, positionLabel, locationlabel, connectionLabel], separatorLength: LayoutConstants.Padding.betweenVerticalSmall)
+        
+        fullNameLabel.frame.origin.y = photoImageView.frame.origin.y + floor((photoImageView.frame.size.height - totallabelsHeight) / 2.0)
+        positionLabel.frame.origin.y = fullNameLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
+        locationlabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
+        connectionLabel.frame.origin.y = locationlabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
+        
+        phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
+        phoneButton.frame.origin.y = bounds.size.height - LayoutConstants.Padding.bottom - phoneButton.frame.size.height
+        phoneButton.centerHorizontallyWithReferenceView(self.contentView)
+        
+        separatorView.frame.size.width = floor(bounds.size.width * LayoutConstants.Separator.widthFactor)
+        separatorView.frame.size.height = LayoutConstants.Separator.height
+        separatorView.frame.origin.y = phoneButton.frame.minY - LayoutConstants.Padding.betweenVerticalLarge - separatorView.frame.size.height
+        separatorView.centerHorizontallyWithReferenceView(self.contentView)
+
+        emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
+        emailButton.frame.origin.y = separatorView.frame.minY - LayoutConstants.Padding.betweenVerticalLarge - emailButton.frame.size.height
+        emailButton.centerHorizontallyWithReferenceView(self.contentView)
+        
+        cardBackgroundImageView.frame = bounds
+    }
 }

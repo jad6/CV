@@ -36,7 +36,7 @@ class Contactor: NSObject, MFMailComposeViewControllerDelegate {
         if UIDevice.canEmail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
-            mailComposer.setBccRecipients(reciepients)
+            mailComposer.setToRecipients(reciepients)
             controller.presentViewController(mailComposer, animated: true, completion: nil)
             
             viewController = controller
