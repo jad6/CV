@@ -17,7 +17,7 @@ class CVFont: UIFont {
         static let ΔFontSize: CGFloat = 2.0
         static let largeFontSize: CGFloat = 15.0
         
-        static let résuméHolderNameLargeFontSize: CGFloat = 24.0
+        static let résuméHolderNameLargeFontSize: CGFloat = 22.0
         static let caption2LargeFontSize: CGFloat = 14.0
         static let headlinesLargeFontSize: CGFloat = 16.0
         static let timelineDateLargeFontSize: CGFloat = 12.0

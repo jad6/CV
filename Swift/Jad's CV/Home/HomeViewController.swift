@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     //MARK: Init
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        self.sectionsPageViewController = ExperienceNavigationController(rootViewController: TimelineTableViewController())
+        self.sectionsPageViewController = ExperienceNavigationController(rootViewController: ExtraCurricularTableViewController())
         self.résuméHolder = RésuméHolder.résuméHolder()
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

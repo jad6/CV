@@ -65,4 +65,8 @@ class RefereesCollectionViewController: CollectionViewController {
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return RefereesCollectionViewController.refereeCellIdentifier()
     }
+    
+    //MARK: Collection view
+    
+    
 }

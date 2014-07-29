@@ -18,7 +18,7 @@ class TableViewController : UITableViewController, List {
         return "Cell"
     }
     
-    var listData: ListData<TimelineEvent> = ListData<TimelineEvent>() {
+    var listData: ListData<ExtraCurricularActivity> = ListData<ExtraCurricularActivity>() {
     didSet {
         tableView.reloadData()
     }
@@ -28,7 +28,7 @@ class TableViewController : UITableViewController, List {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
-    init(style: UITableViewStyle, listData: ListData<TimelineEvent>) {
+    init(style: UITableViewStyle, listData: ListData<ExtraCurricularActivity>) {
         super.init(style: style)
         
         self.listData = listData

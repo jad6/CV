@@ -48,6 +48,7 @@
 		05B3DDF319872E8E00C4B057 /* DynamicTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF219872E8E00C4B057 /* DynamicTypeView.swift */; };
 		05B3DDF51987304000C4B057 /* DynamicTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF41987304000C4B057 /* DynamicTypeTableViewCell.swift */; };
 		05B3DDF71987304C00C4B057 /* DynamicTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF61987304C00C4B057 /* DynamicTypeCollectionViewCell.swift */; };
+		05B3DDF91987696900C4B057 /* DynamicTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF81987696900C4B057 /* DynamicTypeTableViewController.swift */; };
 		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
 		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
@@ -127,6 +128,7 @@
 		05B3DDF219872E8E00C4B057 /* DynamicTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeView.swift; sourceTree = "<group>"; };
 		05B3DDF41987304000C4B057 /* DynamicTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeTableViewCell.swift; sourceTree = "<group>"; };
 		05B3DDF61987304C00C4B057 /* DynamicTypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		05B3DDF81987696900C4B057 /* DynamicTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeTableViewController.swift; sourceTree = "<group>"; };
 		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
@@ -369,8 +371,10 @@
 				05B3DDF219872E8E00C4B057 /* DynamicTypeView.swift */,
 				05B3DDF41987304000C4B057 /* DynamicTypeTableViewCell.swift */,
 				05B3DDF61987304C00C4B057 /* DynamicTypeCollectionViewCell.swift */,
+				05B3DDF81987696900C4B057 /* DynamicTypeTableViewController.swift */,
 			);
 			name = "Dynamic Type";
+			path = DynamicType;
 			sourceTree = "<group>";
 		};
 		05BF82071980C04A0070DE37 /* Experience Detail */ = {
@@ -538,6 +542,7 @@
 				05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */,
 				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
 				05F18808197A23470025756F /* Contactor.swift in Sources */,
+				05B3DDF91987696900C4B057 /* DynamicTypeTableViewController.swift in Sources */,
 				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,
 				0579C959197E4CBF000233EC /* Date.swift in Sources */,
 				05B3DDF71987304C00C4B057 /* DynamicTypeCollectionViewCell.swift in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
     struct LayoutConstants {
         struct Padding {
+            static let top: CGFloat = 30.0
             static let side: CGFloat = 15.0
             static let betweenVertical: CGFloat = 2.0
             static let betweenHorizontal: CGFloat = 10.0
@@ -85,5 +86,10 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
         positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
         dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+    }
+    
+    override func optimalCellheight() -> CGFloat {
+        let Δ: CGFloat = dateLabel.frame.maxY - positionLabel.frame.minY
+        return max(activityImageView.frame.size.height, Δ) + (2 * LayoutConstants.Padding.top)
     }
 }

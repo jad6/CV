@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExtraCurricularTableViewController: TableViewController {
+class ExtraCurricularTableViewController: DynamicTypeTableViewController, DynamicTypeTableViewCellDelegate {
 
     //TODO: re-enable that once Swift supports class variables
     //    private class let extraCurricularCellIdentifier = "Extra Curricular Cell"
@@ -21,14 +21,14 @@ class ExtraCurricularTableViewController: TableViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-//    init() {
-//        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
-//        
-//        self.title = "Extra Curricular"
-//        
-//        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
-//        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
-//    }
+    init() {
+        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
+        
+        self.title = "Extra Curricular"
+        
+        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
+        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
+    }
     
     //MARK: Abstract Methods
     
@@ -40,6 +40,9 @@ class ExtraCurricularTableViewController: TableViewController {
             tableCell.positionLabel.text = activity.position
             tableCell.organisationLabel.text = activity.organisation
             tableCell.dateLabel.text = activity.timeSpentString(" - ")
+            tableCell.delegate = self
+            
+            cellHeights[indexPath.row] = tableCell.optimalCellheight()
         }
     }
     
@@ -56,11 +59,5 @@ class ExtraCurricularTableViewController: TableViewController {
     
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return ExtraCurricularTableViewController.extraCurricularCellIdentifier()
-    }
-    
-    //MARK: Table view
-    
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return 120.0
     }
 }

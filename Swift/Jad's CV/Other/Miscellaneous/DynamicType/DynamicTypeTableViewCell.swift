@@ -8,13 +8,19 @@
 
 import UIKit
 
-class DynamicTypeTableViewCell: UITableViewCell {
+protocol DynamicTypeTableViewCellDelegate {
+    func dynamicTableViewCell(cell: DynamicTypeTableViewCell, didChangeOptimalHeight: CGFloat)
+}
 
+class DynamicTypeTableViewCell: UITableViewCell {
+    
+    var delegate: DynamicTypeTableViewCellDelegate?
+    
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didChangePreferredContentSize:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
-        self.reloadDynamicTypeContent()
+        self.didChangePreferredContentSize(nil)
     }
     
     deinit {
@@ -23,14 +29,17 @@ class DynamicTypeTableViewCell: UITableViewCell {
     
     //MARK: Override
     
-    func reloadDynamicTypeContent() {
-        
+    func reloadDynamicTypeContent() { }
+    
+    func optimalCellheight() -> CGFloat {
+        return 0.0
     }
     
     //MARK: Notification
     
-    func didChangePreferredContentSize(notification: NSNotification) {
+    func didChangePreferredContentSize(notification: NSNotification?) {
         reloadDynamicTypeContent()
         layoutSubviews()
+        delegate?.dynamicTableViewCell(self, didChangeOptimalHeight: optimalCellheight())
     }
 }
