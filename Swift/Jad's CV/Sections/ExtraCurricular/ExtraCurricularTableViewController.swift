@@ -18,7 +18,7 @@ class ExtraCurricularTableViewController: TableViewController {
     }
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     init() {
@@ -38,7 +38,7 @@ class ExtraCurricularTableViewController: TableViewController {
         if let activity = object as? ExtraCurricularActivity {
             tableCell.activityImageView.image = activity.organisationImage
             tableCell.positionLabel.text = activity.position
-            tableCell.organistationLabel.text = activity.organisation
+            tableCell.organisationLabel.text = activity.organisation
             tableCell.dateLabel.text = activity.timeSpentString(" - ")
         }
     }

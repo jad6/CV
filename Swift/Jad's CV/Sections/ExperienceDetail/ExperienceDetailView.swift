@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperienceDetailView: UIView {
+class ExperienceDetailView: DynamicTypeView {
     struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 20.0
@@ -48,22 +48,15 @@ class ExperienceDetailView: UIView {
         self.organisationImageView.maskToRadius(LayoutConstants.imageViewMaskingRadius)
         self.addSubview(self.organisationImageView)
         
-        self.positionLabel.font = UIFont.helveticaNeueBoldFontOfSize(15.0)
         self.addSubview(self.positionLabel)
-        
-        self.organisationLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.addSubview(self.organisationLabel)
-        
-        self.dateLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.addSubview(self.dateLabel)
         
-        self.textView.font = UIFont.helveticaNeueFontOfSize(15.0)
         if UIDevice.isPad() {
             self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 44.0, bottom: 0.0, right: 44.0)
         } else {
             self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         }
-        
         self.addSubview(self.textView)
         
         self.backgroundColor = UIColor.backgroundGrayColor()
@@ -94,5 +87,14 @@ class ExperienceDetailView: UIView {
         textView.frame.origin.y = dateLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
         textView.frame.size.width = bounds.size.width
         textView.frame.size.height = bounds.size.height - textView.frame.origin.y
+    }
+    
+    //MARK: Dynamic type
+    
+    override func reloadDynamicTypeContent() {
+        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

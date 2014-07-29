@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         self.sectionsPageViewController = SectionNavigationController(rootViewController: ExtraCurricularTableViewController())
         self.résuméHolder = RésuméHolder.résuméHolder()
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addChildViewController(self.sectionsPageViewController)
     }

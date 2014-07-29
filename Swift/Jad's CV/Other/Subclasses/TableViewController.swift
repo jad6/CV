@@ -25,7 +25,7 @@ class TableViewController : UITableViewController, List {
     }
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
     init(style: UITableViewStyle, listData: ListData<ExtraCurricularActivity>) {

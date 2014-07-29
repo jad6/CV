@@ -10,7 +10,7 @@ import UIKit
 
 let kProfileViewAnimationDuration = Animations.Durations.Medium.toRaw()
 
-class ProfileView: UIView, UILayoutSupport {
+class ProfileView: DynamicTypeView, UILayoutSupport {
     struct LayoutConstants {
         struct PictureSizes {
             static let small = CGSize(width: 54.0, height: 54.0)
@@ -81,11 +81,9 @@ class ProfileView: UIView, UILayoutSupport {
         self.backgroundImageView.contentMode = .ScaleAspectFill
         self.addSubview(self.backgroundImageView)
         
-        self.nameLabel.font = UIFont.helveticaNeueThinFontOfSize(21.0)
         self.nameLabel.textColor = UIColor.whiteColor()
         self.addSubview(self.nameLabel)
         
-        self.descriptionLabel.font = UIFont.helveticaNeueLightFontOfSize(15.0)
         self.descriptionLabel.textColor = UIColor.whiteColor()
         self.addSubview(self.descriptionLabel)
         
@@ -95,13 +93,8 @@ class ProfileView: UIView, UILayoutSupport {
         self.profilePictureImageView.image = UIImage(named: "profile_pic")
         self.addSubview(self.profilePictureImageView)
         
-        self.emailButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
-        self.emailButton.setTitleColor((UIDevice.canEmail() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
-        
-        self.phoneButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
-        self.phoneButton.setTitleColor((UIDevice.canCall() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
-        
-        self.textView.font = UIFont.helveticaNeueFontOfSize(15.0)
+        self.emailButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
+        self.phoneButton.setTitleColor(UIColor.defaultBlueColor(), forState: .Normal)
         self.textView.backgroundColor = UIColor.clearColor()
     }
     
@@ -158,5 +151,15 @@ class ProfileView: UIView, UILayoutSupport {
     
     func handleSubview(subview: UIView, toBeHidden hide: Bool, animated: Bool) {
         self.handleSubview(subview, insertedAboveSubview: nil, toBeHidden: hide, animated: animated)
+    }
+    
+    //MARK: Dynamic type
+    
+    override func reloadDynamicTypeContent() {
+        nameLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleRésuméHolderName)
+        descriptionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        emailButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

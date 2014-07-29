@@ -8,40 +8,66 @@
 
 import UIKit
 
-extension UIFont {
-    struct FontDescriptorSingletons {
-        struct HelveticaNeue {
-            static let base: UIFontDescriptor = UIFontDescriptor(name: "Helvetica Neue", size: 0.0)
-            static let bold: UIFontDescriptor = base.fontDescriptorWithSymbolicTraits(.TraitBold)
+let CVFontTextStyleRésuméHolderName = "CVFontTextStyleRésuméHolderName"
 
-            static let light: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Light"])
-            static let thin: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Thin"])
-            static let medium: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Medium"])
-            static let italic: UIFontDescriptor = base.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Italic"])
+class CVFont: UIFont {
+    
+    //TODO: re-enable that once Swift supports class variables
+    //    private class var filePathForResource: String?
+    class func ΔFontSize() -> CGFloat {
+        return 2.0
+    }
+    
+    private class func largeFontSizeForTextStyle(style: String) -> CGFloat {
+        if style == CVFontTextStyleRésuméHolderName {
+            return 21.0
         }
+        
+        return 15.0
     }
     
-    class func helveticaNeueFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont.systemFontOfSize(fontSize)
+    private class func fontSizeForTextStyle(style: String) -> CGFloat {
+        let contentSizeCategory = UIApplication.sharedApplication().preferredContentSizeCategory
+        
+        let largeFontSize = largeFontSizeForTextStyle(style)
+        
+        if contentSizeCategory == UIContentSizeCategoryExtraSmall {
+            return largeFontSize - (3 * ΔFontSize())
+        } else if contentSizeCategory == UIContentSizeCategorySmall {
+            return largeFontSize - (2 * ΔFontSize())
+        } else if contentSizeCategory == UIContentSizeCategoryMedium {
+            return largeFontSize - ΔFontSize()
+        } else if contentSizeCategory == UIContentSizeCategoryLarge {
+            return largeFontSize
+        } else if contentSizeCategory == UIContentSizeCategoryExtraLarge {
+            return largeFontSize + ΔFontSize()
+        } else if contentSizeCategory == UIContentSizeCategoryExtraExtraLarge {
+            return largeFontSize + (2 * ΔFontSize())
+        } else if contentSizeCategory == UIContentSizeCategoryExtraExtraExtraLarge {
+            return largeFontSize + (3 * ΔFontSize())
+        }
+        
+        return 0.0
     }
+    
+    class func preferredFontForRésuméHolderName(#fontSize: CGFloat) -> UIFont {
+        let headlineFontDescriptor = UIFontDescriptor(name: "Helvetica Neue", size: 0.0)
+        let thinHeadlineFontDescriptor = headlineFontDescriptor.fontDescriptorByAddingAttributes([UIFontDescriptorNameAttribute: "Thin"])
+        return UIFont(descriptor: thinHeadlineFontDescriptor, size: fontSize)
+    }
+    
+    class func preferredFontForTextStyle(style: String, fontSize: CGFloat) -> UIFont {
+        let descriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(style)
+        return UIFont(descriptor: descriptor, size: fontSize)
+    }
+    
+    override class func preferredFontForTextStyle(style: String!) -> UIFont! {
+        let size = fontSizeForTextStyle(style)
 
-    class func helveticaNeueBoldFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(descriptor: FontDescriptorSingletons.HelveticaNeue.bold, size: fontSize)
-    }
-    
-    class func helveticaNeueLightFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(descriptor: FontDescriptorSingletons.HelveticaNeue.light, size: fontSize)
-    }
-    
-    class func helveticaNeueThinFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(descriptor: FontDescriptorSingletons.HelveticaNeue.thin, size: fontSize)
-    }
-    
-    class func helveticaNeueMediumFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(descriptor: FontDescriptorSingletons.HelveticaNeue.medium, size: fontSize)
-    }
-    
-    class func helveticaNeueItalicFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(descriptor: FontDescriptorSingletons.HelveticaNeue.italic, size: fontSize)
+        if style == CVFontTextStyleRésuméHolderName {
+            return preferredFontForRésuméHolderName(fontSize: size)
+        } else {
+            return preferredFontForTextStyle(style, fontSize: size)
+        }
     }
 }

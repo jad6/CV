@@ -77,15 +77,12 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         
         self.contentView.addSubview(self.circleView)
         
-        self.positionLabel.font = UIFont.helveticaNeueMediumFontOfSize(15.0)
         self.positionLabel.numberOfLines = 2
         self.contentView.addSubview(self.positionLabel)
         
-        self.organisationLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.organisationLabel.numberOfLines = 2
         self.contentView.addSubview(self.organisationLabel)
         
-        self.dateLabel.font = UIFont.helveticaNeueItalicFontOfSize(12.0)
         self.dateLabel.numberOfLines = 2
         self.contentView.addSubview(self.dateLabel)
         
@@ -147,5 +144,13 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         
         lineView.backgroundColor = UIColor.timelineGrayColor()
         circleView.backgroundColor = color
+    }
+    
+    //MARK: Dynamic type
+    
+    override func reloadDynamicTypeContent() {
+        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
     }
 }

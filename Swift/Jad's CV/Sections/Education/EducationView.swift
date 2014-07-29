@@ -27,18 +27,18 @@ class EducationView: UIView {
         
         super.init(frame: frame)
 
-        self.textView.font = UIFont.helveticaNeueFontOfSize(15.0)
+        self.textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
         self.addSubview(self.textView)
         
-        self.establishmentLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
+        self.establishmentLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.establishmentLabel.numberOfLines = 2
         self.addSubview(self.establishmentLabel)
         
-        self.statusLabel.font = UIFont.helveticaNeueBoldFontOfSize(15.0)
+        self.statusLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.statusLabel.numberOfLines = 3
         self.addSubview(self.statusLabel)
         
-        self.completionDateLabel.font = UIFont.helveticaNeueItalicFontOfSize(15.0)
+        self.completionDateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.addSubview(self.completionDateLabel)
         
         
