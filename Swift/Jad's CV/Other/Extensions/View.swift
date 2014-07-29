@@ -78,7 +78,7 @@ extension UIView {
                 }, completion: completion)
             }
         } else {
-            alpha = (hide) ? 0.0 : 1.0
+            alpha = hide ? 0.0 : 1.0
             hidden = hide
 
             if completion {

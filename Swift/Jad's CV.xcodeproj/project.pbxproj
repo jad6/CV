@@ -56,6 +56,8 @@
 		05F18808197A23470025756F /* Contactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18807197A23470025756F /* Contactor.swift */; };
 		05F1880A197A41570025756F /* FormattedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18809197A41570025756F /* FormattedTextView.swift */; };
 		05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6C30819775C54007CCD66 /* BlurImageView.swift */; };
+		05F9EAAA19865A26001D2633 /* EducationView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9EAA919865A26001D2633 /* EducationView_Phone.swift */; };
+		05F9EAAC19865A2F001D2633 /* EducationView_Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9EAAB19865A2F001D2633 /* EducationView_Pad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		05F18807197A23470025756F /* Contactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contactor.swift; sourceTree = "<group>"; };
 		05F18809197A41570025756F /* FormattedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedTextView.swift; sourceTree = "<group>"; };
 		05F6C30819775C54007CCD66 /* BlurImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurImageView.swift; sourceTree = "<group>"; };
+		05F9EAA919865A26001D2633 /* EducationView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationView_Phone.swift; sourceTree = "<group>"; };
+		05F9EAAB19865A2F001D2633 /* EducationView_Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationView_Pad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +298,8 @@
 			children = (
 				0581032919824009005FDF8F /* EducationViewController.swift */,
 				0581032B19824061005FDF8F /* EducationView.swift */,
+				05F9EAAB19865A2F001D2633 /* EducationView_Pad.swift */,
+				05F9EAA919865A26001D2633 /* EducationView_Phone.swift */,
 			);
 			path = Education;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F1880A197A41570025756F /* FormattedTextView.swift in Sources */,
+				05F9EAAA19865A26001D2633 /* EducationView_Phone.swift in Sources */,
 				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
 				05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
@@ -540,6 +547,7 @@
 				05810336198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift in Sources */,
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
 				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
+				05F9EAAC19865A2F001D2633 /* EducationView_Pad.swift in Sources */,
 				0529482D197E0BBE00739084 /* List.swift in Sources */,
 				0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */,
 				0529482F197E0FC700739084 /* TimelineTableViewController.swift in Sources */,

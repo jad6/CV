@@ -9,23 +9,35 @@
 import UIKit
 
 class EducationView: UIView {
-    
-    
+    struct LayoutConstants {
+        struct Padding {
+            static let side: CGFloat = 15.0
+            static let top: CGFloat = 15.0
+            static let betweenHorizontal: CGFloat = 8.0
+            static let betweenVertical: CGFloat = 2.0
+        }
+        
+        static let imageViewSize = CGSize(width: 70.0, height: 70.0)
+    }
+        
+    private(set) var universityLogoImageView: UIImageView!
     private(set) var textView: FormattedTextView!
     private(set) var establishmentLabel: UILabel!
     private(set) var statusLabel: UILabel!
     private(set) var completionDateLabel: UILabel!
     private(set) var backgroundImageView: UIImageView!
-    private(set) var fadeImageView: UIImageView!
     
     init(frame: CGRect) {
+        self.universityLogoImageView = UIImageView()
         self.textView = FormattedTextView()
         self.establishmentLabel = UILabel()
         self.statusLabel = UILabel()
         self.completionDateLabel = UILabel()
-        self.fadeImageView = UIImageView()
+        self.backgroundImageView = UIImageView()
         
         super.init(frame: frame)
+        
+        self.addSubview(self.universityLogoImageView)
 
         self.textView.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.addSubview(self.textView)
@@ -41,11 +53,10 @@ class EducationView: UIView {
         self.completionDateLabel.font = UIFont.helveticaNeueItalicFontOfSize(15.0)
         self.addSubview(self.completionDateLabel)
         
-        
+        self.backgroundColor = UIColor.whiteColor()
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    
+    convenience init() {
+        self.init(frame: CGRectZero)
     }
 }

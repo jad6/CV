@@ -10,26 +10,40 @@ import UIKit
 
 class EducationViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    var education: Education
+    
+    var educationView: EducationView! {
+    return view as? EducationView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Init
+    
+    init() {
+        self.education = Education.education()
+        
+        super.init(nibName: nil, bundle: nil)
     }
-    */
-
+    
+    //MARK: View lifecycle
+    
+    override func loadView() {
+        view = UIDevice.isPad() ? EducationView_Pad() : EducationView_Phone()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupEducationView()
+    }
+    
+    //MARK: Logic
+    
+    func setupEducationView() {
+        educationView.universityLogoImageView.image = education.universityLogo
+        educationView.statusLabel.text = education.status
+        educationView.establishmentLabel.text = education.establishment
+        educationView.completionDateLabel.text = education.completion
+        educationView.textView.text = education.detailDescription
+        educationView.backgroundImageView.image = education.backgroundImage
+    }
 }

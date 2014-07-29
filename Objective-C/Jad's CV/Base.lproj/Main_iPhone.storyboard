@@ -168,14 +168,17 @@
                                     <constraint firstAttribute="height" constant="249" id="siR-HZ-2OO"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final year,  Bachelor of Software Engineering" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-Hg-OMc">
-                                <rect key="frame" x="78" y="8" width="165" height="36"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final year,  Bachelor of Software Engineering" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="202" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-Hg-OMc">
+                                <rect key="frame" x="98" y="8" width="202" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="p6c-IC-2Lg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University of Western Australia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="210" translatesAutoresizingMaskIntoConstraints="NO" id="smw-56-24v">
-                                <rect key="frame" x="55" y="47" width="210" height="18"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University of Western Australia" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="210" translatesAutoresizingMaskIntoConstraints="NO" id="smw-56-24v">
+                                <rect key="frame" x="98" y="46" width="210" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -189,8 +192,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksd-AZ-ULR">
-                                <rect key="frame" x="55" y="66" width="210" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksd-AZ-ULR">
+                                <rect key="frame" x="98" y="65" width="210" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VHz-ya-reh"/>
                                 </constraints>
@@ -198,23 +201,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uwa" translatesAutoresizingMaskIntoConstraints="NO" id="Wn1-8b-hUC">
+                                <rect key="frame" x="20" y="14" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Am4-rD-gow"/>
+                                    <constraint firstAttribute="width" constant="70" id="iGE-e6-xxu"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="smw-56-24v" firstAttribute="top" secondItem="EfR-Hg-OMc" secondAttribute="bottom" constant="3" id="5mL-Fg-E7G"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="top" secondItem="zdP-Dd-B84" secondAttribute="bottom" constant="8" id="3NK-iF-FQ3"/>
+                            <constraint firstItem="Wn1-8b-hUC" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="20" id="6EK-Dx-ulg"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="leading" secondItem="Wn1-8b-hUC" secondAttribute="trailing" constant="8" symbolic="YES" id="6oj-Xt-Dhf"/>
                             <constraint firstAttribute="trailing" secondItem="t1g-my-rVo" secondAttribute="trailing" constant="20" id="9gt-xJ-zZK"/>
-                            <constraint firstItem="smw-56-24v" firstAttribute="centerX" secondItem="y8j-OU-Sms" secondAttribute="centerX" id="Ee2-lE-Iwm"/>
-                            <constraint firstItem="ksd-AZ-ULR" firstAttribute="centerX" secondItem="t1g-my-rVo" secondAttribute="centerX" id="JEm-v1-cU7"/>
+                            <constraint firstItem="smw-56-24v" firstAttribute="centerX" secondItem="y8j-OU-Sms" secondAttribute="centerX" constant="43" id="Ee2-lE-Iwm"/>
+                            <constraint firstItem="ksd-AZ-ULR" firstAttribute="centerX" secondItem="t1g-my-rVo" secondAttribute="centerX" constant="43" id="JEm-v1-cU7"/>
                             <constraint firstItem="t1g-my-rVo" firstAttribute="leading" secondItem="y8j-OU-Sms" secondAttribute="leading" constant="20" id="OXS-sQ-p9H"/>
-                            <constraint firstItem="smw-56-24v" firstAttribute="centerX" secondItem="t1g-my-rVo" secondAttribute="centerX" id="Q5S-fF-i8I"/>
+                            <constraint firstItem="smw-56-24v" firstAttribute="centerX" secondItem="t1g-my-rVo" secondAttribute="centerX" constant="43" id="Q5S-fF-i8I"/>
                             <constraint firstItem="B5T-jv-Tq2" firstAttribute="bottom" secondItem="axq-RK-xo1" secondAttribute="bottom" id="RgK-p7-dmc"/>
-                            <constraint firstItem="t1g-my-rVo" firstAttribute="top" secondItem="ksd-AZ-ULR" secondAttribute="bottom" constant="10" id="Vvv-ai-E47"/>
+                            <constraint firstItem="smw-56-24v" firstAttribute="top" secondItem="EfR-Hg-OMc" secondAttribute="bottom" constant="2" id="UPv-XH-cTT"/>
+                            <constraint firstItem="t1g-my-rVo" firstAttribute="top" secondItem="ksd-AZ-ULR" secondAttribute="bottom" constant="11" id="Vvv-ai-E47"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="leading" secondItem="smw-56-24v" secondAttribute="leading" id="ZeD-0j-5wI"/>
                             <constraint firstItem="ksd-AZ-ULR" firstAttribute="top" secondItem="smw-56-24v" secondAttribute="bottom" constant="1" id="aSU-I8-bPb"/>
-                            <constraint firstItem="t1g-my-rVo" firstAttribute="top" secondItem="ksd-AZ-ULR" secondAttribute="bottom" constant="10" id="at4-eo-ln9"/>
-                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="centerX" secondItem="t1g-my-rVo" secondAttribute="centerX" id="fR4-Ey-1qP"/>
-                            <constraint firstItem="ksd-AZ-ULR" firstAttribute="centerX" secondItem="axq-RK-xo1" secondAttribute="centerX" id="iG4-dH-led"/>
-                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="top" secondItem="zdP-Dd-B84" secondAttribute="bottom" constant="8" id="ktD-0p-nqi"/>
-                            <constraint firstItem="ksd-AZ-ULR" firstAttribute="centerX" secondItem="B5T-jv-Tq2" secondAttribute="centerX" id="lf7-fb-YaL"/>
+                            <constraint firstItem="t1g-my-rVo" firstAttribute="top" secondItem="ksd-AZ-ULR" secondAttribute="bottom" constant="11" id="at4-eo-ln9"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="top" secondItem="Wn1-8b-hUC" secondAttribute="top" constant="-6" id="gh5-gF-yJI"/>
+                            <constraint firstItem="Wn1-8b-hUC" firstAttribute="top" secondItem="zdP-Dd-B84" secondAttribute="bottom" constant="14" id="hwN-zi-U15"/>
+                            <constraint firstItem="ksd-AZ-ULR" firstAttribute="centerX" secondItem="axq-RK-xo1" secondAttribute="centerX" constant="43" id="iG4-dH-led"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="trailing" secondItem="t1g-my-rVo" secondAttribute="trailing" id="igT-MG-NAA"/>
+                            <constraint firstItem="ksd-AZ-ULR" firstAttribute="centerX" secondItem="B5T-jv-Tq2" secondAttribute="centerX" constant="43" id="lf7-fb-YaL"/>
+                            <constraint firstItem="EfR-Hg-OMc" firstAttribute="leading" secondItem="Wn1-8b-hUC" secondAttribute="trailing" constant="8" id="rdd-Ej-5vL"/>
                             <constraint firstAttribute="bottom" secondItem="B5T-jv-Tq2" secondAttribute="bottom" id="ucD-F7-16O"/>
                             <constraint firstItem="smw-56-24v" firstAttribute="leading" secondItem="ksd-AZ-ULR" secondAttribute="leading" id="xRj-p8-OQ0"/>
                         </constraints>
@@ -756,6 +772,7 @@
         <image name="back" width="12" height="20"/>
         <image name="fade_down" width="320" height="264"/>
         <image name="union_lake.jpg" width="2048" height="2048"/>
+        <image name="uwa" width="70" height="70"/>
         <image name="winthrop_hall.jpg" width="2048" height="1536"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

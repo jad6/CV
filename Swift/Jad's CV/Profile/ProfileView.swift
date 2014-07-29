@@ -45,7 +45,7 @@ class ProfileView: UIView, UILayoutSupport {
     
     var expanded: Bool {
     didSet {
-        let color = (self.expanded) ? UIColor.blackColor() : UIColor.whiteColor()
+        let color = self.expanded ? UIColor.blackColor() : UIColor.whiteColor()
 
         UIView.animateWithDuration(kProfileViewAnimationDuration) {
             self.infoButton.tintColor = color

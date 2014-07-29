@@ -14,7 +14,7 @@ class HomeView: UIView {
     private(set) var profileView: ProfileView!
     
     init(frame: CGRect) {
-        self.profileView = (UIDevice.isPad() ? ProfileView_Pad() : ProfileView_Phone())
+        self.profileView = UIDevice.isPad() ? ProfileView_Pad() : ProfileView_Phone()
         
         super.init(frame: frame)
         
@@ -31,7 +31,7 @@ class HomeView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        profileView.frame.size.height = (profileView.expanded) ? bounds.size.height : profileView.length
+        profileView.frame.size.height = profileView.expanded ? bounds.size.height : profileView.length
         profileView.frame.size.width = bounds.size.width
         
         sectionsPageView.frame.size.height = bounds.size.height - ProfileView.LayoutConstants.topLayoutLength

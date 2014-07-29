@@ -19,7 +19,7 @@ class ProfileView_Phone: ProfileView {
     }
     
     init(frame: CGRect) {
-        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsets(top: 263.0, left: 0.0, bottom: 0.0, right: 0.0))
+        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsets(top: 260.0, left: 0.0, bottom: 0.0, right: 0.0))
         self.fadeImageView = UIImageView(image: fadeImage)
         super.init(frame: frame)
         
