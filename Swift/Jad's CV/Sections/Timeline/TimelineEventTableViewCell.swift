@@ -19,7 +19,7 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
             static let side: CGFloat = 15.0
             static let betweenDateAndCircle: CGFloat = 2.0
             static let betweenCircleAndLabels: CGFloat = 10.0
-            static let betweenVertical: CGFloat = 5.0
+            static let betweenVertical: CGFloat = 3.0
         }
         
         static let lineViewWidth: CGFloat = 2.0
@@ -150,7 +150,7 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
     
     override func reloadDynamicTypeContent() {
         positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        dateLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleTimelineDate)
     }
 }

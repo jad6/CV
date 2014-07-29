@@ -21,14 +21,14 @@ class ExtraCurricularTableViewController: TableViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    init() {
-        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
-        
-        self.title = "Extra Curricular"
-        
-        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
-        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
-    }
+//    init() {
+//        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
+//        
+//        self.title = "Extra Curricular"
+//        
+//        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
+//        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
+//    }
     
     //MARK: Abstract Methods
     

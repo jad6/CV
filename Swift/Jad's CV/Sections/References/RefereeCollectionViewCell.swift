@@ -130,10 +130,10 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
     
     override func reloadDynamicTypeContent() {
         fullNameLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
-        locationlabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
-        connectionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
-        emailButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
+        locationlabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
+        connectionLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleCaption2Italic)
+        emailButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

@@ -159,7 +159,7 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
         nameLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleRésuméHolderName)
         descriptionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         emailButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

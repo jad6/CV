@@ -13,7 +13,7 @@ class ExperienceDetailView: DynamicTypeView {
         struct Padding {
             static let top: CGFloat = 20.0
             static let betweenVerticalLarge: CGFloat = 15.0
-            static let betweenVerticalSmall: CGFloat = 5.0
+            static let betweenVerticalSmall: CGFloat = 3.0
         }
     
         static let backButtonSize = CGSize(width: 48.0, height: 44.0)

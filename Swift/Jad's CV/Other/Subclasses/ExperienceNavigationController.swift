@@ -1,5 +1,5 @@
 //
-//  SectionNavigationController.swift
+//  ExperienceNavigationController.swift
 //  Jad's CV
 //
 //  Created by Jad Osseiran on 25/07/2014.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SectionNavigationController: UINavigationController {
+class ExperienceNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

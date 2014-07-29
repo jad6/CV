@@ -12,7 +12,7 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
     struct LayoutConstants {
         struct Padding {
             static let side: CGFloat = 15.0
-            static let betweenVertical: CGFloat = 4.0
+            static let betweenVertical: CGFloat = 2.0
             static let betweenHorizontal: CGFloat = 10.0
             static let accessoryViewWidth: CGFloat = 30.0
         }
@@ -83,7 +83,7 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
     
     override func reloadDynamicTypeContent() {
         positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

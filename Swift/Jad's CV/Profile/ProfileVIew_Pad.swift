@@ -56,7 +56,7 @@ class ProfileView_Pad: ProfileView {
             nameLabel.frame.origin.y = profilePictureImageView.frame.maxY + LayoutConstants.Padding.side
             descriptionLabel.frame.origin.y = nameLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
             emailButton.frame.origin.y = descriptionLabel.frame.maxY + fadeContentTopPadding
-            phoneButton.frame.origin.y = emailButton.frame.maxY + LayoutConstants.Padding.betweenVertical
+            phoneButton.frame.origin.y = emailButton.frame.maxY
         } else {
             // This makes the buttons disppear nicely with the animations
             emailButton.frame = nameLabel.frame
