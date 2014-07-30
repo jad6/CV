@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kRefereeCardBaseSize = CGSize(width: 310.0, height: 200.0)
+
 class RefereesCollectionViewFlowLayout: UICollectionViewFlowLayout {
  
     init() {
@@ -25,7 +27,7 @@ class RefereesCollectionViewFlowLayout: UICollectionViewFlowLayout {
     override func prepareLayout() {
         super.prepareLayout()
         
-        itemSize = CGSize(width: 310.0, height: 200.0)
+        itemSize = kRefereeCardBaseSize
     }
     
     //MARK: Logic

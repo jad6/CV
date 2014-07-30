@@ -11,7 +11,7 @@ import UIKit
 class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
     struct LayoutConstants {
         struct Padding {
-            static let top: CGFloat = 30.0
+            static let top: CGFloat = 20.0
             static let side: CGFloat = 15.0
             static let betweenVertical: CGFloat = 2.0
             static let betweenHorizontal: CGFloat = 10.0

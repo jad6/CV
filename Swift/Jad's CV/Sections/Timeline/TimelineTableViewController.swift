@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimelineTableViewController: DynamicTypeTableViewController, DynamicTypeTableViewCellDelegate {
+class TimelineTableViewController: DynamicTypeTableViewController {
         
     //TODO: re-enable that once Swift supports class variables
     //    private class let defaultCellIdentifier = "Cell"
@@ -21,16 +21,16 @@ class TimelineTableViewController: DynamicTypeTableViewController, DynamicTypeTa
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-//    init() {        
-//        super.init(style: .Plain, listData: TimelineEvent.timelineEventsListData())
-//        
-//        self.title = "Experience"
-//        
-//        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
-//        self.tableView.separatorStyle = .None
-//        self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
-//        self.tableView.backgroundView = TimelineTableBackgroundView()
-//    }
+    init() {        
+        super.init(style: .Plain, listData: TimelineEvent.timelineEventsListData())
+        
+        self.title = "Experience"
+        
+        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
+        self.tableView.separatorStyle = .None
+        self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
+        self.tableView.backgroundView = TimelineTableBackgroundView()
+    }
     
     //MARK: View lifecycle
     
@@ -55,9 +55,6 @@ class TimelineTableViewController: DynamicTypeTableViewController, DynamicTypeTa
             tableCell.organisationLabel.text = timelineEvent.organisation
             tableCell.dateLabel.text = timelineEvent.timeSpentString(" /n  ")
             tableCell.importance = timelineEvent.importance
-            tableCell.delegate = self
-            
-            cellHeights[indexPath.row] = tableCell.optimalCellheight()
         }
     }
     

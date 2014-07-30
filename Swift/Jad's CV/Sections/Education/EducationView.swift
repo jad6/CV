@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EducationView: UIView {
+class EducationView: DynamicTypeView {
     struct LayoutConstants {
         struct Padding {
             static let side: CGFloat = 15.0
@@ -39,18 +39,14 @@ class EducationView: UIView {
         
         self.addSubview(self.universityLogoImageView)
 
-        self.textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
         self.addSubview(self.textView)
         
-        self.establishmentLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.establishmentLabel.numberOfLines = 2
         self.addSubview(self.establishmentLabel)
         
-        self.statusLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.statusLabel.numberOfLines = 3
         self.addSubview(self.statusLabel)
         
-        self.completionDateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.addSubview(self.completionDateLabel)
         
         self.backgroundColor = UIColor.whiteColor()
@@ -58,5 +54,14 @@ class EducationView: UIView {
     
     convenience init() {
         self.init(frame: CGRectZero)
+    }
+    
+    //MARK: Dynamic type
+    
+    override func reloadDynamicTypeContent() {
+        textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        establishmentLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        statusLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        completionDateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
     }
 }

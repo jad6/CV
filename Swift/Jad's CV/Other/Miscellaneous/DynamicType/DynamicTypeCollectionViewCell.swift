@@ -9,7 +9,7 @@
 import UIKit
 
 class DynamicTypeCollectionViewCell: UICollectionViewCell {
-
+    
     init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -23,14 +23,15 @@ class DynamicTypeCollectionViewCell: UICollectionViewCell {
     
     //MARK: Override
     
-    func reloadDynamicTypeContent() {
-        
+    func reloadDynamicTypeContent() { }
+    
+    func optimalCellSize() -> CGSize {
+        return CGSizeZero
     }
     
     //MARK: Notification
     
     func didChangePreferredContentSize(notification: NSNotification) {
         reloadDynamicTypeContent()
-        layoutSubviews()
     }
 }

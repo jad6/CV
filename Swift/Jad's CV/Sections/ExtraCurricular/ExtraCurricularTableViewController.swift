@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExtraCurricularTableViewController: DynamicTypeTableViewController, DynamicTypeTableViewCellDelegate {
+class ExtraCurricularTableViewController: DynamicTypeTableViewController {
 
     //TODO: re-enable that once Swift supports class variables
     //    private class let extraCurricularCellIdentifier = "Extra Curricular Cell"
@@ -21,14 +21,14 @@ class ExtraCurricularTableViewController: DynamicTypeTableViewController, Dynami
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    init() {
-        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
-        
-        self.title = "Extra Curricular"
-        
-        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
-        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
-    }
+//    init() {
+//        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
+//        
+//        self.title = "Extra Curricular"
+//        
+//        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
+//        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
+//    }
     
     //MARK: Abstract Methods
     
@@ -40,9 +40,6 @@ class ExtraCurricularTableViewController: DynamicTypeTableViewController, Dynami
             tableCell.positionLabel.text = activity.position
             tableCell.organisationLabel.text = activity.organisation
             tableCell.dateLabel.text = activity.timeSpentString(" - ")
-            tableCell.delegate = self
-            
-            cellHeights[indexPath.row] = tableCell.optimalCellheight()
         }
     }
     

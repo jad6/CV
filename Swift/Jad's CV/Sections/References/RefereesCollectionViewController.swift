@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RefereesCollectionViewController: CollectionViewController {
+class RefereesCollectionViewController: DynamicTypeCollectionViewController {
     
     //TODO: re-enable that once Swift supports class variables
     //    private class let defaultCellIdentifier = "Cell"
@@ -57,16 +57,10 @@ class RefereesCollectionViewController: CollectionViewController {
             
             collectionCell.phoneButton.enabled = UIDevice.canCall()
             collectionCell.emailButton.enabled = UIDevice.canEmail()
-            
-            collectionCell.layoutSubviews()
         }
     }
     
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return RefereesCollectionViewController.refereeCellIdentifier()
     }
-    
-    //MARK: Collection view
-    
-    
 }

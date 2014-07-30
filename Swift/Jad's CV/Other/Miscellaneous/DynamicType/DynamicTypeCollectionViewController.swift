@@ -9,27 +9,46 @@
 import UIKit
 
 class DynamicTypeCollectionViewController: CollectionViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private var cellSizes = [Int: CGSize]()
+    
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    init(layout: UICollectionViewLayout, listData: ListData<Referee>) {
+        super.init(layout: layout, listData: listData)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didChangePreferredContentSize:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
-    */
-
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    //MARK: Collection view
+    
+    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+        let size = cellSizes[indexPath.row]
+        
+        return size ? size! : kRefereeCardBaseSize
+    }
+    
+    override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
+        let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
+        
+        if let dynamicCell = cell as? DynamicTypeCollectionViewCell {
+            dynamicCell.layoutSubviews()
+            cellSizes[indexPath.row] = dynamicCell.optimalCellSize()
+            collectionViewLayout.invalidateLayout()
+        }
+        
+        return cell
+    }
+    
+    //MARK: Notification
+    
+    func didChangePreferredContentSize(notification: NSNotification) {
+        collectionView.reloadData()
+    }
 }

@@ -10,20 +10,25 @@ import UIKit
 
 class DynamicTypeTableViewController: TableViewController {
     
-    var cellHeights = [Int: CGFloat]()
+    private var cellHeights = [Int: CGFloat]()
     
     //MARK: Table view
     
     override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         let height = cellHeights[indexPath.row]
-        return (height) ? height! : 44.0
+        
+        return height ? height! : 44.0
     }
     
-    //MARK: Dynamic type
-    
-    func dynamicTableViewCell(cell: DynamicTypeTableViewCell, didChangeOptimalHeight: CGFloat) {
-        if let indexPath = tableView.indexPathForCell(cell) {
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    {
+        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        
+        if let dynamicCell = cell as? DynamicTypeTableViewCell {
+            dynamicCell.layoutSubviews()
+            cellHeights[indexPath.row] = dynamicCell.optimalCellheight()
         }
+        
+        return cell
     }
 }

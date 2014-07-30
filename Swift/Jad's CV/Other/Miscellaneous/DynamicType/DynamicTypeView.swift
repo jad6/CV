@@ -23,9 +23,7 @@ class DynamicTypeView: UIView {
     
     //MARK: Override
     
-    func reloadDynamicTypeContent() {
-        
-    }
+    func reloadDynamicTypeContent() { }
     
     //MARK: Notification
     
