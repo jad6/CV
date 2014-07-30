@@ -61,7 +61,7 @@ class EducationView: DynamicTypeView {
     override func reloadDynamicTypeContent() {
         textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
         establishmentLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        statusLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        completionDateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        statusLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        completionDateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
     }
 }

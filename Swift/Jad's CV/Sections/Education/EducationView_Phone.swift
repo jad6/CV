@@ -80,7 +80,7 @@ class EducationView_Phone: EducationView {
         universityLogoImageView.frame.origin.y = statusLabel.frame.origin.y + floor((totalLabelHeights - universityLogoImageView.frame.size.height) / 2.0)
         
         textView.frame.size.width = bounds.width
-        textView.frame.origin.y = tallestView(views: [universityLogoImageView, completionDateLabel]).frame.maxY + LayoutConstants_Phone.Padding.betweenTopInfoAndTextView
+        textView.frame.origin.y = max(universityLogoImageView.frame.maxY, completionDateLabel.frame.maxY) + LayoutConstants_Phone.Padding.betweenTopInfoAndTextView
         textView.frame.size.height = bounds.size.height - textView.frame.origin.y
         
         fadeImageView.frame.size.width = textView.frame.width
@@ -91,11 +91,25 @@ class EducationView_Phone: EducationView {
         backgroundImageView.frame.origin.y = LayoutConstants_Phone.TextView.backgroundImageViewYOffset
     }
     
+    //MARK: Logic
+    
+    func recalculateTextViewContentInset() {
+        textView.contentInset.bottom = LayoutConstants_Phone.TextView.bottomInset(textView: textView)
+    }
+    
     //MARK: KVO
     
     override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafePointer<()>) {
         if keyPath == "contentSize" {
-            textView.contentInset.bottom = LayoutConstants_Phone.TextView.bottomInset(textView: textView)
+            recalculateTextViewContentInset()
         }
+    }
+    
+    //MARK: Dynamic type
+    
+    override func reloadDynamicTypeContent() {
+        super.reloadDynamicTypeContent()
+        
+        recalculateTextViewContentInset()
     }
 }
