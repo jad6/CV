@@ -8,17 +8,17 @@
 
 import UIKit
 
-class TimelineTableViewController: TableViewController {
+class TimelineTableViewController: DynamicTypeTableViewController, DynamicTypeTableViewCellDelegate {
         
     //TODO: re-enable that once Swift supports class variables
     //    private class let defaultCellIdentifier = "Cell"
-    
+        
     private class func timelineCellIdentifier() -> String {
         return "Timeline Cell"
     }
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
 //    init() {        
@@ -55,6 +55,9 @@ class TimelineTableViewController: TableViewController {
             tableCell.organisationLabel.text = timelineEvent.organisation
             tableCell.dateLabel.text = timelineEvent.timeSpentString(" /n  ")
             tableCell.importance = timelineEvent.importance
+            tableCell.delegate = self
+            
+            cellHeights[indexPath.row] = tableCell.optimalCellheight()
         }
     }
     
@@ -71,11 +74,5 @@ class TimelineTableViewController: TableViewController {
     
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return TimelineTableViewController.timelineCellIdentifier()
-    }
-    
-    //MARK: Table view
-    
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return 100.0
     }
 }

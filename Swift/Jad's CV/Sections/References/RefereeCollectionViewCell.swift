@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RefereeCollectionViewCell: UICollectionViewCell {
+class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
     struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 24.0
@@ -60,27 +60,21 @@ class RefereeCollectionViewCell: UICollectionViewCell {
         
         self.contentView.addSubview(self.photoImageView)
         
-        self.fullNameLabel.font = UIFont.helveticaNeueBoldFontOfSize(15.0)
         self.fullNameLabel.numberOfLines = 2
         self.contentView.addSubview(self.fullNameLabel)
         
-        self.positionLabel.font = UIFont.helveticaNeueFontOfSize(14.0)
         self.positionLabel.numberOfLines = 2
         self.contentView.addSubview(self.positionLabel)
         
-        self.locationlabel.font = UIFont.helveticaNeueFontOfSize(14.0)
         self.locationlabel.numberOfLines = 2
         self.contentView.addSubview(self.locationlabel)
         
-        self.connectionLabel.font = UIFont.helveticaNeueItalicFontOfSize(14.0)
         self.connectionLabel.numberOfLines = 3
         self.contentView.addSubview(self.connectionLabel)
         
-        self.emailButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.emailButton.setTitleColor((UIDevice.canEmail() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
         self.contentView.addSubview(self.emailButton)
         
-        self.phoneButton.titleLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.phoneButton.setTitleColor((UIDevice.canCall() ? UIColor.defaultBlueColor() : UIColor.darkGrayColor()), forState: .Normal)
         self.contentView.addSubview(self.phoneButton)
     }
@@ -130,5 +124,16 @@ class RefereeCollectionViewCell: UICollectionViewCell {
         emailButton.centerHorizontallyWithReferenceView(self.contentView)
         
         cardBackgroundImageView.frame = bounds
+    }
+    
+    //MARK: Dynamic type
+    
+    override func reloadDynamicTypeContent() {
+        fullNameLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
+        locationlabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
+        connectionLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleCaption2Italic)
+        emailButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

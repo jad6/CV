@@ -18,7 +18,7 @@ class RefereesCollectionViewController: CollectionViewController {
     }
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     init() {
@@ -65,4 +65,8 @@ class RefereesCollectionViewController: CollectionViewController {
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return RefereesCollectionViewController.refereeCellIdentifier()
     }
+    
+    //MARK: Collection view
+    
+    
 }

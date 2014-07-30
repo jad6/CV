@@ -48,7 +48,7 @@ class ProfileView_Phone: ProfileView {
             
             phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
             phoneButton.centerHorizontallyWithReferenceView(self)
-            phoneButton.frame.origin.y = emailButton.frame.maxY + LayoutConstants.Padding.betweenVertical
+            phoneButton.frame.origin.y = emailButton.frame.maxY
         } else {
             // This makes the buttons disppear nicely with the animations
             emailButton.frame = nameLabel.frame

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GraySelectionTableViewCell: UITableViewCell {
+class GraySelectionTableViewCell: DynamicTypeTableViewCell {
 
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

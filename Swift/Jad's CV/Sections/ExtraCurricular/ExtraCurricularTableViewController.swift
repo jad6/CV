@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExtraCurricularTableViewController: TableViewController {
+class ExtraCurricularTableViewController: DynamicTypeTableViewController, DynamicTypeTableViewCellDelegate {
 
     //TODO: re-enable that once Swift supports class variables
     //    private class let extraCurricularCellIdentifier = "Extra Curricular Cell"
@@ -18,7 +18,7 @@ class ExtraCurricularTableViewController: TableViewController {
     }
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     init() {
@@ -38,8 +38,11 @@ class ExtraCurricularTableViewController: TableViewController {
         if let activity = object as? ExtraCurricularActivity {
             tableCell.activityImageView.image = activity.organisationImage
             tableCell.positionLabel.text = activity.position
-            tableCell.organistationLabel.text = activity.organisation
+            tableCell.organisationLabel.text = activity.organisation
             tableCell.dateLabel.text = activity.timeSpentString(" - ")
+            tableCell.delegate = self
+            
+            cellHeights[indexPath.row] = tableCell.optimalCellheight()
         }
     }
     
@@ -56,11 +59,5 @@ class ExtraCurricularTableViewController: TableViewController {
     
     override func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return ExtraCurricularTableViewController.extraCurricularCellIdentifier()
-    }
-    
-    //MARK: Table view
-    
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return 120.0
     }
 }

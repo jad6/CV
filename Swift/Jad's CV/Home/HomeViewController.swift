@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
 
     let résuméHolder: RésuméHolder
     
-    var sectionsPageViewController: SectionNavigationController!
+    var sectionsPageViewController: ExperienceNavigationController!
     
     var homeView: HomeView! {
     return view as? HomeView
@@ -21,10 +21,10 @@ class HomeViewController: UIViewController {
     //MARK: Init
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        self.sectionsPageViewController = SectionNavigationController(rootViewController: EducationViewController())
+        self.sectionsPageViewController = ExperienceNavigationController(rootViewController: ExtraCurricularTableViewController())
         self.résuméHolder = RésuméHolder.résuméHolder()
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addChildViewController(self.sectionsPageViewController)
     }

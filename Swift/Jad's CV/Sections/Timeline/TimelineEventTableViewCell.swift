@@ -16,10 +16,11 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         }
         
         struct Padding {
+            static let top: CGFloat = 25.0
             static let side: CGFloat = 15.0
             static let betweenDateAndCircle: CGFloat = 2.0
             static let betweenCircleAndLabels: CGFloat = 10.0
-            static let betweenVertical: CGFloat = 5.0
+            static let betweenVertical: CGFloat = 3.0
         }
         
         static let lineViewWidth: CGFloat = 2.0
@@ -77,15 +78,12 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         
         self.contentView.addSubview(self.circleView)
         
-        self.positionLabel.font = UIFont.helveticaNeueMediumFontOfSize(15.0)
         self.positionLabel.numberOfLines = 2
         self.contentView.addSubview(self.positionLabel)
         
-        self.organisationLabel.font = UIFont.helveticaNeueFontOfSize(15.0)
         self.organisationLabel.numberOfLines = 2
         self.contentView.addSubview(self.organisationLabel)
         
-        self.dateLabel.font = UIFont.helveticaNeueItalicFontOfSize(12.0)
         self.dateLabel.numberOfLines = 2
         self.contentView.addSubview(self.dateLabel)
         
@@ -118,7 +116,10 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         lineView.frame.origin.x = circleView.frame.origin.x + floor((circleView.frame.size.width - lineView.frame.size.width) / 2.0)
         
         let labelXOrigin = circleView.frame.maxX + LayoutConstants.Padding.betweenCircleAndLabels
-        let boundingLabelWidth = bounds.size.width - labelXOrigin - (UIDevice.isPad() ? 0.0 : (bounds.size.width - accessoryView.frame.minX))
+        var boundingLabelWidth: CGFloat = bounds.size.width - labelXOrigin
+        if accessoryView {
+            boundingLabelWidth -= UIDevice.isPad() ? 0.0 : (bounds.size.width - accessoryView.frame.minX)
+        }
         let boundingLabelSize = CGSize(width: boundingLabelWidth, height: bounds.size.height)
         
         positionLabel.frame.size = positionLabel.sizeThatFits(boundingLabelSize).ceilSize
@@ -147,5 +148,18 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         
         lineView.backgroundColor = UIColor.timelineGrayColor()
         circleView.backgroundColor = color
+    }
+    
+    //MARK: Dynamic type
+    
+    override func reloadDynamicTypeContent() {
+        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        dateLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleTimelineDate)
+    }
+    
+    override func optimalCellheight() -> CGFloat {
+        let Δ = organisationLabel.frame.maxY - positionLabel.frame.minY
+        return Δ + (2 * LayoutConstants.Padding.top)
     }
 }

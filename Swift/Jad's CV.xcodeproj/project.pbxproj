@@ -33,7 +33,7 @@
 		056C9B4619766FE20047F3E5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4519766FE20047F3E5 /* View.swift */; };
 		0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */; };
 		0579C959197E4CBF000233EC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579C958197E4CBF000233EC /* Date.swift */; };
-		058103221981DD08005FDF8F /* SectionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058103211981DD08005FDF8F /* SectionNavigationController.swift */; };
+		058103221981DD08005FDF8F /* ExperienceNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058103211981DD08005FDF8F /* ExperienceNavigationController.swift */; };
 		0581032419821816005FDF8F /* GraySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */; };
 		0581032619821BA2005FDF8F /* ExtraCurricularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032519821BA2005FDF8F /* ExtraCurricularTableViewController.swift */; };
 		0581032819821C3C005FDF8F /* ExtraCurricularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581032719821C3C005FDF8F /* ExtraCurricularTableViewCell.swift */; };
@@ -45,6 +45,10 @@
 		05810336198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05810335198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift */; };
 		058103381982544D005FDF8F /* RefereeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058103371982544D005FDF8F /* RefereeCollectionViewCell.swift */; };
 		05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */; };
+		05B3DDF319872E8E00C4B057 /* DynamicTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF219872E8E00C4B057 /* DynamicTypeView.swift */; };
+		05B3DDF51987304000C4B057 /* DynamicTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF41987304000C4B057 /* DynamicTypeTableViewCell.swift */; };
+		05B3DDF71987304C00C4B057 /* DynamicTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF61987304C00C4B057 /* DynamicTypeCollectionViewCell.swift */; };
+		05B3DDF91987696900C4B057 /* DynamicTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDF81987696900C4B057 /* DynamicTypeTableViewController.swift */; };
 		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
 		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
@@ -111,7 +115,7 @@
 		056C9B4519766FE20047F3E5 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		0579C956197E46DA000233EC /* TimelineEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEventTableViewCell.swift; sourceTree = "<group>"; };
 		0579C958197E4CBF000233EC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		058103211981DD08005FDF8F /* SectionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionNavigationController.swift; sourceTree = "<group>"; };
+		058103211981DD08005FDF8F /* ExperienceNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceNavigationController.swift; sourceTree = "<group>"; };
 		0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraySelectionTableViewCell.swift; sourceTree = "<group>"; };
 		0581032519821BA2005FDF8F /* ExtraCurricularTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraCurricularTableViewController.swift; sourceTree = "<group>"; };
 		0581032719821C3C005FDF8F /* ExtraCurricularTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraCurricularTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +127,10 @@
 		05810335198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefereesCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		058103371982544D005FDF8F /* RefereeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefereeCollectionViewCell.swift; sourceTree = "<group>"; };
 		05A266351980B291005B5ED2 /* TimelineTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableBackgroundView.swift; sourceTree = "<group>"; };
+		05B3DDF219872E8E00C4B057 /* DynamicTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeView.swift; sourceTree = "<group>"; };
+		05B3DDF41987304000C4B057 /* DynamicTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeTableViewCell.swift; sourceTree = "<group>"; };
+		05B3DDF61987304C00C4B057 /* DynamicTypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		05B3DDF81987696900C4B057 /* DynamicTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeTableViewController.swift; sourceTree = "<group>"; };
 		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
@@ -346,7 +354,7 @@
 				05F6C30819775C54007CCD66 /* BlurImageView.swift */,
 				05F18809197A41570025756F /* FormattedTextView.swift */,
 				05DF17F9197CC10F003AA613 /* ScrollPageViewController.swift */,
-				058103211981DD08005FDF8F /* SectionNavigationController.swift */,
+				058103211981DD08005FDF8F /* ExperienceNavigationController.swift */,
 				0581032319821816005FDF8F /* GraySelectionTableViewCell.swift */,
 				05294829197E031E00739084 /* TableViewController.swift */,
 				0581032F19824596005FDF8F /* CollectionViewController.swift */,
@@ -357,9 +365,22 @@
 		056C9B3B197663FF0047F3E5 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
+				05B3DDF119872E6700C4B057 /* Dynamic Type */,
 				056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */,
 			);
 			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		05B3DDF119872E6700C4B057 /* Dynamic Type */ = {
+			isa = PBXGroup;
+			children = (
+				05B3DDF219872E8E00C4B057 /* DynamicTypeView.swift */,
+				05B3DDF41987304000C4B057 /* DynamicTypeTableViewCell.swift */,
+				05B3DDF61987304C00C4B057 /* DynamicTypeCollectionViewCell.swift */,
+				05B3DDF81987696900C4B057 /* DynamicTypeTableViewController.swift */,
+			);
+			name = "Dynamic Type";
+			path = DynamicType;
 			sourceTree = "<group>";
 		};
 		05BF82071980C04A0070DE37 /* Experience Detail */ = {
@@ -516,7 +537,7 @@
 				05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
 				05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */,
-				058103221981DD08005FDF8F /* SectionNavigationController.swift in Sources */,
+				058103221981DD08005FDF8F /* ExperienceNavigationController.swift in Sources */,
 				056C9B2F19765B2B0047F3E5 /* HomeView.swift in Sources */,
 				058103381982544D005FDF8F /* RefereeCollectionViewCell.swift in Sources */,
 				056C9B4619766FE20047F3E5 /* View.swift in Sources */,
@@ -528,10 +549,13 @@
 				05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */,
 				05DC99D71977A99500AF6BB7 /* PersonObject.swift in Sources */,
 				05F18808197A23470025756F /* Contactor.swift in Sources */,
+				05B3DDF91987696900C4B057 /* DynamicTypeTableViewController.swift in Sources */,
 				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,
 				0579C959197E4CBF000233EC /* Date.swift in Sources */,
+				05B3DDF71987304C00C4B057 /* DynamicTypeCollectionViewCell.swift in Sources */,
 				05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
+				05B3DDF51987304000C4B057 /* DynamicTypeTableViewCell.swift in Sources */,
 				056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */,
 				05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */,
 				0581032819821C3C005FDF8F /* ExtraCurricularTableViewCell.swift in Sources */,
@@ -546,6 +570,7 @@
 				054D63411977789A0022D63A /* Font.swift in Sources */,
 				05810336198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift in Sources */,
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
+				05B3DDF319872E8E00C4B057 /* DynamicTypeView.swift in Sources */,
 				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
 				05F9EAAC19865A2F001D2633 /* EducationView_Pad.swift in Sources */,
 				0529482D197E0BBE00739084 /* List.swift in Sources */,
