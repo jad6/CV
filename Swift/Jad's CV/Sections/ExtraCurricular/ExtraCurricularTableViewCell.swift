@@ -83,9 +83,9 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
     //MARK: Dynamic type
     
     override func reloadDynamicTypeContent() {
-        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        organisationLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        dateLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
     
     override func optimalCellheight() -> CGFloat {

@@ -10,26 +10,28 @@ import UIKit
 
 class EducationView_Phone: EducationView {
     
-    struct LayoutConstants_Phone {
+    private struct LayoutConstants_Phone {
         struct Padding {
             static let betweenTopInfoAndTextView: CGFloat = 10.0
         }
 
         struct TextView {
-            static let backgroundImageViewYOffset: CGFloat = 220.0
+            static let fadeImageViewOffsetBeforeBackgroundImageView: CGFloat = 88.0
+            static let backgroundImageViewOffsetBeforeEndOftext: CGFloat = 44.0
             static let backgroundImageViewHeight: CGFloat = 320.0
             
             static var fadeImageViewHeight: CGFloat {
-            return backgroundImageViewHeight + backgroundImageViewYOffset
+            return backgroundImageViewHeight + fadeImageViewOffsetBeforeBackgroundImageView
             }
             
-            static func bottomInset(#textView: UITextView) -> CGFloat {
-                return fadeImageViewHeight - textView.contentSize.height
+            static var bottomInset: CGFloat {
+            return backgroundImageViewHeight - backgroundImageViewOffsetBeforeEndOftext
             }
         }
     }
-
+    
     private var fadeImageView: UIImageView!
+    private var textViewTextHeight: CGFloat = 0.0
     
     init(frame: CGRect) {
         let fadeImage = UIImage(named: "fade_down").resizableImageWithCapInsets(UIEdgeInsets(top: 0.0, left: 1.0, bottom: 260.0, right: 1.0))
@@ -40,7 +42,7 @@ class EducationView_Phone: EducationView {
         self.backgroundImageView.contentMode = .ScaleAspectFill
     
         self.textView.showsVerticalScrollIndicator = false
-        self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 40.0, bottom: 0.0, right: 40.0)
+        self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 40.0, bottom: LayoutConstants_Phone.TextView.bottomInset, right: 40.0)
         
         self.textView.addObserver(self, forKeyPath: "contentSize", options: .New, context: nil)
         
@@ -82,26 +84,32 @@ class EducationView_Phone: EducationView {
         textView.frame.size.width = bounds.width
         textView.frame.origin.y = max(universityLogoImageView.frame.maxY, completionDateLabel.frame.maxY) + LayoutConstants_Phone.Padding.betweenTopInfoAndTextView
         textView.frame.size.height = bounds.size.height - textView.frame.origin.y
+
+        backgroundImageView.frame.size.width = textView.frame.width
+        backgroundImageView.frame.size.height = LayoutConstants_Phone.TextView.backgroundImageViewHeight
+        backgroundImageView.frame.origin.y = textViewTextHeight - LayoutConstants_Phone.TextView.backgroundImageViewOffsetBeforeEndOftext
         
         fadeImageView.frame.size.width = textView.frame.width
         fadeImageView.frame.size.height = LayoutConstants_Phone.TextView.fadeImageViewHeight
-        
-        backgroundImageView.frame.size.width = textView.frame.width
-        backgroundImageView.frame.size.height = LayoutConstants_Phone.TextView.backgroundImageViewHeight
-        backgroundImageView.frame.origin.y = LayoutConstants_Phone.TextView.backgroundImageViewYOffset
+        fadeImageView.frame.origin.y = backgroundImageView.frame.origin.y - LayoutConstants_Phone.TextView.fadeImageViewOffsetBeforeBackgroundImageView
     }
     
     //MARK: Logic
     
-    func recalculateTextViewContentInset() {
-        textView.contentInset.bottom = LayoutConstants_Phone.TextView.bottomInset(textView: textView)
+    func recalculateTextViewTextHeight() {
+        let boundingSize = CGSize(width: textView.frame.size.width - textView.textContainerInset.left - textView.textContainerInset.right, height: CGFloat.max)
+        //FIXME: When Apple fixes the NSStringDrawingOptions on iOS do that.
+//        let options: NSStringDrawingOptions = .UsesLineFragmentOrigin | .UsesFontLeading
+        let textSize = textView.text.boundingRectWithSize(boundingSize, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: textView.font], context: nil)
+
+        textViewTextHeight = textSize.height
     }
     
     //MARK: KVO
     
     override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafePointer<()>) {
         if keyPath == "contentSize" {
-            recalculateTextViewContentInset()
+            recalculateTextViewTextHeight()
         }
     }
     
@@ -110,6 +118,6 @@ class EducationView_Phone: EducationView {
     override func reloadDynamicTypeContent() {
         super.reloadDynamicTypeContent()
         
-        recalculateTextViewContentInset()
+        recalculateTextViewTextHeight()
     }
 }

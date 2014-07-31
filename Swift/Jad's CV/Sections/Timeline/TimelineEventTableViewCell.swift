@@ -153,9 +153,9 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
     //MARK: Dynamic type
     
     override func reloadDynamicTypeContent() {
-        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        dateLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleTimelineDate)
+        positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        organisationLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        dateLabel.font = DynamicTypeFont.preferredFontForTextStyle(CVFontTextStyleTimelineDate)
     }
     
     override func optimalCellheight() -> CGFloat {

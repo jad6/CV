@@ -85,6 +85,7 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
         
         photoImageView.frame.size = LayoutConstants.photoImageViewSize
         photoImageView.frame.origin.x = LayoutConstants.Padding.side
+        photoImageView.frame.origin.y = LayoutConstants.Padding.top
         photoImageView.maskToCircle()
         
         let labelXOrigin = photoImageView.frame.maxX + LayoutConstants.Padding.betweenHorizontal
@@ -107,9 +108,6 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
         connectionLabel.frame.origin.x = labelXOrigin
         connectionLabel.frame.origin.y = locationlabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
         
-        let totallabelsHeight = totalHeight(views: [fullNameLabel, positionLabel, locationlabel, connectionLabel], separatorLength: LayoutConstants.Padding.betweenVerticalSmall)
-        photoImageView.frame.origin.y = fullNameLabel.frame.origin.y + floor((totallabelsHeight - photoImageView.frame.size.height) / 2.0)
-        
         phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
         phoneButton.frame.origin.y = max(connectionLabel.frame.maxY, photoImageView.frame.maxY) + LayoutConstants.Padding.betweenInfoAndContact
         phoneButton.centerHorizontallyWithReferenceView(self.contentView)
@@ -129,12 +127,12 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
     //MARK: Dynamic type
     
     override func reloadDynamicTypeContent() {
-        fullNameLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
-        locationlabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
-        connectionLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleCaption2Italic)
-        emailButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        fullNameLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
+        locationlabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleCaption2)
+        connectionLabel.font = DynamicTypeFont.preferredFontForTextStyle(CVFontTextStyleCaption2Italic)
+        emailButton.titleLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        phoneButton.titleLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
     
     override func optimalCellSize() -> CGSize {

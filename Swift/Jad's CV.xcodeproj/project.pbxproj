@@ -16,7 +16,6 @@
 		05294867197E1A1700739084 /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294869197E1A1700739084 /* Extra Curricular.plist */; };
 		0529486C197E1A1E00739084 /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0529486E197E1A1E00739084 /* Referees.plist */; };
 		052C2A421977CCAF00D85C98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C2A411977CCAF00D85C98 /* Color.swift */; };
-		054D63411977789A0022D63A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D63401977789A0022D63A /* Font.swift */; };
 		0564EADE197757950003DA44 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADC197757950003DA44 /* union_lake.jpg */; };
 		0564EADF197757950003DA44 /* winthrop_hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADD197757950003DA44 /* winthrop_hall.jpg */; };
 		056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9AFE197655CD0047F3E5 /* AppDelegate.swift */; };
@@ -52,6 +51,7 @@
 		05B3DDFD19877AA300C4B057 /* DynamicTypeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDFC19877AA300C4B057 /* DynamicTypeCollectionViewController.swift */; };
 		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
 		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
+		05C767EB1989F63400438CC2 /* DynamicTypeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C767EA1989F63400438CC2 /* DynamicTypeFont.swift */; };
 		05D2C51F1987820C009CDF3A /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D2C51E1987820C009CDF3A /* Array.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
@@ -96,7 +96,6 @@
 		0529486F197E1A1F00739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Referees.plist; sourceTree = "<group>"; };
 		05294870197E1A2000739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Referees.plist; sourceTree = "<group>"; };
 		052C2A411977CCAF00D85C98 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		054D63401977789A0022D63A /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		0564EADC197757950003DA44 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
 		0564EADD197757950003DA44 /* winthrop_hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winthrop_hall.jpg; sourceTree = "<group>"; };
 		056C9AF9197655CD0047F3E5 /* Jad's CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jad's CV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +135,7 @@
 		05B3DDFC19877AA300C4B057 /* DynamicTypeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeCollectionViewController.swift; sourceTree = "<group>"; };
 		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
+		05C767EA1989F63400438CC2 /* DynamicTypeFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeFont.swift; sourceTree = "<group>"; };
 		05D2C51E1987820C009CDF3A /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
@@ -342,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				056C9B39197662420047F3E5 /* Device.swift */,
-				054D63401977789A0022D63A /* Font.swift */,
 				056C9B4519766FE20047F3E5 /* View.swift */,
 				05DC99DA1977AEA300AF6BB7 /* Error.swift */,
 				052C2A411977CCAF00D85C98 /* Color.swift */,
@@ -356,6 +355,7 @@
 		056C9B2A1976584B0047F3E5 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				05C767EA1989F63400438CC2 /* DynamicTypeFont.swift */,
 				05F6C30819775C54007CCD66 /* BlurImageView.swift */,
 				05F18809197A41570025756F /* FormattedTextView.swift */,
 				05DF17F9197CC10F003AA613 /* ScrollPageViewController.swift */,
@@ -575,13 +575,13 @@
 				0581032419821816005FDF8F /* GraySelectionTableViewCell.swift in Sources */,
 				0529482A197E031E00739084 /* TableViewController.swift in Sources */,
 				0581033019824596005FDF8F /* CollectionViewController.swift in Sources */,
-				054D63411977789A0022D63A /* Font.swift in Sources */,
 				05810336198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift in Sources */,
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
 				05B3DDF319872E8E00C4B057 /* DynamicTypeView.swift in Sources */,
 				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
 				05F9EAAC19865A2F001D2633 /* EducationView_Pad.swift in Sources */,
 				0529482D197E0BBE00739084 /* List.swift in Sources */,
+				05C767EB1989F63400438CC2 /* DynamicTypeFont.swift in Sources */,
 				0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */,
 				0529482F197E0FC700739084 /* TimelineTableViewController.swift in Sources */,
 				056C9B2C19765B160047F3E5 /* HomeViewController.swift in Sources */,

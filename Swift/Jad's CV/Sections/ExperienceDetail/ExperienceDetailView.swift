@@ -92,9 +92,9 @@ class ExperienceDetailView: DynamicTypeView {
     //MARK: Dynamic type
     
     override func reloadDynamicTypeContent() {
-        positionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        organisationLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        dateLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        organisationLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        dateLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        textView.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

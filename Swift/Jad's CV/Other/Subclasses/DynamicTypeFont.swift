@@ -1,5 +1,5 @@
 //
-//  Font.swift
+//  DynamicTypeFont.swift
 //  Jad's CV
 //
 //  Created by Jad Osseiran on 17/07/2014.
@@ -12,7 +12,7 @@ let CVFontTextStyleRésuméHolderName = "CVFontTextStyleRésuméHolderName"
 let CVFontTextStyleCaption2Italic = "CVFontTextStyleCaption2Italic"
 let CVFontTextStyleTimelineDate = "CVFontTextStyleTimelineDate"
 
-class CVFont: UIFont {
+class DynamicTypeFont: UIFont {
     private struct Constants {
         static let ΔFontSize: CGFloat = 2.0
         static let largeFontSize: CGFloat = 15.0
@@ -75,6 +75,18 @@ class CVFont: UIFont {
             return largeFontSize + (2 * Constants.ΔFontSize)
         } else if contentSizeCategory == UIContentSizeCategoryExtraExtraExtraLarge {
             return largeFontSize + (3 * Constants.ΔFontSize)
+        }
+        
+        if contentSizeCategory == UIContentSizeCategoryAccessibilityMedium {
+            return largeFontSize + (4 * Constants.ΔFontSize)
+        } else if contentSizeCategory == UIContentSizeCategoryAccessibilityLarge {
+            return largeFontSize + (5 * Constants.ΔFontSize)
+        } else if contentSizeCategory == UIContentSizeCategoryAccessibilityExtraLarge {
+            return largeFontSize + (6 * Constants.ΔFontSize)
+        } else if contentSizeCategory == UIContentSizeCategoryAccessibilityExtraExtraLarge {
+            return largeFontSize + (7 * Constants.ΔFontSize)
+        } else if contentSizeCategory == UIContentSizeCategoryAccessibilityExtraExtraExtraLarge {
+            return largeFontSize + (8 * Constants.ΔFontSize)
         }
         
         return 0.0

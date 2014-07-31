@@ -156,10 +156,10 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
     //MARK: Dynamic type
     
     override func reloadDynamicTypeContent() {
-        nameLabel.font = CVFont.preferredFontForTextStyle(CVFontTextStyleRésuméHolderName)
-        descriptionLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        emailButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        phoneButton.titleLabel.font = CVFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        textView.font = CVFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        nameLabel.font = DynamicTypeFont.preferredFontForTextStyle(CVFontTextStyleRésuméHolderName)
+        descriptionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        emailButton.titleLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        phoneButton.titleLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        textView.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }
