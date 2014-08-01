@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
-    struct LayoutConstants {
+class ExtraCurricularTableViewCell: ExperienceTableViewCell {
+    private struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 20.0
             static let side: CGFloat = 15.0
@@ -23,29 +23,13 @@ class ExtraCurricularTableViewCell: GraySelectionTableViewCell {
     }
     
     private(set) var activityImageView: UIImageView!
-    private(set) var positionLabel: UILabel!
-    private(set) var organisationLabel: UILabel!
-    private(set) var dateLabel: UILabel!
     
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         self.activityImageView = UIImageView()
-        self.positionLabel = UILabel()
-        self.organisationLabel = UILabel()
-        self.dateLabel = UILabel()
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.addSubview(self.activityImageView)
-        
-        contentView.addSubview(self.activityImageView)
-        
-        self.positionLabel.numberOfLines = 2
-        self.contentView.addSubview(self.positionLabel)
-        
-        self.organisationLabel.numberOfLines = 2
-        self.contentView.addSubview(self.organisationLabel)
-        
-        contentView.addSubview(self.dateLabel)
         
         if !UIDevice.isPad() {
             self.accessoryType = .DisclosureIndicator

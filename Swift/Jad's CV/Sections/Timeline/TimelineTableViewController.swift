@@ -8,11 +8,13 @@
 
 import UIKit
 
-class TimelineTableViewController: DynamicTypeTableViewController {
-        
+//FIXME: Generics
+//class TimelineTableViewController<T: TimelineEvent>: ExperienceTableViewController<T> {
+class TimelineTableViewController: ExperienceTableViewController {
+    
     //TODO: re-enable that once Swift supports class variables
     //    private class let defaultCellIdentifier = "Cell"
-        
+    
     private class func timelineCellIdentifier() -> String {
         return "Timeline Cell"
     }
@@ -26,9 +28,8 @@ class TimelineTableViewController: DynamicTypeTableViewController {
         
         self.title = "Experience"
         
-        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
-        self.tableView.separatorStyle = .None
         self.tableView.registerClass(TimelineEventTableViewCell.self, forCellReuseIdentifier: TimelineTableViewController.timelineCellIdentifier())
+        self.tableView.separatorStyle = .None
         self.tableView.backgroundView = TimelineTableBackgroundView()
     }
     
@@ -47,25 +48,13 @@ class TimelineTableViewController: DynamicTypeTableViewController {
     //MARK: Abstract Methods
     
     override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
-        let tableCell = cell as TimelineEventTableViewCell
+        super.listView(listView, configureCell: cell, withObject: object, atIndexPath: indexPath)
         
         if let timelineEvent = object as? TimelineEvent {
-            tableCell.color = timelineEvent.color
-            tableCell.positionLabel.text = timelineEvent.position
-            tableCell.organisationLabel.text = timelineEvent.organisation
-            tableCell.dateLabel.text = timelineEvent.timeSpentString(" /n  ")
-            tableCell.importance = timelineEvent.importance
-        }
-    }
-    
-    override func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
-        let timelineEvent = object as TimelineEvent
-        
-        if UIDevice.isPad() {
-            
-        } else {
-            let detailViewController = ExperienceDetailViewController(experience: timelineEvent)
-            navigationController.pushViewController(detailViewController, animated: true)
+            if let tableCell = cell as? TimelineEventTableViewCell {
+                tableCell.color = timelineEvent.color
+                tableCell.importance = timelineEvent.importance
+            }
         }
     }
     

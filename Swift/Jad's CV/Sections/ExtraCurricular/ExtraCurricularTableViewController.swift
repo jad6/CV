@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ExtraCurricularTableViewController: DynamicTypeTableViewController {
-
+//FIXME: Generics
+//class ExtraCurricularTableViewController<T: ExtraCurricularActivity>: ExperienceTableViewController<T> {
+class ExtraCurricularTableViewController: ExperienceTableViewController {
+    
     //TODO: re-enable that once Swift supports class variables
     //    private class let extraCurricularCellIdentifier = "Extra Curricular Cell"
     
@@ -25,32 +27,18 @@ class ExtraCurricularTableViewController: DynamicTypeTableViewController {
 //        super.init(style: .Plain, listData: ExtraCurricularActivity.extraCurricularActivitiesListData())
 //        
 //        self.title = "Extra Curricular"
-//        
-//        self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
 //        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
 //    }
     
     //MARK: Abstract Methods
     
     override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
-        let tableCell = cell as ExtraCurricularTableViewCell
-        
+        super.listView(listView, configureCell: cell, withObject: object, atIndexPath: indexPath)
+
         if let activity = object as? ExtraCurricularActivity {
-            tableCell.activityImageView.image = activity.organisationImage
-            tableCell.positionLabel.text = activity.position
-            tableCell.organisationLabel.text = activity.organisation
-            tableCell.dateLabel.text = activity.timeSpentString(" - ")
-        }
-    }
-    
-    override func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
-        let activity = object as ExtraCurricularActivity
-        
-        if UIDevice.isPad() {
-            
-        } else {
-            let detailViewController = ExperienceDetailViewController(experience: activity)
-            navigationController.pushViewController(detailViewController, animated: true)
+            if let tableCell = cell as? ExtraCurricularTableViewCell {
+                tableCell.activityImageView.image = activity.organisationImage
+            }
         }
     }
     

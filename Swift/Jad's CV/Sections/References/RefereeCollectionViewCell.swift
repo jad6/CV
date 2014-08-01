@@ -9,7 +9,7 @@
 import UIKit
 
 class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
-    struct LayoutConstants {
+    private struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 15.0
             static let side: CGFloat = 15.0

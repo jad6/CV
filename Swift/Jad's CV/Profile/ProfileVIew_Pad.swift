@@ -11,7 +11,7 @@ import UIKit
 class ProfileView_Pad: ProfileView {
 
     //TODO: when class variables are allowed make this one.
-    struct CloudImageLayout {
+    private struct CloudImageLayout {
         static let resizableInsets = UIEdgeInsets(top: 80.0, left: 75.0, bottom: 80.0, right: 75.0)
     }
     

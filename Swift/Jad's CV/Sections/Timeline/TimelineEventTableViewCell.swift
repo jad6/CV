@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TimelineEventTableViewCell: GraySelectionTableViewCell {
-    struct LayoutConstants {
+class TimelineEventTableViewCell: ExperienceTableViewCell {
+    private struct LayoutConstants {
         struct CircleSizes {
             static let big = CGSize(width: 24.0, height: 24.0)
             static let small = CGSize(width: 10.0, height: 10.0)
@@ -41,10 +41,6 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
     private var circleView: UIView!
     private(set) var lineView: UIView!
     
-    private(set) var positionLabel: UILabel!
-    private(set) var organisationLabel: UILabel!
-    private(set) var dateLabel: UILabel!
-    
     var importance: TimelineEvent.Importance {
     didSet {
         layoutIfNeeded()
@@ -66,9 +62,6 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         self.circleView = UIView()
         self.lineView = UIView()
-        self.positionLabel = UILabel()
-        self.organisationLabel = UILabel()
-        self.dateLabel = UILabel()
         self.importance = .Minor
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -77,15 +70,6 @@ class TimelineEventTableViewCell: GraySelectionTableViewCell {
         self.contentView.addSubview(self.lineView)
         
         self.contentView.addSubview(self.circleView)
-        
-        self.positionLabel.numberOfLines = 2
-        self.contentView.addSubview(self.positionLabel)
-        
-        self.organisationLabel.numberOfLines = 2
-        self.contentView.addSubview(self.organisationLabel)
-        
-        self.dateLabel.numberOfLines = 2
-        self.contentView.addSubview(self.dateLabel)
         
         if !UIDevice.isPad() {
             let accessoryImage = UIImage(named: "chevron").imageWithRenderingMode(.AlwaysTemplate)

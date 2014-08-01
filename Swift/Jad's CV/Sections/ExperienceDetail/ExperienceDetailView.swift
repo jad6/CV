@@ -9,7 +9,7 @@
 import UIKit
 
 class ExperienceDetailView: DynamicTypeView {
-    struct LayoutConstants {
+    private struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 20.0
             static let betweenVerticalLarge: CGFloat = 15.0
