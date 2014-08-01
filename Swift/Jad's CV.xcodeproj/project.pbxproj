@@ -26,7 +26,6 @@
 		056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B3419765D990047F3E5 /* SectionsPageViewController.swift */; };
 		056C9B3819765F7D0047F3E5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B3719765F7D0047F3E5 /* ProfileView.swift */; };
 		056C9B3A197662420047F3E5 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B39197662420047F3E5 /* Device.swift */; };
-		056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */; };
 		056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */; };
 		056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */; };
 		056C9B4619766FE20047F3E5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9B4519766FE20047F3E5 /* View.swift */; };
@@ -51,7 +50,6 @@
 		05B3DDFD19877AA300C4B057 /* DynamicTypeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDFC19877AA300C4B057 /* DynamicTypeCollectionViewController.swift */; };
 		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
 		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
-		05C767EB1989F63400438CC2 /* DynamicTypeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C767EA1989F63400438CC2 /* DynamicTypeFont.swift */; };
 		05D2C51F1987820C009CDF3A /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D2C51E1987820C009CDF3A /* Array.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
@@ -63,6 +61,10 @@
 		05F18808197A23470025756F /* Contactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18807197A23470025756F /* Contactor.swift */; };
 		05F1880A197A41570025756F /* FormattedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F18809197A41570025756F /* FormattedTextView.swift */; };
 		05F5B61C198B729D00E1C98F /* ExperienceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F5B61B198B729D00E1C98F /* ExperienceTableViewController.swift */; };
+		05F5B623198B811B00E1C98F /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F5B622198B811B00E1C98F /* AppConfiguration.swift */; };
+		05F5B625198B814C00E1C98F /* DynamicTypeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F5B624198B814C00E1C98F /* DynamicTypeFont.swift */; };
+		05F5B628198B823E00E1C98F /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F5B627198B823E00E1C98F /* SplitView.swift */; };
+		05F5B62A198B824900E1C98F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F5B629198B824900E1C98F /* SplitViewController.swift */; };
 		05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6C30819775C54007CCD66 /* BlurImageView.swift */; };
 		05F9EAAA19865A26001D2633 /* EducationView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9EAA919865A26001D2633 /* EducationView_Phone.swift */; };
 		05F9EAAC19865A2F001D2633 /* EducationView_Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9EAAB19865A2F001D2633 /* EducationView_Pad.swift */; };
@@ -112,7 +114,6 @@
 		056C9B3419765D990047F3E5 /* SectionsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsPageViewController.swift; sourceTree = "<group>"; };
 		056C9B3719765F7D0047F3E5 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		056C9B39197662420047F3E5 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		056C9B4119766B0E0047F3E5 /* ProfileVIew_Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVIew_Pad.swift; sourceTree = "<group>"; };
 		056C9B4319766B310047F3E5 /* ProfileView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView_Phone.swift; sourceTree = "<group>"; };
 		056C9B4519766FE20047F3E5 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		05B3DDFC19877AA300C4B057 /* DynamicTypeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeCollectionViewController.swift; sourceTree = "<group>"; };
 		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
-		05C767EA1989F63400438CC2 /* DynamicTypeFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeFont.swift; sourceTree = "<group>"; };
 		05D2C51E1987820C009CDF3A /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
@@ -149,6 +149,10 @@
 		05F18807197A23470025756F /* Contactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contactor.swift; sourceTree = "<group>"; };
 		05F18809197A41570025756F /* FormattedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedTextView.swift; sourceTree = "<group>"; };
 		05F5B61B198B729D00E1C98F /* ExperienceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewController.swift; sourceTree = "<group>"; };
+		05F5B622198B811B00E1C98F /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		05F5B624198B814C00E1C98F /* DynamicTypeFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeFont.swift; sourceTree = "<group>"; };
+		05F5B627198B823E00E1C98F /* SplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
+		05F5B629198B824900E1C98F /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		05F6C30819775C54007CCD66 /* BlurImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurImageView.swift; sourceTree = "<group>"; };
 		05F9EAA919865A26001D2633 /* EducationView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationView_Phone.swift; sourceTree = "<group>"; };
 		05F9EAAB19865A2F001D2633 /* EducationView_Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationView_Pad.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				056C9AFE197655CD0047F3E5 /* AppDelegate.swift */,
+				05F5B622198B811B00E1C98F /* AppConfiguration.swift */,
 				056C9B1B197656740047F3E5 /* Home */,
 				056C9B20197657180047F3E5 /* Profile */,
 				056C9B21197657330047F3E5 /* Sections */,
@@ -335,7 +340,6 @@
 			children = (
 				0529482B197E0B8D00739084 /* Protocols */,
 				05F18806197A232E0025756F /* Helpers */,
-				056C9B3B197663FF0047F3E5 /* Miscellaneous */,
 				056C9B2A1976584B0047F3E5 /* Subclasses */,
 				056C9B291976583E0047F3E5 /* Extensions */,
 			);
@@ -361,24 +365,17 @@
 			children = (
 				05F5B618198B719E00E1C98F /* Controllers */,
 				05F5B619198B71CA00E1C98F /* Views */,
-				05F5B61A198B71DA00E1C98F /* Others */,
 				05B3DDF119872E6700C4B057 /* Dynamic Type */,
+				05F5B626198B816C00E1C98F /* Split */,
 				05F5B617198B717E00E1C98F /* Experience */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
 		};
-		056C9B3B197663FF0047F3E5 /* Miscellaneous */ = {
-			isa = PBXGroup;
-			children = (
-				056C9B3C1976642F0047F3E5 /* AppConfiguration.swift */,
-			);
-			path = Miscellaneous;
-			sourceTree = "<group>";
-		};
 		05B3DDF119872E6700C4B057 /* Dynamic Type */ = {
 			isa = PBXGroup;
 			children = (
+				05F5B624198B814C00E1C98F /* DynamicTypeFont.swift */,
 				05B3DDF219872E8E00C4B057 /* DynamicTypeView.swift */,
 				05B3DDF41987304000C4B057 /* DynamicTypeTableViewCell.swift */,
 				05B3DDF61987304C00C4B057 /* DynamicTypeCollectionViewCell.swift */,
@@ -436,8 +433,7 @@
 			children = (
 				058103211981DD08005FDF8F /* ExperienceNavigationController.swift */,
 				05ED5130198B661700EF8286 /* ExperienceSplitViewController.swift */,
-				05F5B61B198B729D00E1C98F /* ExperienceTableViewController.swift */,
-				0581032319821816005FDF8F /* ExperienceTableViewCell.swift */,
+				05F5B61D198B808200E1C98F /* Table View */,
 			);
 			path = Experience;
 			sourceTree = "<group>";
@@ -461,12 +457,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		05F5B61A198B71DA00E1C98F /* Others */ = {
+		05F5B61D198B808200E1C98F /* Table View */ = {
 			isa = PBXGroup;
 			children = (
-				05C767EA1989F63400438CC2 /* DynamicTypeFont.swift */,
+				05F5B61B198B729D00E1C98F /* ExperienceTableViewController.swift */,
+				0581032319821816005FDF8F /* ExperienceTableViewCell.swift */,
 			);
-			path = Others;
+			name = "Table View";
+			sourceTree = "<group>";
+		};
+		05F5B626198B816C00E1C98F /* Split */ = {
+			isa = PBXGroup;
+			children = (
+				05F5B629198B824900E1C98F /* SplitViewController.swift */,
+				05F5B627198B823E00E1C98F /* SplitView.swift */,
+			);
+			path = Split;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,6 +583,7 @@
 			files = (
 				05B3DDFD19877AA300C4B057 /* DynamicTypeCollectionViewController.swift in Sources */,
 				05F1880A197A41570025756F /* FormattedTextView.swift in Sources */,
+				05F5B625198B814C00E1C98F /* DynamicTypeFont.swift in Sources */,
 				05F9EAAA19865A26001D2633 /* EducationView_Phone.swift in Sources */,
 				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
 				05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */,
@@ -597,6 +604,7 @@
 				05B3DDF91987696900C4B057 /* DynamicTypeTableViewController.swift in Sources */,
 				05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */,
 				0579C959197E4CBF000233EC /* Date.swift in Sources */,
+				05F5B628198B823E00E1C98F /* SplitView.swift in Sources */,
 				05B3DDF71987304C00C4B057 /* DynamicTypeCollectionViewCell.swift in Sources */,
 				05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
@@ -608,19 +616,19 @@
 				05D2C51F1987820C009CDF3A /* Array.swift in Sources */,
 				056C9B3A197662420047F3E5 /* Device.swift in Sources */,
 				05DF17FA197CC10F003AA613 /* ScrollPageViewController.swift in Sources */,
+				05F5B62A198B824900E1C98F /* SplitViewController.swift in Sources */,
 				056C9B4419766B310047F3E5 /* ProfileView_Phone.swift in Sources */,
 				0581032C19824061005FDF8F /* EducationView.swift in Sources */,
 				0581032419821816005FDF8F /* ExperienceTableViewCell.swift in Sources */,
+				05F5B623198B811B00E1C98F /* AppConfiguration.swift in Sources */,
 				0529482A197E031E00739084 /* TableViewController.swift in Sources */,
 				0581033019824596005FDF8F /* CollectionViewController.swift in Sources */,
 				05ED5131198B661700EF8286 /* ExperienceSplitViewController.swift in Sources */,
 				05810336198247D4005FDF8F /* RefereesCollectionViewFlowLayout.swift in Sources */,
 				056C9B3519765D990047F3E5 /* SectionsPageViewController.swift in Sources */,
 				05B3DDF319872E8E00C4B057 /* DynamicTypeView.swift in Sources */,
-				056C9B3D1976642F0047F3E5 /* AppConfiguration.swift in Sources */,
 				05F9EAAC19865A2F001D2633 /* EducationView_Pad.swift in Sources */,
 				0529482D197E0BBE00739084 /* List.swift in Sources */,
-				05C767EB1989F63400438CC2 /* DynamicTypeFont.swift in Sources */,
 				0579C957197E46DA000233EC /* TimelineEventTableViewCell.swift in Sources */,
 				0529482F197E0FC700739084 /* TimelineTableViewController.swift in Sources */,
 				056C9B2C19765B160047F3E5 /* HomeViewController.swift in Sources */,
