@@ -6,7 +6,9 @@
   Copyright (c) 2014 Jad Osseiran. All rights reserved.
 */
 
-"ExperienceTitle" = "Experience";
+"ExperienceTitle" = "Expérience";
 "ExtraCurricularTitle" = "Autres activités";
 "EducationTitle" = "Education";
 "ReferencesTitle" = "Références";
+
+"PresentDate" = "présent";

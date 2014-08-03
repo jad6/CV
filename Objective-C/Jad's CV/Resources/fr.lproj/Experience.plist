@@ -48,9 +48,9 @@
 		<key>color</key>
 		<string>198,68,252,1</string>
 		<key>organisation</key>
-		<string>University of Western Australia</string>
+		<string>Université d’Australie Occidentale</string>
 		<key>position</key>
-		<string>Database Manager</string>
+		<string>Administrateur de base de données</string>
 		<key>description</key>
 		<string>J’ai crée et maintenu une base de données pour un professeur de UWA, de la faculté de biologie des plantes. Le but principal de cette base de données était qu’elle devienne un outil d’apprentissage pour les étudiants en excursion sur le terrain.</string>
 		<key>imageName</key>
@@ -226,9 +226,9 @@
 		<key>color</key>
 		<string>198,68,252,1</string>
 		<key>organisation</key>
-		<string>University of Western Asutralia</string>
+		<string>Université d’Australie Occidentale</string>
 		<key>position</key>
-		<string>Honours Thesis</string>
+		<string>Projet de thèse</string>
 		<key>description</key>
 		<string>Le sujet de recherche de ma thèse est l’implementation d’un algorithme qui calcule la force d’une touche sur un smartphone ou une tablette en utilisant les motions induites par l’interaction. Cette recherche a duré un an et j’ai produit: un article, une application iOS, une soutenance et un poster de conférence. L’application démontrant l’algorithme et l’article peut être trouvé sur le lien: https://github.com/jad6/DOMATI-iOS.</string>
 		<key>imageName</key>

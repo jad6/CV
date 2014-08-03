@@ -63,7 +63,7 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
 
     if ([endDate compare:[NSDate date]] == NSOrderedDescending)
     {
-        return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, @"Present"];
+        return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, NSLocalizedString(@"PresentDate", nil)];
     }
     else
     {
