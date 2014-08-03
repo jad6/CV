@@ -54,14 +54,23 @@
     self = [super initFromDictionary:dictionary];
     if (self)
     {
-        self.fullName = dictionary[@"fullName"];
+        self.firstName = dictionary[@"firstName"];
+        self.lastName = dictionary[@"lastName"];
         self.location = dictionary[@"location"];
         self.phoneNumber = dictionary[@"phoneNumber"];
         self.email = dictionary[@"email"];
         self.detailDescription = dictionary[@"description"];
         self.profileImage = [UIImage imageNamed:dictionary[@"imageName"]];
+        
+        NSDictionary *backgroundImageInfo = dictionary[@"backgroundImageInfo"];
+        self.backgroundImage = [CVExtractedObject loadBackgroundImage:backgroundImageInfo];
     }
     return self;
+}
+
+- (NSString *)fullName
+{
+    return [[NSString alloc] initWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
 
 @end

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>organisation</key>
+		<string>Surf Life Saving Australia</string>
+		<key>position</key>
+		<string>Membre de la patrouille de Scarborough Beach</string>
+		<key>startDate</key>
+		<date>2003-09-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2009-09-01T04:00:00Z</date>
+		<key>description</key>
+		<string>Je me suis engagé à patrouiller la plage de Scarborough toutes les deux semaines. Ceci a grandement amélioré ma condition physique, ma patience et mon sens de l’attention car je devais être prêt à agir rapidement en toutes sortes de situations.</string>
+		<key>imageName</key>
+		<string>slsa</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>University Engineers Club</string>
+		<key>position</key>
+		<string>Délégué des ingénieurs informaticiens</string>
+		<key>startDate</key>
+		<date>2009-11-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2011-02-01T04:00:00Z</date>
+		<key>description</key>
+		<string>Je fut élu deux ans d&apos;affilé par les étudiants informaticiens pour les représenter auprès de l’école d’ingénieurs. J’ai relayé les opinions des mes camarades durant les réunions pendants lesquelles l’université décidait les changements de la structure des cours. J’ai également été responsable de l’organisation des activités éducationnelles et de maintenir un lien fort entre les entreprises d’informatiques et le club des ingénieurs.</string>
+		<key>imageName</key>
+		<string>uec</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>University Engineers Club</string>
+		<key>position</key>
+		<string>Délégué des étudiants ingénieurs en première année</string>
+		<key>startDate</key>
+		<date>2009-02-01T03:00:00Z</date>
+		<key>endDate</key>
+		<date>2009-11-01T04:00:00Z</date>
+		<key>description</key>
+		<string>J’ai été élu délégué des étudiants ingénieurs en première année. J’ai représenté un grand nombre d’étudiants et je les ai guidé dans leurs choix d’études. Je les ai aussi aidé à s’intégrer dans les cercles sociaux et éducationnels de l’université.</string>
+		<key>imageName</key>
+		<string>uec</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>Uni Camp for Kids</string>
+		<key>position</key>
+		<string>Bénévole</string>
+		<key>startDate</key>
+		<date>2009-02-01T03:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-11-01T04:00:00Z</date>
+		<key>description</key>
+		<string>Tout au long de mes études je me suis impliqué dans l’activité charitable de “Uni Camp for Kids” (UCFK). Le but de cette activité de charité est de permettre à des enfants défavorisés de s’amuser en étant accompagné d’étudiants universitaire. Chaque année j’ai participé en tant qu’animateur lors de quatre pique-niques et d’un camp. J’ai aussi représenté UCFK lors d’un marathon annuel.</string>
+		<key>imageName</key>
+		<string>ucfk</string>
+	</dict>
+	<dict>
+		<key>organisation</key>
+		<string>Apple</string>
+		<key>position</key>
+		<string>Participant à WWDC</string>
+		<key>startDate</key>
+		<date>2013-06-01T04:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-06-01T04:00:00Z</date>
+		<key>description</key>
+		<string>Lors de mon séjour à San Francisco j’ai participé à la conférence d’Apple “World Wide Developer Conference”, mon employeur de l’époque ayant financé mon inscription. J’ai profité de cette opportunité pour perfectionner mes compétences en Objective-C en collaborant avec les ingénieurs d’Apple ansi que d’autres participants de WWDC.</string>
+		<key>imageName</key>
+		<string>wwdc</string>
+	</dict>
+</array>
+</plist>

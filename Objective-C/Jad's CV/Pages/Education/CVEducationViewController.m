@@ -50,7 +50,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"Education";
+    self.title = NSLocalizedString(@"EducationTitle", nil);
     
     if (IS_IPAD)
     {

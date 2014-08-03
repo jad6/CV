@@ -76,6 +76,15 @@
     return nil;
 }
 
++ (UIImage *)loadBackgroundImage:(NSDictionary *)backgroundImageInfo
+{
+    NSString *backgroundImageName = backgroundImageInfo[@"name"];
+    NSString *backgroundImageExtension = backgroundImageInfo[@"extension"];
+
+    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:backgroundImageName ofType:backgroundImageExtension];
+    return [[UIImage alloc] initWithContentsOfFile:backgroundImagePath];
+}
+
 - (instancetype)initFromDictionary:(NSDictionary *)dictionary
 {
     self = [super init];

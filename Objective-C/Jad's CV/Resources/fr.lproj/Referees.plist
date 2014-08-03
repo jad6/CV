@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Dr.</string>
+		<key>firstName</key>
+		<string>Julie</string>
+		<key>lastName</key>
+		<string>Plummer</string>
+		<key>position</key>
+		<string>Professeur à la retraite</string>
+		<key>location</key>
+		<string>Département de la biologie des plantes de UWA</string>
+		<key>connection</key>
+		<string>J’ai maintenu la base de données de recherche pour ce professeur.</string>
+		<key>email</key>
+		<string>towerplummer@gmail.com</string>
+		<key>phoneNumber</key>
+		<string>+61 415 104 108</string>
+		<key>imageName</key>
+		<string>julie</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Dr.</string>
+		<key>firstName</key>
+		<string>Amitava</string>
+		<key>lastName</key>
+		<string>Datta</string>
+		<key>position</key>
+		<string>Professeur</string>
+		<key>location</key>
+		<string>Université d’Australie Occidentale</string>
+		<key>connection</key>
+		<string>Mon superviseur de projet de thèse.</string>
+		<key>email</key>
+		<string>amitava.datta@uwa.edu.au</string>
+		<key>phoneNumber</key>
+		<string>+61 8 6488 3449</string>
+		<key>imageName</key>
+		<string>datta</string>
+	</dict>
+	<dict>
+		<key>firstName</key>
+		<string>Monica</string>
+		<key>lastName</key>
+		<string>Sacroug</string>
+		<key>position</key>
+		<string>Chef de projet</string>
+		<key>location</key>
+		<string>XciteLogic Development</string>
+		<key>connection</key>
+		<string>Ancien chef de projet à XciteLogic Development.</string>
+		<key>email</key>
+		<string>monica@ramiken.com</string>
+		<key>phoneNumber</key>
+		<string>+61 422 581 744</string>
+		<key>imageName</key>
+		<string>monica</string>
+	</dict>
+	<dict>
+		<key>firstName</key>
+		<string>Matt</string>
+		<key>lastName</key>
+		<string>Urquhart</string>
+		<key>position</key>
+		<string>Ingénieur informatique</string>
+		<key>location</key>
+		<string>Express VPN</string>
+		<key>connection</key>
+		<string>Matt fut un collègue à Xcite et Datacom.</string>
+		<key>email</key>
+		<string>matt.u@chengbao.com.hk</string>
+		<key>phoneNumber</key>
+		<string>+852 6342 5280</string>
+		<key>imageName</key>
+		<string>matt</string>
+	</dict>
+	<dict>
+		<key>firstName</key>
+		<string>Cameron</string>
+		<key>lastName</key>
+		<string>Fitzgerald</string>
+		<key>position</key>
+		<string>Vice-président de l’association des étudiants</string>
+		<key>location</key>
+		<string>Université d’Australie Occidentale</string>
+		<key>connection</key>
+		<string>J’ai travaillé avec Cam sur l’application UEC.</string>
+		<key>email</key>
+		<string>vp@guild.uwa.edu.au</string>
+		<key>phoneNumber</key>
+		<string>+61 405 031 177</string>
+		<key>imageName</key>
+		<string>cam</string>
+	</dict>
+</array>
+</plist>

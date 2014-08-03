@@ -51,7 +51,6 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 @property (nonatomic, weak) IBOutlet UIImageView *profilePicImageView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIButton *infoButton;
-@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
 
 @property (nonatomic, weak) CVAboutMeView *aboutMeView;
 @property (nonatomic, weak) UIImageView *blurredImageView;
@@ -109,6 +108,7 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     {
         self->_personalInfo = personalInfo;
         
+        self.backgroundImageView.image = personalInfo.backgroundImage;
         self.nameLabel.text = personalInfo.fullName;
         self.profilePicImageView.image = personalInfo.profileImage;
     }

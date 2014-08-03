@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>status</key>
+	<string>Diplôme d’ingénieur informatique</string>
+	<key>establishment</key>
+	<string>Université d’Australie Occidentale (UWA)</string>
+	<key>description</key>
+	<string>Pedant mes études a l’Université d’Australie Occidentale j’ai bien profité des opportunités sociales et académiques. J’ai adhéré à des organisations d’étudiants et à plusieurs reprises, j’ai été élu membre de leurs comités.
+
+Mes études à UWA m’ont permis de créer mes propres opportunités ce qui ma fait progresser plus rapidement dans le monde de l’industrie informatique. J’ai pu observer pendant ma formation à l’école d’ingénieurs en informatique des réalisations innovatrices et impressionnantes. L’université fut un formidable lieu de rencontre où j’ai rencontré d’autres étudiants et enseignants avec lesquels je partageais les mêmes valeurs.</string>
+	<key>completion</key>
+	<string>Date d’obtention: Mi-2014</string>
+	<key>universityLogoImageName</key>
+	<string>uwa</string>
+	<key>backgroundImageInfo</key>
+	<dict>
+		<key>name</key>
+		<string>winthrop_hall</string>
+		<key>extension</key>
+		<string>jpg</string>
+	</dict>
+</dict>
+</plist>

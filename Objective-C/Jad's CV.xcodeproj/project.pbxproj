@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05015ACC198DED2600C9DAE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05015ACE198DED2600C9DAE7 /* Localizable.strings */; };
 		050A5CE618FA35C400244F50 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE518FA35C400244F50 /* union_lake.jpg */; };
 		050A5CE918FA35FA00244F50 /* winthrop_hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */; };
 		050A5CEC18FA3D8100244F50 /* CVEducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5CEB18FA3D8100244F50 /* CVEducationViewController.m */; };
@@ -17,8 +18,12 @@
 		050A5D0218FA738D00244F50 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5D0118FA738D00244F50 /* UIColor+Extension.m */; };
 		050A5D0518FA8C4400244F50 /* CVExperienceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5D0418FA8C4400244F50 /* CVExperienceObject.m */; };
 		050A5D0B18FA8FF200244F50 /* CVRoundedRectImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 050A5D0A18FA8FF200244F50 /* CVRoundedRectImageView.m */; };
+		0529487F197E1CB000739084 /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294881197E1CB000739084 /* Experience.plist */; };
+		05294884197E1CB500739084 /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294886197E1CB500739084 /* Referees.plist */; };
+		05294889197E1CB900739084 /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0529488B197E1CB900739084 /* Extra Curricular.plist */; };
+		0529488E197E1CC100739084 /* Education.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294890197E1CC100739084 /* Education.plist */; };
+		05294893197E1CC600739084 /* About Me.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294895197E1CC600739084 /* About Me.plist */; };
 		0550425018FD19A000CEDF2C /* CVContactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0550424F18FD19A000CEDF2C /* CVContactor.m */; };
-		0550425218FD1C0900CEDF2C /* About Me.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0550425118FD1C0900CEDF2C /* About Me.plist */; };
 		0550425518FD1C5400CEDF2C /* CVPersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0550425418FD1C5400CEDF2C /* CVPersonalInfo.m */; };
 		056872EE18F6361E00132551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872ED18F6361E00132551 /* Foundation.framework */; };
 		056872F018F6361E00132551 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056872EF18F6361E00132551 /* CoreGraphics.framework */; };
@@ -58,10 +63,6 @@
 		05BECD02191CBA7D002445E3 /* AboutMe~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BECD04191CBA7D002445E3 /* AboutMe~iphone.xib */; };
 		05BECD05191CBA82002445E3 /* AboutMe~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BECD07191CBA82002445E3 /* AboutMe~ipad.xib */; };
 		05F75ABC18F6904C0061C1BC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ABB18F6904C0061C1BC /* UIView+Extension.m */; };
-		05F75AC018F69A9B0061C1BC /* Experience.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75ABF18F69A9B0061C1BC /* Experience.plist */; };
-		05F75AC218F69AAF0061C1BC /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC118F69AAF0061C1BC /* Referees.plist */; };
-		05F75AC418F69ACD0061C1BC /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC318F69ACD0061C1BC /* Extra Curricular.plist */; };
-		05F75AC618F69AE40061C1BC /* Education.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F75AC518F69AE40061C1BC /* Education.plist */; };
 		05F75AC918F69B120061C1BC /* CVTimelineEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75AC818F69B120061C1BC /* CVTimelineEvent.m */; };
 		05F75ACC18F69DF80061C1BC /* CVTimelineEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ACB18F69DF80061C1BC /* CVTimelineEventTableViewCell.m */; };
 		05F75AD018F69EF70061C1BC /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F75ACF18F69EF70061C1BC /* NSDate+Extension.m */; };
@@ -82,6 +83,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05015ACD198DED2600C9DAE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05015ACF198DED2A00C9DAE7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05015AD0198DED2B00C9DAE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		050A5CE518FA35C400244F50 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
 		050A5CE818FA35FA00244F50 /* winthrop_hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winthrop_hall.jpg; sourceTree = "<group>"; };
 		050A5CEA18FA3D8100244F50 /* CVEducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVEducationViewController.h; sourceTree = "<group>"; };
@@ -100,9 +104,33 @@
 		050A5D0418FA8C4400244F50 /* CVExperienceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVExperienceObject.m; sourceTree = "<group>"; };
 		050A5D0918FA8FF200244F50 /* CVRoundedRectImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVRoundedRectImageView.h; sourceTree = "<group>"; };
 		050A5D0A18FA8FF200244F50 /* CVRoundedRectImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVRoundedRectImageView.m; sourceTree = "<group>"; };
+		05294871197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		05294872197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		05294873197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "fr.lproj/AboutMe~iphone.strings"; sourceTree = "<group>"; };
+		05294874197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "fr.lproj/AboutMe~ipad.strings"; sourceTree = "<group>"; };
+		05294875197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05294876197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05294878197E1C9E00739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		0529487A197E1CA200739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		0529487C197E1CA400739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/AboutMe~iphone.strings"; sourceTree = "<group>"; };
+		0529487E197E1CA700739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/AboutMe~ipad.strings"; sourceTree = "<group>"; };
+		05294880197E1CB000739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Experience.plist; sourceTree = "<group>"; };
+		05294882197E1CB100739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Experience.plist; sourceTree = "<group>"; };
+		05294883197E1CB200739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Experience.plist; sourceTree = "<group>"; };
+		05294885197E1CB500739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Referees.plist; sourceTree = "<group>"; };
+		05294887197E1CB600739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Referees.plist; sourceTree = "<group>"; };
+		05294888197E1CB600739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Referees.plist; sourceTree = "<group>"; };
+		0529488A197E1CB900739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "Base.lproj/Extra Curricular.plist"; sourceTree = "<group>"; };
+		0529488C197E1CBB00739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = "fr.lproj/Extra Curricular.plist"; sourceTree = "<group>"; };
+		0529488D197E1CBC00739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/Extra Curricular.plist"; sourceTree = "<group>"; };
+		0529488F197E1CC100739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Education.plist; sourceTree = "<group>"; };
+		05294891197E1CC200739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Education.plist; sourceTree = "<group>"; };
+		05294892197E1CC300739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Education.plist; sourceTree = "<group>"; };
+		05294894197E1CC600739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "Base.lproj/About Me.plist"; sourceTree = "<group>"; };
+		05294896197E1CC800739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/About Me.plist"; sourceTree = "<group>"; };
+		05294897197E1CC800739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = "fr.lproj/About Me.plist"; sourceTree = "<group>"; };
 		0550424E18FD19A000CEDF2C /* CVContactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVContactor.h; sourceTree = "<group>"; };
 		0550424F18FD19A000CEDF2C /* CVContactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVContactor.m; sourceTree = "<group>"; };
-		0550425118FD1C0900CEDF2C /* About Me.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "About Me.plist"; sourceTree = "<group>"; };
 		0550425318FD1C5400CEDF2C /* CVPersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPersonalInfo.h; sourceTree = "<group>"; };
 		0550425418FD1C5400CEDF2C /* CVPersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPersonalInfo.m; sourceTree = "<group>"; };
 		056872EA18F6361E00132551 /* Jad's CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jad's CV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,10 +200,6 @@
 		05E342AE193AD29600662461 /* CVPagingConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVPagingConstants.h; sourceTree = "<group>"; };
 		05F75ABA18F6904C0061C1BC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		05F75ABB18F6904C0061C1BC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		05F75ABF18F69A9B0061C1BC /* Experience.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Experience.plist; sourceTree = "<group>"; };
-		05F75AC118F69AAF0061C1BC /* Referees.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Referees.plist; sourceTree = "<group>"; };
-		05F75AC318F69ACD0061C1BC /* Extra Curricular.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Extra Curricular.plist"; sourceTree = "<group>"; };
-		05F75AC518F69AE40061C1BC /* Education.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Education.plist; sourceTree = "<group>"; };
 		05F75AC718F69B120061C1BC /* CVTimelineEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineEvent.h; sourceTree = "<group>"; };
 		05F75AC818F69B120061C1BC /* CVTimelineEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTimelineEvent.m; sourceTree = "<group>"; };
 		05F75ACA18F69DF80061C1BC /* CVTimelineEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineEventTableViewCell.h; sourceTree = "<group>"; };
@@ -419,11 +443,12 @@
 		0568734518F6618400132551 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				05F75ABF18F69A9B0061C1BC /* Experience.plist */,
-				05F75AC118F69AAF0061C1BC /* Referees.plist */,
-				05F75AC318F69ACD0061C1BC /* Extra Curricular.plist */,
-				05F75AC518F69AE40061C1BC /* Education.plist */,
-				0550425118FD1C0900CEDF2C /* About Me.plist */,
+				05294881197E1CB000739084 /* Experience.plist */,
+				05294886197E1CB500739084 /* Referees.plist */,
+				0529488B197E1CB900739084 /* Extra Curricular.plist */,
+				05294890197E1CC100739084 /* Education.plist */,
+				05294895197E1CC600739084 /* About Me.plist */,
+				05015ACE198DED2600C9DAE7 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -595,6 +620,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 056872E118F6361E00132551;
 			productRefGroup = 056872EB18F6361E00132551 /* Products */;
@@ -612,19 +638,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F75AC418F69ACD0061C1BC /* Extra Curricular.plist in Resources */,
+				05294889197E1CB900739084 /* Extra Curricular.plist in Resources */,
 				0568730418F6361E00132551 /* Main_iPad.storyboard in Resources */,
 				05BECD05191CBA82002445E3 /* AboutMe~ipad.xib in Resources */,
+				05015ACC198DED2600C9DAE7 /* Localizable.strings in Resources */,
 				050A5CE918FA35FA00244F50 /* winthrop_hall.jpg in Resources */,
 				05BECD02191CBA7D002445E3 /* AboutMe~iphone.xib in Resources */,
 				0568730918F6361E00132551 /* Images.xcassets in Resources */,
 				0568730118F6361E00132551 /* Main_iPhone.storyboard in Resources */,
 				050A5CE618FA35C400244F50 /* union_lake.jpg in Resources */,
 				056872F818F6361E00132551 /* InfoPlist.strings in Resources */,
-				05F75AC018F69A9B0061C1BC /* Experience.plist in Resources */,
-				05F75AC218F69AAF0061C1BC /* Referees.plist in Resources */,
-				05F75AC618F69AE40061C1BC /* Education.plist in Resources */,
-				0550425218FD1C0900CEDF2C /* About Me.plist in Resources */,
+				0529487F197E1CB000739084 /* Experience.plist in Resources */,
+				05294884197E1CB500739084 /* Referees.plist in Resources */,
+				0529488E197E1CC100739084 /* Education.plist in Resources */,
+				05294893197E1CC600739084 /* About Me.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,10 +731,71 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		05015ACE198DED2600C9DAE7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05015ACD198DED2600C9DAE7 /* Base */,
+				05015ACF198DED2A00C9DAE7 /* fr */,
+				05015AD0198DED2B00C9DAE7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		05294881197E1CB000739084 /* Experience.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05294880197E1CB000739084 /* Base */,
+				05294882197E1CB100739084 /* en */,
+				05294883197E1CB200739084 /* fr */,
+			);
+			name = Experience.plist;
+			sourceTree = "<group>";
+		};
+		05294886197E1CB500739084 /* Referees.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05294885197E1CB500739084 /* Base */,
+				05294887197E1CB600739084 /* en */,
+				05294888197E1CB600739084 /* fr */,
+			);
+			name = Referees.plist;
+			sourceTree = "<group>";
+		};
+		0529488B197E1CB900739084 /* Extra Curricular.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0529488A197E1CB900739084 /* Base */,
+				0529488C197E1CBB00739084 /* fr */,
+				0529488D197E1CBC00739084 /* en */,
+			);
+			name = "Extra Curricular.plist";
+			sourceTree = "<group>";
+		};
+		05294890197E1CC100739084 /* Education.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0529488F197E1CC100739084 /* Base */,
+				05294891197E1CC200739084 /* en */,
+				05294892197E1CC300739084 /* fr */,
+			);
+			name = Education.plist;
+			sourceTree = "<group>";
+		};
+		05294895197E1CC600739084 /* About Me.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05294894197E1CC600739084 /* Base */,
+				05294896197E1CC800739084 /* en */,
+				05294897197E1CC800739084 /* fr */,
+			);
+			name = "About Me.plist";
+			sourceTree = "<group>";
+		};
 		056872F618F6361E00132551 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				056872F718F6361E00132551 /* en */,
+				05294875197E1C9100739084 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -716,6 +804,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				0568730018F6361E00132551 /* Base */,
+				05294871197E1C9100739084 /* fr */,
+				05294878197E1C9E00739084 /* en */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -724,6 +814,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				0568730318F6361E00132551 /* Base */,
+				05294872197E1C9100739084 /* fr */,
+				0529487A197E1CA200739084 /* en */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -732,6 +824,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0568731918F6361E00132551 /* en */,
+				05294876197E1C9100739084 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -740,6 +833,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				05BECD03191CBA7D002445E3 /* Base */,
+				05294873197E1C9100739084 /* fr */,
+				0529487C197E1CA400739084 /* en */,
 			);
 			name = "AboutMe~iphone.xib";
 			sourceTree = "<group>";
@@ -748,6 +843,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				05BECD06191CBA82002445E3 /* Base */,
+				05294874197E1C9100739084 /* fr */,
+				0529487E197E1CA700739084 /* en */,
 			);
 			name = "AboutMe~ipad.xib";
 			sourceTree = "<group>";

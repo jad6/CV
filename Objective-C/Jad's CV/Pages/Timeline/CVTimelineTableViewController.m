@@ -47,7 +47,7 @@ static NSString *CVMinorEventTableCellIdentifier = @"Minor Event Cell";
 {
     [super viewDidLoad];
     
-    self.title = @"Experience";
+    self.title = NSLocalizedString(@"ExperienceTitle", nil);
     
     self.clearsSelectionOnViewWillAppear = IS_IPHONE;
     

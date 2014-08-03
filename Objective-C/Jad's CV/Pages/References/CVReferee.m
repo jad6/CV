@@ -53,7 +53,9 @@
     self = [super init];
     if (self)
     {
-        self.fullName = dictionary[@"fullName"];
+        self.title = dictionary[@"title"];
+        self.firstName = dictionary[@"firstName"];
+        self.lastName = dictionary[@"lastName"];
         self.position = dictionary[@"position"];
         self.location = dictionary[@"location"];
         self.connection = dictionary[@"connection"];
@@ -62,6 +64,17 @@
         self.picture = [UIImage imageNamed:dictionary[@"imageName"]];
     }
     return self;
+}
+
+- (NSString *)fullName
+{
+    NSMutableString *fullName = [[NSMutableString alloc] init];
+    if (self.title)
+        [fullName appendFormat:@"%@ ", self.title];
+    
+    [fullName appendFormat:@"%@ %@", self.firstName, self.lastName];
+    
+    return fullName;
 }
 
 @end

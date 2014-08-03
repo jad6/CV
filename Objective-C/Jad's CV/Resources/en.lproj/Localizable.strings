@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Jad's CV
+
+  Created by Jad Osseiran on 3/08/2014.
+  Copyright (c) 2014 Jad Osseiran. All rights reserved.
+*/
+
+"ExperienceTitle" = "Experience";
+"ExtraCurricularTitle" = "Extra Curricular";
+"EducationTitle" = "Education";
+"ReferencesTitle" = "References";

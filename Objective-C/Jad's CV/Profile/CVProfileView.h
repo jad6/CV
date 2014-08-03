@@ -73,6 +73,7 @@
 @property (nonatomic, weak) id<CVProfileViewDataSource> dataSource;
 /// The label describing the current views seen by the user.
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
 
 @property (nonatomic, strong) CVPersonalInfo *personalInfo;
 

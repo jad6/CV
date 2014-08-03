@@ -167,6 +167,11 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     UIViewController *currentController = [pageViewController.viewControllers lastObject];
     NSString *controllerIdentifier = NSStringFromClass([currentController class]);
     
+    if ([controllerIdentifier isEqualToString:CVReferencesViewControllerIdentifier])
+        pageViewController.view.backgroundColor = [UIColor backgroundGrayColor];
+    else
+        pageViewController.view.backgroundColor = [UIColor whiteColor];
+    
     self.profileView.descriptionLabel.text = currentController.title;
     
     // Because we store the storyboard identifiers as the class names
@@ -214,6 +219,8 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     self.descriptionTextBeforeInfoTransition = self.profileView.descriptionLabel.text;
     // Update the description label text.
     self.profileView.descriptionLabel.text = self.profileView.personalInfo.location;
+    
+    self.profileView.backgroundImageView.image = self.profileView.personalInfo.backgroundImage;
 
     // Set the UI changes.
     BOOL animated = YES;

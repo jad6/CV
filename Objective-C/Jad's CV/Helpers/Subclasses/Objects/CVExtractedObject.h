@@ -50,6 +50,8 @@
 
 + (NSString *)filePathForResource;
 
++ (UIImage *)loadBackgroundImage:(NSDictionary *)backgroundImageInfo;
+
 /**
  *  Creates an instance from a dictionary.
  *

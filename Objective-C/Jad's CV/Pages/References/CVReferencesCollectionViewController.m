@@ -48,7 +48,7 @@ static NSString *CVRefereeCollectionViewCellIdentifier = @"Referee Cell";
 {
     [super viewDidLoad];
     
-    self.title = @"References";
+    self.title = NSLocalizedString(@"ReferencesTitle", nil);
     
     NSArray *referees = [CVReferee referees];
     [self setData:referees containsSections:NO];

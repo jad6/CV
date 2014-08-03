@@ -48,7 +48,7 @@ static NSString *CVExtraCurricularTableCellIdentifier = @"Extra Curricular Cell"
 {
     [super viewDidLoad];
     
-    self.title = @"Extra Curricular";
+    self.title = NSLocalizedString(@"ExtraCurricularTitle", nil);
     
     self.clearsSelectionOnViewWillAppear = !IS_IPAD;
     
