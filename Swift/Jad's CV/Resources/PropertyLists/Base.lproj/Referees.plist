@@ -3,12 +3,12 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>title</key>
-		<string>Dr.</string>
-		<key>firstName</key>
-		<string>Julie</string>
-		<key>lastName</key>
-		<string>Plummer</string>
+        <key>title</key>
+        <string>Dr.</string>
+        <key>firstName</key>
+        <string>Julie</string>
+        <key>lastName</key>
+        <string>Plummer</string>
 		<key>position</key>
 		<string>Retired Professor</string>
 		<key>location</key>
@@ -23,12 +23,12 @@
 		<string>julie</string>
 	</dict>
 	<dict>
-		<key>title</key>
-		<string>Dr.</string>
-		<key>firstName</key>
-		<string>Amitava</string>
-		<key>lastName</key>
-		<string>Datta</string>
+        <key>title</key>
+        <string>Dr.</string>
+        <key>firstName</key>
+        <string>Amitava</string>
+        <key>lastName</key>
+        <string>Datta</string>
 		<key>position</key>
 		<string>Professor</string>
 		<key>location</key>
@@ -43,10 +43,10 @@
 		<string>datta</string>
 	</dict>
 	<dict>
-		<key>firstName</key>
-		<string>Monica</string>
-		<key>lastName</key>
-		<string>Sacroug</string>
+        <key>firstName</key>
+        <string>Monica</string>
+        <key>lastName</key>
+        <string>Sacroug</string>
 		<key>position</key>
 		<string>Project Manager</string>
 		<key>location</key>
@@ -61,11 +61,10 @@
 		<string>monica</string>
 	</dict>
 	<dict>
-		<key>firstName</key>
-		<string>Matt</string>
-		<key>lastName</key>
-		<string>Urquhart</string>
-		<key>position</key>
+        <key>firstName</key>
+        <string>Matt</string>
+        <key>lastName</key>
+        <string>Urquhart</string>		<key>position</key>
 		<string>Software Developer</string>
 		<key>location</key>
 		<string>Express VPN</string>
@@ -79,12 +78,12 @@
 		<string>matt</string>
 	</dict>
 	<dict>
-		<key>firstName</key>
-		<string>Cameron</string>
-		<key>lastName</key>
-		<string>Fitzgerald</string>
-		<key>position</key>
-		<string>Guild VP, Ex-Google Intern</string>
+        <key>firstName</key>
+        <string>Cameron</string>
+        <key>lastName</key>
+        <string>Fitzgerald</string>
+        <key>position</key>
+		<string>Guild VP</string>
 		<key>location</key>
 		<string>University of Western Australia</string>
 		<key>connection</key>

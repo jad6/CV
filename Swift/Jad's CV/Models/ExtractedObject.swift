@@ -50,11 +50,11 @@ class ExtractedObject {
         return objects
     }
     
-    class func loadBackgroundImage(backgrounfImageInfo: NSDictionary) -> UIImage {
-        let backgrounfImageName = backgrounfImageInfo["name"] as String
-        let backgrounfImageExtension = backgrounfImageInfo["extension"] as String
+    class func loadBackgroundImage(#imageInfo: NSDictionary) -> UIImage {
+        let backgroundImageName = imageInfo["name"] as String
+        let backgroundImageExtension = imageInfo["extension"] as String
         
-        let backgroundImagePath = NSBundle.mainBundle().pathForResource(backgrounfImageName, ofType: backgrounfImageExtension)
+        let backgroundImagePath = NSBundle.mainBundle().pathForResource(backgroundImageName, ofType: backgroundImageExtension)
         return UIImage(contentsOfFile: backgroundImagePath)
     }
     

@@ -52,7 +52,7 @@
 		<key>position</key>
 		<string>Database Manager</string>
 		<key>description</key>
-		<string>I assisted a UWA Professor in the School of Plant Biology create and maintain a database of plants she recorded for research. The main goal was that the database be made available for students as a learning tool during expeditions.</string>
+		<string>I created and maintained a database for a UWA Professor in the School of Plant Biology. The main goal was that the database be made available for students as a learning tool during expeditions.</string>
 		<key>imageName</key>
 		<string>uwa</string>
 	</dict>
@@ -70,7 +70,7 @@
 		<key>position</key>
 		<string>Software Engineer</string>
 		<key>description</key>
-		<string>Working at XciteLogic Development improved my software development skills. I worked on several projects in teams of various sizes and I regularly met with clients to discuss ideas, scope and support. My specialisation was in iOS development and deployment. XciteLogic Development has been acquired by another IT company.</string>
+		<string>Working at XciteLogic Development improved my software development skills. I worked on several projects in teams of various sizes. I regularly met with clients to discuss ideas, scope and support. My specialisation was in iOS development and deployment. XciteLogic Development has been acquired by another IT company.</string>
 		<key>imageName</key>
 		<string>xcite</string>
 	</dict>
@@ -158,7 +158,7 @@
 		<key>position</key>
 		<string>Department of Fisheries Kiosk App</string>
 		<key>description</key>
-		<string>I was part of the development team for an iPad kiosk application which is on display at the Department of Fisheries in Hillarys, Western Australia. The application allows the visitors to explore different regions&apos; flora and fauna through pictures, movies and interactive games.</string>
+		<string>I was part of the development team for an iPad kiosk application which is on display at the Department of Fisheries in Hillarys, Western Australia. The application allows the visitors to explore the flora and fauna of different regions in the state through pictures, movies and interactive games.</string>
 		<key>imageName</key>
 		<string>gov</string>
 	</dict>
@@ -176,7 +176,7 @@
 		<key>position</key>
 		<string>Liberal Victoria App</string>
 		<key>description</key>
-		<string>My first commercial application was released for the Liberal Party during my employment at XciteLogic Development. The application is now managed by another party  and can be found at this link: https://itunes.apple.com/au/app/liberal-vic/id516471497?mt=8.</string>
+		<string>My first commercial application was released for the Liberal Party during my employment at XciteLogic Development. The application is now managed by another company and can be found at this link: https://itunes.apple.com/au/app/liberal-vic/id516471497?mt=8.</string>
 		<key>imageName</key>
 		<string>liberal</string>
 	</dict>

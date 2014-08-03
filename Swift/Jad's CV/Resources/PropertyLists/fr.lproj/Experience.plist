@@ -14,9 +14,9 @@
 		<key>organisation</key>
 		<string>Student Marketing Australia</string>
 		<key>position</key>
-		<string>Apple Campus Representative</string>
+		<string>Representant Apple au campus</string>
 		<key>description</key>
-		<string>I was chosen from a vast group of students for being the most approachable and outgoing to represent Apple products at UWA to students and staff. This job required the employees to be very independent as it was up to the campus representatives to create their roasters to meet targets. </string>
+		<string>J’ai été sélectionné parmi un large groupe d’étudiants pour mes qualités d’ouverture et de communication pour représenter les produits Apple auprès des étudiants et du personnel de l’université de l’Australie Occidentale. Cet emploi demandait d’être très autonome car il fallait gérer son propre emploi du temps afin d’atteindre les objectifs de la société. </string>
 		<key>imageName</key>
 		<string>apple</string>
 	</dict>
@@ -32,9 +32,9 @@
 		<key>organisation</key>
 		<string>AUC, iOS Workshop</string>
 		<key>position</key>
-		<string>Scholarship Recipient </string>
+		<string>Bénéficiaire d’un prix</string>
 		<key>description</key>
-		<string>I received scholarship from the Apple University Consortium to an iOS workshop in Sydney. During the workshop I was introduced to iOS development and have since continued to improve my skills and keep my expertise up to date.</string>
+		<string>J’ai gagné un prix (bourse) de l’Apple University Consortium pour assister a un atelier iOS a Sydney. Durant cet atelier je fut exposé au development pour iOS et depuis j’ai continué à perfectionner mes connaissances. </string>
 		<key>imageName</key>
 		<string>auc</string>
 	</dict>
@@ -52,7 +52,7 @@
 		<key>position</key>
 		<string>Database Manager</string>
 		<key>description</key>
-		<string>I assisted a UWA Professor in the School of Plant Biology create and maintain a database of plants she recorded for research. The main goal was that the database be made available for students as a learning tool during expeditions.</string>
+		<string>J’ai crée et maintenu une base de données pour un professeur de UWA, de la faculté de biologie des plantes. Le but principal de cette base de données était qu’elle devienne un outil d’apprentissage pour les étudiants en excursion sur le terrain.</string>
 		<key>imageName</key>
 		<string>uwa</string>
 	</dict>
@@ -68,9 +68,9 @@
 		<key>organisation</key>
 		<string>XciteLogic Development</string>
 		<key>position</key>
-		<string>Software Engineer</string>
+		<string>Ingénieur informatique</string>
 		<key>description</key>
-		<string>Working at XciteLogic Development improved my software development skills. I worked on several projects in teams of various sizes and I regularly met with clients to discuss ideas, scope and support. My specialisation was in iOS development and deployment. XciteLogic Development has been acquired by another IT company.</string>
+		<string>Travailler a XciteLogic Development m’a permit de perfectionner mes connaissance de development de logiciel. J’ai travaillé en équipe sur plusieurs projets de différentes tailles. Je rencontrais régulièrement les clients afin de discuter leurs besoins et specifications. Ma specialisation était de developer et mettre en place des applications iOS. XciteLogic Development fut racheté par une autre compagnie informatique.</string>
 		<key>imageName</key>
 		<string>xcite</string>
 	</dict>
@@ -86,9 +86,9 @@
 		<key>organisation</key>
 		<string>Datacom</string>
 		<key>position</key>
-		<string>Software Engineer</string>
+		<string>Ingénieur informatique</string>
 		<key>description</key>
-		<string>I was amongst a small group of employees which were kept after Datacom acquired XciteLogic Development. My role is to develop iOS applications for both internal and external projects. I create, maintain and fix projects for clients of various size. </string>
+		<string>Je fut parmi un petit groupe d’employés que Datacom a gardé après leur acquisition de XciteLogic Development. Ma position de developer des applications iOS pour des projets internes et externes à la société. Je crée, maintiens et améliore des projets pour des clients de différent taille.</string>
 		<key>imageName</key>
 		<string>datacom</string>
 	</dict>
@@ -104,9 +104,9 @@
 		<key>organisation</key>
 		<string>Appulse</string>
 		<key>position</key>
-		<string>Partner &amp; Co-founder</string>
+		<string>Partenaire &amp; Co-fondateur</string>
 		<key>description</key>
-		<string>I started a business partnership called Appulse with two fellow students which creates websites and mobile applications. We use Appulse as our creative outlet for developing experiments. Its current focus is to try new ways to develop software and learn from them. </string>
+		<string>J’ai crée la société Appulse avec deux amis étudiants. Cette société crée des sites web et applications pour appareils mobiles. Le but principal d’Appulse est d’experimenter de nouvelles façons de developer des logiciels. </string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -122,7 +122,7 @@
 		<key>position</key>
 		<string>Coach&apos;s Box App</string>
 		<key>description</key>
-		<string>Appulse’s first project was to produce an iPad application for an Australian Rules Football board game. The project proved to be a great learning experience in iOS programming, scoping deliverables and team development. The app is available on the App Store via this link: https://itunes.apple.com/au/app/coachs-box/id500384054?mt=8.</string>
+		<string>Le premier projet d’Appulse a été de developer une application iPad pour un jeu de société sur le Football Australien. Le projet fut une grande experience d’apprentissage dans la programmation iOS, dans la definition des specifications et du travail en équipe.  L’application est disponible sur le App Store via le lien: https://itunes.apple.com/au/app/coachs-box/id500384054?mt=8.</string>
 		<key>imageName</key>
 		<string>cb</string>
 	</dict>
@@ -140,7 +140,7 @@
 		<key>position</key>
 		<string>UEC App</string>
 		<key>description</key>
-		<string>Appulse released an application for the University Engineer Club of Western Australia. The universal iOS application keeps track of the latest news and events of the club and is available on the App Store at the following link: https://itunes.apple.com/au/app/uec/id805489954?mt=8.</string>
+		<string>Appulse a crée un application pour le club des ingénieurs de l’université de l’Australie Occidentale. L’application universelle iOS affiche les dernières nouvelles et les derniers événements du club. Elle est disponible via ce lien: https://itunes.apple.com/au/app/uec/id805489954?mt=8.</string>
 		<key>imageName</key>
 		<string>uec</string>
 	</dict>
@@ -158,7 +158,7 @@
 		<key>position</key>
 		<string>Department of Fisheries Kiosk App</string>
 		<key>description</key>
-		<string>I was part of the development team for an iPad kiosk application which is on display at the Department of Fisheries in Hillarys, Western Australia. The application allows the visitors to explore different regions&apos; flora and fauna through pictures, movies and interactive games.</string>
+		<string>J’ai fait parti de l’équipe de development d’une application iPad kiosque pour une exposition du Département de la Pêche de Australie Occidentale. L’application permet au visiteurs d’explorer la faune et la flore des différentes regions de l’état au travers d’images, de films et de jeux interactifs. </string>
 		<key>imageName</key>
 		<string>gov</string>
 	</dict>
@@ -176,7 +176,7 @@
 		<key>position</key>
 		<string>Liberal Victoria App</string>
 		<key>description</key>
-		<string>My first commercial application was released for the Liberal Party during my employment at XciteLogic Development. The application is now managed by another party  and can be found at this link: https://itunes.apple.com/au/app/liberal-vic/id516471497?mt=8.</string>
+		<string>Ma première application commerciale a été crée pour le parti politique Liberal durant mon emploi a XciteLogic Development. L’application est maintenant gérée par une autre société et peut-être accédé par le lien: https://itunes.apple.com/au/app/liberal-vic/id516471497?mt=8.</string>
 		<key>imageName</key>
 		<string>liberal</string>
 	</dict>
@@ -194,7 +194,7 @@
 		<key>position</key>
 		<string>Catholic Education Australia App</string>
 		<key>description</key>
-		<string>My first project at Datacom was to fix the iCE iOS application for the Catholic Education Office of WA. The project was successfully brought back on track and it has since been uploaded on the App Store at the following link: https://itunes.apple.com/au/app/ice/id766249312?mt=8.</string>
+		<string>Mon premier project a Datacom a été d’améliorer l’application iOS iCE pour le “Catholic Education Office of WA”. Cette amelioration fut un succès et l’application a été téléchargée sur l’App Store via le lien: https://itunes.apple.com/au/app/ice/id766249312?mt=8.</string>
 		<key>imageName</key>
 		<string>ice</string>
 	</dict>
@@ -212,7 +212,7 @@
 		<key>position</key>
 		<string>Billanook College App </string>
 		<key>description</key>
-		<string>I led a project which aims to greatly improve the use iPads in schools. The iOS application called My Billanook integrates with the school’s administration system to provide modules such as calendar, homework, notices, lesson plans and newsletters. My Billanook will be in use starting from term two 2014.</string>
+		<string>J’ai dirigé un projet dont le but est d’améliorer l’utilisation des iPads dans les écoles. L’application iOS appelée My Billanook se connecte au system administratif de l’école pour afficher le calendrier, les devoirs, le planning des cours et les nouvelles. My Billanook a été utilisé depuis le début 2014.</string>
 		<key>imageName</key>
 		<string>billanook</string>
 	</dict>
@@ -230,7 +230,7 @@
 		<key>position</key>
 		<string>Honours Thesis</string>
 		<key>description</key>
-		<string>For my thesis I researched and implemented an algorithm to calculate the strength of a touch using the motions it induces on a smartphone or tablet. The research project was a year long and involved writing a paper, programming a mobile application, presenting the research and creating a conference poster. The application demonstrating the algorithm and the dissertation paper can be found at this link: https://github.com/jad6/DOMATI-iOS.</string>
+		<string>Le sujet de recherche de ma thèse est l’implementation d’un algorithme qui calcule la force d’une touche sur un smartphone ou une tablette en utilisant les motions induites par l’interaction. Cette recherche a duré un an et j’ai produit: un article, une application iOS, une soutenance et un poster de conférence. L’application démontrant l’algorithme et l’article peut être trouvé sur le lien: https://github.com/jad6/DOMATI-iOS.</string>
 		<key>imageName</key>
 		<string>domati</string>
 	</dict>

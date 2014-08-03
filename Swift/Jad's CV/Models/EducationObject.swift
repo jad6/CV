@@ -37,8 +37,8 @@ class Education: ExtractedObject {
         self.status = dictionary["status"] as String
         self.universityLogo = UIImage(named: dictionary["universityLogoImageName"] as String)
         
-        let backgrounfImageInfo = dictionary["backgroundImageInfo"] as NSDictionary
-        self.backgroundImage = ExtractedObject.loadBackgroundImage(backgrounfImageInfo)
+        let backgroundImageInfo = dictionary["backgroundImageInfo"] as NSDictionary
+        self.backgroundImage = ExtractedObject.loadBackgroundImage(imageInfo: backgroundImageInfo)
         
         super.init(dictionary: dictionary)
     }

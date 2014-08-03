@@ -10,11 +10,11 @@
 		<key>lastName</key>
 		<string>Plummer</string>
 		<key>position</key>
-		<string>Retired Professor</string>
+		<string>Professeur à la retraite</string>
 		<key>location</key>
-		<string>UWA School of Plant Biology</string>
+		<string>Département de la biologie des plantes de UWA</string>
 		<key>connection</key>
-		<string>I managed Julie&apos;s plant database for research.</string>
+		<string>J’ai maintenu la base de données de recherche pour ce professeur.</string>
 		<key>email</key>
 		<string>towerplummer@gmail.com</string>
 		<key>phoneNumber</key>
@@ -30,11 +30,11 @@
 		<key>lastName</key>
 		<string>Datta</string>
 		<key>position</key>
-		<string>Professor</string>
+		<string>Professeur</string>
 		<key>location</key>
-		<string>University of Western Australia</string>
+		<string>Université d’Australie Occidentale</string>
 		<key>connection</key>
-		<string>Final year thesis supervisor.</string>
+		<string>Mon superviseur de projet de thèse.</string>
 		<key>email</key>
 		<string>amitava.datta@uwa.edu.au</string>
 		<key>phoneNumber</key>
@@ -48,11 +48,11 @@
 		<key>lastName</key>
 		<string>Sacroug</string>
 		<key>position</key>
-		<string>Project Manager</string>
+		<string>Chef de projet</string>
 		<key>location</key>
 		<string>XciteLogic Development</string>
 		<key>connection</key>
-		<string>Ex project manager at XciteLogic Development.</string>
+		<string>Ancien chef de projet à XciteLogic Development.</string>
 		<key>email</key>
 		<string>monica@ramiken.com</string>
 		<key>phoneNumber</key>
@@ -66,11 +66,11 @@
 		<key>lastName</key>
 		<string>Urquhart</string>
 		<key>position</key>
-		<string>Software Developer</string>
+		<string>Ingénieur informatique</string>
 		<key>location</key>
 		<string>Express VPN</string>
 		<key>connection</key>
-		<string>Matt was a colleague at Xcite and Datacom.</string>
+		<string>Matt fut un collègue à Xcite et Datacom.</string>
 		<key>email</key>
 		<string>matt.u@chengbao.com.hk</string>
 		<key>phoneNumber</key>
@@ -84,11 +84,11 @@
 		<key>lastName</key>
 		<string>Fitzgerald</string>
 		<key>position</key>
-		<string>Guild VP, Ex-Google Intern</string>
+		<string>Vice-président de l’association des étudiants de UWA</string>
 		<key>location</key>
-		<string>University of Western Australia</string>
+		<string>Université d’Australie Occidentale</string>
 		<key>connection</key>
-		<string>I worked with Cam on the UEC app.</string>
+		<string>J’ai travaillé avec Cam sur l’application UEC.</string>
 		<key>email</key>
 		<string>vp@guild.uwa.edu.au</string>
 		<key>phoneNumber</key>

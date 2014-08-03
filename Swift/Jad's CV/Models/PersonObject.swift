@@ -59,8 +59,8 @@ class RésuméHolder : PersonObject {
     init(dictionary: NSDictionary) {
         self.detailDescription = dictionary["description"] as String
         
-        let backgrounfImageInfo = dictionary["backgroundImageInfo"] as NSDictionary
-        self.backgroundImage = ExtractedObject.loadBackgroundImage(backgrounfImageInfo)
+        let backgroundImageInfo = dictionary["backgroundImageInfo"] as NSDictionary
+        self.backgroundImage = ExtractedObject.loadBackgroundImage(imageInfo: backgroundImageInfo)
         
         super.init(dictionary: dictionary)
     }
