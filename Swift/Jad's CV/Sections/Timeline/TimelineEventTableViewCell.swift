@@ -84,7 +84,7 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         
         dateLabel.frame.size = LayoutConstants.dateLabelSize
         dateLabel.frame.origin.x = LayoutConstants.Padding.side
-        dateLabel.centerVerticallyWithReferenceView(self.contentView)
+        dateLabel.centerVerticallyWithReferenceRect(self.contentView.bounds)
         
         circleView.frame.size = LayoutConstants.circleViewSizeForImportance(importance)
         if importance != .Major {
@@ -92,7 +92,7 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         } else {
             circleView.frame.origin.x = dateLabel.frame.maxX + LayoutConstants.Padding.betweenDateAndCircle
         }
-        circleView.centerVerticallyWithReferenceView(self.contentView)
+        circleView.centerVerticallyWithReferenceRect(self.contentView.bounds)
         circleView.maskToCircle()
         
         lineView.frame.size.width = LayoutConstants.lineViewWidth

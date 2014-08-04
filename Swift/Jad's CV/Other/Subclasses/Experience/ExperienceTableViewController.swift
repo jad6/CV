@@ -24,6 +24,16 @@ class ExperienceTableViewController: DynamicTypeTableViewController {
         self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let indexPathZero = NSIndexPath(forRow: 0, inSection: 0)
+        if UIDevice.isPad() && listData.isValidIndexPath(indexPathZero) {
+            tableView.selectRowAtIndexPath(indexPathZero, animated: false, scrollPosition: .Top)
+            tableView(tableView, didSelectRowAtIndexPath: indexPathZero)
+        }
+    }
+    
     override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
         if let experience = object as? ExperienceObject {
             if let tableCell = cell as? ExperienceTableViewCell {

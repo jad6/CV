@@ -50,6 +50,7 @@
 		05B3DDFD19877AA300C4B057 /* DynamicTypeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DDFC19877AA300C4B057 /* DynamicTypeCollectionViewController.swift */; };
 		05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */; };
 		05BF820B1980C1550070DE37 /* ExperienceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */; };
+		05C5C5B7198F822D00FA1AD1 /* ExperienceDetailView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5C5B6198F822D00FA1AD1 /* ExperienceDetailView_Phone.swift */; };
 		05D2C51F1987820C009CDF3A /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D2C51E1987820C009CDF3A /* Array.swift */; };
 		05DC99D31977870F00AF6BB7 /* ExtractedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */; };
 		05DC99D51977A7D200AF6BB7 /* ExperienceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */; };
@@ -138,6 +139,7 @@
 		05B3DDFC19877AA300C4B057 /* DynamicTypeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeCollectionViewController.swift; sourceTree = "<group>"; };
 		05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView.swift; sourceTree = "<group>"; };
+		05C5C5B6198F822D00FA1AD1 /* ExperienceDetailView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailView_Phone.swift; sourceTree = "<group>"; };
 		05D2C51E1987820C009CDF3A /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		05DC99D21977870F00AF6BB7 /* ExtractedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractedObject.swift; sourceTree = "<group>"; };
 		05DC99D41977A7D200AF6BB7 /* ExperienceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceObject.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 			children = (
 				05BF82081980C0F80070DE37 /* ExperienceDetailViewController.swift */,
 				05BF820A1980C1550070DE37 /* ExperienceDetailView.swift */,
+				05C5C5B6198F822D00FA1AD1 /* ExperienceDetailView_Phone.swift */,
 			);
 			name = "Experience Detail";
 			path = ExperienceDetail;
@@ -585,6 +588,7 @@
 				05F1880A197A41570025756F /* FormattedTextView.swift in Sources */,
 				05F5B625198B814C00E1C98F /* DynamicTypeFont.swift in Sources */,
 				05F9EAAA19865A26001D2633 /* EducationView_Phone.swift in Sources */,
+				05C5C5B7198F822D00FA1AD1 /* ExperienceDetailView_Phone.swift in Sources */,
 				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
 				05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,

@@ -14,7 +14,7 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
     return view as? ExperienceDetailView
     }
     
-    var experience: ExperienceObject {
+    var experience: ExperienceObject! {
     didSet {
         setupExperienceInfo()
     }
@@ -22,8 +22,7 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
     
     //MARK: Init
     
-    init(experience: ExperienceObject) {
-
+    init(experience: ExperienceObject!) {
         //FIXME: ... Words cannot describe this Xcode fail
 //        self.experience = experience
         self.experience = ExtraCurricularActivity.extraCurricularActivities()[0]
@@ -31,18 +30,26 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
         super.init(nibName: nil, bundle: nil)
     }
     
+    convenience init() {
+        self.init(experience: nil)
+    }
+    
     //MARK: View lifecycle
     
     override func loadView() {
-        view = ExperienceDetailView()
+        view = UIDevice.isPad() ? ExperienceDetailView() : ExperienceDetailView_Phone()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController.interactivePopGestureRecognizer.delegate = self
+        if navigationController {
+            navigationController.interactivePopGestureRecognizer.delegate = self
+        }
 
-        detailView.backButton.addTarget(self, action: "backAction:", forControlEvents: .TouchUpInside)
+        if let detailView_phone = detailView as? ExperienceDetailView_Phone {
+            detailView_phone.backButton.addTarget(self, action: "backAction:", forControlEvents: .TouchUpInside)
+        }
         
         setupExperienceInfo()
     }

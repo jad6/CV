@@ -41,7 +41,7 @@ class ExtraCurricularTableViewCell: ExperienceTableViewCell {
 
         activityImageView.frame.size = LayoutConstants.imageViewSize
         activityImageView.frame.origin.x = LayoutConstants.Padding.side
-        activityImageView.centerVerticallyWithReferenceView(self.contentView)
+        activityImageView.centerVerticallyWithReferenceRect(self.contentView.bounds)
         activityImageView.maskToRadius(LayoutConstants.imageViewMaskingRadius)
         
         let labelXOrigin = activityImageView.frame.maxX + LayoutConstants.Padding.betweenHorizontal

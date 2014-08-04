@@ -239,20 +239,20 @@ extension UIView {
      *  This method centers the view to be centered on the X axis with relation
      *  to the passed view.
      *
-     *  :param: view The view which is used as a horizontal centering reference.
+     *  :param: rect The rect which is used as a horizontal centering reference.
      */
-    func centerHorizontallyWithReferenceView(view: UIView) {
-        self.frame.origin.x = horizontalCenterWithReferenceFrame(view.frame)
+    func centerHorizontallyWithReferenceRect(rect: CGRect) {
+        self.frame.origin.x = horizontalCenterWithReferenceFrame(rect)
     }
 
     /**
      *  This method centers the view to be centered on the Y axis with relation
      *  to the passed view.
      *
-     *  :param: view The view which is used as a vertical centering reference.
+     *  :param: rect The rect which is used as a vertical centering reference.
      */
-    func centerVerticallyWithReferenceView(view: UIView) {
-        self.frame.origin.y = verticalCenterWithReferenceFrame(view.frame)
+    func centerVerticallyWithReferenceRect(rect: CGRect) {
+        self.frame.origin.y = verticalCenterWithReferenceFrame(rect)
     }
     
     //MARK: Masking

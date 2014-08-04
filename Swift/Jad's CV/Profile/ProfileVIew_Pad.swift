@@ -36,19 +36,19 @@ class ProfileView_Pad: ProfileView {
         
         if expanded {
             profilePictureImageView.frame.size = LayoutConstants.PictureSizes.big
-            profilePictureImageView.centerHorizontallyWithReferenceView(self)
+            profilePictureImageView.centerHorizontallyWithReferenceRect(self.bounds)
             
             nameLabel.frame.size = nameLabel.sizeThatFits(bounds.size).ceilSize
-            nameLabel.centerHorizontallyWithReferenceView(self)
+            nameLabel.centerHorizontallyWithReferenceRect(self.bounds)
             
             descriptionLabel.frame.size = descriptionLabel.sizeThatFits(bounds.size).ceilSize
-            descriptionLabel.centerHorizontallyWithReferenceView(self)
+            descriptionLabel.centerHorizontallyWithReferenceRect(self.bounds)
             
             emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
-            emailButton.centerHorizontallyWithReferenceView(self)
+            emailButton.centerHorizontallyWithReferenceRect(self.bounds)
             
             phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
-            phoneButton.centerHorizontallyWithReferenceView(self)
+            phoneButton.centerHorizontallyWithReferenceRect(self.bounds)
             
             let fadeContentTopPadding = 16 * LayoutConstants.Padding.betweenVertical
             
@@ -64,7 +64,7 @@ class ProfileView_Pad: ProfileView {
         }
         
         textView.frame.origin.y = phoneButton.frame.maxY + (4 * LayoutConstants.Padding.betweenVertical)
-        textView.centerHorizontallyWithReferenceView(self)
+        textView.centerHorizontallyWithReferenceRect(self.bounds)
         
         cloudImageView.frame.size.width = max(max(emailButton.frame.size.width, phoneButton.frame.size.width), textView.frame.size.width) + CloudImageLayout.resizableInsets.left + CloudImageLayout.resizableInsets.right
         cloudImageView.frame.size.height = phoneButton.frame.size.height + emailButton.frame.size.height + textView.frame.size.height + (5 * LayoutConstants.Padding.betweenVertical) + CloudImageLayout.resizableInsets.top + CloudImageLayout.resizableInsets.bottom

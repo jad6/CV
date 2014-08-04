@@ -16,12 +16,10 @@ class ExperienceDetailView: DynamicTypeView {
             static let betweenVerticalSmall: CGFloat = 3.0
         }
     
-        static let backButtonSize = CGSize(width: 48.0, height: 44.0)
         static let imagveViewSize = CGSize(width: 70.0, height: 70.0)
         static let imageViewMaskingRadius: CGFloat = 18.0
     }
         
-    private(set) var backButton: UIButton!
     private(set) var organisationImageView: UIImageView!
     private(set) var positionLabel: UILabel!
     private(set) var organisationLabel: UILabel!
@@ -29,7 +27,6 @@ class ExperienceDetailView: DynamicTypeView {
     private(set) var textView: FormattedTextView!
     
     init(frame: CGRect) {
-        self.backButton = UIButton()
         self.organisationImageView = UIImageView()
         self.positionLabel = UILabel()
         self.organisationLabel = UILabel()
@@ -37,12 +34,6 @@ class ExperienceDetailView: DynamicTypeView {
         self.textView = FormattedTextView()
         
         super.init(frame: frame)
-        
-        let backImage = UIImage(named: "back")
-        self.backButton.setImage(backImage, forState: .Normal)
-        self.backButton.contentMode = .ScaleAspectFit
-        self.backButton.frame.size = LayoutConstants.backButtonSize
-        self.addSubview(self.backButton)
         
         self.organisationImageView.frame.size = LayoutConstants.imagveViewSize
         self.organisationImageView.maskToRadius(LayoutConstants.imageViewMaskingRadius)
@@ -70,19 +61,19 @@ class ExperienceDetailView: DynamicTypeView {
         super.layoutSubviews()
         
         organisationImageView.frame.origin.y = LayoutConstants.Padding.top
-        organisationImageView.centerHorizontallyWithReferenceView(self)
+        organisationImageView.centerHorizontallyWithReferenceRect(self.bounds)
         
         positionLabel.frame.size = positionLabel.sizeThatFits(bounds.size).ceilSize
         positionLabel.frame.origin.y = organisationImageView.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
-        positionLabel.centerHorizontallyWithReferenceView(self)
+        positionLabel.centerHorizontallyWithReferenceRect(self.bounds)
 
         organisationLabel.frame.size = organisationLabel.sizeThatFits(bounds.size).ceilSize
         organisationLabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
-        organisationLabel.centerHorizontallyWithReferenceView(self)
+        organisationLabel.centerHorizontallyWithReferenceRect(self.bounds)
     
         dateLabel.frame.size = dateLabel.sizeThatFits(bounds.size).ceilSize
         dateLabel.frame.origin.y = organisationLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
-        dateLabel.centerHorizontallyWithReferenceView(self)
+        dateLabel.centerHorizontallyWithReferenceRect(self.bounds)
         
         textView.frame.origin.y = dateLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
         textView.frame.size.width = bounds.size.width

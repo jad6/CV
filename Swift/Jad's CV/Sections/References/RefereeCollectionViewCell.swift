@@ -110,16 +110,16 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
         
         phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
         phoneButton.frame.origin.y = max(connectionLabel.frame.maxY, photoImageView.frame.maxY) + LayoutConstants.Padding.betweenInfoAndContact
-        phoneButton.centerHorizontallyWithReferenceView(self.contentView)
+        phoneButton.centerHorizontallyWithReferenceRect(self.contentView.bounds)
         
         separatorView.frame.size.width = floor(bounds.size.width * LayoutConstants.Separator.widthFactor)
         separatorView.frame.size.height = LayoutConstants.Separator.height
         separatorView.frame.origin.y = phoneButton.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
-        separatorView.centerHorizontallyWithReferenceView(self.contentView)
+        separatorView.centerHorizontallyWithReferenceRect(self.contentView.bounds)
 
         emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
         emailButton.frame.origin.y = separatorView.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
-        emailButton.centerHorizontallyWithReferenceView(self.contentView)
+        emailButton.centerHorizontallyWithReferenceRect(self.contentView.bounds)
         
         cardBackgroundImageView.frame = bounds
     }

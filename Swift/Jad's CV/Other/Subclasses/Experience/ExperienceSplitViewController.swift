@@ -19,6 +19,10 @@ class ExperienceSplitViewController: SplitViewController {
     return detailViewController as? ExperienceDetailViewController
     }
     
+    init() {
+        super.init(masterViewController: TimelineTableViewController(), detailViewController: ExperienceDetailViewController())
+    }
+    
     override func masterViewController(masterViewController: UIViewController, didSelectObject object: Any) {
         if let experience = object as? ExperienceObject {
             experienceDetailViewController.experience = experience

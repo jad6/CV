@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     /// The model object of the résumé holder.
     let résuméHolder: RésuméHolder
     
-    var sectionsPageViewController: ExperienceNavigationController!
+    var sectionsPageViewController: ExperienceSplitViewController!
     
     var homeView: HomeView! {
     return view as? HomeView
@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     //MARK: Init
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        self.sectionsPageViewController = ExperienceNavigationController(rootViewController: TimelineTableViewController())
+        self.sectionsPageViewController = ExperienceSplitViewController()
         self.résuméHolder = RésuméHolder.résuméHolder()
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

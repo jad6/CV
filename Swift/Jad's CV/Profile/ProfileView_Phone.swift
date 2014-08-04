@@ -31,23 +31,23 @@ class ProfileView_Phone: ProfileView {
         
         if expanded {
             profilePictureImageView.frame.size = LayoutConstants.PictureSizes.big
-            profilePictureImageView.centerHorizontallyWithReferenceView(self)
+            profilePictureImageView.centerHorizontallyWithReferenceRect(self.bounds)
             profilePictureImageView.frame.origin.y = LayoutConstants.statusBarHeight + LayoutConstants.Padding.top
             
             nameLabel.frame.size = nameLabel.sizeThatFits(bounds.size).ceilSize
-            nameLabel.centerHorizontallyWithReferenceView(self)
+            nameLabel.centerHorizontallyWithReferenceRect(self.bounds)
             nameLabel.frame.origin.y = profilePictureImageView.frame.maxY + LayoutConstants.Padding.side
             
             descriptionLabel.frame.size = descriptionLabel.sizeThatFits(bounds.size).ceilSize
-            descriptionLabel.centerHorizontallyWithReferenceView(self)
+            descriptionLabel.centerHorizontallyWithReferenceRect(self.bounds)
             descriptionLabel.frame.origin.y = nameLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
             
             emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
-            emailButton.centerHorizontallyWithReferenceView(self)
+            emailButton.centerHorizontallyWithReferenceRect(self.bounds)
             emailButton.frame.origin.y = descriptionLabel.frame.maxY + (2 * LayoutConstants.Padding.betweenVertical)
             
             phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
-            phoneButton.centerHorizontallyWithReferenceView(self)
+            phoneButton.centerHorizontallyWithReferenceRect(self.bounds)
             phoneButton.frame.origin.y = emailButton.frame.maxY
         } else {
             // This makes the buttons disppear nicely with the animations

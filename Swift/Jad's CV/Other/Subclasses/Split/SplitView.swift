@@ -38,6 +38,18 @@ class SplitView: UIView {
         self.masterViewWidth = masterViewWidth
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        masterView.frame.origin.y = 0.0
+        masterView.frame.size.width = masterViewWidth
+        masterView.frame.size.height = bounds.size.height
+        
+        detailView.frame.size.width = bounds.size.width - masterViewWidth
+        detailView.frame.size.height = bounds.size.height
+        detailView.frame.origin.x = masterView.frame.maxX
+    }
+    
     //MARK: Master width
     
     func setMasterWidth(width: CGFloat, animated: Bool) {
