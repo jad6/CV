@@ -8,15 +8,11 @@
 
 import UIKit
 
-protocol ExperienceTableViewControllerDelegate {
-    func experienceTableViewController(experienceTableViewController: ExperienceTableViewController, didSelectExperience experience: ExperienceObject)
-}
-
 //FIXME: Generics
 //class ExperienceTableViewController<T: ExperienceObject>: DynamicTypeTableViewController {
 class ExperienceTableViewController: DynamicTypeTableViewController {
 
-    var delegate: ExperienceTableViewControllerDelegate?
+    var delegate: MasterViewControllerDelegate?
     
     init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -41,7 +37,7 @@ class ExperienceTableViewController: DynamicTypeTableViewController {
     override func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
         if let experience = object as? ExperienceObject {
             if UIDevice.isPad() {
-                delegate?.experienceTableViewController(self, didSelectExperience: experience)
+                delegate?.masterViewController(self, didSelectObject: object)
             } else {
                 let detailViewController = ExperienceDetailViewController(experience: experience)
                 navigationController.pushViewController(detailViewController, animated: true)

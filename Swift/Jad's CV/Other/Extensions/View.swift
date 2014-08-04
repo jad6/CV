@@ -242,7 +242,7 @@ extension UIView {
      *  :param: view The view which is used as a horizontal centering reference.
      */
     func centerHorizontallyWithReferenceView(view: UIView) {
-        self.frame.origin.x = horizontalCenterWithReferenceFrame(view.bounds)
+        self.frame.origin.x = horizontalCenterWithReferenceFrame(view.frame)
     }
 
     /**
@@ -252,7 +252,7 @@ extension UIView {
      *  :param: view The view which is used as a vertical centering reference.
      */
     func centerVerticallyWithReferenceView(view: UIView) {
-        self.frame.origin.y = verticalCenterWithReferenceFrame(view.bounds)
+        self.frame.origin.y = verticalCenterWithReferenceFrame(view.frame)
     }
     
     //MARK: Masking

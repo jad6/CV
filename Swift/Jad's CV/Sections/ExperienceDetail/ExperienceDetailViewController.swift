@@ -14,7 +14,11 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
     return view as? ExperienceDetailView
     }
     
-    let experience: ExperienceObject
+    var experience: ExperienceObject {
+    didSet {
+        setupExperienceInfo()
+    }
+    }
     
     //MARK: Init
     
@@ -40,6 +44,18 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
 
         detailView.backButton.addTarget(self, action: "backAction:", forControlEvents: .TouchUpInside)
         
+        setupExperienceInfo()
+    }
+    
+    //MARK: Actions
+    
+    func backAction(sender: AnyObject) {
+        navigationController.popViewControllerAnimated(true)
+    }
+    
+    //MARK: Logic
+    
+    func setupExperienceInfo() {
         if let image = experience.organisationImage {
             detailView.organisationImageView.image = image
         }
@@ -47,11 +63,5 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
         detailView.dateLabel.text = experience.timeSpentString(" - ")
         detailView.textView.text = experience.detailedDescription
         detailView.positionLabel.text = experience.position
-    }
-    
-    //MARK: Actions
-    
-    func backAction(sender: AnyObject) {
-        navigationController.popViewControllerAnimated(true)
     }
 }
