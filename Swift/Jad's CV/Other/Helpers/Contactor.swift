@@ -11,15 +11,19 @@ import MessageUI
 
 class Contactor: NSObject, MFMailComposeViewControllerDelegate {
     
-    var viewController: UIViewController?
+    //MARK:- Properties
     
     class var sharedContactor: Contactor {
     struct Static {
         static let instance = Contactor()
-    }
-    return Static.instance
+        }
+        return Static.instance
     }
     
+    var viewController: UIViewController?
+    
+    //MARK:- Logic
+
     class func call(#number: String) {
         if UIDevice.canCall() {
             let telPhone = "tel://" + number.stringByReplacingOccurrencesOfString(" ", withString: "")

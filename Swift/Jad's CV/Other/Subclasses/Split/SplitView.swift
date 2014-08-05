@@ -12,14 +12,26 @@ private let kDefaultMasterWidth: CGFloat = 320.0
 
 class SplitView: UIView {
     
+    //MARK:- Properties
+    
     var masterViewWidth: CGFloat {
     didSet {
         layoutSubviews()
     }
     }
 
-    private(set) var masterView: UIView!
-    private(set) var detailView: UIView!
+    let masterView: UIView
+    let detailView: UIView
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        self.masterView = UIView()
+        self.detailView = UIView()
+        self.masterViewWidth = kDefaultMasterWidth
+
+        super.init(coder: aDecoder)
+    }
     
     init(masterView: UIView, detailView: UIView) {
         self.masterView = masterView
@@ -38,6 +50,8 @@ class SplitView: UIView {
         self.masterViewWidth = masterViewWidth
     }
     
+    //MARK:- Layout
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -50,10 +64,10 @@ class SplitView: UIView {
         detailView.frame.origin.x = masterView.frame.maxX
     }
     
-    //MARK: Master width
+    //MARK:- Logic
     
     func setMasterWidth(width: CGFloat, animated: Bool) {
-        if animated {
+        if animated == true {
             UIView.animateWithDuration(Animations.Durations.Short.toRaw()) {
                 self.masterViewWidth = width
             }

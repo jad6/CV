@@ -10,31 +10,34 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    /// The model object of the résumé holder.
-    let résuméHolder: RésuméHolder
+    //MARK:- Properties
     
-    var sectionsPageViewController: ExperienceSplitViewController!
+    /// The model object of the résumé holder.
+    let résuméHolder = RésuméHolder.résuméHolder()
+    
+    let sectionsPageViewController = RefereesCollectionViewController()
     
     var homeView: HomeView! {
     return view as? HomeView
     }
     
-    //MARK: Init
+    //MARK:- Init
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        self.sectionsPageViewController = ExperienceSplitViewController()
-        self.résuméHolder = RésuméHolder.résuméHolder()
-        
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addChildViewController(self.sectionsPageViewController)
     }
     
-    convenience init() {
+    convenience override init() {
         self.init(nibName: nil, bundle: nil)
     }
     
-    //MARK: View lifecycle
+    //MARK:- View lifecycle
     
     override func loadView() {
         view = HomeView(sectionsPageView: sectionsPageViewController.view)
@@ -52,13 +55,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    //MARK: Status bar
+    //MARK:- Status bar
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return homeView.profileView.expanded ? .Default : .LightContent
     }
     
-    //MARK: Actions
+    //MARK:- Actions
     
     func profileInfoAction(sender: AnyObject) {
         homeView.handleProfileViewFocus()
@@ -76,7 +79,7 @@ class HomeViewController: UIViewController {
         Contactor.call(number: résuméHolder.phoneNumber)
     }
     
-    //MARK: Logic
+    //MARK:- Logic
     
     func setupProfileView() {
         let profileView = homeView.profileView

@@ -10,7 +10,9 @@ import UIKit
 
 class ProfileView_Phone: ProfileView {
     
-    private var fadeImageView: UIImageView!
+    //MARK:- Properties
+    
+    private let fadeImageView = UIImageView()
     
     override var expanded: Bool {
     didSet {
@@ -18,18 +20,27 @@ class ProfileView_Phone: ProfileView {
     }
     }
     
-    init(frame: CGRect) {
-        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsets(top: 263.0, left: 0.0, bottom: 0.0, right: 0.0))
-        self.fadeImageView = UIImageView(image: fadeImage)
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsets(top: 263.0, left: 0.0, bottom: 0.0, right: 0.0))
+        self.fadeImageView.image = fadeImage
         
         self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 20, bottom: 0.0, right: 20)
     }
+    
+    //MARK:- Layout
 
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if expanded {
+        if expanded == true {
             profilePictureImageView.frame.size = LayoutConstants.PictureSizes.big
             profilePictureImageView.centerHorizontallyWithReferenceRect(self.bounds)
             profilePictureImageView.frame.origin.y = LayoutConstants.statusBarHeight + LayoutConstants.Padding.top

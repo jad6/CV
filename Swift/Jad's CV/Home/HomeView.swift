@@ -10,23 +10,28 @@ import UIKit
 
 class HomeView: UIView {
 
-    private(set) var sectionsPageView: UIView!
-    private(set) var profileView: ProfileView!
+    //MARK:- Properties
+
+    let sectionsPageView: UIView
+    let profileView = UIDevice.isPad() ? ProfileView_Pad() : ProfileView_Phone()
     
-    init(frame: CGRect) {
-        self.profileView = UIDevice.isPad() ? ProfileView_Pad() : ProfileView_Phone()
-        
-        super.init(frame: frame)
-        
-        self.addSubview(self.profileView)
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        self.sectionsPageView = UIView()
+        super.init(coder: aDecoder)
     }
 
-    convenience init(sectionsPageView: UIView) {
-        self.init(frame: CGRectZero)
-        
-        self.addSubview(sectionsPageView)
+    init(sectionsPageView: UIView) {
         self.sectionsPageView = sectionsPageView
+        
+        super.init(frame: CGRectZero)
+        
+        self.addSubview(self.profileView)
+        self.addSubview(sectionsPageView)
     }
+    
+    //MARK:- Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -44,15 +49,15 @@ class HomeView: UIView {
     func handleProfileViewFocus() {
         profileView.expanded = !profileView.expanded
         
-        if profileView.expanded {
+        if profileView.expanded == true {
             profileView.backgroundImageView.blurEffectView.setHidden(true, animated: true, duration: kProfileViewAnimationDuration, completion: nil)
         }
         
         UIView.animateWithDuration(kProfileViewAnimationDuration, animations: {
             self.layoutSubviews()
             self.profileView.layoutSubviews()
-        }, completion: { finished in
-            if finished && !self.profileView.expanded {
+            }, completion: { finished in
+            if finished == true && self.profileView.expanded == false {
                 self.profileView.backgroundImageView.blurEffectView.setHidden(false, animated: true, duration: Animations.Durations.Short.toRaw(), completion: nil)
             }
         })

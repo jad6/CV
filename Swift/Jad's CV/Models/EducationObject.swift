@@ -23,14 +23,14 @@ class Education: ExtractedObject {
         
         assert(educationObjects.count == 1, "There needs to be exactly one (1) education object")
         
-        return educationObjects[0] as Education
+        return educationObjects.first as Education
     }
     
     override class func filePathForResource() -> String? {
         return NSBundle.mainBundle().pathForResource("Education", ofType: "plist")
     }
     
-    init(dictionary: NSDictionary) {
+    required init(dictionary: NSDictionary) {
         self.detailDescription = dictionary["description"] as String
         self.completion = dictionary["completion"] as String
         self.establishment = dictionary["establishment"] as String

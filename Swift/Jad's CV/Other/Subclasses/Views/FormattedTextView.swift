@@ -10,11 +10,22 @@ import UIKit
 
 class FormattedTextView: UITextView {
     
-    init(frame: CGRect, textContainer: NSTextContainer!) {
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect, textContainer: NSTextContainer!) {
         super.init(frame: frame, textContainer: textContainer)
         
         self.editable = false
         self.textAlignment = .Center
         self.backgroundColor = UIColor.clearColor()
+        self.dataDetectorTypes = .All
+    }
+    
+    convenience override init() {
+        self.init(frame: CGRectZero, textContainer: nil)
     }
 }

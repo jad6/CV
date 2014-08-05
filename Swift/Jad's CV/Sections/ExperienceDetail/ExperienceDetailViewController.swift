@@ -9,32 +9,33 @@
 import UIKit
 
 class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    //MARK:- Properties
 
     var detailView: ExperienceDetailView! {
     return view as? ExperienceDetailView
     }
     
-    var experience: ExperienceObject! {
+    var experience: ExperienceObject {
     didSet {
         setupExperienceInfo()
     }
     }
     
-    //MARK: Init
+    //MARK:- Init
     
-    init(experience: ExperienceObject!) {
-        //FIXME: ... Words cannot describe this Xcode fail
-//        self.experience = experience
-        self.experience = ExtraCurricularActivity.extraCurricularActivities()[0]
+    required init(coder aDecoder: NSCoder!) {
+        self.experience = ExtraCurricularActivity.extraCurricularActivities().first!
         
+        super.init(coder: aDecoder)
+    }
+    
+    init(experience: ExperienceObject) {
+        self.experience = experience
         super.init(nibName: nil, bundle: nil)
     }
     
-    convenience init() {
-        self.init(experience: nil)
-    }
-    
-    //MARK: View lifecycle
+    //MARK:- View lifecycle
     
     override func loadView() {
         view = UIDevice.isPad() ? ExperienceDetailView() : ExperienceDetailView_Phone()
@@ -43,7 +44,7 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if navigationController {
+        if navigationController != nil {
             navigationController.interactivePopGestureRecognizer.delegate = self
         }
 
@@ -54,13 +55,13 @@ class ExperienceDetailViewController: UIViewController, UIGestureRecognizerDeleg
         setupExperienceInfo()
     }
     
-    //MARK: Actions
+    //MARK:- Actions
     
     func backAction(sender: AnyObject) {
         navigationController.popViewControllerAnimated(true)
     }
     
-    //MARK: Logic
+    //MARK:- Logic
     
     func setupExperienceInfo() {
         if let image = experience.organisationImage {

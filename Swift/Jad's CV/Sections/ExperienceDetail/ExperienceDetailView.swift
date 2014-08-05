@@ -9,6 +9,9 @@
 import UIKit
 
 class ExperienceDetailView: DynamicTypeView {
+    
+    //MARK:- Constants
+    
     private struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 20.0
@@ -19,20 +22,22 @@ class ExperienceDetailView: DynamicTypeView {
         static let imagveViewSize = CGSize(width: 70.0, height: 70.0)
         static let imageViewMaskingRadius: CGFloat = 18.0
     }
-        
-    private(set) var organisationImageView: UIImageView!
-    private(set) var positionLabel: UILabel!
-    private(set) var organisationLabel: UILabel!
-    private(set) var dateLabel: UILabel!
-    private(set) var textView: FormattedTextView!
     
-    init(frame: CGRect) {
-        self.organisationImageView = UIImageView()
-        self.positionLabel = UILabel()
-        self.organisationLabel = UILabel()
-        self.dateLabel = UILabel()
-        self.textView = FormattedTextView()
-        
+    //MARK:- Properties
+    
+    let organisationImageView = UIImageView()
+    let positionLabel = UILabel()
+    let organisationLabel = UILabel()
+    let dateLabel = UILabel()
+    let textView = FormattedTextView()
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.organisationImageView.frame.size = LayoutConstants.imagveViewSize
@@ -56,6 +61,8 @@ class ExperienceDetailView: DynamicTypeView {
     convenience init() {
         self.init(frame: CGRectZero)
     }
+    
+    //MARK:- Layout
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -80,7 +87,7 @@ class ExperienceDetailView: DynamicTypeView {
         textView.frame.size.height = bounds.size.height - textView.frame.origin.y
     }
     
-    //MARK: Dynamic type
+    //MARK:- Dynamic type
     
     override func reloadDynamicTypeContent() {
         positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)

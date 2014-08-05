@@ -9,6 +9,9 @@
 import UIKit
 
 class ExtraCurricularTableViewCell: ExperienceTableViewCell {
+    
+    //MARK:- Constants
+    
     private struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 20.0
@@ -22,11 +25,17 @@ class ExtraCurricularTableViewCell: ExperienceTableViewCell {
         static let imageViewSize = CGSize(width: 70.0, height: 70.0)
     }
     
-    private(set) var activityImageView: UIImageView!
+    //MARK:- Properties
     
-    init(style: UITableViewCellStyle, reuseIdentifier: String) {
-        self.activityImageView = UIImageView()
-        
+    let activityImageView = UIImageView()
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.addSubview(self.activityImageView)
@@ -35,6 +44,8 @@ class ExtraCurricularTableViewCell: ExperienceTableViewCell {
             self.accessoryType = .DisclosureIndicator
         }
     }
+    
+    //MARK:- Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -64,7 +75,7 @@ class ExtraCurricularTableViewCell: ExperienceTableViewCell {
         dateLabel.frame.origin.y = organisationLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
     }
     
-    //MARK: Dynamic type
+    //MARK:- Dynamic type
     
     override func reloadDynamicTypeContent() {
         positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)

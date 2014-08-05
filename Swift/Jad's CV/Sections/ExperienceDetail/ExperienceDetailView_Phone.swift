@@ -9,22 +9,30 @@
 import UIKit
 
 class ExperienceDetailView_Phone: ExperienceDetailView {
-    private struct LayoutConstants {
+    
+    //MARK:- Constants
+    
+    private struct LayoutConstants_Phone {
         static let backButtonSize = CGSize(width: 48.0, height: 44.0)
     }
     
-    private(set) var backButton: UIButton!
+    //MARK:- Properties
     
-    init(frame: CGRect) {
-        
-        self.backButton = UIButton()
-        
+    let backButton = UIButton()
+    
+    //MARK:- Init
+
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
 
         let backImage = UIImage(named: "back")
         self.backButton.setImage(backImage, forState: .Normal)
         self.backButton.contentMode = .ScaleAspectFit
-        self.backButton.frame.size = LayoutConstants.backButtonSize
+        self.backButton.frame.size = LayoutConstants_Phone.backButtonSize
         self.addSubview(self.backButton)
     }
 }

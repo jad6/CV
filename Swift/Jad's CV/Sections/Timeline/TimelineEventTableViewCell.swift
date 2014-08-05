@@ -9,6 +9,9 @@
 import UIKit
 
 class TimelineEventTableViewCell: ExperienceTableViewCell {
+    
+    //MARK:- Constants
+    
     private struct LayoutConstants {
         struct CircleSizes {
             static let big = CGSize(width: 24.0, height: 24.0)
@@ -16,7 +19,7 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         }
         
         struct Padding {
-            static let top: CGFloat = 25.0
+            static let top: CGFloat = 30.0
             static let side: CGFloat = 15.0
             static let betweenDateAndCircle: CGFloat = 2.0
             static let betweenCircleAndLabels: CGFloat = 10.0
@@ -38,14 +41,17 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         }
     }
     
-    private var circleView: UIView!
-    private(set) var lineView: UIView!
+    //MARK:- Properties
     
-    var importance: TimelineEvent.Importance {
+    private let circleView = UIView()
+    let lineView = UIView()
+    
+    var importance: TimelineEvent.Importance = .Minor {
     didSet {
         layoutIfNeeded()
     }
     }
+    
     var color: UIColor! {
     didSet {
         positionLabel.textColor = color
@@ -58,12 +64,14 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         }
     }
     }
+    
+    //MARK:- Init
 
-    init(style: UITableViewCellStyle, reuseIdentifier: String) {
-        self.circleView = UIView()
-        self.lineView = UIView()
-        self.importance = .Minor
-        
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.lineView.backgroundColor = UIColor.timelineGrayColor()
@@ -78,6 +86,8 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
             self.accessoryView = accessoryImageView
         }
     }
+    
+    //MARK:- Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -101,7 +111,7 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         
         let labelXOrigin = circleView.frame.maxX + LayoutConstants.Padding.betweenCircleAndLabels
         var boundingLabelWidth: CGFloat = bounds.size.width - labelXOrigin
-        if accessoryView {
+        if accessoryView != nil {
             boundingLabelWidth -= UIDevice.isPad() ? 0.0 : (bounds.size.width - accessoryView.frame.minX)
         }
         let boundingLabelSize = CGSize(width: boundingLabelWidth, height: bounds.size.height)
@@ -118,7 +128,7 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         organisationLabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
     }
     
-    //MARK: Selection
+    //MARK:- Selection
     
     override func setHighlighted(highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
@@ -134,7 +144,7 @@ class TimelineEventTableViewCell: ExperienceTableViewCell {
         circleView.backgroundColor = color
     }
     
-    //MARK: Dynamic type
+    //MARK:- Dynamic type
     
     override func reloadDynamicTypeContent() {
         positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)

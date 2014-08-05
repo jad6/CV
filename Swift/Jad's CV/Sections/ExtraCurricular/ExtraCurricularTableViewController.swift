@@ -12,6 +12,8 @@ import UIKit
 //class ExtraCurricularTableViewController<T: ExtraCurricularActivity>: ExperienceTableViewController<T> {
 class ExtraCurricularTableViewController: ExperienceTableViewController {
     
+    //MARK:- Properties
+
     //TODO: re-enable that once Swift supports class variables
     //    private class let extraCurricularCellIdentifier = "Extra Curricular Cell"
     
@@ -19,7 +21,9 @@ class ExtraCurricularTableViewController: ExperienceTableViewController {
         return "Extra Curricular Cell"
     }
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    //MARK:- Init
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -30,9 +34,9 @@ class ExtraCurricularTableViewController: ExperienceTableViewController {
 //        self.tableView.registerClass(ExtraCurricularTableViewCell.self, forCellReuseIdentifier: ExtraCurricularTableViewController.extraCurricularCellIdentifier())
 //    }
     
-    //MARK: Abstract Methods
+    //MARK:- Abstract Methods
     
-    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
+    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any, atIndexPath indexPath: NSIndexPath) {
         super.listView(listView, configureCell: cell, withObject: object, atIndexPath: indexPath)
 
         if let activity = object as? ExtraCurricularActivity {

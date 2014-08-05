@@ -10,6 +10,9 @@ import UIKit
 
 //TODO: Make class Generic once Apple fixes the bug in Beta 4
 class CollectionViewController: UICollectionViewController, List {
+
+    //MARK:- Properties
+    
     //TODO: re-enable that once Swift supports class variables
     //    private class let defaultCellIdentifier = "Cell"
     
@@ -17,13 +20,19 @@ class CollectionViewController: UICollectionViewController, List {
         return "Cell"
     }
     
-    var listData: ListData<Referee> = ListData<Referee>() {
+    var listData: ListData<Referee> = ListData() {
     didSet {
         collectionView.reloadData()
     }
     }
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -35,9 +44,9 @@ class CollectionViewController: UICollectionViewController, List {
         self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewController.defaultCellIdentifier())
     }
     
-    //MARK: List
+    //MARK:- Abstract Methods
     
-    func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
+    func listView(listView: UIView, configureCell cell: UIView, withObject object: Any, atIndexPath indexPath: NSIndexPath) {
         // Override me!
     }
     
@@ -49,7 +58,7 @@ class CollectionViewController: UICollectionViewController, List {
         return CollectionViewController.defaultCellIdentifier()
     }
     
-    //MARK: Collection view
+    //MARK:- Collection view
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
         return listData.sections.count
@@ -66,17 +75,19 @@ class CollectionViewController: UICollectionViewController, List {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as UICollectionViewCell
         
         // Get object from overriden method.
-        let object = listData[indexPath]
-        // Let the subclasses configure the cell.
-        listView(collectionView, configureCell: cell, withObject: object, atIndexPath: indexPath)
-        
+        if let object = listData[indexPath] {
+            // Let the subclasses configure the cell.
+            listView(collectionView, configureCell: cell, withObject: object, atIndexPath: indexPath)
+        }
+
         return cell
     }
     
     override func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
         // Get object from overriden method.
-        let object = listData[indexPath]
-        // Call overridable method.
-        listView(collectionView, didSelectObject: object, atIndexPath: indexPath)
+        if let object = listData[indexPath] {
+            // Call overridable method.
+            listView(collectionView, didSelectObject: object, atIndexPath: indexPath)
+        }
     }
 }

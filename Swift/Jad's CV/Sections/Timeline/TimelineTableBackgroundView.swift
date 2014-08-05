@@ -10,20 +10,28 @@ import UIKit
 
 class TimelineTableBackgroundView: UIView {
 
-    private(set) var lineView: UIView!
+    //MARK:- Properties
+
+    let lineView = UIView()
     
-    init(frame: CGRect) {
-        self.lineView = UIView()
-        
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
 
         self.lineView.backgroundColor = UIColor.timelineGrayColor()
         self.addSubview(lineView)
     }
     
-    convenience init() {
+    convenience override init() {
         self.init(frame: CGRectZero)
     }
+    
+    //MARK:- Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()

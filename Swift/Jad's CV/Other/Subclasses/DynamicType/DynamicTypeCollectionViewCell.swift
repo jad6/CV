@@ -10,7 +10,13 @@ import UIKit
 
 class DynamicTypeCollectionViewCell: UICollectionViewCell {
     
-    init(frame: CGRect) {
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didChangePreferredContentSize:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
@@ -21,7 +27,7 @@ class DynamicTypeCollectionViewCell: UICollectionViewCell {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    //MARK: Override
+    //MARK:- Abstract Method
     
     func reloadDynamicTypeContent() { }
     
@@ -29,7 +35,7 @@ class DynamicTypeCollectionViewCell: UICollectionViewCell {
         return CGSizeZero
     }
     
-    //MARK: Notification
+    //MARK:- Notification
     
     func didChangePreferredContentSize(notification: NSNotification) {
         reloadDynamicTypeContent()

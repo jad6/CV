@@ -10,13 +10,21 @@ import UIKit
 
 class DynamicTypeCollectionViewController: CollectionViewController {
     
+    //MARK:- Properties
+    
     private var cellSizes = [Int: CGSize]()
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    init(layout: UICollectionViewLayout, listData: ListData<Referee>) {
+    override init(layout: UICollectionViewLayout, listData: ListData<Referee>) {
         super.init(layout: layout, listData: listData)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didChangePreferredContentSize:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
@@ -26,12 +34,12 @@ class DynamicTypeCollectionViewController: CollectionViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    //MARK: Collection view
+    //MARK:- Collection view
     
     func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
         let size = cellSizes[indexPath.row]
         
-        return size ? size! : kRefereeCardBaseSize
+        return size != nil ? size! : kRefereeCardBaseSize
     }
     
     override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
@@ -46,7 +54,7 @@ class DynamicTypeCollectionViewController: CollectionViewController {
         return cell
     }
     
-    //MARK: Notification
+    //MARK:- Notification
     
     func didChangePreferredContentSize(notification: NSNotification) {
         collectionView.reloadData()

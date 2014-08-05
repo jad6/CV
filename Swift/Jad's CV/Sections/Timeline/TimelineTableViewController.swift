@@ -12,6 +12,8 @@ import UIKit
 //class TimelineTableViewController<T: TimelineEvent>: ExperienceTableViewController<T> {
 class TimelineTableViewController: ExperienceTableViewController {
     
+    //MARK:- Properties
+    
     //TODO: re-enable that once Swift supports class variables
     //    private class let defaultCellIdentifier = "Cell"
     
@@ -19,7 +21,9 @@ class TimelineTableViewController: ExperienceTableViewController {
         return "Timeline Cell"
     }
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    //MARK:- Init
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -33,7 +37,7 @@ class TimelineTableViewController: ExperienceTableViewController {
         self.tableView.backgroundView = TimelineTableBackgroundView()
     }
     
-    //MARK: View lifecycle
+    //MARK:- View lifecycle
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -45,9 +49,9 @@ class TimelineTableViewController: ExperienceTableViewController {
         }
     }
     
-    //MARK: Abstract Methods
+    //MARK:- Abstract Methods
     
-    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
+    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any, atIndexPath indexPath: NSIndexPath) {
         super.listView(listView, configureCell: cell, withObject: object, atIndexPath: indexPath)
         
         if let timelineEvent = object as? TimelineEvent {

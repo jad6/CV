@@ -12,17 +12,23 @@ import UIKit
 //class ExperienceTableViewController<T: ExperienceObject>: DynamicTypeTableViewController {
 class ExperienceTableViewController: DynamicTypeTableViewController {
 
+    //MARK:- Properties
+    
     var delegate: MasterViewControllerDelegate?
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    //MARK:- Init
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    init(style: UITableViewStyle, listData: ListData<TimelineEvent>) {
+    override init(style: UITableViewStyle, listData: ListData<TimelineEvent>) {
         super.init(style: style, listData: listData)
         
         self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
     }
+    
+    //MARK:- View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,9 @@ class ExperienceTableViewController: DynamicTypeTableViewController {
         }
     }
     
-    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
+    //MARK:- Abstract Methods
+    
+    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any, atIndexPath indexPath: NSIndexPath) {
         if let experience = object as? ExperienceObject {
             if let tableCell = cell as? ExperienceTableViewCell {
                 tableCell.positionLabel.text = experience.position

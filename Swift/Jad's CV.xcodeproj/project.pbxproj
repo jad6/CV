@@ -16,6 +16,7 @@
 		05294867197E1A1700739084 /* Extra Curricular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05294869197E1A1700739084 /* Extra Curricular.plist */; };
 		0529486C197E1A1E00739084 /* Referees.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0529486E197E1A1E00739084 /* Referees.plist */; };
 		052C2A421977CCAF00D85C98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C2A411977CCAF00D85C98 /* Color.swift */; };
+		0534D7831990693300B9694A /* CloudFormattedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0534D7821990693300B9694A /* CloudFormattedTextView.swift */; };
 		0564EADE197757950003DA44 /* union_lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADC197757950003DA44 /* union_lake.jpg */; };
 		0564EADF197757950003DA44 /* winthrop_hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0564EADD197757950003DA44 /* winthrop_hall.jpg */; };
 		056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056C9AFE197655CD0047F3E5 /* AppDelegate.swift */; };
@@ -101,6 +102,7 @@
 		0529486F197E1A1F00739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Referees.plist; sourceTree = "<group>"; };
 		05294870197E1A2000739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Referees.plist; sourceTree = "<group>"; };
 		052C2A411977CCAF00D85C98 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0534D7821990693300B9694A /* CloudFormattedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudFormattedTextView.swift; sourceTree = "<group>"; };
 		0564EADC197757950003DA44 /* union_lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = union_lake.jpg; sourceTree = "<group>"; };
 		0564EADD197757950003DA44 /* winthrop_hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winthrop_hall.jpg; sourceTree = "<group>"; };
 		056C9AF9197655CD0047F3E5 /* Jad's CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jad's CV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -456,6 +458,7 @@
 			children = (
 				05F6C30819775C54007CCD66 /* BlurImageView.swift */,
 				05F18809197A41570025756F /* FormattedTextView.swift */,
+				0534D7821990693300B9694A /* CloudFormattedTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				0579C959197E4CBF000233EC /* Date.swift in Sources */,
 				05F5B628198B823E00E1C98F /* SplitView.swift in Sources */,
 				05B3DDF71987304C00C4B057 /* DynamicTypeCollectionViewCell.swift in Sources */,
+				0534D7831990693300B9694A /* CloudFormattedTextView.swift in Sources */,
 				05BF82091980C0F80070DE37 /* ExperienceDetailViewController.swift in Sources */,
 				056C9AFF197655CD0047F3E5 /* AppDelegate.swift in Sources */,
 				05B3DDF51987304000C4B057 /* DynamicTypeTableViewCell.swift in Sources */,

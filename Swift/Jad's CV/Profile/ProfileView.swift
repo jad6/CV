@@ -11,6 +11,9 @@ import UIKit
 let kProfileViewAnimationDuration = Animations.Durations.Medium.toRaw()
 
 class ProfileView: DynamicTypeView, UILayoutSupport {
+
+    //MARK:- Constants
+    
     struct LayoutConstants {
         struct PictureSizes {
             static let small = CGSize(width: 54.0, height: 54.0)
@@ -25,7 +28,6 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
             static let betweenVertical: CGFloat = 4.0
         }
         
-        static let textViewMaxSize = CGSize(width: 320.0, height: 480.0)
         static let statusBarHeight: CGFloat = 20.0
         static let topLayoutLength: CGFloat = 108.0
         
@@ -34,16 +36,19 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
         }
     }
     
-    private(set) var backgroundImageView: BlurImageView!
-    private(set) var profilePictureImageView: UIImageView!
-    private(set) var nameLabel: UILabel!
-    private(set) var descriptionLabel: UILabel!
-    private(set) var infoButton: UIButton!
-    private(set) var emailButton: UIButton!
-    private(set) var phoneButton: UIButton!
-    private(set) var textView: UITextView!
+    //MARK:- Properties
     
-    var expanded: Bool {
+    let backgroundImageView = BlurImageView(blurEffectStyle: .Light)
+    let profilePictureImageView = UIImageView()
+    let nameLabel = UILabel()
+    let descriptionLabel = UILabel()
+    //FIXME: that downcast is really unecessary, fix when Apple fixes.
+    let infoButton = UIButton.buttonWithType(.InfoLight) as UIButton
+    let emailButton = UIButton()
+    let phoneButton = UIButton()
+    let textView = UIDevice.isPad() ? CloudFormattedTextView() : FormattedTextView()
+    
+    var expanded: Bool = false {
     didSet {
         let color = self.expanded ? UIColor.blackColor() : UIColor.whiteColor()
 
@@ -63,18 +68,13 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
     return LayoutConstants.topLayoutLength
     }
     
-    init(frame: CGRect) {
-        self.backgroundImageView = BlurImageView(blurEffectStyle: .Light)
-        self.nameLabel = UILabel()
-        self.descriptionLabel = UILabel()
-        self.infoButton = UIButton.buttonWithType(.InfoLight) as UIButton
-        self.emailButton = UIButton()
-        self.phoneButton = UIButton()
-        self.textView = FormattedTextView()
-        self.profilePictureImageView = UIImageView()
-        
-        self.expanded = false
-        
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
                 
         self.backgroundImageView.clipsToBounds = true
@@ -102,13 +102,15 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
         self.init(frame: CGRectZero)
     }
     
+    //MARK:- Layout
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         backgroundImageView.frame = bounds
         
         // When the view is not expanded the iPad and iPhone share the same layout
-        if !expanded {
+        if expanded == false {
             infoButton.frame.size = infoButton.sizeThatFits(CGSizeZero).ceilSize
             infoButton.frame.origin.y = infoButton.verticalCenterWithReferenceFrame(LayoutConstants.headerFrameInView(self))
             infoButton.frame.origin.x = bounds.size.width - infoButton.frame.size.width - LayoutConstants.Padding.side
@@ -134,8 +136,8 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
     //MARK: Logic
     
     func handleSubview(subview: UIView, insertedAboveSubview bewlowSubview: UIView?, toBeHidden hide: Bool, animated: Bool) {
-        if !hide {
-            if bewlowSubview {
+        if hide == false {
+            if bewlowSubview != nil {
                 self.insertSubview(subview, aboveSubview: bewlowSubview!)
             } else {
                 self.addSubview(subview)
@@ -143,7 +145,7 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
         }
         
         subview.setHidden(hide, animated: animated, duration: kProfileViewAnimationDuration) { finished in
-            if finished && hide {
+            if finished == true && hide == true {
                 subview.removeFromSuperview()
             }
         }
