@@ -84,7 +84,7 @@ import UIKit
 //    
 //    func pageViewDidSwipe() {
 //        // Set the controller so that any objects observing this keypath get properly notified.
-//        currentContentViewController = viewControllers[0] as? T
+//        currentContentViewController = viewControllers.first as? T
 //    }
 //    
 //    //MARK: Logic

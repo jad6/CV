@@ -10,7 +10,17 @@ import UIKit
 
 class BlurImageView: UIImageView {
     
-    var blurEffectView: UIVisualEffectView!
+    //MARK:- Properties
+    
+    let blurEffectView: UIVisualEffectView
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        self.blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+
+        super.init(coder: aDecoder)
+    }
     
     init(blurEffectStyle: UIBlurEffectStyle) {
         self.blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: blurEffectStyle))
@@ -20,6 +30,8 @@ class BlurImageView: UIImageView {
         self.addSubview(self.blurEffectView)
     }
 
+    //MARK:- Layout
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

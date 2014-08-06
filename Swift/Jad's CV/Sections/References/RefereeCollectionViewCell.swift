@@ -9,11 +9,15 @@
 import UIKit
 
 class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
+
+    //MARK:- Constants
+    
     private struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 15.0
             static let side: CGFloat = 15.0
             static let bottom: CGFloat = 15.0
+            static let sideSmall: CGFloat = 4.0
             static let betweenHorizontal: CGFloat = 10.0
             static let betweenVerticalSmall: CGFloat = 3.0
             static let betweenVerticalLarge: CGFloat = 4.0
@@ -28,32 +32,30 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
         static let photoImageViewSize = CGSize(width: 70.0, height: 70.0)
     }
     
-    private var cardBackgroundImageView: UIImageView!
-    private var separatorView: UIView!
+    //MARK:- Properties
     
-    private(set) var photoImageView: UIImageView!
-    private(set) var fullNameLabel: UILabel!
-    private(set) var positionLabel: UILabel!
-    private(set) var locationlabel: UILabel!
-    private(set) var connectionLabel: UILabel!
-    private(set) var phoneButton: UIButton!
-    private(set) var emailButton: UIButton!
+    let photoImageView = UIImageView()
+    let fullNameLabel = UILabel()
+    let positionLabel = UILabel()
+    let locationlabel = UILabel()
+    let connectionLabel = UILabel()
+    let phoneButton = UIButton()
+    let emailButton = UIButton()
     
-    init(frame: CGRect) {
-        let cardImage = UIImage(named: "conatct-card").resizableImageWithCapInsets(UIEdgeInsets(top: 2.0, left: 4.0, bottom: 6.0, right: 4.0))
-        self.cardBackgroundImageView = UIImageView(image: cardImage)
-        self.separatorView = UIView()
-        
-        self.photoImageView = UIImageView()
-        self.fullNameLabel = UILabel()
-        self.positionLabel = UILabel()
-        self.locationlabel = UILabel()
-        self.connectionLabel = UILabel()
-        self.phoneButton = UIButton()
-        self.emailButton = UIButton()
-        
+    private let cardBackgroundImageView = UIImageView()
+    private let separatorView = UIView()
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
+        let cardImage = UIImage(named: "conatct-card").resizableImageWithCapInsets(UIEdgeInsets(top: 2.0, left: 4.0, bottom: 6.0, right: 4.0))
+        self.cardBackgroundImageView.image = cardImage
         self.contentView.addSubview(self.cardBackgroundImageView)
         
         self.separatorView.backgroundColor = UIColor.lightGrayColor()
@@ -80,6 +82,8 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
         self.contentView.addSubview(self.phoneButton)
     }
     
+    //MARK:- Layout
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -89,7 +93,7 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
         photoImageView.maskToCircle()
         
         let labelXOrigin = photoImageView.frame.maxX + LayoutConstants.Padding.betweenHorizontal
-        let boundingLabelWidth = bounds.size.width - labelXOrigin
+        let boundingLabelWidth = bounds.size.width - labelXOrigin - LayoutConstants.Padding.sideSmall
         let boundingLabelSize = CGSize(width: boundingLabelWidth, height: bounds.size.height)
         
         fullNameLabel.frame.size = fullNameLabel.sizeThatFits(boundingLabelSize).ceilSize
@@ -110,21 +114,21 @@ class RefereeCollectionViewCell: DynamicTypeCollectionViewCell {
         
         phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
         phoneButton.frame.origin.y = max(connectionLabel.frame.maxY, photoImageView.frame.maxY) + LayoutConstants.Padding.betweenInfoAndContact
-        phoneButton.centerHorizontallyWithReferenceView(self.contentView)
+        phoneButton.centerHorizontallyWithReferenceRect(self.contentView.bounds)
         
         separatorView.frame.size.width = floor(bounds.size.width * LayoutConstants.Separator.widthFactor)
         separatorView.frame.size.height = LayoutConstants.Separator.height
         separatorView.frame.origin.y = phoneButton.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
-        separatorView.centerHorizontallyWithReferenceView(self.contentView)
+        separatorView.centerHorizontallyWithReferenceRect(self.contentView.bounds)
 
         emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
         emailButton.frame.origin.y = separatorView.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
-        emailButton.centerHorizontallyWithReferenceView(self.contentView)
+        emailButton.centerHorizontallyWithReferenceRect(self.contentView.bounds)
         
         cardBackgroundImageView.frame = bounds
     }
     
-    //MARK: Dynamic type
+    //MARK:- Dynamic type
     
     override func reloadDynamicTypeContent() {
         fullNameLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)

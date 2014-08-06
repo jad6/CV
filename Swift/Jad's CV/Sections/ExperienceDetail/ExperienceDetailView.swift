@@ -9,6 +9,9 @@
 import UIKit
 
 class ExperienceDetailView: DynamicTypeView {
+    
+    //MARK:- Constants
+    
     private struct LayoutConstants {
         struct Padding {
             static let top: CGFloat = 20.0
@@ -16,33 +19,26 @@ class ExperienceDetailView: DynamicTypeView {
             static let betweenVerticalSmall: CGFloat = 3.0
         }
     
-        static let backButtonSize = CGSize(width: 48.0, height: 44.0)
         static let imagveViewSize = CGSize(width: 70.0, height: 70.0)
         static let imageViewMaskingRadius: CGFloat = 18.0
     }
-        
-    private(set) var backButton: UIButton!
-    private(set) var organisationImageView: UIImageView!
-    private(set) var positionLabel: UILabel!
-    private(set) var organisationLabel: UILabel!
-    private(set) var dateLabel: UILabel!
-    private(set) var textView: FormattedTextView!
     
-    init(frame: CGRect) {
-        self.backButton = UIButton()
-        self.organisationImageView = UIImageView()
-        self.positionLabel = UILabel()
-        self.organisationLabel = UILabel()
-        self.dateLabel = UILabel()
-        self.textView = FormattedTextView()
-        
+    //MARK:- Properties
+    
+    let organisationImageView = UIImageView()
+    let positionLabel = UILabel()
+    let organisationLabel = UILabel()
+    let dateLabel = UILabel()
+    let textView = FormattedTextView()
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let backImage = UIImage(named: "back")
-        self.backButton.setImage(backImage, forState: .Normal)
-        self.backButton.contentMode = .ScaleAspectFit
-        self.backButton.frame.size = LayoutConstants.backButtonSize
-        self.addSubview(self.backButton)
         
         self.organisationImageView.frame.size = LayoutConstants.imagveViewSize
         self.organisationImageView.maskToRadius(LayoutConstants.imageViewMaskingRadius)
@@ -65,31 +61,33 @@ class ExperienceDetailView: DynamicTypeView {
     convenience init() {
         self.init(frame: CGRectZero)
     }
+    
+    //MARK:- Layout
 
     override func layoutSubviews() {
         super.layoutSubviews()
         
         organisationImageView.frame.origin.y = LayoutConstants.Padding.top
-        organisationImageView.centerHorizontallyWithReferenceView(self)
+        organisationImageView.centerHorizontallyWithReferenceRect(self.bounds)
         
         positionLabel.frame.size = positionLabel.sizeThatFits(bounds.size).ceilSize
         positionLabel.frame.origin.y = organisationImageView.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
-        positionLabel.centerHorizontallyWithReferenceView(self)
+        positionLabel.centerHorizontallyWithReferenceRect(self.bounds)
 
         organisationLabel.frame.size = organisationLabel.sizeThatFits(bounds.size).ceilSize
         organisationLabel.frame.origin.y = positionLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
-        organisationLabel.centerHorizontallyWithReferenceView(self)
+        organisationLabel.centerHorizontallyWithReferenceRect(self.bounds)
     
         dateLabel.frame.size = dateLabel.sizeThatFits(bounds.size).ceilSize
         dateLabel.frame.origin.y = organisationLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalSmall
-        dateLabel.centerHorizontallyWithReferenceView(self)
+        dateLabel.centerHorizontallyWithReferenceRect(self.bounds)
         
         textView.frame.origin.y = dateLabel.frame.maxY + LayoutConstants.Padding.betweenVerticalLarge
         textView.frame.size.width = bounds.size.width
         textView.frame.size.height = bounds.size.height - textView.frame.origin.y
     }
     
-    //MARK: Dynamic type
+    //MARK:- Dynamic type
     
     override func reloadDynamicTypeContent() {
         positionLabel.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleHeadline)

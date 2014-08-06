@@ -13,6 +13,9 @@ let CVFontTextStyleCaption2Italic = "CVFontTextStyleCaption2Italic"
 let CVFontTextStyleTimelineDate = "CVFontTextStyleTimelineDate"
 
 class DynamicTypeFont: UIFont {
+    
+    //MARK:- Constants
+    
     private struct Constants {
         static let ΔFontSize: CGFloat = 2.0
         static let largeFontSize: CGFloat = 15.0
@@ -22,6 +25,8 @@ class DynamicTypeFont: UIFont {
         static let headlinesLargeFontSize: CGFloat = 16.0
         static let timelineDateLargeFontSize: CGFloat = 12.0
     }
+    
+    //MARK:- Logic
     
     private class func fontDescriptorForTextStyle(style: String) -> UIFontDescriptor {
         if style == CVFontTextStyleRésuméHolderName {
@@ -102,7 +107,9 @@ class DynamicTypeFont: UIFont {
         return UIFont(descriptor: descriptor, size: fontSize)
     }
     
-    override class func preferredFontForTextStyle(style: String!) -> UIFont! {
+    //MARK:- Override
+    
+    override class func preferredFontForTextStyle(style: String) -> UIFont {
         let size = fontSizeForTextStyle(style)
 
         if style == CVFontTextStyleRésuméHolderName {

@@ -10,6 +10,8 @@ import UIKit
 
 class EducationView_Phone: EducationView {
     
+    //MARK:- Constants
+    
     private struct LayoutConstants_Phone {
         struct Padding {
             static let betweenTopInfoAndTextView: CGFloat = 10.0
@@ -30,17 +32,25 @@ class EducationView_Phone: EducationView {
         }
     }
     
-    private var fadeImageView: UIImageView!
+    //MARK:- Properties
+    
     private var textViewTextHeight: CGFloat = 0.0
     
-    init(frame: CGRect) {
-        let fadeImage = UIImage(named: "fade_down").resizableImageWithCapInsets(UIEdgeInsets(top: 0.0, left: 1.0, bottom: 260.0, right: 1.0))
-        self.fadeImageView = UIImageView(image: fadeImage)
-        
-        super.init(frame: frame)
-
-        self.backgroundImageView.contentMode = .ScaleAspectFill
+    private let fadeImageView = UIImageView()
     
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        let fadeImage = UIImage(named: "fade_down").resizableImageWithCapInsets(UIEdgeInsets(top: 0.0, left: 1.0, bottom: 260.0, right: 1.0))
+        self.fadeImageView.image = fadeImage
+        self.backgroundImageView.contentMode = .ScaleAspectFill
+        
         self.textView.showsVerticalScrollIndicator = false
         self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 40.0, bottom: LayoutConstants_Phone.TextView.bottomInset, right: 40.0)
         
@@ -55,6 +65,8 @@ class EducationView_Phone: EducationView {
         self.textView.removeObserver(self, forKeyPath: "contentSize")
     }
 
+    //MARK:- Layout
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -94,7 +106,7 @@ class EducationView_Phone: EducationView {
         fadeImageView.frame.origin.y = backgroundImageView.frame.origin.y - LayoutConstants_Phone.TextView.fadeImageViewOffsetBeforeBackgroundImageView
     }
     
-    //MARK: Logic
+    //MARK:- Logic
     
     func recalculateTextViewTextHeight() {
         let boundingSize = CGSize(width: textView.frame.size.width - textView.textContainerInset.left - textView.textContainerInset.right, height: CGFloat.max)
@@ -105,15 +117,15 @@ class EducationView_Phone: EducationView {
         textViewTextHeight = textSize.height
     }
     
-    //MARK: KVO
+    //MARK:- KVO
     
-    override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafePointer<()>) {
+    override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<()>) {
         if keyPath == "contentSize" {
             recalculateTextViewTextHeight()
         }
     }
     
-    //MARK: Dynamic type
+    //MARK:- Dynamic type
     
     override func reloadDynamicTypeContent() {
         super.reloadDynamicTypeContent()

@@ -11,6 +11,8 @@ import UIKit
 //TODO: Make class Generic once Apple fixes the bug in Beta 4
 class TableViewController : UITableViewController, List {
     
+    //MARK:- Properties
+    
     //TODO: re-enable that once Swift supports class variables
 //    private class let defaultCellIdentifier = "Cell"
     
@@ -18,13 +20,19 @@ class TableViewController : UITableViewController, List {
         return "Cell"
     }
     
-    var listData: ListData<TimelineEvent> = ListData<TimelineEvent>() {
+    var listData: ListData<TimelineEvent> = ListData() {
     didSet {
         tableView.reloadData()
     }
     }
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -36,9 +44,9 @@ class TableViewController : UITableViewController, List {
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: TableViewController.defaultCellIdentifier())
     }
 
-    //MARK: List
+    //MARK:- Abstract Methods
 
-    func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
+    func listView(listView: UIView, configureCell cell: UIView, withObject object: Any, atIndexPath indexPath: NSIndexPath) {
         // Override me!
     }
     
@@ -50,7 +58,7 @@ class TableViewController : UITableViewController, List {
         return TableViewController.defaultCellIdentifier()
     }
     
-    //MARK: Table view 
+    //MARK:- Table view
     
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return listData.sections.count
@@ -66,17 +74,19 @@ class TableViewController : UITableViewController, List {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
         
         // Get object from overriden method.
-        let object = listData[indexPath]
-        // Let the subclasses configure the cell.
-        listView(tableView, configureCell: cell, withObject: object, atIndexPath: indexPath)
+        if let object = listData[indexPath] {
+            // Let the subclasses configure the cell.
+            listView(tableView, configureCell: cell, withObject: object, atIndexPath: indexPath)
+        }
         
         return cell
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         // Get object from overriden method.
-        let object = listData[indexPath]
-        // Call overridable method.
-        listView(tableView, didSelectObject: object, atIndexPath: indexPath)
+        if let object = listData[indexPath] {
+            // Call overridable method.
+            listView(tableView, didSelectObject: object, atIndexPath: indexPath)
+        }
     }
 }

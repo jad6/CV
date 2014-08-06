@@ -9,33 +9,36 @@
 import UIKit
 
 //TODO: Create abstract superclass with generics, look at SplitViewController
-class ExperienceSplitViewController: UIViewController, ExperienceTableViewControllerDelegate {
-
-    //TODO: This would be moved to the super class
-    var splitView: SplitView! {
-    return view as? SplitView
+class ExperienceSplitViewController: SplitViewController {
+    
+    //MARK:- Properties
+    
+    var experienceTableViewController: ExperienceTableViewController! {
+    return masterViewController as? ExperienceTableViewController
     }
     
-    var experienceTableViewController: ExperienceTableViewController!
-    var detailViewController: ExperienceDetailViewController!
-    
-    init(masterViewController: ExperienceTableViewController, detailViewController: ExperienceDetailViewController) {
-        self.experienceTableViewController = masterViewController
-        self.detailViewController = detailViewController
-        
-        super.init(nibName: nil, bundle: nil)
-        
-        self.experienceTableViewController.delegate = self
+    var experienceDetailViewController: ExperienceDetailViewController! {
+    return detailViewController as? ExperienceDetailViewController
     }
     
-    //TODO: This would be moved to the super class
-    override func loadView() {
-        
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
     }
     
-    //MARK: Experience table view controller
-    
-    func experienceTableViewController(experienceTableViewController: ExperienceTableViewController, didSelectExperience experience: ExperienceObject) {
+    init(masterTableViewController: ExperienceTableViewController) {
+        let indexPathZero = NSIndexPath(forRow: 0, inSection: 0)
+        let experience = masterTableViewController.listData[indexPathZero]
         
+        super.init(masterViewController: masterTableViewController, detailViewController: ExperienceDetailViewController(experience: experience!))
+    }
+    
+    //MARK:- Delegate
+    
+    override func masterViewController(masterViewController: UIViewController, didSelectObject object: Any) {
+        if let experience = object as? ExperienceObject {
+            experienceDetailViewController.experience = experience
+        }
     }
 }

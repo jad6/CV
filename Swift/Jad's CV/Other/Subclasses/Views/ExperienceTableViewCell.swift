@@ -10,15 +10,19 @@ import UIKit
 
 class ExperienceTableViewCell: DynamicTypeTableViewCell {
     
-    private(set) var positionLabel: UILabel!
-    private(set) var organisationLabel: UILabel!
-    private(set) var dateLabel: UILabel!
-
-    init(style: UITableViewCellStyle, reuseIdentifier: String) {
-        self.positionLabel = UILabel()
-        self.organisationLabel = UILabel()
-        self.dateLabel = UILabel()
-        
+    //MARK:- Properties
+    
+    let positionLabel = UILabel()
+    let organisationLabel = UILabel()
+    let dateLabel = UILabel()
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.positionLabel.numberOfLines = 2

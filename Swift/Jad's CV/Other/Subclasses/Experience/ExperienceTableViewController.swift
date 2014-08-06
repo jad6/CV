@@ -8,27 +8,41 @@
 
 import UIKit
 
-protocol ExperienceTableViewControllerDelegate {
-    func experienceTableViewController(experienceTableViewController: ExperienceTableViewController, didSelectExperience experience: ExperienceObject)
-}
-
 //FIXME: Generics
 //class ExperienceTableViewController<T: ExperienceObject>: DynamicTypeTableViewController {
 class ExperienceTableViewController: DynamicTypeTableViewController {
 
-    var delegate: ExperienceTableViewControllerDelegate?
+    //MARK:- Properties
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    var delegate: MasterViewControllerDelegate?
+    
+    //MARK:- Init
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    init(style: UITableViewStyle, listData: ListData<TimelineEvent>) {
+    override init(style: UITableViewStyle, listData: ListData<TimelineEvent>) {
         super.init(style: style, listData: listData)
         
         self.clearsSelectionOnViewWillAppear = !UIDevice.isPad()
     }
     
-    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
+    //MARK:- View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let indexPathZero = NSIndexPath(forRow: 0, inSection: 0)
+        if UIDevice.isPad() && listData.isValidIndexPath(indexPathZero) {
+            tableView.selectRowAtIndexPath(indexPathZero, animated: false, scrollPosition: .Top)
+            tableView(tableView, didSelectRowAtIndexPath: indexPathZero)
+        }
+    }
+    
+    //MARK:- Abstract Methods
+    
+    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any, atIndexPath indexPath: NSIndexPath) {
         if let experience = object as? ExperienceObject {
             if let tableCell = cell as? ExperienceTableViewCell {
                 tableCell.positionLabel.text = experience.position
@@ -41,7 +55,7 @@ class ExperienceTableViewController: DynamicTypeTableViewController {
     override func listView(listView: UIView, didSelectObject object: Any, atIndexPath indexPath: NSIndexPath) {
         if let experience = object as? ExperienceObject {
             if UIDevice.isPad() {
-                delegate?.experienceTableViewController(self, didSelectExperience: experience)
+                delegate?.masterViewController(self, didSelectObject: object)
             } else {
                 let detailViewController = ExperienceDetailViewController(experience: experience)
                 navigationController.pushViewController(detailViewController, animated: true)

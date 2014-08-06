@@ -12,17 +12,21 @@ let kRefereeCardBaseSize = CGSize(width: 310.0, height: 200.0)
 
 class RefereesCollectionViewFlowLayout: UICollectionViewFlowLayout {
  
-    init() {
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+        
+        self.setupSpacing()
+    }
+    
+    override init() {
         super.init()
         
         self.setupSpacing()
     }
     
-    init(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
-        
-        self.setupSpacing()
-    }
+    //MARK:- Layout
     
     override func prepareLayout() {
         super.prepareLayout()
@@ -30,7 +34,7 @@ class RefereesCollectionViewFlowLayout: UICollectionViewFlowLayout {
         itemSize = kRefereeCardBaseSize
     }
     
-    //MARK: Logic
+    //MARK:- Logic
     
     func setupSpacing() {
         minimumLineSpacing = 10.0

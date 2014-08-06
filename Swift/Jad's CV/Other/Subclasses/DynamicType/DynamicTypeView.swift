@@ -9,8 +9,14 @@
 import UIKit
 
 class DynamicTypeView: UIView {
+    
+    //MARK:- Init
 
-    init(frame: CGRect) {
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didChangePreferredContentSize:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
@@ -21,11 +27,11 @@ class DynamicTypeView: UIView {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    //MARK: Override
+    //MARK:- Abstract Method
     
     func reloadDynamicTypeContent() { }
     
-    //MARK: Notification
+    //MARK:- Notification
     
     func didChangePreferredContentSize(notification: NSNotification) {
         reloadDynamicTypeContent()

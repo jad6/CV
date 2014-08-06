@@ -19,13 +19,13 @@ class PersonObject: ExtractedObject {
     
     var fullName: String {
     var name = String()
-    if title {
+    if title != nil {
         name = title! + " "
     }
     return name + firstName + " " + lastName
     }
     
-    init(dictionary: NSDictionary) {
+    required init(dictionary: NSDictionary) {
         self.title = dictionary["title"] as? String
         self.firstName = dictionary["firstName"] as String
         self.lastName = dictionary["lastName"] as String
@@ -49,14 +49,14 @@ class RésuméHolder : PersonObject {
 
         assert(holderObjects.count == 1, "There needs to be exactly one (1) résumé holder object")
         
-        return holderObjects[0] as RésuméHolder
+        return holderObjects.first as RésuméHolder
     }
     
     override class func filePathForResource() -> String? {
         return NSBundle.mainBundle().pathForResource("About Me", ofType: "plist")
     }
     
-    init(dictionary: NSDictionary) {
+    required init(dictionary: NSDictionary) {
         self.detailDescription = dictionary["description"] as String
         
         let backgroundImageInfo = dictionary["backgroundImageInfo"] as NSDictionary
@@ -72,7 +72,7 @@ class Referee : PersonObject {
     
     class func refereesListData() -> ListData<Referee> {
         var refereesListData = ListData<Referee>()
-        refereesListData.sections += ListSection(rowObjects: Referee.referees(), name: "Referees")
+        refereesListData.sections += [ListSection(rowObjects: Referee.referees(), name: "Referees")]
         
         return refereesListData
     }
@@ -81,7 +81,7 @@ class Referee : PersonObject {
         var error = NSError?()
         var objects = self.extractObjects(&error)
         error?.handle()
-        
+                
         return objects as [Referee]
     }
     
@@ -89,7 +89,7 @@ class Referee : PersonObject {
         return NSBundle.mainBundle().pathForResource("Referees", ofType: "plist")
     }
     
-    init(dictionary: NSDictionary) {
+    required init(dictionary: NSDictionary) {
         self.position = dictionary["position"] as String
         self.connection = dictionary["connection"] as String
         

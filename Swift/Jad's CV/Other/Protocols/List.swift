@@ -8,7 +8,7 @@
 
 import UIKit
 
-//FIXME: bring this back into ListData
+//FIXME: bring this back into ListData... when SourceKit stops having a fit.
 struct ListSection<T>: Section {
     var rowObjects: [T]
     var name: String?
@@ -57,31 +57,31 @@ protocol List {
     var listData: Data { get set }
     
     /**
-    *  Helper method to configure a cell at the given index path with a given
-    *  object.
-    *
-    *  @param listView The list view who's cell is configured.
-    *  @param cell      The cell to configure.
-    *  @param object    The object which matches the cell's index path.
-    *  @param indexPath The index path of the cell to configure.
-    */
-    func listView(listView: UIView, configureCell cell: UIView, withObject object: Object?, atIndexPath indexPath: NSIndexPath)
+     *  Helper method to configure a cell at the given index path with a given
+     *  object.
+     *
+     *  :param: listView  The list view who's cell is configured.
+     *  :param: cell      The cell to configure.
+     *  :param: object    The object which matches the cell's index path.
+     *  :param: indexPath The index path of the cell to configure.
+     */
+    func listView(listView: UIView, configureCell cell: UIView, withObject object: Object, atIndexPath indexPath: NSIndexPath)
     
     /**
-    *  Called when the user selects a cell a the given index path.
-    *
-    *  @param listView The list view who is interacted with.
-    *  @param object    The object at the selected index path.
-    *  @param indexPath The index path of the cell which was selected.
-    */
+     *  Called when the user selects a cell a the given index path.
+     *
+     *  :param: listView The list view who is interacted with.
+     *  :param: object    The object at the selected index path.
+     *  :param: indexPath The index path of the cell which was selected.
+     */
     func listView(listView: UIView, didSelectObject object: Object, atIndexPath indexPath: NSIndexPath)
     
     /**
-    *  The cell identifier for the given index path.
-    *
-    *  @param indexPath The index path of the cell.
-    *
-    *  @return The cell identifier.
-    */
+     *  The cell identifier for the given index path.
+     *
+     *  :param: indexPath The index path of the cell.
+     *
+     *  :returns: The cell identifier.
+     */
     func cellIdentifierForIndexPath(indexPath: NSIndexPath) -> String
 }

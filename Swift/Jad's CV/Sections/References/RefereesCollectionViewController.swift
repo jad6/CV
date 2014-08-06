@@ -10,6 +10,8 @@ import UIKit
 
 class RefereesCollectionViewController: DynamicTypeCollectionViewController {
     
+    //MARK:- Properties
+    
     //TODO: re-enable that once Swift supports class variables
     //    private class let defaultCellIdentifier = "Cell"
     
@@ -17,7 +19,13 @@ class RefereesCollectionViewController: DynamicTypeCollectionViewController {
         return "Referee Cell"
     }
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -28,9 +36,9 @@ class RefereesCollectionViewController: DynamicTypeCollectionViewController {
         self.collectionView.backgroundColor = UIColor.backgroundGrayColor()
     }
     
-    //MARK: Actions
+    //MARK:- Actions
     
-    func emailAction(sender: UIButton) {
+    func emailAction(sender: UIButton) {        
         Contactor.sharedContactor.email(reciepients: [sender.titleForState(.Normal)], fromController: self)
     }
     
@@ -38,9 +46,9 @@ class RefereesCollectionViewController: DynamicTypeCollectionViewController {
         Contactor.call(number: sender.titleForState(.Normal))
     }
     
-    //MARK: Abstract Methods
+    //MARK:- Abstract Methods
     
-    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any?, atIndexPath indexPath: NSIndexPath) {
+    override func listView(listView: UIView, configureCell cell: UIView, withObject object: Any, atIndexPath indexPath: NSIndexPath) {
         let collectionCell = cell as RefereeCollectionViewCell
         
         if let referee = object as? Referee {

@@ -8,28 +8,47 @@
 
 import UIKit
 
-class SplitViewController: UIViewController {
+protocol MasterViewControllerDelegate {
+    func masterViewController(masterViewController: UIViewController, didSelectObject object: Any)
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class SplitViewController: UIViewController, MasterViewControllerDelegate {
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK:- Properties
+    
+    var splitView: SplitView! {
+    return view as? SplitView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //TODO: Generics, force the master view controller to conform to MasterViewControllerDelegate
+    var masterViewController: UIViewController
+    var detailViewController: UIViewController
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        self.masterViewController = UIViewController()
+        self.detailViewController = UIViewController()
+        
+        super.init(coder: aDecoder)
     }
-    */
-
+    
+    init(masterViewController: UIViewController, detailViewController: UIViewController) {
+        self.masterViewController = masterViewController
+        self.detailViewController = detailViewController
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    //MARK:- View lifecycle
+    
+    override func loadView() {
+        view = SplitView(masterView: masterViewController.view, detailView: detailViewController.view)
+    }
+    
+    //MARK:- Delegate
+    
+    func masterViewController(masterViewController: UIViewController, didSelectObject object: Any) {
+        // Override me!
+    }
 }

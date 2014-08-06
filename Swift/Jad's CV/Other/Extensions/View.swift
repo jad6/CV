@@ -21,17 +21,17 @@ func widestViews(#views: [UIView]) -> [UIView] {
     
     for view in views {
         if widestViews.count > 0 {
-            let widestWidth = widestViews[0].frame.size.width
+            let widestWidth = widestViews.first!.frame.size.width
             let viewWidth = view.frame.size.width
             
             if widestWidth < viewWidth {
                 widestViews.removeAll(keepCapacity: false)
-                widestViews += view
+                widestViews += [view]
             } else if widestWidth == viewWidth {
-                widestViews += view
+                widestViews += [view]
             }
         } else {
-            widestViews += view
+            widestViews += [view]
         }
     }
     
@@ -48,7 +48,7 @@ func widestViews(#views: [UIView]) -> [UIView] {
  */
 func widestView(#views: [UIView]) -> UIView! {
     let wideViews = widestViews(views: views)
-    return wideViews.count > 0 ? wideViews[0] : nil
+    return wideViews.first
 }
 
 /**
@@ -64,17 +64,17 @@ func tallestViews(#views: [UIView]) -> [UIView] {
     
     for view in views {
         if tallestViews.count > 0 {
-            let tallestHeight = tallestViews[0].frame.size.height
+            let tallestHeight = tallestViews.first!.frame.size.height
             let viewHeight = view.frame.size.height
             
             if tallestHeight < viewHeight {
                 tallestViews.removeAll(keepCapacity: false)
-                tallestViews += view
+                tallestViews += [view]
             } else if tallestHeight == viewHeight {
-                tallestViews += view
+                tallestViews += [view]
             }
         } else {
-            tallestViews += view
+            tallestViews += [view]
         }
     }
     
@@ -91,7 +91,7 @@ func tallestViews(#views: [UIView]) -> [UIView] {
  */
 func tallestView(#views: [UIView]) -> UIView! {
     let tallViews = tallestViews(views: views)
-    return tallViews.count > 0 ? tallViews[0] : nil
+    return tallViews.first
 }
 
 func totalWidth(#views: [UIView], #separatorLength: CGFloat) -> CGFloat {
@@ -152,7 +152,7 @@ func totalHeight(#views: [UIView]) -> CGFloat {
  */
 extension UIView {
     
-    //MARK: Hiding
+    //MARK:- Hiding
     
     /**
      *  Hides or unhides the view with the option the animate the transition.
@@ -205,7 +205,7 @@ extension UIView {
         setHidden(hide, animated: animated, duration: Animations.Durations.Short.toRaw(), completion: nil)
     }
     
-    //MARK: Positioning
+    //MARK:- Positioning
     
     /**
      *  Calculates and returns the value for the X origin of the view which will
@@ -239,23 +239,23 @@ extension UIView {
      *  This method centers the view to be centered on the X axis with relation
      *  to the passed view.
      *
-     *  :param: view The view which is used as a horizontal centering reference.
+     *  :param: rect The rect which is used as a horizontal centering reference.
      */
-    func centerHorizontallyWithReferenceView(view: UIView) {
-        self.frame.origin.x = horizontalCenterWithReferenceFrame(view.bounds)
+    func centerHorizontallyWithReferenceRect(rect: CGRect) {
+        self.frame.origin.x = horizontalCenterWithReferenceFrame(rect)
     }
 
     /**
      *  This method centers the view to be centered on the Y axis with relation
      *  to the passed view.
      *
-     *  :param: view The view which is used as a vertical centering reference.
+     *  :param: rect The rect which is used as a vertical centering reference.
      */
-    func centerVerticallyWithReferenceView(view: UIView) {
-        self.frame.origin.y = verticalCenterWithReferenceFrame(view.bounds)
+    func centerVerticallyWithReferenceRect(rect: CGRect) {
+        self.frame.origin.y = verticalCenterWithReferenceFrame(rect)
     }
     
-    //MARK: Masking
+    //MARK:- Masking
     
     /**
      *  Method to set a rounded edges mask on the view's layer.

@@ -10,21 +10,25 @@ import UIKit
 
 class EducationViewController: UIViewController {
     
-    var education: Education
+    //MARK:- Properties
+    
+    let education = Education.education()
     
     var educationView: EducationView! {
     return view as? EducationView
     }
     
-    //MARK: Init
+    //MARK:- Init
     
-    init() {
-        self.education = Education.education()
-        
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init() {
         super.init(nibName: nil, bundle: nil)
     }
     
-    //MARK: View lifecycle
+    //MARK:- View lifecycle
     
     override func loadView() {
         view = UIDevice.isPad() ? EducationView_Pad() : EducationView_Phone()
@@ -36,7 +40,7 @@ class EducationViewController: UIViewController {
         setupEducationView()
     }
     
-    //MARK: Logic
+    //MARK:- Logic
     
     func setupEducationView() {
         educationView.universityLogoImageView.image = education.universityLogo

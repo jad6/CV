@@ -10,14 +10,16 @@ import UIKit
 
 class DynamicTypeTableViewController: TableViewController {
     
+    //MARK:- Properties
+    
     private var cellHeights = [Int: CGFloat]()
     
-    //MARK: Table view
+    //MARK:- Table view
     
     override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         let height = cellHeights[indexPath.row]
         
-        return height ? height! : 44.0
+        return height != nil ? height! : 44.0
     }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!

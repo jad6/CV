@@ -35,8 +35,7 @@ class ExperienceObject: ExtractedObject {
         }
     }
     
-    init(dictionary: NSDictionary) {
-        
+    required init(dictionary: NSDictionary) {
         self.startDate = dictionary["startDate"] as NSDate
         self.endDate = dictionary["endDate"] as NSDate
         self.organisation = dictionary["organisation"] as String
@@ -59,7 +58,7 @@ class ExtraCurricularActivity: ExperienceObject {
     
     class func extraCurricularActivitiesListData() -> ListData<ExtraCurricularActivity> {
         var extraCurricularActivitiesListData = ListData<ExtraCurricularActivity>()
-        extraCurricularActivitiesListData.sections += ListSection(rowObjects: ExtraCurricularActivity.extraCurricularActivities(), name: "Extra Curricular")
+        extraCurricularActivitiesListData.sections += [ListSection(rowObjects: ExtraCurricularActivity.extraCurricularActivities(), name: "Extra Curricular")]
         
         return extraCurricularActivitiesListData
     }
@@ -72,7 +71,7 @@ class ExtraCurricularActivity: ExperienceObject {
         return NSBundle.mainBundle().pathForResource("Extra Curricular", ofType: "plist")
     }
     
-    init(dictionary: NSDictionary) {
+    required init(dictionary: NSDictionary) {
         super.init(dictionary: dictionary)
     }
 }
@@ -98,7 +97,7 @@ class TimelineEvent: ExperienceObject {
     
     class func timelineEventsListData() -> ListData<TimelineEvent> {
         var timelineEventsListData = ListData<TimelineEvent>()
-        timelineEventsListData.sections += ListSection(rowObjects: TimelineEvent.timelineEvents(), name: "Timeline")
+        timelineEventsListData.sections += [ListSection(rowObjects: TimelineEvent.timelineEvents(), name: "Timeline")]
         
         return timelineEventsListData
     }
@@ -111,7 +110,7 @@ class TimelineEvent: ExperienceObject {
         return NSBundle.mainBundle().pathForResource("Experience", ofType: "plist")
     }
     
-    init(dictionary: NSDictionary) {
+    required init(dictionary: NSDictionary) {
         self.color = UIColor.colorFromRGBString(dictionary["color"] as String)
         
         let importance = dictionary["importance"] as Int

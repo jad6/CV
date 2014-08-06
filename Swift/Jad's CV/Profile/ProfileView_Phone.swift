@@ -10,7 +10,9 @@ import UIKit
 
 class ProfileView_Phone: ProfileView {
     
-    private var fadeImageView: UIImageView!
+    //MARK:- Properties
+    
+    private let fadeImageView = UIImageView()
     
     override var expanded: Bool {
     didSet {
@@ -18,36 +20,45 @@ class ProfileView_Phone: ProfileView {
     }
     }
     
-    init(frame: CGRect) {
-        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsets(top: 263.0, left: 0.0, bottom: 0.0, right: 0.0))
-        self.fadeImageView = UIImageView(image: fadeImage)
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        let fadeImage = UIImage(named: "fade_up").resizableImageWithCapInsets(UIEdgeInsets(top: 263.0, left: 0.0, bottom: 0.0, right: 0.0))
+        self.fadeImageView.image = fadeImage
         
         self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: 20, bottom: 0.0, right: 20)
     }
+    
+    //MARK:- Layout
 
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if expanded {
+        if expanded == true {
             profilePictureImageView.frame.size = LayoutConstants.PictureSizes.big
-            profilePictureImageView.centerHorizontallyWithReferenceView(self)
+            profilePictureImageView.centerHorizontallyWithReferenceRect(self.bounds)
             profilePictureImageView.frame.origin.y = LayoutConstants.statusBarHeight + LayoutConstants.Padding.top
             
             nameLabel.frame.size = nameLabel.sizeThatFits(bounds.size).ceilSize
-            nameLabel.centerHorizontallyWithReferenceView(self)
+            nameLabel.centerHorizontallyWithReferenceRect(self.bounds)
             nameLabel.frame.origin.y = profilePictureImageView.frame.maxY + LayoutConstants.Padding.side
             
             descriptionLabel.frame.size = descriptionLabel.sizeThatFits(bounds.size).ceilSize
-            descriptionLabel.centerHorizontallyWithReferenceView(self)
+            descriptionLabel.centerHorizontallyWithReferenceRect(self.bounds)
             descriptionLabel.frame.origin.y = nameLabel.frame.maxY + LayoutConstants.Padding.betweenVertical
             
             emailButton.frame.size = emailButton.sizeThatFits(bounds.size).ceilSize
-            emailButton.centerHorizontallyWithReferenceView(self)
+            emailButton.centerHorizontallyWithReferenceRect(self.bounds)
             emailButton.frame.origin.y = descriptionLabel.frame.maxY + (2 * LayoutConstants.Padding.betweenVertical)
             
             phoneButton.frame.size = phoneButton.sizeThatFits(bounds.size).ceilSize
-            phoneButton.centerHorizontallyWithReferenceView(self)
+            phoneButton.centerHorizontallyWithReferenceRect(self.bounds)
             phoneButton.frame.origin.y = emailButton.frame.maxY
         } else {
             // This makes the buttons disppear nicely with the animations

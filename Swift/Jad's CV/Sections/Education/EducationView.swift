@@ -9,6 +9,9 @@
 import UIKit
 
 class EducationView: DynamicTypeView {
+    
+    //MARK:- Constants
+    
     struct LayoutConstants {
         struct Padding {
             static let side: CGFloat = 15.0
@@ -19,26 +22,27 @@ class EducationView: DynamicTypeView {
         
         static let imageViewSize = CGSize(width: 70.0, height: 70.0)
     }
-        
-    private(set) var universityLogoImageView: UIImageView!
-    private(set) var textView: FormattedTextView!
-    private(set) var establishmentLabel: UILabel!
-    private(set) var statusLabel: UILabel!
-    private(set) var completionDateLabel: UILabel!
-    private(set) var backgroundImageView: UIImageView!
     
-    init(frame: CGRect) {
-        self.universityLogoImageView = UIImageView()
-        self.textView = FormattedTextView()
-        self.establishmentLabel = UILabel()
-        self.statusLabel = UILabel()
-        self.completionDateLabel = UILabel()
-        self.backgroundImageView = UIImageView()
-        
+    //MARK:- Properties
+    
+    let universityLogoImageView = UIImageView()
+    let textView = FormattedTextView()
+    let establishmentLabel = UILabel()
+    let statusLabel = UILabel()
+    let completionDateLabel = UILabel()
+    let backgroundImageView = UIImageView()
+    
+    //MARK:- Init
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.addSubview(self.universityLogoImageView)
-
+        self.addSubview(self.completionDateLabel)
         self.addSubview(self.textView)
         
         self.establishmentLabel.numberOfLines = 2
@@ -47,7 +51,8 @@ class EducationView: DynamicTypeView {
         self.statusLabel.numberOfLines = 3
         self.addSubview(self.statusLabel)
         
-        self.addSubview(self.completionDateLabel)
+        self.backgroundImageView.contentMode = .ScaleAspectFill
+        self.backgroundImageView.clipsToBounds = true
         
         self.backgroundColor = UIColor.whiteColor()
     }
@@ -56,7 +61,7 @@ class EducationView: DynamicTypeView {
         self.init(frame: CGRectZero)
     }
     
-    //MARK: Dynamic type
+    //MARK:- Dynamic type
     
     override func reloadDynamicTypeContent() {
         textView.font = DynamicTypeFont.preferredFontForTextStyle(UIFontTextStyleBody)
