@@ -46,47 +46,41 @@
 
 @synthesize pageIndex = _pageIndex;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = NSLocalizedString(@"EducationTitle", nil);
-    
-    if (IS_IPAD)
-    {
+
+    if (IS_IPAD) {
         UIImage *ipadFadeImage = [UIImage imageNamed:@"ipad_fade"];
         UIImage *strechedImage = [ipadFadeImage resizableImageWithCapInsets:UIEdgeInsetsMake(80.0f, 80.0f, 80.0f, 80.0f) resizingMode:UIImageResizingModeStretch];
         self.fadeImageView.image = strechedImage;
     }
-    
+
     [self populateSubviews];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     [self layoutTextView];
 }
 
 #pragma mark - Layout
 
-- (void)layoutTextView
-{
+- (void)layoutTextView {
     UITextView *textView = self.textView;
     CGRect idealTextViewFrame = textView.frame;
     CGSize maxSize = CGSizeMake(idealTextViewFrame.size.width, CGFLOAT_MAX);
+
     idealTextViewFrame.size = [textView sizeThatFits:maxSize];
-    
+
     UIView *fadeSuperview = self.fadeImageView.superview;
     CGFloat maxHeight = ABS(fadeSuperview.frame.size.height - textView.frame.origin.y) - floorf(self.fadeImageView.frame.size.height / 2.0);
-    if (idealTextViewFrame.size.height > maxHeight)
-    {
+    if (idealTextViewFrame.size.height > maxHeight) {
         self.textView.scrollEnabled = YES;
         self.textViewHeightLayoutConstraint.constant = maxHeight;
-    }
-    else
-    {
+    } else {
         self.textView.scrollEnabled = NO;
         self.textViewHeightLayoutConstraint.constant = idealTextViewFrame.size.height;
     }
@@ -94,11 +88,10 @@
 
 #pragma mark - Logic
 
-- (void)populateSubviews
-{
+- (void)populateSubviews {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Education" ofType:@"plist"];
     NSDictionary *educationInfo = [[NSDictionary alloc] initWithContentsOfFile:filePath];
-    
+
     self.completionDateLabel.text = educationInfo[@"completion"];
     self.establishmentLabel.text = educationInfo[@"establishment"];
     self.statusLabel.text = educationInfo[@"status"];

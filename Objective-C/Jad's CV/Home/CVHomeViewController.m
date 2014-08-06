@@ -74,8 +74,7 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 @implementation CVHomeViewController
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
 
     CVProfileView *profileView = self.profileView;
@@ -84,44 +83,36 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     profileView.personalInfo = [CVPersonalInfo personalInfo];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+
     [self.profileView handleBackgroundImageBlur:animated];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    if (self.profileView.expanded)
-    {
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if (self.profileView.expanded) {
         return UIStatusBarStyleDefault;
     }
 
     return UIStatusBarStyleLightContent;
 }
 
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
-{
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
     return UIStatusBarAnimationFade;
 }
 
 #pragma mark - Getters & Setters
 
-- (NSArray *)pageContentViewControllerIdentifiers
-{
+- (NSArray *)pageContentViewControllerIdentifiers {
     if (self->_pageContentViewControllerIdentifiers == nil) {
         // Set the identifiers for the decive.
         NSArray *identifiers = nil;
-        if (IS_IPAD)
-        {
+        if (IS_IPAD) {
             identifiers = @[CVTimelineSplitViewControllerIdentifier,
                             CVExtraCurricularSplitViewControllerIdentifier,
                             CVEducationViewControllerIdentifier,
                             CVReferencesViewControllerIdentifier];
-        }
-        else
-        {
+        } else {
             identifiers = @[CVTimelineViewControllerIdentifier,
                             CVExtraCurricularViewControllerIdentifier,
                             CVEducationViewControllerIdentifier,
@@ -129,20 +120,18 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
         }
 
         self->_pageContentViewControllerIdentifiers = identifiers;
-        
+
         // Indicate the number of pages to display in the page control.
         self.pageControl.numberOfPages = [identifiers count];
     }
-    
+
     return self->_pageContentViewControllerIdentifiers;
 }
 
 #pragma mark - Segues
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Page Segue"])
-    {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Page Segue"]) {
         // Set the page view controller's properties.
         CVPageViewController *pageViewController = [segue destinationViewController];
         pageViewController.delegate = self;
@@ -160,20 +149,20 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
  *
  *  @param pageViewController The page view controller who's page has changed.
  */
-- (void)refreshFromPageViewController:(UIPageViewController *)pageViewController
-{
+- (void)refreshFromPageViewController:(UIPageViewController *)pageViewController {
     // In our case we only ever load one page thus this array will only
     // ever contain one element.
     UIViewController *currentController = [pageViewController.viewControllers lastObject];
     NSString *controllerIdentifier = NSStringFromClass([currentController class]);
-    
-    if ([controllerIdentifier isEqualToString:CVReferencesViewControllerIdentifier])
+
+    if ([controllerIdentifier isEqualToString:CVReferencesViewControllerIdentifier]) {
         pageViewController.view.backgroundColor = [UIColor backgroundGrayColor];
-    else
+    } else {
         pageViewController.view.backgroundColor = [UIColor whiteColor];
-    
+    }
+
     self.profileView.descriptionLabel.text = currentController.title;
-    
+
     // Because we store the storyboard identifiers as the class names
     // we can extract the index from the identifiers array.
     self.pageControl.currentPage = [self.pageContentViewControllerIdentifiers indexOfObject:controllerIdentifier];
@@ -186,23 +175,20 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
  *  @param completionBlock Called when the layout has completed.
  */
 - (void)layoutSubviews:(BOOL)animated
-            completion:(void(^)(BOOL finished))completionBlock
-{
-    if (animated)
-    {
+            completion:(void (^)(BOOL finished))completionBlock {
+    if (animated) {
         [UIView animateWithDuration:0.6
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
-                             [self.profileView layoutIfNeeded];
-                             [self.pagesView layoutIfNeeded];
-                         } completion:completionBlock];
+            [self.profileView layoutIfNeeded];
+            [self.pagesView layoutIfNeeded];
+        } completion:completionBlock];
     } else {
         [self.profileView layoutIfNeeded];
         [self.pagesView layoutIfNeeded];
-        
-        if (completionBlock)
-        {
+
+        if (completionBlock) {
             completionBlock(YES);
         }
     }
@@ -210,16 +196,15 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 #pragma mark - Profile View
 
-- (void)profileViewDidSelectInfoButton:(CVProfileView *)profileView
-{
+- (void)profileViewDidSelectInfoButton:(CVProfileView *)profileView {
     // Set the profile view height to the full height of the view.
     self.profileViewHeightLayoutConstraint.constant = self.view.frame.size.height;
-    
+
     // Save the current description label text.
     self.descriptionTextBeforeInfoTransition = self.profileView.descriptionLabel.text;
     // Update the description label text.
     self.profileView.descriptionLabel.text = self.profileView.personalInfo.location;
-    
+
     self.profileView.backgroundImageView.image = self.profileView.personalInfo.backgroundImage;
 
     // Set the UI changes.
@@ -230,8 +215,7 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     [self.profileView handleBackgroundImageBlur:NO];
 }
 
-- (void)profileViewDidSelectCloseButton:(CVProfileView *)profileView
-{
+- (void)profileViewDidSelectCloseButton:(CVProfileView *)profileView {
     // Set the profile view's height back to it layout length.
     self.profileViewHeightLayoutConstraint.constant = self.profileView.length;
 
@@ -248,32 +232,27 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     }];
 }
 
-- (UIViewController *)controllerForEmailPresentationInProfileView:(CVProfileView *)profileView
-{
+- (UIViewController *)controllerForEmailPresentationInProfileView:(CVProfileView *)profileView {
     return self;
 }
 
 #pragma mark - Page Control
 
-- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:CVPagingNotification object:self userInfo:@{CVPagingStateKey: @(CVPagingStateBeganScroll), CVPagingControllersKey: pendingViewControllers}];
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
+    [[NSNotificationCenter defaultCenter] postNotificationName:CVPagingNotification object:self userInfo:@{ CVPagingStateKey: @(CVPagingStateBeganScroll), CVPagingControllersKey: pendingViewControllers }];
 }
 
-- (void)pageViewController:(UIPageViewController *)pageViewController
-        didFinishAnimating:(BOOL)finished
-   previousViewControllers:(NSArray *)previousViewControllers
-       transitionCompleted:(BOOL)completed
-{
+- (void) pageViewController:(UIPageViewController *)pageViewController
+         didFinishAnimating:(BOOL)finished
+    previousViewControllers:(NSArray *)previousViewControllers
+        transitionCompleted:(BOOL)completed {
     // Only refresh the UI if the transition was completed.
-    if (completed)
-    {
+    if (completed) {
         [self refreshFromPageViewController:pageViewController];
     }
-    
-    if (finished)
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:CVPagingNotification object:self userInfo:@{CVPagingStateKey: @(CVPagingStateFinishedScroll), CVPagingControllersKey: previousViewControllers}];
+
+    if (finished) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:CVPagingNotification object:self userInfo:@{ CVPagingStateKey: @(CVPagingStateFinishedScroll), CVPagingControllersKey: previousViewControllers }];
     }
 }
 

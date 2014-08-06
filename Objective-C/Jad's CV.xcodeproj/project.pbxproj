@@ -48,6 +48,8 @@
 		0568735018F678BD00132551 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568734F18F678BD00132551 /* QuartzCore.framework */; };
 		0568735318F67ED700132551 /* CVReferencesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */; };
 		0568735618F680C100132551 /* CVRefereeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */; };
+		059482B0199242E30060C1DF /* CVTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 059482AF199242E30060C1DF /* CVTutorialViewController.m */; };
+		059482B6199244BE0060C1DF /* CVTutorialSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 059482B5199244BE0060C1DF /* CVTutorialSwipeView.m */; };
 		0594FFAD18F7D72300422BA5 /* CVTimelineSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0594FFAC18F7D72300422BA5 /* CVTimelineSplitViewController.m */; };
 		0594FFB018F7D73500422BA5 /* CVExtraCurricularSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0594FFAF18F7D73500422BA5 /* CVExtraCurricularSplitViewController.m */; };
 		05BE998A18F8FA320015D7D9 /* JOCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BE998918F8FA320015D7D9 /* JOCircleView.m */; };
@@ -170,6 +172,10 @@
 		0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVReferencesCollectionViewController.m; sourceTree = "<group>"; };
 		0568735418F680C100132551 /* CVRefereeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVRefereeCollectionViewCell.h; sourceTree = "<group>"; };
 		0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVRefereeCollectionViewCell.m; sourceTree = "<group>"; };
+		059482AE199242E30060C1DF /* CVTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTutorialViewController.h; sourceTree = "<group>"; };
+		059482AF199242E30060C1DF /* CVTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTutorialViewController.m; sourceTree = "<group>"; };
+		059482B4199244BE0060C1DF /* CVTutorialSwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTutorialSwipeView.h; sourceTree = "<group>"; };
+		059482B5199244BE0060C1DF /* CVTutorialSwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTutorialSwipeView.m; sourceTree = "<group>"; };
 		0594FFAB18F7D72300422BA5 /* CVTimelineSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTimelineSplitViewController.h; sourceTree = "<group>"; };
 		0594FFAC18F7D72300422BA5 /* CVTimelineSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTimelineSplitViewController.m; sourceTree = "<group>"; };
 		0594FFAE18F7D73500422BA5 /* CVExtraCurricularSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVExtraCurricularSplitViewController.h; sourceTree = "<group>"; };
@@ -342,6 +348,7 @@
 				056872FC18F6361E00132551 /* CVAppDelegate.h */,
 				056872FD18F6361E00132551 /* CVAppDelegate.m */,
 				05BECD08191CBA90002445E3 /* User Interface */,
+				059482AD199242880060C1DF /* Tutorial */,
 				05BECD01191CBA61002445E3 /* Home */,
 				0568734B18F6650100132551 /* Profile */,
 				0568733518F650A200132551 /* Pages */,
@@ -464,6 +471,17 @@
 				0550425418FD1C5400CEDF2C /* CVPersonalInfo.m */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		059482AD199242880060C1DF /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				059482AE199242E30060C1DF /* CVTutorialViewController.h */,
+				059482AF199242E30060C1DF /* CVTutorialViewController.m */,
+				059482B4199244BE0060C1DF /* CVTutorialSwipeView.h */,
+				059482B5199244BE0060C1DF /* CVTutorialSwipeView.m */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 		0594FFAA18F7D70B00422BA5 /* Split Controllers */ = {
@@ -671,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F75AD718F6AB800061C1BC /* CVExtraCurricularTableViewCell.m in Sources */,
+				059482B0199242E30060C1DF /* CVTutorialViewController.m in Sources */,
 				05BE99A718F96F4F0015D7D9 /* UIView+Snapshot.m in Sources */,
 				05F75ADD18F6B0870061C1BC /* CVExtractedObject.m in Sources */,
 				05BE999318F93A970015D7D9 /* CVPageContentNavigationController.m in Sources */,
@@ -689,6 +708,7 @@
 				0568734E18F6788E00132551 /* JOCircleImageView.m in Sources */,
 				05F75ADA18F6ABC90061C1BC /* CVExtraCurricularActivity.m in Sources */,
 				050A5CF418FA50FC00244F50 /* JOCollectionViewController.m in Sources */,
+				059482B6199244BE0060C1DF /* CVTutorialSwipeView.m in Sources */,
 				050A5D0B18FA8FF200244F50 /* CVRoundedRectImageView.m in Sources */,
 				0550425018FD19A000CEDF2C /* CVContactor.m in Sources */,
 				050A5CF018FA4B7900244F50 /* CVReferee.m in Sources */,

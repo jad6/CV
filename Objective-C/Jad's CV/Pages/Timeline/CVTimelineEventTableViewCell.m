@@ -47,29 +47,25 @@
 
 @implementation CVTimelineEventTableViewCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
+    if (self) {
         [self awakeFromNib];
     }
     return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
-    
-    if (IS_IPHONE)
-    {
+
+    if (IS_IPHONE) {
         UIImage *chevronImage = [UIImage imageNamed:@"chevron"];
         chevronImage = [chevronImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIImageView *chevronImageView = [[UIImageView alloc] initWithImage:chevronImage];
         [chevronImageView sizeToFit];
         self.accessoryView = chevronImageView;
     }
-    
+
     UIView *backgroundView = [[UIView alloc] initWithFrame:self.frame];
     backgroundView.backgroundColor = [UIColor backgroundGrayColor];
     self.selectedBackgroundView = backgroundView;
@@ -77,34 +73,30 @@
 
 #pragma mark - Setters & Getters
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
+
     self.lineView.backgroundColor = [UIColor lightGrayColor];
     self.dotView.backgroundColor = self.event.color;
 }
 
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
-{
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
     [super setHighlighted:highlighted animated:animated];
-    
+
     self.lineView.backgroundColor = [UIColor lightGrayColor];
     self.dotView.backgroundColor = self.event.color;
 }
 
-- (void)setEvent:(CVTimelineEvent *)event
-{
-    if (self->_event != event)
-    {
+- (void)setEvent:(CVTimelineEvent *)event {
+    if (self->_event != event) {
         self->_event = event;
-        
+
         // Set the UI elements from the event.
         self.organisationLabel.text = event.organisation;
         self.positionLabel.text = event.position;
-        
+
         self.dateLabel.text = [event.startDate combinedCondensedStringWithEndDate:event.endDate withMidString:@" -\n  "];
-        
+
         UIColor *tintColor = event.color;
         self.dateLabel.textColor = tintColor;
         self.organisationLabel.textColor = tintColor;

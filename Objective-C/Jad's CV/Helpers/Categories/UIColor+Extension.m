@@ -32,31 +32,27 @@
 
 @implementation UIColor (Extension)
 
-+ (UIColor *)colorFromString:(NSString *)string
-{
++ (UIColor *)colorFromString:(NSString *)string {
     NSArray *components = [string componentsSeparatedByString:@","];
     NSUInteger componentsCount = [components count];
-    
-    if (componentsCount != 4)
-    {
+
+    if (componentsCount != 4) {
         return nil;
     }
-    
+
     CGFloat red = [components[0] floatValue];
     CGFloat green = [components[1] floatValue];
     CGFloat blue = [components[2] floatValue];
     CGFloat alpha = [components[3] floatValue];
-    
-    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha];
+
+    return [UIColor colorWithRed:red / 255.0f green:green / 255.0f blue:blue / 255.0f alpha:alpha];
 }
 
-+ (UIColor *)defaultBlueColor
-{
++ (UIColor *)defaultBlueColor {
     return [UIColor colorFromString:@"0,122,255,1"];
 }
 
-+ (UIColor *)backgroundGrayColor
-{
++ (UIColor *)backgroundGrayColor {
     return [UIColor colorFromString:@"245,245,245,1"];
 }
 

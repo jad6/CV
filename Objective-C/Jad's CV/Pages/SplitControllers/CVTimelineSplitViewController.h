@@ -31,7 +31,7 @@
 #import "CVPageContentSplitViewController.h"
 
 /**
- *  A view controller that has two child view controllers. 
+ *  A view controller that has two child view controllers.
  *  In this case the left hand controller is CVTimelineTableViewController.
  *  The right hand one is its detail view controller.
  */
