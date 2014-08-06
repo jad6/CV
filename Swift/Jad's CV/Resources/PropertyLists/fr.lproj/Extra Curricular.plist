@@ -6,13 +6,13 @@
 		<key>organisation</key>
 		<string>Surf Life Saving Australia</string>
 		<key>position</key>
-		<string>Membre de la patrouille de Scarborough Beach</string>
+		<string>Membre des sauveteurs en mer de Scarborough Beach</string>
 		<key>startDate</key>
 		<date>2003-09-01T04:00:00Z</date>
 		<key>endDate</key>
 		<date>2009-09-01T04:00:00Z</date>
 		<key>description</key>
-		<string>Je me suis engagé à patrouiller la plage de Scarborough toutes les deux semaines. Ceci a grandement amélioré ma condition physique, ma patience et mon sens de l’attention car je devais être prêt à agir rapidement en toutes sortes de situations.</string>
+		<string>Je me suis engagé à patrouiller la plage de Scarborough toutes les deux semaines en tant que maitre nageur. Ceci a grandement amélioré ma condition physique, ma patience et mon sens de l’attention car je devais être prêt à agir rapidement en toutes sortes de situations.</string>
 		<key>imageName</key>
 		<string>slsa</string>
 	</dict>
@@ -26,7 +26,7 @@
 		<key>endDate</key>
 		<date>2011-02-01T04:00:00Z</date>
 		<key>description</key>
-		<string>Je fut élu deux ans d&apos;affilé par les étudiants informaticiens pour les représenter auprès de l’école d’ingénieurs. J’ai relayé les opinions des mes camarades durant les réunions pendants lesquelles l’université décidait les changements de la structure des cours. J’ai également été responsable de l’organisation des activités éducationnelles et de maintenir un lien fort entre les entreprises d’informatiques et le club des ingénieurs.</string>
+		<string>Je fut élu deux fois de suite par les étudiants informaticiens pour les représenter auprès de l’école d’ingénieurs. J’ai participé à plusieurs réunions pendants lesquelles l’université décidait les changements de la structure des cours. J’ai également été responsable de l’organisation des activités éducationnelles et de maintenir un lien fort entre les entreprises d’informatiques et le club des ingénieurs.</string>
 		<key>imageName</key>
 		<string>uec</string>
 	</dict>
@@ -54,7 +54,7 @@
 		<key>endDate</key>
 		<date>2013-11-01T04:00:00Z</date>
 		<key>description</key>
-		<string>Tout au long de mes études je me suis impliqué dans l’activité charitable de “Uni Camp for Kids” (UCFK). Le but de cette activité de charité est de permettre à des enfants défavorisés de s’amuser en étant accompagné d’étudiants universitaire. Chaque année j’ai participé en tant qu’animateur lors de quatre pique-niques et d’un camp. J’ai aussi représenté UCFK lors d’un marathon annuel.</string>
+		<string>Tout au long de mes études j’ai été impliqué dans l’activité charitable de “Uni Camp for Kids” (UCFK). Le but de cette activité de charité est de permettre à des enfants défavorisés de s’amuser en étant accompagnés d’étudiants universitaire. Chaque année, pendant quatre ans, j’ai été animateur lors de pique-niques et d’un camp d’une semaine. J’ai aussi représenté UCFK lors d’un marathon annuel.</string>
 		<key>imageName</key>
 		<string>ucfk</string>
 	</dict>
