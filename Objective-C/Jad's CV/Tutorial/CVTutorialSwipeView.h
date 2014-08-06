@@ -10,6 +10,6 @@
 
 @interface CVTutorialSwipeView : UIView
 
-@property (nonatomic, strong, readonly) CAAnimation *currentAnimation;
+- (void)startAnimating;
 
 @end

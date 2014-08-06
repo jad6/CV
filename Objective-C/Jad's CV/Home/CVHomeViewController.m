@@ -87,6 +87,8 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
     [super viewDidAppear:animated];
 
     [self.profileView handleBackgroundImageBlur:animated];
+    
+    [self presentTutorial];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -192,6 +194,13 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
             completionBlock(YES);
         }
     }
+}
+
+#pragma mark - Tutorial
+
+- (void)presentTutorial
+{
+    [self performSegueWithIdentifier:@"Tutorial Segue" sender:self];
 }
 
 #pragma mark - Profile View

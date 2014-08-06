@@ -29,18 +29,37 @@ typedef NS_ENUM (NSInteger, CVTutorialCircleSwipeDirection) {
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        CGSize circleViewSize = CGSizeMake(30.0f, 30.0f);
-
-        self.circleView = [[JOCircleView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, circleViewSize.width, circleViewSize.height)];
-        [self addSubview:self.circleView];
+        [self awakeFromNib];
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    CGSize circleViewSize = CGSizeMake(30.0f, 30.0f);
+    
+    JOCircleView *circleView = [[JOCircleView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, circleViewSize.width, circleViewSize.height)];
+    circleView.backgroundColor = [UIColor backgroundGrayColor];
+    [self addSubview:circleView];
+    
+    self.circleView = circleView;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
 
     [self.circleView centerVerticallyWithReferenceRect:self.bounds];
+}
+
+- (void)startAnimating {
+    [self animateMovementWithDirection:CVTutorialCircleSwipeDirectionRight];
+}
+
+- (void)endAnimating {
+    if (self.currentAnimation) {
+//        self.currentAnimation
+    }
 }
 
 - (void)animateMovementWithDirection:(CVTutorialCircleSwipeDirection)direction {
@@ -69,7 +88,7 @@ typedef NS_ENUM (NSInteger, CVTutorialCircleSwipeDirection) {
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
 
     [circleView.layer addAnimation:animation forKey:@"basic"];
-    circleView.layer.position = CGPointMake(toX, 0.0f);
+    circleView.layer.position = CGPointMake(toX, circleView.frame.origin.y);
 }
 
 - (void)animationDidStart:(CAAnimation *)anim {
@@ -78,28 +97,28 @@ typedef NS_ENUM (NSInteger, CVTutorialCircleSwipeDirection) {
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     self.currentAnimation = nil;
-
+    
     CVTutorialCircleSwipeDirection nextDirection = (self.lastAnimationDirection == CVTutorialCircleSwipeDirectionLeft) ? CVTutorialCircleSwipeDirectionRight : CVTutorialCircleSwipeDirectionLeft;
-
+    
     JOCircleView *circleView = self.circleView;
     __weak __typeof(circleView) weakCircleView = circleView;
     [circleView setHidden:YES
                  animated:YES
                  duration:0.9f
                completion:^(BOOL finished) {
-        __strong __typeof(weakCircleView) strongCircleView = weakCircleView;
-
-        if (finished) {
-            [strongCircleView setHidden:NO
-                               animated:YES
-                               duration:0.6f
-                             completion:^(BOOL finished) {
-                if (finished) {
-                    [self animateMovementWithDirection:nextDirection];
-                }
-            }];
-        }
-    }];
+                   __strong __typeof(weakCircleView) strongCircleView = weakCircleView;
+                   
+                   if (finished) {
+                       [strongCircleView setHidden:NO
+                                          animated:YES
+                                          duration:0.6f
+                                        completion:^(BOOL finished) {
+                                            if (finished) {
+                                                [self animateMovementWithDirection:nextDirection];
+                                            }
+                                        }];
+                   }
+               }];
 }
 
 @end

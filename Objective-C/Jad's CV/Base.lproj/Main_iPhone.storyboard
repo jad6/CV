@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SQf-sB-2ji">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="46Q-DA-gWm">
             <objects>
-                <viewController id="MTo-SP-lTH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CVTutorialViewController" id="MTo-SP-lTH" customClass="CVTutorialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SBZ-3g-3Db"/>
                         <viewControllerLayoutGuide type="bottom" id="xhh-3n-WgD"/>
@@ -27,9 +26,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U20-o7-oin" customClass="CVTutorialSwipeView">
+                                <rect key="frame" x="10" y="381" width="300" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="swipeView" destination="U20-o7-oin" id="dcv-h5-skN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFf-Yr-Vnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,6 +162,7 @@
                         <outlet property="pagesView" destination="k1h-lV-DDg" id="KE7-QU-1cN"/>
                         <outlet property="profileView" destination="WuD-7c-3u5" id="DDb-NZ-15s"/>
                         <outlet property="profileViewHeightLayoutConstraint" destination="9op-fY-VNA" id="xdf-1f-cYM"/>
+                        <segue destination="MTo-SP-lTH" kind="modal" identifier="Tutorial Segue" modalTransitionStyle="crossDissolve" id="n1s-1I-63t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pv-W0-Pbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
