@@ -34,7 +34,7 @@
 		<key>position</key>
 		<string>Bénéficiaire d’un prix</string>
 		<key>description</key>
-		<string>J’ai gagné un prix (bourse) de l’Apple University Consortium pour assister a un atelier iOS a Sydney. Durant cet atelier je fut exposé au development pour iOS et depuis j’ai continué à perfectionner mes connaissances. </string>
+		<string>J’ai gagné un prix (bourse) de l’Apple University Consortium pour assister a un atelier iOS à Sydney. Durant cet atelier je fut exposé au développement pour iOS et depuis j’ai continué à perfectionner mes connaissances. </string>
 		<key>imageName</key>
 		<string>auc</string>
 	</dict>
@@ -70,7 +70,7 @@
 		<key>position</key>
 		<string>Ingénieur informatique</string>
 		<key>description</key>
-		<string>Travailler a XciteLogic Development m’a permit de perfectionner mes connaissance de development de logiciel. J’ai travaillé en équipe sur plusieurs projets de différentes tailles. Je rencontrais régulièrement les clients afin de discuter leurs besoins et specifications. Ma specialisation était de developer et mettre en place des applications iOS. XciteLogic Development fut racheté par une autre compagnie informatique.</string>
+		<string>Travailler a XciteLogic Development m’a permit de perfectionner mes connaissances de développement de logiciel. J’ai travaillé en équipe sur plusieurs projets de différentes tailles. Je rencontrais régulièrement les clients afin de discuter leurs besoins et specifications. Ma spécialisation était de développer et mettre en place des applications iOS. XciteLogic Development fut racheté par une autre compagnie informatique.</string>
 		<key>imageName</key>
 		<string>xcite</string>
 	</dict>
@@ -88,7 +88,7 @@
 		<key>position</key>
 		<string>Ingénieur informatique</string>
 		<key>description</key>
-		<string>Je fut parmi un petit groupe d’employés que Datacom a gardé après leur acquisition de XciteLogic Development. Ma position de developer des applications iOS pour des projets internes et externes à la société. Je crée, maintiens et améliore des projets pour des clients de différent taille.</string>
+		<string>Je fut parmi un petit groupe d’employés que Datacom a gardé après leur acquisition de XciteLogic Development. Ma position est de développer des applications iOS pour des projets internes et externes à la société. Je crée, maintiens et améliore des projets pour des clients de différent taille.</string>
 		<key>imageName</key>
 		<string>datacom</string>
 	</dict>
@@ -106,7 +106,7 @@
 		<key>position</key>
 		<string>Partenaire &amp; Co-fondateur</string>
 		<key>description</key>
-		<string>J’ai crée la société Appulse avec deux amis étudiants. Cette société crée des sites web et applications pour appareils mobiles. Le but principal d’Appulse est d’experimenter de nouvelles façons de developer des logiciels. </string>
+		<string>J’ai crée la société Appulse avec deux amis étudiants. Cette société crée des sites web et applications pour appareils mobiles. Le but principal d’Appulse est d’experimenter de nouvelles façons de développer des logiciels. </string>
 	</dict>
 	<dict>
 		<key>importance</key>
@@ -122,7 +122,7 @@
 		<key>position</key>
 		<string>Coach&apos;s Box App</string>
 		<key>description</key>
-		<string>Le premier projet d’Appulse a été de developer une application iPad pour un jeu de société sur le Football Australien. Le projet fut une grande experience d’apprentissage dans la programmation iOS, dans la definition des specifications et du travail en équipe.  L’application est disponible sur le App Store via le lien: https://itunes.apple.com/au/app/coachs-box/id500384054?mt=8.</string>
+		<string>Le premier projet d’Appulse a été de développer une application iPad pour un jeu de société sur le Football Australien. Le projet fut une grande experience d’apprentissage dans la programmation iOS, dans la definition des specifications et du travail en équipe.  L’application est disponible sur le App Store via le lien: https://itunes.apple.com/au/app/coachs-box/id500384054?mt=8.</string>
 		<key>imageName</key>
 		<string>cb</string>
 	</dict>
@@ -158,7 +158,7 @@
 		<key>position</key>
 		<string>Department of Fisheries Kiosk App</string>
 		<key>description</key>
-		<string>J’ai fait parti de l’équipe de development d’une application iPad kiosque pour une exposition du Département de la Pêche de Australie Occidentale. L’application permet au visiteurs d’explorer la faune et la flore des différentes regions de l’état au travers d’images, de films et de jeux interactifs. </string>
+		<string>J’ai fait parti de l’équipe de développement d’une application iPad kiosque pour une exposition du Département de la Pêche de Australie Occidentale. L’application permet au visiteurs d’explorer la faune et la flore des différentes regions de l’état au travers d’images, de films et de jeux interactifs. </string>
 		<key>imageName</key>
 		<string>gov</string>
 	</dict>
@@ -194,7 +194,7 @@
 		<key>position</key>
 		<string>Catholic Education Australia App</string>
 		<key>description</key>
-		<string>Mon premier project a Datacom a été d’améliorer l’application iOS iCE pour le “Catholic Education Office of WA”. Cette amelioration fut un succès et l’application a été téléchargée sur l’App Store via le lien: https://itunes.apple.com/au/app/ice/id766249312?mt=8.</string>
+		<string>Mon premier project a Datacom a été d’améliorer l’application iOS iCE pour le “Catholic Education Office of WA”. Cette amélioration fut un succès et l’application a été téléchargée sur l’App Store via le lien: https://itunes.apple.com/au/app/ice/id766249312?mt=8.</string>
 		<key>imageName</key>
 		<string>ice</string>
 	</dict>
@@ -230,7 +230,7 @@
 		<key>position</key>
 		<string>Projet de thèse</string>
 		<key>description</key>
-		<string>Le sujet de recherche de ma thèse est l’implementation d’un algorithme qui calcule la force d’une touche sur un smartphone ou une tablette en utilisant les motions induites par l’interaction. Cette recherche a duré un an et j’ai produit: un article, une application iOS, une soutenance et un poster de conférence. L’application démontrant l’algorithme et l’article peut être trouvé sur le lien: https://github.com/jad6/DOMATI-iOS.</string>
+		<string>Le sujet de recherche de ma thèse est l’implementation d’un algorithme qui calcule la force d’une touche sur un smartphone ou une tablette en utilisant les motions induites par l’interaction. Cette recherche a duré un an et j’ai produit: un article, une application iOS, une soutenance et un poster de conférence. L’application démontrant l’algorithme et l’article peuvent être trouvés sur le lien: https://github.com/jad6/DOMATI-iOS.</string>
 		<key>imageName</key>
 		<string>domati</string>
 	</dict>
