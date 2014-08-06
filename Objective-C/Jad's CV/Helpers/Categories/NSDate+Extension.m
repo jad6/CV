@@ -34,46 +34,38 @@ static NSString *CVCondensedDateFormat = @"MMM YY";
 
 @implementation NSDate (Extension)
 
-- (NSString *)stringFromFormatter:(void(^)(NSDateFormatter *formatter))formatterBlock
-{
+- (NSString *)stringFromFormatter:(void (^)(NSDateFormatter *formatter))formatterBlock {
     static NSDateFormatter *formatter = nil;
     static dispatch_once_t onceToken;
+
     dispatch_once(&onceToken, ^{
         formatter = [[NSDateFormatter alloc] init];
     });
-    
+
     if (formatterBlock) {
         formatterBlock(formatter);
     }
-    
+
     return [formatter stringFromDate:self];
 }
 
-- (NSString *)condensedString
-{
+- (NSString *)condensedString {
     return [self stringFromFormatter:^(NSDateFormatter *formatter) {
         [formatter setDateFormat:CVCondensedDateFormat];
     }];
 }
 
 - (NSString *)combinedCondensedStringWithEndDate:(NSDate *)endDate
-                                   withMidString:(NSString *)midString
-{
+                                   withMidString:(NSString *)midString {
     NSString *startDateText = [self condensedString];
 
-    if ([endDate compare:[NSDate date]] == NSOrderedDescending)
-    {
+    if ([endDate compare:[NSDate date]] == NSOrderedDescending) {
         return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, NSLocalizedString(@"PresentDate", nil)];
-    }
-    else
-    {
+    } else {
         NSString *endDateText = [endDate condensedString];
-        if ([startDateText isEqualToString:endDateText])
-        {
+        if ([startDateText isEqualToString:endDateText]) {
             return startDateText;
-        }
-        else
-        {
+        } else {
             return [[NSString alloc] initWithFormat:@"%@%@%@", startDateText, midString, endDateText];
         }
     }

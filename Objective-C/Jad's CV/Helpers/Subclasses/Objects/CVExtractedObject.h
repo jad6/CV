@@ -31,14 +31,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  Abstract object to help extract data from a resource and convert it 
+ *  Abstract object to help extract data from a resource and convert it
  *  to objects.
  */
 @interface CVExtractedObject : NSObject
 
 /**
  *  Extracts the data from a plist into an array of CVExtractedObjects.
- *  The plist must be formatter with a root object as an Array and 
+ *  The plist must be formatter with a root object as an Array and
  *  each element as a Dictionary for this method to be successful.
  *  NOTE: If the method returns nil check the error parameter.
  *

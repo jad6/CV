@@ -9,7 +9,7 @@
 #ifndef Jad_s_CV_CVPagingConstants_h
 #define Jad_s_CV_CVPagingConstants_h
 
-typedef NS_ENUM(NSInteger, CVPagingState) {
+typedef NS_ENUM (NSInteger, CVPagingState) {
     CVPagingStateStatic,
     CVPagingStateBeganScroll,
     CVPagingStateFinishedScroll

@@ -38,21 +38,18 @@
 
 @implementation CVTimelineSplitViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.title = @"Experience";
 }
 
 #pragma mark - Segue
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [super prepareForSegue:segue sender:sender];
-    
-    if ([segue.identifier isEqualToString:@"Timeline Segue"])
-    {
+
+    if ([segue.identifier isEqualToString:@"Timeline Segue"]) {
         CVTimelineTableViewController *timelineViewController = segue.destinationViewController;
         timelineViewController.delegate = self;
     }
@@ -60,16 +57,14 @@
 
 #pragma mark - Logic
 
-- (NSString *)detailSegueIdentifier
-{
+- (NSString *)detailSegueIdentifier {
     return CVDetailSegueIdentifier;
 }
 
 #pragma mark - Timeline Delegate
 
 - (void)timelineViewController:(UIViewController *)controller
-           didSelectExperience:(CVExperienceObject *)experience
-{
+           didSelectExperience:(CVExperienceObject *)experience {
     [self updateDetailControllerWithExperienceObject:experience];
 }
 

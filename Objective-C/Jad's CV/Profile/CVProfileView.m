@@ -64,62 +64,54 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 
 @implementation CVProfileView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         [self awakeFromNib];
     }
     return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(pagingAction:)
                                                  name:CVPagingNotification
                                                object:nil];
-        
+
     UIImageView *blurredImageView = [[UIImageView alloc] initWithFrame:self.frame];
     [blurredImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
+
     [self insertSubview:blurredImageView aboveSubview:self.backgroundImageView];
-    
+
     NSDictionary *bindings = NSDictionaryOfVariableBindings(blurredImageView);
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[blurredImageView]|" options:0 metrics:nil views:bindings]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[blurredImageView]|" options:0 metrics:nil views:bindings]];
-    
+
     self.blurredImageView = blurredImageView;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - Getters & Setters 
+#pragma mark - Getters & Setters
 
-- (void)setPersonalInfo:(CVPersonalInfo *)personalInfo
-{
-    if (self->_personalInfo != personalInfo)
-    {
+- (void)setPersonalInfo:(CVPersonalInfo *)personalInfo {
+    if (self->_personalInfo != personalInfo) {
         self->_personalInfo = personalInfo;
-        
+
         self.backgroundImageView.image = personalInfo.backgroundImage;
         self.nameLabel.text = personalInfo.fullName;
         self.profilePicImageView.image = personalInfo.profileImage;
     }
 }
 
-- (void)setExpanded:(BOOL)expanded
-{
-    if (self->_expanded != expanded)
-    {
+- (void)setExpanded:(BOOL)expanded {
+    if (self->_expanded != expanded) {
         self->_expanded = expanded;
-        
+
         UIColor *tintColor = (expanded) ? [UIColor blackColor] : [UIColor whiteColor];
         self.nameLabel.textColor = tintColor;
         self.descriptionLabel.textColor = tintColor;
@@ -130,26 +122,21 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     }
 }
 
-- (void)setTintColor:(UIColor *)tintColor
-{
+- (void)setTintColor:(UIColor *)tintColor {
     [super setTintColor:tintColor];
-    
+
     self.infoButton.tintColor = tintColor;
 }
 
-- (CGSize)expandedPhotoSize
-{
-    if (CGSizeEqualToSize(self->_expandedPhotoSize, CGSizeZero))
-    {
+- (CGSize)expandedPhotoSize {
+    if (CGSizeEqualToSize(self->_expandedPhotoSize, CGSizeZero)) {
         self->_expandedPhotoSize = CGSizeMake(self.photoWidthLayoutConstraint.constant * CVPhotoScaleFactor, self.photoHeightLayoutConstraint.constant * CVPhotoScaleFactor);
     }
     return self->_expandedPhotoSize;
 }
 
-- (NSMapTable *)initialConstraintConstants
-{
-    if (self->_initialConstraintConstants == nil)
-    {
+- (NSMapTable *)initialConstraintConstants {
+    if (self->_initialConstraintConstants == nil) {
         NSMapTable *initialTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory
                                                          valueOptions:NSMapTableStrongMemory];
         [initialTable setObject:@(self.photoWidthLayoutConstraint.constant)
@@ -166,69 +153,57 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
                          forKey:self.nameHorizontalLayoutConstraint];
         [initialTable setObject:@(self.descriptionHorizontalLayoutConstraint.constant)
                          forKey:self.descriptionHorizontalLayoutConstraint];
-        
+
         self->_initialConstraintConstants = initialTable;
     }
-    
+
     return self->_initialConstraintConstants;
 }
 
 #pragma mark - Layout
 
-- (CGFloat)length
-{
+- (CGFloat)length {
     return 108.0f;
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [self layoutMainInformation];
-    
+
     [super layoutSubviews];
-    
-    if (self.aboutMeView)
-    {
+
+    if (self.aboutMeView) {
         [self layoutAboutMe];
     }
 }
 
-- (void)layoutMainInformation
-{
-    if (self.expanded)
-    {
+- (void)layoutMainInformation {
+    if (self.expanded) {
         NSMapTable *finalConstraintConstants = [self recalculatedFinalConstraintConstants];
-        for (NSLayoutConstraint *constraint in finalConstraintConstants)
-        {
+        for (NSLayoutConstraint *constraint in finalConstraintConstants) {
             CGFloat constant = [[finalConstraintConstants objectForKey:constraint] floatValue];
-            
+
             constraint.constant = constant;
         }
-    }
-    else
-    {
+    } else {
         NSMapTable *initialConstraintConstants = self.initialConstraintConstants;
-        for (NSLayoutConstraint *constraint in initialConstraintConstants)
-        {
+        for (NSLayoutConstraint *constraint in initialConstraintConstants) {
             CGFloat constant = [[initialConstraintConstants objectForKey:constraint] floatValue];
-            
+
             constraint.constant = constant;
         }
     }
 }
 
-- (void)layoutAboutMe
-{
+- (void)layoutAboutMe {
     // Because I have lost all faith in Autolayout.
     CVAboutMeView *aboutMeView = self.aboutMeView;
     CGRect bounds = self.bounds;
     CGRect aboutMeViewFrame = aboutMeView.frame;
-    if (IS_IPHONE)
-    {
+
+    if (IS_IPHONE) {
         aboutMeViewFrame.size = CGSizeMake(320.0f, floorf(bounds.size.height * 0.85));
         aboutMeViewFrame.origin.y = bounds.size.height - aboutMeViewFrame.size.height;
-    }
-    else
-    {
+    } else {
         aboutMeViewFrame.size = CGSizeMake(480.0f, 480.0f);
         aboutMeViewFrame.origin.y = floorf(bounds.size.height * 0.3);
         aboutMeViewFrame.origin.x = floorf(bounds.size.width / 2.0 - aboutMeViewFrame.size.width / 2.0);
@@ -238,53 +213,44 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 
 #pragma mark - Logic
 
-- (void)handleAboutMeView
-{
-    if (self.expanded)
-    {
+- (void)handleAboutMeView {
+    if (self.expanded) {
         CVAboutMeView *aboutMeView = nil;
-        for (id view in [[NSBundle mainBundle] loadNibNamed:@"AboutMe" owner:nil options:nil])
-        {
-            if ([view isKindOfClass:[CVAboutMeView class]])
-            {
+        for (id view in [[NSBundle mainBundle] loadNibNamed:@"AboutMe" owner:nil options:nil]) {
+            if ([view isKindOfClass:[CVAboutMeView class]]) {
                 aboutMeView = view;
                 break;
             }
         }
-        
+
         [aboutMeView setHidden:YES animated:NO];
         aboutMeView.tintColor = [UIColor defaultBlueColor];
         aboutMeView.personalInfo = self.personalInfo;
-        if ([self.dataSource respondsToSelector:@selector(controllerForEmailPresentationInProfileView:)])
-        {
+        if ([self.dataSource respondsToSelector:@selector(controllerForEmailPresentationInProfileView:)]) {
             aboutMeView.emailPresentController = [self.dataSource controllerForEmailPresentationInProfileView:self];
         }
-        
+
         [self insertSubview:aboutMeView aboveSubview:self.backgroundImageView];
         [aboutMeView setHidden:NO animated:YES];
-        
+
         self.aboutMeView = aboutMeView;
-    }
-    else
-    {
+    } else {
         CVAboutMeView *aboutMeView = self.aboutMeView;
         [aboutMeView setHidden:YES
                       animated:NO
                       duration:0.3
                     completion:^(BOOL finished) {
-                        if (finished)
-                        {
-                            [self.aboutMeView removeFromSuperview];
-                            self.aboutMeView = nil;
-                        }
-                    }];
+            if (finished) {
+                [self.aboutMeView removeFromSuperview];
+                self.aboutMeView = nil;
+            }
+        }];
     }
 }
 
-- (NSMapTable *)recalculatedFinalConstraintConstants
-{
+- (NSMapTable *)recalculatedFinalConstraintConstants {
     CGRect frame = self.frame;
-    
+
     CGFloat photoHeightConstant = 0.0f;
     CGFloat photoWidthConstant = 0.0f;
     CGFloat photoHorizontalConstant = 0.0f;
@@ -292,46 +258,46 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
     CGFloat nameVerticalConstant = 0.0f;
     CGFloat nameHorizontalConstant = 0.0f;
     CGFloat descriptionHorizontalConstant = 0.0f;
-    
+
     NSMapTable *finalTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory
                                                    valueOptions:NSMapTableStrongMemory];
+
     photoHeightConstant = self.expandedPhotoSize.height;
     [finalTable setObject:@(photoHeightConstant)
                    forKey:self.photoWidthLayoutConstraint];
-    
+
     photoWidthConstant = self.expandedPhotoSize.width;
     [finalTable setObject:@(photoWidthConstant)
                    forKey:self.photoHeightLayoutConstraint];
-    
+
     photoHorizontalConstant = floorf(frame.size.width / 2.0 - photoWidthConstant / 2.0);
     [finalTable setObject:@(photoHorizontalConstant)
                    forKey:self.photoHorizontalLayoutConstraint];
-    
+
     photoVerticalConstant = floorf(frame.size.height / 10.0f);
     [finalTable setObject:@(photoVerticalConstant)
                    forKey:self.photoVerticalLayoutConstraint];
-    
+
     nameVerticalConstant = photoVerticalConstant + photoWidthConstant + 15.0f;
     [finalTable setObject:@(nameVerticalConstant)
                    forKey:self.nameVerticalLayoutConstraint];
-    
+
     nameHorizontalConstant = floorf(frame.size.width / 2.0 - self.nameLabel.frame.size.width / 2.0);
     [finalTable setObject:@(nameHorizontalConstant)
                    forKey:self.nameHorizontalLayoutConstraint];
-    
+
     [self.descriptionLabel sizeToFit];
     descriptionHorizontalConstant = floorf(frame.size.width / 2.0 - self.descriptionLabel.frame.size.width / 2.0);
     [finalTable setObject:@(descriptionHorizontalConstant)
                    forKey:self.descriptionHorizontalLayoutConstraint];
-    
+
     return finalTable;
 }
 
-- (void)handleBackgroundImageBlur:(BOOL)animated
-{
+- (void)handleBackgroundImageBlur:(BOOL)animated {
     UIImageView *blurredImageView = self.blurredImageView;
-    if (blurredImageView.image == nil)
-    {
+
+    if (blurredImageView.image == nil) {
         blurredImageView.image = [self.backgroundImageView imageWithBlurRadius:10.0f];
     }
 
@@ -343,9 +309,9 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
 
 #pragma mark - Actions
 
-- (void)pagingAction:(NSNotification *)pagingNotification
-{
+- (void)pagingAction:(NSNotification *)pagingNotification {
     CVPagingState pagingState = [[pagingNotification userInfo][CVPagingStateKey] integerValue];
+
     self.infoButton.userInteractionEnabled = (pagingState != CVPagingStateBeganScroll);
 }
 
@@ -354,26 +320,20 @@ static CGFloat CVPhotoScaleFactor = 2.0f;
  *
  *  @param sender The info button.
  */
-- (IBAction)infoAction:(UIButton *)infoButton
-{
+- (IBAction)infoAction:(UIButton *)infoButton {
     // Save the old value to a scop variable.
     BOOL expanded = self.expanded;
-    
+
     // Update the expand flag.
     self.expanded = !expanded;
-    
+
     // Call the appropirate delegate method based on the old value.
-    if (expanded)
-    {
-        if ([self.delegate respondsToSelector:@selector(profileViewDidSelectCloseButton:)])
-        {
+    if (expanded) {
+        if ([self.delegate respondsToSelector:@selector(profileViewDidSelectCloseButton:)]) {
             [self.delegate profileViewDidSelectCloseButton:self];
         }
-    }
-    else
-    {
-        if ([self.delegate respondsToSelector:@selector(profileViewDidSelectInfoButton:)])
-        {
+    } else {
+        if ([self.delegate respondsToSelector:@selector(profileViewDidSelectInfoButton:)]) {
             [self.delegate profileViewDidSelectInfoButton:self];
         }
     }
