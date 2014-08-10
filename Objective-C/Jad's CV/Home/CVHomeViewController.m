@@ -30,9 +30,12 @@
 
 #import "CVHomeViewController.h"
 
+#import "CVTutorialViewController.h"
 #import "CVPageViewController.h"
 
 #import "CVProfileView.h"
+
+#import "UIView+Snapshot.h"
 
 /// Storyboard identifier for CVTimelineNavigationController.
 static NSString *CVTimelineViewControllerIdentifier = @"CVTimelineNavigationController";
@@ -85,10 +88,30 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [self becomeFirstResponder];
 
     [self.profileView handleBackgroundImageBlur:animated];
     
-    [self presentTutorial];
+    if ([CVTutorialViewController needsToPresentTutorials]) {
+        [self presentTutorial];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self setNeedsStatusBarAppearanceUpdate:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self resignFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -140,6 +163,12 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
         pageViewController.viewControllerIdentifiers = self.pageContentViewControllerIdentifiers;
         // Refresh the UI.
         [self refreshFromPageViewController:pageViewController];
+    }
+    if ([segue.identifier isEqualToString:@"Tutorial Segue"]) {
+        CVTutorialViewController *tutorialViewController = (CVTutorialViewController *)segue.destinationViewController;
+
+        UIImage *viewSnapshot = [self.view imageWithDarkEffect];
+        tutorialViewController.backgroundImage = viewSnapshot;
     }
 }
 
@@ -201,6 +230,14 @@ static NSString *CVExtraCurricularSplitViewControllerIdentifier = @"CVExtraCurri
 - (void)presentTutorial
 {
     [self performSegueWithIdentifier:@"Tutorial Segue" sender:self];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        if (self.presentedViewController == nil) {
+             [self presentTutorial];   
+        }
+    }
 }
 
 #pragma mark - Profile View

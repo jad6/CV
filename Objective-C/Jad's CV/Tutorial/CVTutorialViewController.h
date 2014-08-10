@@ -10,4 +10,8 @@
 
 @interface CVTutorialViewController : UIViewController
 
+@property (nonatomic, strong) UIImage *backgroundImage;
+
++ (BOOL)needsToPresentTutorials;
+
 @end

@@ -11,5 +11,6 @@
 @interface CVTutorialSwipeView : UIView
 
 - (void)startAnimating;
+- (void)endAnimatingOnNextAnimationLoop;
 
 @end

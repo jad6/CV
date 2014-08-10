@@ -19,8 +19,7 @@ typedef NS_ENUM (NSInteger, CVTutorialCircleSwipeDirection) {
 
 @property (nonatomic, strong) JOCircleView *circleView;
 
-@property (nonatomic, strong) CAAnimation *currentAnimation;
-@property (nonatomic, assign) CVTutorialCircleSwipeDirection lastAnimationDirection;
+@property (nonatomic, assign) BOOL endOnNextLoop;
 
 @end
 
@@ -37,88 +36,57 @@ typedef NS_ENUM (NSInteger, CVTutorialCircleSwipeDirection) {
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    CGSize circleViewSize = CGSizeMake(30.0f, 30.0f);
-    
-    JOCircleView *circleView = [[JOCircleView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, circleViewSize.width, circleViewSize.height)];
+    JOCircleView *circleView = [[JOCircleView alloc] init];
     circleView.backgroundColor = [UIColor backgroundGrayColor];
     [self addSubview:circleView];
     
+    CGRect circleViewFrame = circleView.frame;
+    circleViewFrame.size = CGSizeMake(44.0f, 44.0f);
+    circleViewFrame.origin.x = 0.0;
+    circleView.frame = circleViewFrame;
+    [circleView centerVerticallyWithReferenceRect:self.bounds];
+
     self.circleView = circleView;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-
-    [self.circleView centerVerticallyWithReferenceRect:self.bounds];
-}
-
 - (void)startAnimating {
+    self.endOnNextLoop = NO;
     [self animateMovementWithDirection:CVTutorialCircleSwipeDirectionRight];
 }
 
-- (void)endAnimating {
-    if (self.currentAnimation) {
-//        self.currentAnimation
-    }
+- (void)endAnimatingOnNextAnimationLoop {
+    self.endOnNextLoop = YES;
 }
 
 - (void)animateMovementWithDirection:(CVTutorialCircleSwipeDirection)direction {
     CGRect bounds = self.bounds;
     JOCircleView *circleView = self.circleView;
 
-    CGFloat fromX = 0.0f;
+    CVTutorialCircleSwipeDirection nextDirection;
     CGFloat toX = 0.0f;
-
     if (direction == CVTutorialCircleSwipeDirectionLeft) {
-        fromX = bounds.size.width - circleView.frame.size.width;
         toX = 0.0f;
+        nextDirection = CVTutorialCircleSwipeDirectionRight;
     } else {
-        fromX = 0.0f;
         toX = bounds.size.width - circleView.frame.size.width;
+        nextDirection = CVTutorialCircleSwipeDirectionLeft;
     }
-    self.lastAnimationDirection = direction;
-
-    CABasicAnimation *animation = [CABasicAnimation animation];
-    animation.delegate = self;
-
-    animation.keyPath = @"position.x";
-    animation.fromValue = @(fromX);
-    animation.toValue = @(toX);
-    animation.duration = 0.9f;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-
-    [circleView.layer addAnimation:animation forKey:@"basic"];
-    circleView.layer.position = CGPointMake(toX, circleView.frame.origin.y);
-}
-
-- (void)animationDidStart:(CAAnimation *)anim {
-    self.currentAnimation = anim;
-}
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    self.currentAnimation = nil;
     
-    CVTutorialCircleSwipeDirection nextDirection = (self.lastAnimationDirection == CVTutorialCircleSwipeDirectionLeft) ? CVTutorialCircleSwipeDirectionRight : CVTutorialCircleSwipeDirectionLeft;
+    CGRect circleViewFrame = circleView.frame;
+    circleViewFrame.origin.x = toX;
     
-    JOCircleView *circleView = self.circleView;
-    __weak __typeof(circleView) weakCircleView = circleView;
-    [circleView setHidden:YES
-                 animated:YES
-                 duration:0.9f
-               completion:^(BOOL finished) {
-                   __strong __typeof(weakCircleView) strongCircleView = weakCircleView;
-                   
-                   if (finished) {
-                       [strongCircleView setHidden:NO
-                                          animated:YES
-                                          duration:0.6f
-                                        completion:^(BOOL finished) {
-                                            if (finished) {
-                                                [self animateMovementWithDirection:nextDirection];
-                                            }
-                                        }];
-                   }
-               }];
+    [UIView animateWithDuration:0.9 animations:^{
+        circleView.frame = circleViewFrame;
+    } completion:^(BOOL finished) {
+        __weak __typeof(circleView) weakCircleView = circleView;
+        [circleView setHidden:YES animated:YES duration:1.6 completion:^(BOOL finished) {
+            __strong __typeof(weakCircleView) strongCircleView = weakCircleView;
+           [strongCircleView setHidden:NO animated:YES duration:1.6 completion:^(BOOL finished) {
+               if (self.endOnNextLoop == NO)
+                   [self animateMovementWithDirection:nextDirection];
+           }];
+        }];
+    }];
 }
 
 @end
