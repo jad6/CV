@@ -32,16 +32,12 @@
 
 @implementation UIViewController (Extension)
 
-- (void)setNeedsStatusBarAppearanceUpdate:(BOOL)animated
-{
-    if (animated)
-    {
+- (void)setNeedsStatusBarAppearanceUpdate:(BOOL)animated {
+    if (animated) {
         [UIView animateWithDuration:0.3 animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
         }];
-    }
-    else
-    {
+    } else {
         [self setNeedsStatusBarAppearanceUpdate];
     }
 }

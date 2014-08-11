@@ -33,7 +33,7 @@
 /**
  *  The level of importance of the event.
  */
-typedef NS_ENUM(NSInteger, CVTimelineEventImportance) {
+typedef NS_ENUM (NSInteger, CVTimelineEventImportance) {
     /// Importance not set.
     CVTimelineEventImportanceNone,
     /// Big event, usually start of work somewhere.

@@ -44,47 +44,41 @@ static NSString *CVRefereeCollectionViewCellIdentifier = @"Referee Cell";
 
 @synthesize pageIndex = _pageIndex;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.title = NSLocalizedString(@"ReferencesTitle", nil);
-    
+
     NSArray *referees = [CVReferee referees];
     [self setData:referees containsSections:NO];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Collection View
 
-- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
-{
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath {
     return CVRefereeCollectionViewCellIdentifier;
 }
 
-- (void)listView:(id)listView
-   configureCell:(CVRefereeCollectionViewCell *)cell
-      withObject:(CVReferee *)referee
-     atIndexPath:(NSIndexPath *)indexPath
-{
+- (void) listView:(id)listView
+    configureCell:(CVRefereeCollectionViewCell *)cell
+       withObject:(CVReferee *)referee
+      atIndexPath:(NSIndexPath *)indexPath {
     cell.delegate = self;
     cell.referee = referee;
 }
 
 #pragma mark - Referee Cell Delegate
 
-- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToCallReferee:(CVReferee *)referee
-{
+- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToCallReferee:(CVReferee *)referee {
     [CVContactor callNumber:referee.phoneNumber];
 }
 
-- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToEmailReferee:(CVReferee *)referee
-{
+- (void)refereeCell:(CVRefereeCollectionViewCell *)refereeCell didSelectToEmailReferee:(CVReferee *)referee {
     [[CVContactor sharedContactor] emailReciepients:@[referee.email]
                                        inController:self];
 }

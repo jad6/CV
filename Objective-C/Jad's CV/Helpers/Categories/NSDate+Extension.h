@@ -32,7 +32,7 @@
 
 @interface NSDate (Extension)
 
-- (NSString *)stringFromFormatter:(void(^)(NSDateFormatter *formatter))formatterBlock;
+- (NSString *)stringFromFormatter:(void (^)(NSDateFormatter *formatter))formatterBlock;
 
 - (NSString *)condensedString;
 

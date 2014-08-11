@@ -33,10 +33,9 @@
 
 @implementation JOCircleImageView
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     [self.layer setCornerRadius:self.frame.size.width / 2.0];
     self.layer.masksToBounds = YES;
 }

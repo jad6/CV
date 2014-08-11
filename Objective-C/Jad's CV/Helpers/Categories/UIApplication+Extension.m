@@ -34,13 +34,11 @@
 
 @implementation UIApplication (Extension)
 
-+ (BOOL)emailAvailable
-{
++ (BOOL)emailAvailable {
     return [MFMailComposeViewController canSendMail];
 }
 
-+ (BOOL)phoneAvailable
-{
++ (BOOL)phoneAvailable {
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];
 }
 

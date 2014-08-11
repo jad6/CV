@@ -41,7 +41,7 @@ static NSString *CVDetailSegueIdentifier = @"Extra Curricular Detail Segue";
 
 @optional
 - (void)extraCurricularViewController:(CVExtraCurricularTableViewController *)controller
-           didSelectExperience:(CVExperienceObject *)experience;
+                  didSelectExperience:(CVExperienceObject *)experience;
 
 @end
 

@@ -30,7 +30,7 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  Image View Subclass 
+ *  Image View Subclass
  */
 @interface JOCircleImageView : UIImageView
 
