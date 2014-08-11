@@ -144,7 +144,7 @@ class ProfileView: DynamicTypeView, UILayoutSupport {
             }
         }
         
-        subview.setHidden(hide, animated: animated, duration: kProfileViewAnimationDuration) { finished in
+        subview.setHidden(hide, animated: animated, duration: kProfileViewAnimationDuration) { (finished: Bool) in
             if finished == true && hide == true {
                 subview.removeFromSuperview()
             }

@@ -167,7 +167,7 @@ extension UIView {
             if hide {
                 UIView.animateWithDuration(duration, animations: {
                     self.alpha = 0.0
-                }, completion: { finished in
+                }, completion: { (finished: Bool) in
                     if finished {
                         self.hidden = true
                     }

@@ -12,6 +12,8 @@ class HomeView: UIView {
 
     //MARK:- Properties
 
+    private var tipsView: TipsView?
+    
     let sectionsPageView: UIView
     let profileView = UIDevice.isPad() ? ProfileView_Pad() : ProfileView_Phone()
     
@@ -42,9 +44,31 @@ class HomeView: UIView {
         sectionsPageView.frame.size.height = bounds.size.height - ProfileView.LayoutConstants.topLayoutLength
         sectionsPageView.frame.size.width = bounds.size.width
         sectionsPageView.frame.origin.y = profileView.frame.maxY
+        
+        if tipsView != nil {
+            tipsView!.frame = bounds
+        }
     }
     
-    //MARK: Logic
+    //MARK:- Tips
+    
+    func handleTipsView() {
+        if tipsView == nil {
+            tipsView = TipsView(frame: bounds)
+            tipsView!.hidden = true
+            
+            self.addSubview(tipsView!)
+            
+            tipsView!.setHidden(false, animated: true, duration: Animations.Durations.Medium.toRaw(), completion: nil)
+        } else {
+            tipsView!.setHidden(true, animated: true, duration: Animations.Durations.Medium.toRaw()) { (finished: Bool) in
+                self.tipsView!.removeFromSuperview()
+                self.tipsView = nil
+            }
+        }
+    }
+    
+    //MARK:- Logic
     
     func handleProfileViewFocus() {
         profileView.expanded = !profileView.expanded
@@ -56,7 +80,7 @@ class HomeView: UIView {
         UIView.animateWithDuration(kProfileViewAnimationDuration, animations: {
             self.layoutSubviews()
             self.profileView.layoutSubviews()
-            }, completion: { finished in
+            }, completion: { (finished: Bool) in
             if finished == true && self.profileView.expanded == false {
                 self.profileView.backgroundImageView.blurEffectView.setHidden(false, animated: true, duration: Animations.Durations.Short.toRaw(), completion: nil)
             }

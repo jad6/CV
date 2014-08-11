@@ -13,11 +13,11 @@ class HomeViewController: UIViewController {
     //MARK:- Properties
     
     /// The model object of the résumé holder.
-    let résuméHolder = RésuméHolder.résuméHolder()
+    private let résuméHolder = RésuméHolder.résuméHolder()
     
-    let sectionsPageViewController = RefereesCollectionViewController()
-    
-    var homeView: HomeView! {
+    private let sectionsPageViewController = RefereesCollectionViewController()
+        
+    private var homeView: HomeView! {
     return view as? HomeView
     }
     
@@ -50,9 +50,17 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        becomeFirstResponder()
+        
         UIView.animateWithDuration(Animations.Durations.Short.toRaw()) {
             self.setNeedsStatusBarAppearanceUpdate()
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        resignFirstResponder()
     }
     
     //MARK:- Status bar
@@ -63,7 +71,7 @@ class HomeViewController: UIViewController {
     
     //MARK:- Actions
     
-    func profileInfoAction(sender: AnyObject) {
+    private func profileInfoAction(sender: AnyObject) {
         homeView.handleProfileViewFocus()
         
         UIView.animateWithDuration(kProfileViewAnimationDuration) {
@@ -71,17 +79,29 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func emailAction(sender: AnyObject) {
+    private func emailAction(sender: AnyObject) {
         Contactor.sharedContactor.email(reciepients: [résuméHolder.email], fromController: self)
     }
 
-    func phoneAction(sender: AnyObject) {
+    private func phoneAction(sender: AnyObject) {
         Contactor.call(number: résuméHolder.phoneNumber)
+    }
+    
+    //MARK:- Tips
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent!) {
+        if motion == .MotionShake {
+            homeView.handleTipsView()
+        }
     }
     
     //MARK:- Logic
     
-    func setupProfileView() {
+    private func setupProfileView() {
         let profileView = homeView.profileView
         
         profileView.infoButton.addTarget(self, action: "profileInfoAction:", forControlEvents: .TouchUpInside)

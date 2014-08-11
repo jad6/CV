@@ -18,5 +18,7 @@ struct Animations {
         case Short = 0.3
         case Medium = 0.6
         case Long = 0.9
+        case ExtraLong = 1.2
+        case ExtraExtraLong = 1.5
     }
 }

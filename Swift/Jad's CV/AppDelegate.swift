@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary) -> Bool {
         
+        UIApplication.sharedApplication().applicationSupportsShakeToEdit = true
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window.rootViewController = HomeViewController()
         window.tintColor = UIColor.defaultBlueColor()

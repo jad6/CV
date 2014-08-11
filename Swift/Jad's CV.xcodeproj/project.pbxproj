@@ -70,6 +70,7 @@
 		05F6C30919775C54007CCD66 /* BlurImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6C30819775C54007CCD66 /* BlurImageView.swift */; };
 		05F9EAAA19865A26001D2633 /* EducationView_Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9EAA919865A26001D2633 /* EducationView_Phone.swift */; };
 		05F9EAAC19865A2F001D2633 /* EducationView_Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9EAAB19865A2F001D2633 /* EducationView_Pad.swift */; };
+		05FE874419984E7C00620954 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FE874319984E7C00620954 /* TipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		05F6C30819775C54007CCD66 /* BlurImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurImageView.swift; sourceTree = "<group>"; };
 		05F9EAA919865A26001D2633 /* EducationView_Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationView_Phone.swift; sourceTree = "<group>"; };
 		05F9EAAB19865A2F001D2633 /* EducationView_Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationView_Pad.swift; sourceTree = "<group>"; };
+		05FE874319984E7C00620954 /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			children = (
 				056C9AFE197655CD0047F3E5 /* AppDelegate.swift */,
 				05F5B622198B811B00E1C98F /* AppConfiguration.swift */,
+				05FE874219984E4E00620954 /* Tips */,
 				056C9B1B197656740047F3E5 /* Home */,
 				056C9B20197657180047F3E5 /* Profile */,
 				056C9B21197657330047F3E5 /* Sections */,
@@ -481,6 +484,14 @@
 			path = Split;
 			sourceTree = "<group>";
 		};
+		05FE874219984E4E00620954 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				05FE874319984E7C00620954 /* TipsView.swift */,
+			);
+			name = Tips;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -592,6 +603,7 @@
 				05F5B625198B814C00E1C98F /* DynamicTypeFont.swift in Sources */,
 				05F9EAAA19865A26001D2633 /* EducationView_Phone.swift in Sources */,
 				05C5C5B7198F822D00FA1AD1 /* ExperienceDetailView_Phone.swift in Sources */,
+				05FE874419984E7C00620954 /* TipsView.swift in Sources */,
 				05DC99DB1977AEA300AF6BB7 /* Error.swift in Sources */,
 				05A266361980B291005B5ED2 /* TimelineTableBackgroundView.swift in Sources */,
 				056C9B4219766B0E0047F3E5 /* ProfileVIew_Pad.swift in Sources */,
