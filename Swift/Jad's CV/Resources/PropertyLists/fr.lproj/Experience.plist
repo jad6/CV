@@ -234,5 +234,23 @@
 		<key>imageName</key>
 		<string>domati</string>
 	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>2</integer>
+		<key>startDate</key>
+		<date>2014-05-27T03:00:00Z</date>
+		<key>endDate</key>
+		<date>2014-08-11T03:00:00Z</date>
+		<key>color</key>
+		<string>60,171,218,1</string>
+		<key>organisation</key>
+		<string>Datacom</string>
+		<key>position</key>
+		<string>Stories From The Kimberley</string>
+		<key>description</key>
+		<string>J’ai crée une application pour le Département de la Pêche d’Australie Occidentale qui explore  la région du Kimberley. Le temps de développent application fut très court cependant ce projet fut un succès. L’application peut être trouvé ici: https://itunes.apple.com/au/app/kimberley/id909174587?mt=8</string>
+		<key>imageName</key>
+		<string>kimberley</string>
+	</dict>
 </array>
 </plist>
