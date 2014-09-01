@@ -1,4 +1,7 @@
 
+/* Class = "IBUILabel"; text = "Start -\n End"; ObjectID = "0cz-BR-aEw"; */
+"0cz-BR-aEw.text" = "Start -\n End";
+
 /* Class = "IBUILabel"; text = "Location"; ObjectID = "0zf-NI-bLF"; */
 "0zf-NI-bLF.text" = "Location";
 
@@ -11,38 +14,44 @@
 /* Class = "IBUILabel"; text = "Connection"; ObjectID = "6pT-3C-eI3"; */
 "6pT-3C-eI3.text" = "Connection";
 
-/* Class = "IBUILabel"; text = "Start Date - End Date"; ObjectID = "6ye-n9-rbN"; */
-"6ye-n9-rbN.text" = "Start Date - End Date";
+/* Class = "IBUILabel"; text = "Tips"; ObjectID = "BME-Sz-ESW"; */
+"BME-Sz-ESW.text" = "Astuces";
 
 /* Class = "IBUIButton"; normalTitle = "email@emailaddress.com.au"; ObjectID = "BzH-EA-oAh"; */
 "BzH-EA-oAh.normalTitle" = "email@emailaddress.com.au";
 
-/* Class = "IBUILabel"; text = "Position"; ObjectID = "HGA-c3-FJ0"; */
-"HGA-c3-FJ0.text" = "Position";
+/* Class = "IBUILabel"; text = "Swipe horizontally to navigate between app sections in the bottom part of the screen."; ObjectID = "Ddy-Zg-CZw"; */
+"Ddy-Zg-CZw.text" = "Balayez horizontalement sur la partie inférieur de l’écran pour changer les sections.";
+
+/* Class = "IBUILabel"; text = "Position"; ObjectID = "M02-1J-LQV"; */
+"M02-1J-LQV.text" = "Position";
 
 /* Class = "IBUILabel"; text = "Software Developer"; ObjectID = "MkW-YV-M4e"; */
 "MkW-YV-M4e.text" = "Software Developer";
 
-/* Class = "IBUILabel"; text = "Start -\n End"; ObjectID = "Qv9-d6-7Re"; */
-"Qv9-d6-7Re.text" = "Start -\n End";
+/* Class = "IBUILabel"; text = "Organisation"; ObjectID = "QVJ-8a-or8"; */
+"QVJ-8a-or8.text" = "Organisation";
 
-/* Class = "IBUILabel"; text = "Position"; ObjectID = "RfA-Df-FXj"; */
-"RfA-Df-FXj.text" = "Position";
+/* Class = "IBUILabel"; text = "Shake to dismiss tips"; ObjectID = "Qli-u3-xnv"; */
+"Qli-u3-xnv.text" = "Secouez pour la page principale";
 
-/* Class = "IBUILabel"; text = "Start -\n End"; ObjectID = "Uu5-HL-usZ"; */
-"Uu5-HL-usZ.text" = "Start -\n End";
+/* Class = "IBUILabel"; text = "Position"; ObjectID = "RKC-o1-2yS"; */
+"RKC-o1-2yS.text" = "Position";
+
+/* Class = "IBUILabel"; text = "Start -\n End"; ObjectID = "Yqa-nU-M3D"; */
+"Yqa-nU-M3D.text" = "Start -\n End";
 
 /* Class = "IBUILabel"; text = "Location"; ObjectID = "a0I-5z-Pku"; */
 "a0I-5z-Pku.text" = "Location";
 
-/* Class = "IBUILabel"; text = "Label"; ObjectID = "aES-yJ-biD"; */
-"aES-yJ-biD.text" = "Label";
+/* Class = "IBUILabel"; text = "Tap the info button in the header see more about me."; ObjectID = "bl2-NH-5oZ"; */
+"bl2-NH-5oZ.text" = "Touchez le button information sur la page principale pour plus de détails";
 
 /* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "cIr-zb-oui"; */
 "cIr-zb-oui.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
-/* Class = "IBUILabel"; text = "Final year,  Bachelor of Software Engineering"; ObjectID = "cam-bR-tEW"; */
-"cam-bR-tEW.text" = "Final year,  Bachelor of Software Engineering";
+/* Class = "IBUILabel"; text = "Bachelor of Software Engineering"; ObjectID = "cam-bR-tEW"; */
+"cam-bR-tEW.text" = "Bachelor of Software Engineering";
 
 /* Class = "IBUILabel"; text = "Start Date - End Date"; ObjectID = "djZ-zj-Nim"; */
 "djZ-zj-Nim.text" = "Start Date - End Date";
@@ -50,11 +59,11 @@
 /* Class = "IBUIButton"; normalTitle = "+61 412 345 678"; ObjectID = "epa-p1-8Sl"; */
 "epa-p1-8Sl.normalTitle" = "+61 412 345 678";
 
-/* Class = "IBUILabel"; text = "Label"; ObjectID = "erD-Dl-hbx"; */
-"erD-Dl-hbx.text" = "Label";
-
 /* Class = "IBUILabel"; text = "Full Name"; ObjectID = "fR6-3R-rD7"; */
 "fR6-3R-rD7.text" = "Full Name";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "ftH-fi-7c0"; */
+"ftH-fi-7c0.text" = "Label";
 
 /* Class = "IBUILabel"; text = "Position"; ObjectID = "iIu-YY-hqM"; */
 "iIu-YY-hqM.text" = "Position";
@@ -68,8 +77,14 @@
 /* Class = "IBUILabel"; text = "Position"; ObjectID = "lPn-UR-ZdA"; */
 "lPn-UR-ZdA.text" = "Position";
 
-/* Class = "IBUILabel"; text = "Organisation"; ObjectID = "oNJ-7s-ADJ"; */
-"oNJ-7s-ADJ.text" = "Organisation";
+/* Class = "IBUILabel"; text = "Position"; ObjectID = "sn5-pR-BDv"; */
+"sn5-pR-BDv.text" = "Position";
 
-/* Class = "IBUILabel"; text = "Position"; ObjectID = "viB-A1-9Af"; */
-"viB-A1-9Af.text" = "Position";
+/* Class = "IBUILabel"; text = "Shake to bring this screen from anywhere in the app."; ObjectID = "tDv-mN-kAv"; */
+"tDv-mN-kAv.text" = "Secouez votre appareil pour afficher cet écran.";
+
+/* Class = "IBUILabel"; text = "Start Date - End Date"; ObjectID = "umE-Cw-LUt"; */
+"umE-Cw-LUt.text" = "Start Date - End Date";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "ybt-Ni-ZeK"; */
+"ybt-Ni-ZeK.text" = "Label";

@@ -155,14 +155,14 @@ CGFloat totalHeight(NSArray *views) {
 #pragma mark Positioning
 
 - (CGFloat)horizontalCenterWithReferenceRect:(CGRect)rect {
-    CGFloat offset = floorf((rect.size.width = self.frame.size.width) / 2.0);
+    CGFloat offset = floorf((rect.size.width - self.frame.size.width) / 2.0);
 
     return rect.origin.x + offset;
 }
 
 - (CGFloat)verticalCenterWithReferenceRect:(CGRect)rect {
-    CGFloat offset = floorf((rect.size.height = self.frame.size.height) / 2.0);
-
+    CGFloat offset = floorf((rect.size.height - self.frame.size.height) / 2.0);
+    
     return rect.origin.y + offset;
 }
 
@@ -173,10 +173,10 @@ CGFloat totalHeight(NSArray *views) {
     self.frame = frame;
 }
 
-- (void)centerVerticallyWithReferenceRect:(CGRect)rect {
+- (void)centerVerticallyWithReferenceRect:(CGRect)rect {    
     CGRect frame = self.frame;
 
-    frame.origin.y = [self horizontalCenterWithReferenceRect:rect];
+    frame.origin.y = [self verticalCenterWithReferenceRect:rect];
     self.frame = frame;
 }
 

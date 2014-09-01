@@ -158,7 +158,7 @@
 		<key>position</key>
 		<string>Department of Fisheries Kiosk App</string>
 		<key>description</key>
-		<string>J’ai fait parti de l’équipe de développement d’une application iPad kiosque pour une exposition du Département de la Pêche de Australie Occidentale. L’application permet au visiteurs d’explorer la faune et la flore des différentes regions de l’état au travers d’images, de films et de jeux interactifs. </string>
+		<string>J’ai fait parti de l’équipe de développement d’une application iPad kiosque pour une exposition du Département de la Pêche d&apos;Australie Occidentale. L’application permet au visiteurs d’explorer la faune et la flore des différentes regions de l’état au travers d’images, de films et de jeux interactifs. </string>
 		<key>imageName</key>
 		<string>gov</string>
 	</dict>
@@ -233,6 +233,24 @@
 		<string>Le sujet de recherche de ma thèse est l’implementation d’un algorithme qui calcule la force d’une touche sur un smartphone ou une tablette en utilisant les motions induites par l’interaction. Cette recherche a duré un an et j’ai produit: un article, une application iOS, une soutenance et un poster de conférence. L’application démontrant l’algorithme et l’article peuvent être trouvés sur le lien: https://github.com/jad6/DOMATI-iOS.</string>
 		<key>imageName</key>
 		<string>domati</string>
+	</dict>
+	<dict>
+		<key>importance</key>
+		<integer>2</integer>
+		<key>startDate</key>
+		<date>2014-05-27T03:00:00Z</date>
+		<key>endDate</key>
+		<date>2014-08-11T03:00:00Z</date>
+		<key>color</key>
+		<string>60,171,218,1</string>
+		<key>organisation</key>
+		<string>Datacom</string>
+		<key>position</key>
+		<string>Stories From The Kimberley</string>
+		<key>description</key>
+		<string>J’ai crée une application pour le Département de la Pêche d’Australie Occidentale qui explore  la région du Kimberley. Le temps de développent application fut très court cependant ce projet fut un succès. L’application peut être trouvé ici: https://itunes.apple.com/au/app/kimberley/id909174587?mt=8</string>
+		<key>imageName</key>
+		<string>kimberley</string>
 	</dict>
 </array>
 </plist>

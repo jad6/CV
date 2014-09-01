@@ -106,14 +106,10 @@
 		050A5D0418FA8C4400244F50 /* CVExperienceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVExperienceObject.m; sourceTree = "<group>"; };
 		050A5D0918FA8FF200244F50 /* CVRoundedRectImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVRoundedRectImageView.h; sourceTree = "<group>"; };
 		050A5D0A18FA8FF200244F50 /* CVRoundedRectImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVRoundedRectImageView.m; sourceTree = "<group>"; };
-		05294871197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
-		05294872197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		05294873197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "fr.lproj/AboutMe~iphone.strings"; sourceTree = "<group>"; };
 		05294874197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "fr.lproj/AboutMe~ipad.strings"; sourceTree = "<group>"; };
 		05294875197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		05294876197E1C9100739084 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		05294878197E1C9E00739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
-		0529487A197E1CA200739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		0529487C197E1CA400739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/AboutMe~iphone.strings"; sourceTree = "<group>"; };
 		0529487E197E1CA700739084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/AboutMe~ipad.strings"; sourceTree = "<group>"; };
 		05294880197E1CB000739084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Experience.plist; sourceTree = "<group>"; };
@@ -172,6 +168,10 @@
 		0568735218F67ED700132551 /* CVReferencesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVReferencesCollectionViewController.m; sourceTree = "<group>"; };
 		0568735418F680C100132551 /* CVRefereeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVRefereeCollectionViewCell.h; sourceTree = "<group>"; };
 		0568735518F680C100132551 /* CVRefereeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVRefereeCollectionViewCell.m; sourceTree = "<group>"; };
+		0574719319976ADD00169F3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		0574719519976ADE00169F3B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		0574719719976BDB00169F3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		0574719919976BDD00169F3B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		059482AE199242E30060C1DF /* CVTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTutorialViewController.h; sourceTree = "<group>"; };
 		059482AF199242E30060C1DF /* CVTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVTutorialViewController.m; sourceTree = "<group>"; };
 		059482B4199244BE0060C1DF /* CVTutorialSwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVTutorialSwipeView.h; sourceTree = "<group>"; };
@@ -824,8 +824,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				0568730018F6361E00132551 /* Base */,
-				05294871197E1C9100739084 /* fr */,
-				05294878197E1C9E00739084 /* en */,
+				0574719319976ADD00169F3B /* en */,
+				0574719519976ADE00169F3B /* fr */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -834,8 +834,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				0568730318F6361E00132551 /* Base */,
-				05294872197E1C9100739084 /* fr */,
-				0529487A197E1CA200739084 /* en */,
+				0574719719976BDB00169F3B /* en */,
+				0574719919976BDD00169F3B /* fr */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";

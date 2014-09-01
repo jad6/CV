@@ -33,6 +33,9 @@
 @implementation CVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
+    
     return YES;
 }
 
